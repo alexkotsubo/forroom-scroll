@@ -1,0 +1,225 @@
+.doubt {
+	display: flex;
+	flex-wrap: wrap;
+	&__content {
+		overflow: hidden;
+		color: $white;
+		flex: 0 0 34%;
+		background: $dark;
+		padding: 130px 50px 150px;
+		transition: .8s;
+		opacity: 0;
+		&.active {
+			opacity: 1;
+			.doubt__text {
+				opacity: 1;
+				.word {
+					display: inline-block;
+					opacity: 0;
+					filter: blur(4px);
+					animation: fade-in 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
+				}
+				transform: scale(0.94);
+				animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+			}
+			.doubt__title {
+				opacity: 1;
+				&::before {
+					content: '';
+					position: absolute;
+					height: 2px;
+					width: 100%;
+					display: block;
+					background-color: $red;
+					bottom: calc(50% - 1px);
+					animation: line 2000ms;
+					animation-fill-mode: forwards;
+					animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+					transform-origin: left;
+					transform: translateX(0) scaleX(0);
+					// animation-iteration-count: infinite;
+				}
+				.char {
+					display: inline-block;
+					position: relative;
+					animation-duration: 2000ms;
+					animation-fill-mode: forwards;
+					animation-name: kern;
+					animation-delay: calc(var(--char-index) * 5ms);
+					animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+					opacity: 0;
+					// animation-iteration-count: infinite;
+				}
+			}
+		}
+	}
+	&__title {
+		font-weight: 900;
+		font-size: 33px;
+		line-height: 40px;
+		text-transform: uppercase;
+	}
+	&__text {
+		max-width: 420px;
+		margin-top: 40px;
+		font-size: 17px;
+		line-height: 140%;
+	}
+	&__form {
+		margin-top: 40px;
+		&-input {
+			input {
+				opacity: 0.6;
+				font-size: 17px;
+				line-height: 140%;
+				color: $white;
+				background: transparent;
+				border-bottom: 2px solid $white;
+				padding: 10px 0;
+				transition: .2s;
+				&::placeholder {
+					opacity: 1;
+					color: $white;
+				}
+				&:focus {
+					opacity: 1;
+				}
+				&.error {
+					color: #D82C2C;
+					border-bottom-color: #D82C2C;
+					opacity: 1;
+					&::placeholder {
+						color: #D82C2C;
+					}
+					+ p {
+						display: block;
+					}
+				}
+				&.success {
+					color: #2CD847;
+					border-bottom-color: #2CD847;
+					opacity: 1;
+					&::placeholder {
+						color: #2CD847;
+					}
+				}
+			}
+			p {
+				font-size: 14px;
+				line-height: 140%;
+				color: #D82C2C;
+				display: none;
+			}
+		}
+		&-btn {
+			margin-top: 20px;
+		}
+	}
+	&__online {
+		font-weight: 600;
+		font-size: 22px;
+		line-height: 27px;
+		text-align: center;
+		margin-top: 40px;
+	}
+	&__map {
+		position: relative;
+		z-index: 2;
+		margin-top: -130px;
+		flex: 0 0 66%;
+		img {
+			max-width: 100%;
+		}
+	}
+}
+
+@media (max-width: 1440px) {
+	.doubt__map {
+		margin-top: -80px;
+	}
+}
+
+@media (max-width: 1280px) {
+	.doubt__content {
+		padding: 90px 50px 20px;
+	}
+
+	.doubt__online {
+		margin-top: 20px;
+	}
+
+	.doubt__form {
+		margin-top: 20px;
+	}
+
+	.doubt__title {
+		font-size: 28px;
+		line-height: 34px;
+	}
+
+	.doubt__online {
+		font-size: 17px;
+		line-height: 21px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.doubt__content {
+		padding: 40px 50px 60px;
+		flex-basis: 50%;
+	}
+
+	.doubt__map {
+		flex-basis: 50%;
+	}
+
+	.doubt__title {
+		font-size: 22px;
+		line-height: 27px;
+	}
+
+	.doubt__text {
+		font-size: 14px;
+		line-height: 140%;
+	}
+
+	.doubt__online {
+		margin-top: 40px;
+	}
+}
+
+@media (max-width: 768px) {
+	.doubt__content {
+		padding: 40px 20px 60px;
+	}
+
+	.doubt__map {
+		margin-top: 0;
+	}
+}
+
+@media (max-width: 600px) {
+	.doubt {
+		flex-direction: column-reverse;
+	}
+
+	.doubt__content {
+		padding-bottom: 10px;
+		flex: 0 0 100%;
+	}
+
+	.doubt__map {
+		padding-bottom: 100%;
+		flex: 0 0 100%;
+	}
+
+	.doubt__form-btn {
+		.btn {
+			width: 100%;
+		}
+	}
+
+	.doubt__online {
+		margin-top: 20px;
+	}
+}

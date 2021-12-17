@@ -1,0 +1,145 @@
+.thanks {
+  overflow: hidden;
+  padding: 30px 0;
+  text-align: center;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__logo {
+    display: block;
+    margin: 0 auto 60px;
+    max-width: 240px;
+    transition: .8s;
+    opacity: 0;
+    transform: translate(0, -100%);
+    &.active {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+  &__title {
+    transition: .8s;
+    opacity: 0;
+    transform: translate(0, -100%);
+    &.active {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+    font-size: 51px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    line-height: 1.2em;
+  }
+  &__text {
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.6em;
+    margin-bottom: 35px;
+    transition: .8s;
+    transition-delay: .3s;
+    opacity: 0;
+    transform: translate(0, 100%);
+    &.active {
+      opacity: 1;
+      transform: translate(0, 0);
+      &::before {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+    }
+    &::before {
+      content: '';
+      display: block;
+      height: 3px;
+      margin: 0 auto;
+      background: transparent linear-gradient(90deg, transparent 0%, #fff 100%);
+      margin-bottom: 20px;
+      max-width: 115px;
+      width: 100%;
+      transition: .8s;
+      opacity: 0;
+      transform: translate(-500%, 0);
+    }
+  }
+  &__btn {
+    transition: .8s;
+    transition-delay: .6s;
+    opacity: 0;
+    transform: translate(0, 100%);
+    &.active {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+    .btn {
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+      color: #fff;
+      background: transparent;
+      border: 1px solid #fff;
+      box-shadow: 0 5px 14px rgba(20, 14, 49, .1);
+      padding: 15px 30px;
+      border-radius: 4px;
+      transition: transform .5s;
+      &:hover {
+        transform: translateY(-8px);
+        background: #b15051;
+        border-color: #b15051;
+      }
+    }
+  }
+  &__socials {
+    display: flex;
+    justify-content: center;
+    transition: .8s;
+    transition-delay: .8s;
+    opacity: 0;
+    &.active {
+      opacity: 1;
+    }
+    margin-top: 55px;
+    li {
+      margin-right: 50px;
+      &:last-child {
+        margin-right: 0;
+      }
+      a {
+        i {
+          font-size: 30px;
+          color: #fff;
+          &:hover {
+            color: #B15051;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .thanks__logo {
+    max-width: 47%;
+  }
+
+  .thanks__title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .thanks__text {
+    &:before {
+      margin-bottom: 30px;
+    }
+    font-size: 18px;
+  }
+
+  .thanks__btn .btn {
+    width: 100%;
+  }
+}

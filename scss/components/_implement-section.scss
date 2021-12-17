@@ -1,0 +1,117 @@
+.implement {
+	overflow: hidden;
+	padding: 100px 0 160px;
+	.container {
+		padding: 0;
+	}
+	&__top {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__slider {
+		position: relative;
+		z-index: 1;
+		flex: 0 0 50%;
+		width: 50%;
+		.swiper {
+			width: 100%;
+			height: 100%;
+		}
+		.swiper-slide {
+			width: 100%;
+			height: 100%;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+		}
+	}
+	&__about {
+		position: relative;
+		z-index: 2;
+		flex: 0 0 50%;
+		box-shadow: 0 5px 30px rgba(0, 0, 0, .1);
+		transition: .3s;
+		margin: -3px 0 10px -45px;
+		padding: 60px;
+		background: #fff;
+		align-self: start;
+		&-title {
+			color: $red;
+			font-size: 31px;
+			font-weight: 600;
+			text-transform: uppercase;
+			line-height: 1.3;
+			letter-spacing: .8px;
+			margin-bottom: 30px;
+		}
+		&-text {
+			margin-bottom: 30px;
+			line-height: 1.9em;
+			letter-spacing: .2px;
+		}
+	}
+	&__bottom {
+		margin-top: 25px;
+		display: flex;
+		flex-wrap: wrap;
+		margin-right: -50px;
+		padding: 0 20px;
+		&-part {
+			flex: 0 0 50%;
+			padding-right: 50px;
+			margin-top: 20px;
+		}
+	}
+	&__text {
+		line-height: 1.9em;
+		letter-spacing: .2px;
+		margin-bottom: 30px;
+	}
+}
+
+@media (max-width: 767px) {
+	.implement {
+		padding-top: 7px;
+		padding-bottom: 40px;
+	}
+
+	.implement__top {
+		flex-direction: column-reverse;
+	}
+
+	.implement__about {
+		flex-basis: 100%;
+		margin: 0;
+		padding: 40px 20px;
+	}
+
+	.implement__slider {
+		width: 100%;
+		flex-basis: 100%;
+		.swiper {
+			height: 242px;
+		}
+	}
+
+	.implement__about-title {
+		font-size: 22px;
+	}
+
+	.implement__about-text {
+		font-size: 14px;
+	}
+
+	.implement__bottom {
+		margin-top: 50px;
+		margin-right: 0;
+	}
+
+	.implement__bottom-part {
+		flex-basis: 100%;
+		margin-top: 0;
+		padding-right: 0;
+		p {
+			font-size: 14px;
+		}
+	}
+}
