@@ -356,7 +356,8 @@ window.addEventListener('DOMContentLoaded', e => {
 						cantStartSlider = true;
 						window.addEventListener('scroll', function handleCantSlide(e) {
 							const distance = +(repairsInner.getBoundingClientRect().top).toFixed();
-							if (distance > repairsInner.offsetHeight / 100 * (threshold * 100) + 200 || distance < nav.offsetHeight - 30) {
+							console.log(distance, repairsInner.offsetHeight / 100 * (threshold * 100) + 200)
+							if (distance > repairsInner.offsetHeight / 100 * (threshold * 100) + 200 || distance < 50) {
 								cantStartSlider = false;
 								this.removeEventListener('scroll', handleCantSlide);
 							}
@@ -367,7 +368,8 @@ window.addEventListener('DOMContentLoaded', e => {
 					cantStartSlider = true;
 					window.addEventListener('scroll', function handleCantSlide(e) {
 						const distance = +(repairsInner.getBoundingClientRect().top).toFixed();
-						if (distance > repairsInner.offsetHeight / 100 * (threshold * 100) + 200 || distance < nav.offsetHeight - 30) {
+						console.log(distance, repairsInner.offsetHeight / 100 * (threshold * 100) + 200)
+						if (distance > repairsInner.offsetHeight / 100 * (threshold * 100) + 200 || distance < 50) {
 							cantStartSlider = false;
 							this.removeEventListener('scroll', handleCantSlide);
 						}
