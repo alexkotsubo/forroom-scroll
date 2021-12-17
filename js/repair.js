@@ -356,7 +356,6 @@ window.addEventListener('DOMContentLoaded', e => {
 						cantStartSlider = true;
 						window.addEventListener('scroll', function handleCantSlide(e) {
 							const distance = +(repairsInner.getBoundingClientRect().top).toFixed();
-							console.log(repairsInner.offsetHeight / 100 * (threshold * 100) + 200, distance, -(nav.offsetHeight))
 							if (distance > repairsInner.offsetHeight / 100 * (threshold * 100) + 200 || distance < nav.offsetHeight - 30) {
 								cantStartSlider = false;
 								this.removeEventListener('scroll', handleCantSlide);
@@ -368,7 +367,6 @@ window.addEventListener('DOMContentLoaded', e => {
 					cantStartSlider = true;
 					window.addEventListener('scroll', function handleCantSlide(e) {
 						const distance = +(repairsInner.getBoundingClientRect().top).toFixed();
-						console.log(repairsInner.offsetHeight / 100 * (threshold * 100) + 200, distance, -(nav.offsetHeight))
 						if (distance > repairsInner.offsetHeight / 100 * (threshold * 100) + 200 || distance < nav.offsetHeight - 30) {
 							cantStartSlider = false;
 							this.removeEventListener('scroll', handleCantSlide);
@@ -391,7 +389,7 @@ window.addEventListener('DOMContentLoaded', e => {
 								repairsCartsContent[slider.realIndex].removeEventListener('scroll', handleSlideScroll);
 								window.addEventListener('scroll', function handleCantSlide(e) {
 									const distance = +(repairsInner.getBoundingClientRect().top).toFixed();
-									if (distance < -(repairsInner.offsetHeight / 100 * (threshold * 100)) - 50 || distance > nav.offsetHeight + 50) {
+									if (distance < -(repairsInner.offsetHeight / 100 * (threshold * 100)) - 150 || distance > nav.offsetHeight + 50) {
 										cantStartSlider = false;
 										this.removeEventListener('scroll', handleCantSlide);
 									}
@@ -406,7 +404,7 @@ window.addEventListener('DOMContentLoaded', e => {
 					cantStartSlider = true;
 					window.addEventListener('scroll', function handleCantSlide(e) {
 						const distance = +(repairsInner.getBoundingClientRect().top).toFixed();
-						if (distance < -(repairsInner.offsetHeight / 100 * (threshold * 100)) - 50 || distance > nav.offsetHeight + 50) {
+						if (distance < -(repairsInner.offsetHeight / 100 * (threshold * 100)) - 150 || distance > nav.offsetHeight + 50) {
 							cantStartSlider = false;
 							this.removeEventListener('scroll', handleCantSlide);
 						}
