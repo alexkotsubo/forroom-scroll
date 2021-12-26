@@ -34,6 +34,14 @@ body.lock {
 	overflow: hidden;
 }
 
+body.lock-x {
+	overflow-x: hidden;
+}
+
+body.lock-y {
+	overflow-y: hidden;
+}
+
 address {
 	font-style: normal;
 }
@@ -143,5 +151,15 @@ h1, h2, h3, h4, h5, h6 {
 		transform: translateX(0);
 		opacity: 1;
 		animation-timing-function: none;
+	}
+}
+
+@keyframes scrollMenuAppear {
+	0% {
+		transform: translate(-50%, 100%);
+	}
+
+	100% {
+		transform: translate(-50%, 0);
 	}
 }

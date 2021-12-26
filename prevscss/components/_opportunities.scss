@@ -1,0 +1,439 @@
+.opportunities {
+	overflow: hidden;
+	$self: &;
+	&__title {
+		font-weight: 900;
+		font-size: 33px;
+		line-height: 40px;
+		text-transform: uppercase;
+		margin-bottom: 40px;
+		&.active {
+			opacity: 1;
+			.line {
+				position: absolute;
+				height: 2px;
+				width: 100%;
+				display: block;
+				background-color: $red;
+				bottom: calc(50% - 1px);
+				animation: line 2000ms;
+				animation-fill-mode: forwards;
+				animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+				transform-origin: left;
+				transform: translateX(0) scaleX(0);
+				// animation-iteration-count: infinite;
+			}
+			.char {
+				display: inline-block;
+				position: relative;
+				animation-duration: 2000ms;
+				animation-fill-mode: forwards;
+				animation-name: kern;
+				animation-delay: calc(var(--char-index) * 5ms);
+				animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+				opacity: 0;
+				// animation-iteration-count: infinite;
+			}
+		}
+	}
+	&__tabs {
+		background: $white;
+		max-width: 47%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&__tab {
+		transition: .8s;
+		opacity: 0;
+		transform: translate(-100%, 0);
+		&.active {
+			opacity: 1;
+			transform: translate(0, 0);
+			&:nth-child(2n) {
+				transform: translate(0, 0);
+			}
+		}
+		&:nth-child(2n) {
+			transform: translate(100%, 0);
+		}
+		&:first-child {
+			margin-top: 0;
+		}
+		margin-top: 40px;
+		width: 100%;
+		border: 3px solid rgba(58, 64, 66, .7);
+		&-nav {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 20px;
+			.iconify {
+				margin-left: 30px;
+				font-size: 40px;
+			}
+		}
+		&-title {
+			font-weight: 500;
+			font-size: 17px;
+			line-height: 21px;
+			text-transform: uppercase;
+			color: $dark;
+		}
+		&-content {
+			display: none;
+			padding: 0 20px 20px;
+		}
+		&.open {
+			.opportunities__tab-content {
+				display: block;
+			}
+		}
+	}
+	&__block {
+		color: $black;
+		position: relative;
+		&-inner {
+			position: relative;
+			z-index: 2;
+		}
+		&_payment {
+			#{$self}__wrap {
+				padding: 0 50px;
+				display: flex;
+			}
+			#{$self}__content {
+				padding-top: 200px;
+				padding-left: 8vw;
+				flex: 0 0 50%;
+				transition: .8s;
+				opacity: 0;
+				transform: translate(-100%, 0);
+				&.active {
+					opacity: 1;
+					transform: translate(0, 0);
+				}
+			}
+			#{$self}__text {
+				font-weight: 600;
+				margin-top: 10px;
+				font-size: 22px;
+				line-height: 27px;
+			}
+			#{$self}__btn {
+				margin-top: 20px;
+			}
+			#{$self}__advice {
+				padding-left: calc(8vw + 50px);
+				width: 50%;
+				margin-top: 40px;
+				margin-bottom: 105px;
+				&-wrap {
+					max-width: 600px;
+					display: flex;
+					align-items: flex-start;
+				}
+				&-icon {
+					display: flex;
+					.lottie-player {
+						width: 80px;
+						height: 80px;
+						flex: 0 0 80px;
+					}
+				}
+				&-text {
+					margin-left: 20px;
+					font-weight: 600;
+					font-size: 22px;
+					line-height: 27px;
+					color: $dark;
+				}
+			}
+			#{$self}__img {
+				margin-top: -100px;
+				margin-bottom: -240px;
+				padding: 0 8vw;
+				flex: 0 0 50%;
+				transition: .8s;
+				opacity: 0;
+				transform: translate(100%, 0);
+				&.active {
+					opacity: 1;
+					transform: translate(0, 0);
+				}
+			}
+			#{$self}__image {
+				height: 100%;
+			}
+		}
+		&_willbe {
+			padding-top: 110px;
+			#{$self}__wrap {
+				display: flex;
+				align-items: flex-end;
+				padding-bottom: 80px;
+				min-height: 65vh;
+			}
+			#{$self}__content {
+				padding-right: 50px;
+				padding-bottom: 40px;
+				padding-top: 40px;
+				flex: 0 0 50%;
+				background: $white;
+				transition: .8s;
+				opacity: 0;
+				transform: translate(100%, 0);
+				&.active {
+					opacity: 1;
+					transform: translate(0, 0);
+				}
+			}
+			#{$self}__text {
+				font-size: 17px;
+				line-height: 140%;
+				margin-top: 10px;
+			}
+			#{$self}__img {
+				align-self: stretch;
+				flex: 0 0 50%;
+				padding-right: 16vw;
+				transition: .8s;
+				opacity: 0;
+				transform: translate(-100%, 0);
+				&.active {
+					opacity: 1;
+					transform: translate(0, 0);
+				}
+			}
+			#{$self}__image {
+				height: 100%;
+			}
+			#{$self}__tabs {
+				padding-bottom: 270px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1440px) {
+	.opportunities__block_payment .opportunities__img {
+		margin-bottom: -80px;
+	}
+
+	.opportunities__block_payment .opportunities__content {
+		padding-top: 130px;
+	}
+
+	.opportunities__tab {
+		margin-top: 20px;
+	}
+
+	.opportunities__block_payment .opportunities__advice {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+}
+
+@media (max-width: 1280px) {
+	.opportunities__title {
+		font-size: 28px;
+		line-height: 34px;
+	}
+
+	.opportunities__block_payment .opportunities__text {
+		font-size: 22px;
+		line-height: 27px;
+	}
+
+	.opportunities__block_payment .opportunities__advice-text {
+		font-size: 17px;
+		line-height: 21px;
+	}
+
+	.opportunities__block_payment .opportunities__img {
+		margin-bottom: -120px;
+	}
+
+	.opportunities__block_payment .opportunities__content {
+		padding-top: 80px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.opportunities__title {
+		font-size: 22px;
+		line-height: 27px;
+	}
+
+	.opportunities__block_payment .opportunities__text {
+		font-size: 17px;
+		line-height: 21px;
+	}
+
+	.opportunities__block_payment .opportunities__advice-text {
+		font-size: 14px;
+		line-height: 17px;
+	}
+
+	.opportunities__block_payment .opportunities__img {
+		margin-bottom: -220px;
+		padding-right: 0;
+	}
+
+	.opportunities__advice {
+		padding-bottom: 80px;
+	}
+
+	.opportunities__tab-title {
+		font-size: 14px;
+		line-height: 17px;
+	}
+
+	.opportunities__block_payment .opportunities__advice-icon .lottie-player {
+		width: 60px;
+		height: 60px;
+		flex: 0 0 60px;
+	}
+
+	.opportunities__block_payment .opportunities__wrap {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	.opportunities__tab-nav {
+		padding: 5px 20px;
+	}
+
+	.opportunities__block_payment .opportunities__content {
+		padding-left: calc(50px + 8vw);
+	}
+
+	.opportunities__block_willbe {
+		padding-top: 70px;
+	}
+
+	.opportunities__block_willbe .opportunities__tabs {
+		padding-bottom: 140px;
+	}
+
+	.opportunities__block_willbe .opportunities__content {
+		padding-bottom: 0;
+	}
+
+	.opportunities__block_willbe .opportunities__text {
+		font-size: 14px;
+		line-height: 140%;
+	}
+}
+
+@media (max-width: 768px) {
+	.opportunities__block_payment .opportunities__content {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.opportunities__tabs {
+		padding-left: 20px;
+		padding-right: 20px;
+		max-width: 66%;
+	}
+
+	.opportunities__block_payment .opportunities__img {
+		padding-left: 0;
+	}
+
+	.opportunities__block_willbe .opportunities__tabs {
+		padding-bottom: 75px;
+	}
+
+	.opportunities__block_willbe .opportunities__img {
+		padding-right: 90px;
+	}
+
+	.opportunities__block_payment .opportunities__content {
+		padding-top: 175px;
+	}
+
+	.opportunities__block_payment .opportunities__img {
+		margin-bottom: 0;
+	}
+
+	.opportunities__block_payment .opportunities__advice {
+		padding-left: 20px;
+		padding-right: 20px;
+		width: 100%;
+		padding-bottom: 0;
+	}
+}
+
+@media (max-width: 650px) {
+	.opportunities__wrap {
+		flex-direction: column-reverse;
+	}
+
+	.opportunities__block_payment .opportunities__img {
+		margin: 40px 0;
+	}
+
+	.opportunities__block_payment .opportunities__image {
+		min-height: 344px;
+	}
+
+	.opportunities__block_payment .opportunities__content {
+		padding-top: 0;
+	}
+
+	.opportunities__tabs {
+		max-width: 100%;
+	}
+
+	.opportunities__block_willbe .opportunities__wrap {
+		flex-direction: column;
+		padding-bottom: 0;
+	}
+
+	.opportunities__block_willbe .opportunities__image {
+		min-height: 380px;
+	}
+
+	.opportunities__block_willbe .opportunities__content {
+		padding: 20px;
+	}
+
+	.opportunities__block_willbe .opportunities__tabs {
+		padding-bottom: 20px;
+	}
+
+	.opportunities__title {
+		margin-bottom: 20px;
+	}
+
+	.opportunities__block_willbe {
+		padding-top: 30px;
+	}
+}
+
+@media (max-width: 375px) {
+	.opportunities__block_payment .opportunities__image {
+		max-width: 270px;
+		margin-left: auto;
+	}
+
+	.opportunities__block_willbe .opportunities__image {
+		max-width: 270px;
+		margin-right: auto;
+	}
+
+	.opportunities__title {
+		font-size: 17px;
+		line-height: 21px;
+	}
+
+	.opportunities__block_payment .opportunities__text {
+		font-size: 14px;
+		line-height: 17px;
+	}
+
+	.opportunities__block_payment .opportunities__btn {
+		text-align: center;
+	}
+}

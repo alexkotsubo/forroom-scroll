@@ -100,7 +100,10 @@
 	}
 
 	.btn_big {
-		font-size: 17px;
+		font-size: 14px;
+		&-fill {
+			font-size: 14px;
+		}
 	}
 }
 
@@ -115,5 +118,8 @@
 		padding-top: 9px;
 		font-size: 14px;
 		padding-bottom: 9px;
+		&-fill {
+			font-size: 14px;
+		}
 	}
 }

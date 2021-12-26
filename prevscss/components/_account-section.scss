@@ -1,0 +1,81 @@
+/* Accounts */
+
+.account {
+	padding: 140px 0;
+	&__body {
+		display: flex;
+		align-items: center;
+	}
+	&__content {
+		flex: 0 1 50%;
+		padding-left: 20px;
+		&-title {
+			color: $secondary_black;
+			line-height: 1;
+			font-size: 45px;
+			font-weight: 600;
+		}
+		&-text {
+			margin-top: 50px;
+			line-height: 1.4;
+			font-size: 24px;
+			max-width: 570px;
+			letter-spacing: 0.7px;
+		}
+	}
+	&__image {
+		flex: 0 1 50%;
+		display: flex;
+		justify-content: center;
+		&-wrap {
+			max-width: 48%;
+			text-align: center;
+		}
+		img {
+			max-width: 100%;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	/* Account */
+
+	.account__image-wrap {
+		max-width: 67%;
+	}
+}
+
+@media (max-width: 767px) {
+	/* Account */
+
+	.account {
+		padding: 85px 0 70px;
+		.account_house {
+			padding: 130px 0 30px;
+		}
+	}
+
+	.account__content {
+		width: 100%;
+		padding-left: 0;
+		flex-basis: 100%;
+		&-title {
+			font-size: 34px;
+		}
+		&-text {
+			max-width: 100%;
+		}
+	}
+
+	.account__body {
+		flex-direction: column;
+	}
+
+	.account__image {
+		flex-basis: 100%;
+		margin-top: 90px;
+		&-wrap {
+			max-width: 85%;
+		}
+	}
+}

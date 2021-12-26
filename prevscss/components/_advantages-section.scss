@@ -1,0 +1,49 @@
+/* Advantages */
+
+.advantages {
+	padding-top: 85px;
+	&__container {
+		padding: 0;
+	}
+	&__top {
+		padding: 0 10px;
+	}
+	&__title {
+		font-size: 50px;
+		font-weight: 500;
+		span {
+			color: $red_secondary;
+		}
+	}
+	&__text {
+		line-height: 1.8;
+		font-size: 23px;
+		color: $red;
+		margin-top: 30px;
+		font-style: italic;
+	}
+	.advantages-carts {
+		margin-top: 100px;
+	}
+	&_stroitelstvo {
+		padding-top: 45px;
+		.advantages-carts {
+			margin-top: 0;
+		}
+	}
+	&_proekt {
+		padding-top: 0;
+		.advantages-carts {
+			margin-top: 55px;
+			margin-bottom: 80px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	/* Advantages */
+
+	.advantages__title {
+		font-size: 33px;
+	}
+}

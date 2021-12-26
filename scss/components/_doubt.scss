@@ -1,74 +1,61 @@
 .doubt {
 	display: flex;
-	flex-wrap: wrap;
 	&__content {
 		overflow: hidden;
+		padding: 65px 50px 50px;
 		color: $white;
 		flex: 0 0 34%;
 		background: $dark;
-		padding: 130px 50px 150px;
-		transition: .8s;
-		opacity: 0;
-		&.active {
-			opacity: 1;
-			.doubt__text {
-				opacity: 1;
-				.word {
-					display: inline-block;
-					opacity: 0;
-					filter: blur(4px);
-					animation: fade-in 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
-				}
-				transform: scale(0.94);
-				animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
-			}
-			.doubt__title {
-				opacity: 1;
-				&::before {
-					content: '';
-					position: absolute;
-					height: 2px;
-					width: 100%;
-					display: block;
-					background-color: $red;
-					bottom: calc(50% - 1px);
-					animation: line 2000ms;
-					animation-fill-mode: forwards;
-					animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-					transform-origin: left;
-					transform: translateX(0) scaleX(0);
-					// animation-iteration-count: infinite;
-				}
-				.char {
-					display: inline-block;
-					position: relative;
-					animation-duration: 2000ms;
-					animation-fill-mode: forwards;
-					animation-name: kern;
-					animation-delay: calc(var(--char-index) * 5ms);
-					animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-					opacity: 0;
-					// animation-iteration-count: infinite;
-				}
-			}
-		}
 	}
 	&__title {
-		font-weight: 900;
-		font-size: 33px;
-		line-height: 40px;
-		text-transform: uppercase;
+		min-height: 110px;
+		position: relative;
+		display: flex;
+		align-items: flex-end;
+		h2 {
+			font-weight: 900;
+			font-size: 33px;
+			line-height: 40px;
+			text-transform: uppercase;
+			position: relative;
+			z-index: 2;
+			display: flex;
+			align-items: flex-end;
+			margin-top: 57px;
+		}
+		h3 {
+			font-weight: 900;
+			font-size: 90px;
+			line-height: 110px;
+			text-align: center;
+			text-transform: uppercase;
+			opacity: .4;
+			-webkit-text-stroke: 1px $white;
+			color: transparent;
+			position: absolute;
+			top: 0;
+			left: 0;
+			white-space: nowrap;
+			transform: translate(15%, 0);
+			z-index: 1;
+		}
 	}
 	&__text {
-		max-width: 420px;
 		margin-top: 40px;
 		font-size: 17px;
 		line-height: 140%;
+		max-width: 420px;
+	}
+	&__inner {
+		max-width: 280px;
+		margin: 0 auto;
+		text-align: center;
 	}
 	&__form {
 		margin-top: 40px;
 		&-input {
 			input {
+				width: 100%;
 				opacity: 0.6;
 				font-size: 17px;
 				line-height: 140%;
@@ -113,38 +100,64 @@
 		}
 		&-btn {
 			margin-top: 20px;
+			.btn {
+				width: 100%;
+			}
 		}
 	}
-	&__online {
-		font-weight: 600;
-		font-size: 22px;
-		line-height: 27px;
-		text-align: center;
+	&__socials {
 		margin-top: 40px;
+		display: flex;
+		justify-content: center;
+		li {
+			margin-right: 40px;
+			&:last-child {
+				margin-right: 0;
+			}
+			a {
+				.iconify {
+					font-size: 60px;
+					color: $red;
+				}
+			}
+		}
+	}
+	&__info {
+		margin-top: 80px;
+		&-text {
+			font-weight: 600;
+			font-size: 27px;
+			line-height: 33px;
+		}
+		&-address {
+			font-size: 17px;
+			line-height: 140%;
+			margin-top: 20px;
+		}
+		&-time {
+			font-weight: 600;
+			font-size: 22px;
+			line-height: 27px;
+			margin-top: 20px;
+		}
 	}
 	&__map {
 		position: relative;
-		z-index: 2;
-		margin-top: -130px;
+		z-index: 3;
 		flex: 0 0 66%;
-		img {
-			max-width: 100%;
-		}
 	}
 }
 
 @media (max-width: 1440px) {
-	.doubt__map {
-		margin-top: -80px;
-	}
-}
-
-@media (max-width: 1280px) {
-	.doubt__content {
-		padding: 90px 50px 20px;
+	.doubt__title h3 {
+		transform: translate(0, 0);
 	}
 
-	.doubt__online {
+	.doubt__info {
+		margin-top: 40px;
+	}
+
+	.doubt__socials {
 		margin-top: 20px;
 	}
 
@@ -152,74 +165,142 @@
 		margin-top: 20px;
 	}
 
+	.doubt__info-time {
+		margin-top: 10px;
+	}
+
+	.doubt__info-address {
+		margin-top: 10px;
+	}
+}
+
+@media (max-width: 1280px) {
+	.doubt__content {
+		padding: 40px 50px 10px;
+	}
+
 	.doubt__title {
+		min-height: 85px;
+	}
+
+	.doubt__title h2 {
 		font-size: 28px;
+		margin-top: 41px;
 		line-height: 34px;
 	}
 
-	.doubt__online {
-		font-size: 17px;
-		line-height: 21px;
+	.doubt__title h3 {
+		font-size: 70px;
+		line-height: 85px;
 	}
 }
 
 @media (max-width: 1024px) {
+	.doubt__title {
+		min-height: 61px;
+	}
+
+	.doubt__title h3 {
+		font-size: 50px;
+		line-height: 61px;
+	}
+
+	.doubt__title h2 {
+		font-size: 28px;
+		line-height: 34px;
+		margin-top: 21px;
+	}
+
+	.doubt__text {
+		margin-top: 20px;
+	}
+
+	.doubt__info-text {
+		font-size: 17px;
+		line-height: 21px;
+	}
+
+	.doubt__info-address {
+		font-size: 14px;
+		line-height: 140%;
+	}
+
+	.doubt__info-time {
+		font-size: 14px;
+		line-height: 17px;
+	}
+
+	.doubt__socials li a .iconify {
+		font-size: 40px;
+	}
+}
+
+@media (max-width: 900px) {
+	.doubt {
+		flex-direction: column;
+	}
+
 	.doubt__content {
-		padding: 40px 50px 60px;
-		flex-basis: 50%;
+		margin-bottom: -80px;
+		max-width: 540px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		z-index: 4;
+		padding: 50px 35px 25px;
 	}
 
 	.doubt__map {
-		flex-basis: 50%;
+		padding-bottom: 64%;
 	}
 
 	.doubt__title {
+		min-height: 61px;
+	}
+
+	.doubt__title h2 {
 		font-size: 22px;
 		line-height: 27px;
+		margin-top: 0;
+		top: -7px;
+	}
+
+	.doubt__title h3 {
+		font-size: 50px;
+		line-height: 61px;
 	}
 
 	.doubt__text {
 		font-size: 14px;
 		line-height: 140%;
-	}
-
-	.doubt__online {
-		margin-top: 40px;
+		max-width: 100%;
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 575px) {
 	.doubt__content {
-		padding: 40px 20px 60px;
-	}
-
-	.doubt__map {
-		margin-top: 0;
+		margin-bottom: 0;
 	}
 }
 
-@media (max-width: 600px) {
-	.doubt {
-		flex-direction: column-reverse;
+@media (max-width: 320px) {
+	.doubt__title {
+		text-align: center;
+	}
+
+	.doubt__title h2 {
+		font-size: 17px;
+		line-height: 21px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.doubt__title h3 {
+		transform: translate(-50%, 0);
+		left: 50%;
 	}
 
 	.doubt__content {
-		padding-bottom: 10px;
-		flex: 0 0 100%;
-	}
-
-	.doubt__map {
-		padding-bottom: 100%;
-		flex: 0 0 100%;
-	}
-
-	.doubt__form-btn {
-		.btn {
-			width: 100%;
-		}
-	}
-
-	.doubt__online {
-		margin-top: 20px;
+		padding: 30px 20px;
 	}
 }

@@ -5,91 +5,93 @@
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 45;
-  padding: 5px 0 12px;
-  background: rgba(95, 95, 95, 0.5);
+  z-index: 52;
   $self: &;
   &_main {
-    #{$self}__body {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    #{$self}__phone {
-      text-align: center;
-      flex: 0 1 20%;
-      padding-left: 20px;
-      &:hover {
-        i {
-          color: $red;
-        }
-      }
-      i {
-        font-size: 37px;
-        transition: 0.3s;
-        color: #fff;
-      }
-    }
-    #{$self}__logo {
-      display: flex;
-      justify-content: center;
-      flex: 0 1 60%;
-      &-link {
-        margin: 0 30px;
-        display: block;
-        max-width: 166px;
-        img {
-          max-width: 100%;
-        }
-      }
-    }
-    #{$self}__burger {
-      display: flex;
-      justify-content: center;
-      flex: 0 1 20%;
-      padding-right: 20px;
-      &_small-text {
-        .burger__link {
-          font-size: 21px;
-          font-weight: 300;
-          &.active {
-            color: $red;
-          }
-        }
-      }
-    }
-    #{$self}__home {
-      text-align: center;
-      flex: 0 1 7%;
-      padding-left: 20px;
-      &:hover {
-        i {
-          color: $red;
-        }
-      }
-      i {
-        font-size: 29px;
-        transition: 0.3s;
-        color: #fff;
-      }
-    }
+	background: rgba(95, 95, 95, 0.5);
+	padding: 5px 0 12px;
+	#{$self}__body {
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	}
+	#{$self}__phone {
+	  text-align: center;
+	  flex: 0 1 20%;
+	  padding-left: 20px;
+	  &:hover {
+		i {
+		  color: $red;
+		}
+	  }
+	  i {
+		font-size: 37px;
+		transition: 0.3s;
+		color: #fff;
+	  }
+	}
+	#{$self}__logo {
+	  display: flex;
+	  justify-content: center;
+	  flex: 0 1 60%;
+	  &-link {
+		margin: 0 30px;
+		display: block;
+		max-width: 166px;
+		img {
+		  max-width: 100%;
+		}
+	  }
+	}
+	#{$self}__burger {
+	  display: flex;
+	  justify-content: center;
+	  flex: 0 1 20%;
+	  padding-right: 20px;
+	  &_small-text {
+		.burger__link {
+		  font-size: 21px;
+		  font-weight: 300;
+		  &.active {
+			color: $red;
+		  }
+		}
+	  }
+	}
+	#{$self}__home {
+	  text-align: center;
+	  flex: 0 1 7%;
+	  padding-left: 20px;
+	  &:hover {
+		i {
+		  color: $red;
+		}
+	  }
+	  i {
+		font-size: 29px;
+		transition: 0.3s;
+		color: #fff;
+	  }
+	}
   }
   &_small {
-    background: rgba(57, 57, 57, 0.5);
-    padding: 8px 0 5px;
-    .burger {
-      flex: 0 1 7%;
-      padding-right: 20px;
-      &__btn {
-        height: 8px;
-        &:hover {
-          transform: translate(0, 0);
-        }
-      }
-    }
-    .nav__logo-link {
-      max-width: 210px;
-    }
+	&.nav_main {
+		background: rgba(57, 57, 57, 0.5);
+		padding: 8px 0 5px;
+	}
+	.burger {
+	  flex: 0 1 7%;
+	  padding-right: 20px;
+	  &__btn {
+		height: 8px;
+		&:hover {
+		  transform: translate(0, 0);
+		}
+	  }
+	}
+	.nav__logo-link {
+	  max-width: 210px;
+	}
   }
 	&_menus {
 		opacity: 0;
@@ -103,30 +105,48 @@
 		top: 0;
 		left: 0;
 		width: 100%;
-		background: $white;
-		z-index: 45;
-		#{$self}__phone {
+		z-index: 52;
+		display: flex;
+		min-height: 100px;
+		#{$self}__btn, #{$self}__close-btn {
 			display: none;
+			cursor: pointer;
+			transition: .2s;
+			margin-left: auto;
 			.iconify {
 				font-size: 40px;
-				margin-right: 10px;
 				color: $red;
 			}
 		}
 		#{$self}__body {
-			padding: 15px 50px;
+			width: 100%;
+			padding: 10px 50px;
+			background: $white;
 			display: flex;
 			align-items: center;
-			justify-content: space-between;
+			position: relative;
+			z-index: 52;
 		}
 		#{$self}__logo {
-			margin-right: 30px;
-			max-width: 225px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			max-width: 245px;
 			img {
 				max-width: 100%;
 			}
 		}
+		#{$self}__menus {
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+		}
 		#{$self}__menu {
+			margin-right: 30px;
+			&:last-child {
+				margin-right: 0;
+			}
 			display: flex;
 			li {
 				margin-right: 40px;
@@ -147,43 +167,58 @@
 		}
 		#{$self}__burger {
 			display: none;
-			overflow: hidden;
 			margin-left: auto;
+		}
+		#{$self}__lang {
+			position: relative;
+			margin-left: 40px;
 			&.active {
-				.nav__burger-list {
-					visibility: visible;
+				.nav__lang-select {
 					opacity: 1;
+					visibility: visible;
 				}
 			}
-			.iconify {
-				font-size: 40px;
-			}
-			&-list {
+			&-head {
+				cursor: pointer;
 				display: flex;
-				flex-wrap: wrap;
+				align-items: center;
+			}
+			&-chosen {
+				font-weight: 500;
+				font-size: 17px;
+				line-height: 21px;
+				color: $black;
+			}
+			&-icon {
+				.iconify {
+					font-size: 40px;
+					transform: translate(0, 2px);
+				}
+			}
+			&-select {
+				display: flex;
+				flex-direction: column;
 				position: absolute;
-				bottom: 0;
-				left: 0;
-				width: 100%;
-				transform: translate(0, 100%);
-				background: #fff;
-				padding: 10px 20px 20px;
-				justify-content: center;
-				visibility: hidden;
+				top: 44px;
+				right: 0;
+				background: $white;
+				padding: 5px 10px;
+				min-width: 100px;
 				opacity: 0;
+				visibility: hidden;
 				transition: .2s;
-				li {
-					margin-right: 30px;
-					margin-top: 10px;
-					a {
-						font-weight: 500;
-						font-size: 14px;
-						line-height: 17px;
-						color: $black;
-						&:hover {
-							color: $red;
-						}
-					}
+			}
+			&-variant {
+				cursor: pointer;
+				color: $black;
+				padding: 5px 0;
+				&:hover {
+					text-decoration: underline;
+				}
+				input {
+					position: absolute;
+					top: -9999px;
+					left: -9999px;
 				}
 			}
 		}
@@ -204,13 +239,43 @@
 			padding-top: 10px;
 			padding-bottom: 10px;
 		}
+		.nav__logo {
+			left: calc(50% - 60px);
+		}
+		.nav__menu {
+			li {
+				margin-right: 20px;
+			}
+		}
+		.nav__lang {
+			margin-left: 20px;
+		}
+	}
+}
+
+@media (max-width: 1070px) {
+	.nav_menus {
+		.nav__menus {
+			display: none;
+		}
+		.nav__lang {
+			display: none;
+		}
+		.nav__burger {
+			display: block;
+		}
+		.nav__btn {
+			display: block;
+		}
 	}
 }
 
 @media (max-width: 1024px) {
 	.nav_menus {
+		min-height: 74px;
 		.nav__logo {
 			max-width: 150px;
+			left: 50%;
 		}
 		.nav__menu {
 			li {
@@ -220,8 +285,8 @@
 			}
 		}
 		.nav__body {
-			padding-top: 25px;
-			padding-bottom: 25px;
+			padding-top: 15px;
+			padding-bottom: 15px;
 		}
 	}
 }
@@ -239,17 +304,12 @@
 			padding-right: 20px;
 			justify-content: center;
 		}
-		.nav__burger {
-			display: block;
-		}
 	}
 }
 
 @media (max-width: 480px) {
 	.nav_menus {
-		.nav__phone {
-			display: block;
-		}
+		min-height: 60px;
 		.nav__body {
 			padding-top: 5px;
 			padding-bottom: 5px;
@@ -261,41 +321,41 @@
   /* Nav */
 
   .nav_main {
-    padding: 5px 0 9px;
-    .nav__logo {
-      width: 70%;
-      &-link {
-        max-width: 104px;
-      }
-    }
-    .nav__phone {
-      flex-basis: 15%;
-      padding-left: 10px;
-    }
-    &_small {
-      padding: 17px 0;
-      .nav__logo-link {
-        max-width: 24%;
-      }
-      .nav__logo {
-        width: 72%;
-      }
-      .nav__home {
-        flex-basis: 14%;
-        padding-left: 10px;
-        width: 14%;
-      }
-      .burger {
-        flex-basis: 14%;
-        padding-right: 10px;
-        &__btn {
-          height: 12px;
-          span {
-            width: 30px;
-          }
-        }
-      }
-    }
+	padding: 5px 0 9px;
+	.nav__logo {
+	  width: 70%;
+	  &-link {
+		max-width: 104px;
+	  }
+	}
+	.nav__phone {
+	  flex-basis: 15%;
+	  padding-left: 10px;
+	}
+	&_small {
+	  padding: 17px 0;
+	  .nav__logo-link {
+		max-width: 24%;
+	  }
+	  .nav__logo {
+		width: 72%;
+	  }
+	  .nav__home {
+		flex-basis: 14%;
+		padding-left: 10px;
+		width: 14%;
+	  }
+	  .burger {
+		flex-basis: 14%;
+		padding-right: 10px;
+		&__btn {
+		  height: 12px;
+		  span {
+			width: 30px;
+		  }
+		}
+	  }
+	}
   }
 }
 
@@ -303,10 +363,10 @@
   /* Nav */
 
   .nav_small {
-    padding: 1.3em 0;
-    .nav__logo-link {
-      max-width: 48%;
-    }
+	padding: 1.3em 0;
+	.nav__logo-link {
+	  max-width: 48%;
+	}
   }
 }
 
@@ -314,6 +374,6 @@
   /* Nav */
 
   .nav_small {
-    padding: 0.7em 0;
+	padding: 0.7em 0;
   }
 }

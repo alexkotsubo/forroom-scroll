@@ -1,0 +1,130 @@
+/* Compare */
+
+.compare {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+	color: #fff;
+	&__wrap {
+		background: rgba(0, 0, 0, .8);
+		padding: 60px 0 90px;
+	}
+	&__title {
+		font-size: 50px;
+		font-weight: 500;
+		line-height: 1.2em;
+	}
+	&__carts {
+		padding: 0 80px;
+		display: flex;
+		flex-wrap: nowrap;
+	}
+	&__slider {
+		.compare-slider__left {
+			.compare__slider-text {
+				left: 5px;
+			}
+		}
+		.compare-slider__right {
+			.compare__slider-text {
+				right: 5px;
+			}
+		}
+		&-text {
+			font-size: 16px;
+			padding: .25em .75em;
+			display: inline-block;
+			color: #fff;
+			background: $red_secondary;
+			position: absolute;
+			top: 5px;
+			z-index: 5;
+			white-space: nowrap;
+			line-height: 18px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			-o-user-select: none;
+			user-select: none;
+		}
+	}
+	&__cart {
+		flex: 0 1 50%;
+		margin-right: 60px;
+		&:last-child {
+			margin-right: 0;
+		}
+		&-title {
+			font-size: 20px;
+			text-transform: uppercase;
+			line-height: 1;
+			margin: 60px 0 50px;
+			text-align: center;
+		}
+		&-text {
+			padding-left: 20px;
+			margin-top: 25px;
+			line-height: 1.8;
+			max-width: 490px;
+		}
+	}
+	&_services {
+		.compare__wrap {
+			padding-bottom: 140px;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	/* Compare */
+
+	.compare__title {
+		font-size: 40px;
+	}
+
+	.compare__cart-title {
+		font-size: 17px;
+	}
+
+	.compare__carts {
+		padding: 0 20px;
+	}
+}
+
+@media (max-width: 767px) {
+	/* Compare */
+
+	.compare__title {
+		font-size: 30px;
+	}
+
+	.compare__cart {
+		flex-basis: 0%;
+		margin-right: 0;
+		margin-bottom: 50px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.compare__cart-title {
+		margin-top: 0;
+		font-size: 14px;
+	}
+
+	.compare__cart-text {
+		margin-top: 20px;
+		font-size: 10px;
+	}
+
+	.compare__wrap {
+		padding: 35px 0 80px;
+	}
+
+	.compare__carts {
+		margin-top: 60px;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+}
