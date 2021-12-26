@@ -752,7 +752,7 @@
 				}
 			}
 			&-inner {
-				width: calc(100vw - (16vw + 50px) * 2);
+				width: calc(100% - (16vw + 50px) * 2);
 				display: flex;
 				flex-wrap: nowrap;
 				span {
@@ -917,7 +917,7 @@
 				width: calc(8vw + 50px);
 			}
 			&-inner {
-				width: calc(100vw - (8vw + 50px) * 2);
+				width: calc(100% - (8vw + 50px) * 2);
 			}
 		}
 	}
@@ -966,7 +966,7 @@
 				width: calc(16vw + 50px);
 			}
 			&-inner {
-				width: calc(100vw - (16vw + 50px) * 2);
+				width: calc(100% - (16vw + 50px) * 2);
 				&:nth-child(3), &:nth-child(4) {
 					display: none;
 				}
@@ -1006,7 +1006,7 @@
 				width: 20px;
 			}
 			&-inner {
-				width: calc(100vw - 20px * 2);
+				width: calc(100% - 20px * 2);
 				span {
 					flex: 0 0 50%;
 					width: 50%;
