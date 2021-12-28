@@ -84,7 +84,7 @@
 		max-height: 100vh;
 		background: transparent;
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		flex-direction: column;
 		color: $black;
 		transition: top .6s linear;
@@ -262,6 +262,7 @@
 		color: $white;
 		position: static;
 		max-height: unset;
+		justify-content: flex-end;
 	}
 
 	.repairs__title {
@@ -282,11 +283,14 @@
 	}
 
 	.repairs__text {
+		text-align: center;
 		font-size: 14px;
 		line-height: 140%;
 	}
 
 	.repairs__btn {
+		text-align: center;
+		margin-bottom: 0;
 		.btn {
 			color: $white;
 			border-color: $white;
@@ -299,21 +303,6 @@
 	.repairs__inner {
 		padding: 0;
 	}
-}
-
-@media (max-width: 575px) {
-	.repairs__content {
-		padding: 40px;
-	}
-
-	.repairs__btn {
-		margin-bottom: 0;
-		text-align: center;
-	}
-
-	.repairs__body {
-		padding-bottom: 0;
-	}
 
 	.repairs__title h2 {
 		left: 50%;
@@ -321,11 +310,25 @@
 	}
 
 	.repairs__title h3 {
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media (max-width: 575px) {
+	.repairs__content {
+		padding: 40px;
+	}
+
+	.repairs__body {
+		padding-bottom: 0;
+	}
+
+	.repairs__title h3 {
 		font-size: 17px;
 		line-height: 21px;
 		margin-top: 32px;
-		margin-left: auto;
-		margin-right: auto;
 	}
 
 	.repairs__text {
