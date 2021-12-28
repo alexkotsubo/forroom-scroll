@@ -150,6 +150,8 @@
 
 	.order__content-btns .btn {
 		margin-right: 10px;
+		padding: 12px 20px;
+		font-size: 10px;
 	}
 }
 
@@ -186,6 +188,16 @@
 	}
 }
 
+@media (max-width: 650px) {
+	.order__content-btns {
+		padding: 0 40px;
+		flex-direction: column;
+		.btn {
+			margin-right: 0;
+		}
+	}
+}
+
 @media (max-width: 575px) {
 	.order__content {
 		margin-top: 0;
@@ -206,13 +218,11 @@
 		font-size: 12px;
 		line-height: 135%;
 	}
+}
 
+@media (max-width: 480px) {
 	.order__content-btns {
-		padding: 0 40px;
-		flex-direction: column;
-		.btn {
-			margin-right: 0;
-		}
+		padding: 0;
 	}
 }
 
@@ -222,9 +232,5 @@
 		padding: 30px 20px 25px;
 		margin-left: 0;
 		margin-right: 0;
-	}
-
-	.order__content-btns {
-		padding: 0;
 	}
 }

@@ -19,6 +19,11 @@ window.addEventListener('DOMContentLoaded', e => {
 			left: +(box.left + window.scrollX).toFixed(),
 		};
 	};
+	const coordinate = y => {
+		if (y === 1) return (getCoords(repairsImgs[y]).top - getCoords(repairsScroll).top) / 2;
+		return (getCoords(repairsImgs[y]).top - getCoords(repairsScroll).top) / (y + 2) * (y + 1);
+	};
+	const coordinateMobile = y => getCoords(repairsInners[y]).top + repairsInners[y].offsetHeight / 1.75 - repairsInners[y].offsetHeight * 2;
 	const handleDesktopScroll = e => {
 		for (let i = 0; i < repairsImgs.length; i++) {
 			if (repairsImgs[i + 1]) {
@@ -41,20 +46,23 @@ window.addEventListener('DOMContentLoaded', e => {
 	};
 	const handleMobileScroll = e => {
 		for (let i = 0; i < repairsInners.length; i++) {
-			if (i === 0) {
-				if (+window.scrollY.toFixed() >= getCoords(repairsInners[i]).top / 2) {
+			if (repairsInners[i + 1]) {
+				if (
+					+(window.scrollY - getCoords(repairsScroll).top).toFixed() > coordinateMobile(i) && 
+					+(window.scrollY - getCoords(repairsScroll).top).toFixed() < coordinateMobile(i + 1)
+				) {
+					repairsContent[prev].classList.remove('active');
 					repairsContent[i].classList.add('active');
+					prev = i;
 				}
 			} else {
-				if (+window.scrollY.toFixed() >= getCoords(repairsInners[i]).top / (i + 2) * (i + 1)) {
+				if (+(window.scrollY - getCoords(repairsScroll).top).toFixed() > coordinateMobile(i)) {
+					repairsContent[prev].classList.remove('active');
 					repairsContent[i].classList.add('active');
+					prev = i;
 				}
 			}
 		}
-	};
-	const coordinate = y => {
-		if (y === 1) return (getCoords(repairsImgs[y]).top - getCoords(repairsScroll).top) / 2;
-		return (getCoords(repairsImgs[y]).top - getCoords(repairsScroll).top) / (y + 2) * (y + 1);
 	};
 	const handleResize = e => {
 		if (document.documentElement.clientWidth > 1024) {

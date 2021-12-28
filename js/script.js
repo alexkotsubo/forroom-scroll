@@ -3,6 +3,45 @@ let activeFixedMenu = false;
 let fixedPadding = document.querySelectorAll('.fixed-padding');
 const body = document.querySelector('body');
 const nav = document.querySelector('#nav');
+const getCoords = elem => {
+	const box = elem.getBoundingClientRect();
+	return {
+		top: +(box.top + window.scrollY).toFixed(),
+		right: +(box.right + window.scrollX).toFixed(),
+		bottom: +(box.bottom + window.scrollY).toFixed(),
+		left: +(box.left + window.scrollX).toFixed(),
+	};
+};
+const getPos = elem => {
+	const box = elem.getBoundingClientRect();
+	return {
+		top: +(box.top).toFixed(),
+		right: +(box.right).toFixed(),
+		bottom: +(box.bottom).toFixed(),
+		left: +(box.left).toFixed(),
+	};
+};
+
+/* Fix Image Scroll */
+
+// window.addEventListener('DOMContentLoaded', e => {
+// 	const fixImg = document.querySelectorAll('.fix-img');
+// 	for (let i = 0; i < fixImg.length; i++) {
+// 		fixImg[i].style.backgroundPosition = '0px ' + '-' + fixImg[i].offsetHeight + 'px';//getCoords(fixImg[i]).top
+// 	}
+// 	const handleFixImg = e => {
+// 		//console.log(+window.scrollY.toFixed() >= getCoords(fixImg[0]).top - fixImg[0].offsetHeight, getCoords(fixImg[0]).bottom >= +window.scrollY.toFixed())
+// 		console.log(document.documentElement.scrollTop - getCoords(fixImg[0]).bottom)
+// 		for (let i = 0; i < fixImg.length; i++) {
+// 			//console.log(document.documentElement.scrollTop - getCoords(fixImg[i]).bottom)
+// 			if (+window.scrollY.toFixed() >= getCoords(fixImg[i]).top - fixImg[i].offsetHeight && getCoords(fixImg[i]).bottom >= +window.scrollY.toFixed()) {
+// 				fixImg[i].style.backgroundPosition = '0px ' + (document.documentElement.scrollTop - getCoords(fixImg[i]).bottom) + 'px';
+// 			}
+// 		}
+// 	};
+// 	handleFixImg();
+// 	window.addEventListener('scroll', handleFixImg);
+// });
 
 /* IB */
 
@@ -168,7 +207,7 @@ if (headerCover && headerBackground) {
 		timeouts[0] = addHide;
 		timeouts[1] = deleteHide;
 	};
-	new Swiper('.header__anim-background .swiper', {
+	const a = new Swiper('.header__anim-background .swiper', {
 		loop: true,
 		speed,
 		autoplay: { delay },
@@ -179,7 +218,11 @@ if (headerCover && headerBackground) {
 			}
 		},
 	});
+	a.on('autoplayStop', swiper => {
+		console.log(swiper)
+	})
 	window.addEventListener('resize', e => {
+		headerCover.classList.remove('hide');
 		clearInterval(interval);
 		for (let i = 0; i < timeouts.length; i++) {
 			clearTimeout(timeouts[i]);
@@ -299,15 +342,14 @@ const scrollingMenu = document.querySelector('#scroll-menu');
 
 const handleScrollMenu = e => {
 	let activeMode = null;
-	const getCoords = elem => {
-		const box = elem.getBoundingClientRect();
-		return {
-			top: +(box.top + window.scrollY).toFixed(),
-			right: +(box.right + window.scrollX).toFixed(),
-			bottom: +(box.bottom + window.scrollY).toFixed(),
-			left: +(box.left + window.scrollX).toFixed(),
-		};
+	let prevScroll;
+	const fixedMenu = () => {
+		if (scrollY <= prevScroll) scrollingMenu.style.transform = 'translate(0, 0)';
+		if (scrollY > prevScroll) scrollingMenu.style.transform = 'translate(0, 110%)';
+		prevScroll = scrollY;
 	};
+	fixedMenu();
+	window.addEventListener('scroll', fixedMenu);
 	if (+window.scrollY.toFixed() >= getCoords(scrollHeader).bottom) {
 		if (activeMode !== 1) {
 			scrollingMenu.classList.add('active');

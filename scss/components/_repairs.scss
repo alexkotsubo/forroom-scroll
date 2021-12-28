@@ -10,9 +10,9 @@
 	&__images {
 		flex: 0 0 42%;
 		padding-left: calc(8vw + 50px);
-		.repairs__img {
-			width: 100%;
-		}
+	}
+	&__img {
+		width: 100%;
 	}
 	&__contents {
 		flex: 0 0 58%;
@@ -22,6 +22,34 @@
 		min-height: 100vh;
 		max-height: 100vh;
 		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+	&__carts {
+		.repairs__inner {
+			&:first-child {
+				.repairs__wrap {
+					&::before {
+						content: '';
+						display: block;
+						width: calc(100% - 1px);
+						height: 100%;
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: 9;
+						margin-right: 1px;
+						background: $white;
+					}
+				}
+			}
+			&:nth-child(2) {
+				.repairs__content {
+					z-index: 6;
+				}
+			}
+		}
 	}
 	&__inner {
 		display: flex;
@@ -35,7 +63,9 @@
 	&__picture {
 		width: 100%;
 		margin-top: auto;
-		padding-right: 8vw;
+		padding-right: calc(50px + 8vw);
+		padding-left: 16vw;
+		padding-bottom: 40px;
 		&-wrap {
 			width: 100%;
 			padding-bottom: 47%;
@@ -45,7 +75,6 @@
 		min-height: 100vh;
 		position: relative;
 		z-index: 2;
-		background-attachment: fixed;
 	}
 	&__content {
 		position: relative;
@@ -58,28 +87,30 @@
 		justify-content: flex-start;
 		flex-direction: column;
 		color: $black;
-		transition: opacity .6s linear, top .6s linear;
-		opacity: 0;
-		animation: unactiveSlideRepair .6s forwards;
+		transition: top .6s linear;
 		&.active {
-			animation: activeSlideRepair .6s forwards;
-			opacity: 1;
 			z-index: 6;
+			.repairs__body {
+				opacity: 1;
+				animation: activeSlideRepair .6s forwards;
+			}
 		}
 	}
 	&__body {
-		min-height: 100%;
-		padding-bottom: 40px;
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-end;
+		position: relative;
+		z-index: 10;
+		justify-content: flex-start;
+		transition: opacity .6s linear;
+		opacity: 0;
+		animation: unactiveSlideRepair .6s forwards;
 	}
 	&__wrap {
-		min-height: 100%;
 		flex: 0 0 auto;
 		width: 100%;
 		position: relative;
-		z-index: 3;
+		z-index: 7;
 	}
 	&__title {
 		margin-bottom: 40px;
@@ -87,7 +118,7 @@
 		align-items: flex-end;
 		background: transparent;
 		position: relative;
-		z-index: 2;
+		z-index: 8;
 		padding-top: 75px;
 		min-height: 110px;
 		h3 {
@@ -198,6 +229,18 @@
 		}
 	}
 
+	.repairs__carts {
+		.repairs__inner {
+			&:first-child {
+				.repairs__wrap {
+					&::before {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
 	.repairs__images {
 		display: none;
 	}
@@ -218,6 +261,7 @@
 		padding: 80px 110px;
 		color: $white;
 		position: static;
+		max-height: unset;
 	}
 
 	.repairs__title {

@@ -92,18 +92,22 @@
 	}
 }
 
+@media (max-width: 1024px) {
+	/* Btn */
+
+	.btn.btn_big {
+		font-size: 14px;
+		&-fill {
+			font-size: 14px;
+		}
+	}
+}
+
 @media (max-width: 991px) {
 	/* Btn */
 
 	.btn {
 		font-size: 10px;
-	}
-
-	.btn_big {
-		font-size: 14px;
-		&-fill {
-			font-size: 14px;
-		}
 	}
 }
 
@@ -113,13 +117,21 @@
 	.btn {
 		font-size: 12px;
 	}
+}
 
-	.btn_big {
-		padding-top: 9px;
-		font-size: 14px;
-		padding-bottom: 9px;
+@media (max-width: 480px) {
+	/* Btn */
+
+	.btn.btn_big {
+		font-size: 11px;
+		line-height: 13px;
+		padding-top: 12px;
+		padding-bottom: 12px;
 		&-fill {
-			font-size: 14px;
+			font-size: 11px;
+			line-height: 13px;
+			padding-top: 12px;
+			padding-bottom: 12px;
 		}
 	}
 }

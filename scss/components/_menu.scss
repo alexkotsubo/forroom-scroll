@@ -1,16 +1,13 @@
-.menu {
-	display: flex;
-	align-items: flex-start;
-	flex-wrap: wrap;
-	z-index: 10;
-	width: 100vw;
+.menus {
+	overflow: hidden;
 	position: fixed;
 	bottom: 0;
-	left: 50%;
-	background: $dark;
-	padding: 20px 8px;
-	max-width: 1230px;
-	visibility: hidden;
+	left: 0;
+	z-index: 10;
+	width: 100vw;
+}
+
+.menu {
 	li {
 		flex: 0 0 25%;
 		a {
@@ -32,21 +29,50 @@
 			}
 		}
 	}
+	&__wrap {
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+	}
 }
 
-#scroll-menu.active {
-	visibility: visible;
-	animation: scrollMenuAppear .4s forwards;
+#scroll-menu {
+	transition: transform .3s;
+	visibility: hidden;
+	.menu {
+		max-width: 1230px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		.menu__wrap {
+			width: 100%;
+			padding: 20px 8px;
+			background: $dark;
+			position: relative;
+			left: 50%;
+		}
+		&:last-child {
+			display: none;
+		}
+	}
+	&.active {
+		visibility: visible;
+		.menu {
+			.menu__wrap {
+				animation: scrollMenuAppear .4s forwards;
+			}
+		}
+	}
 }
 
 @media (max-width: 1440px) {
-	.menu.header__menu {
+	.menu.header__menu .menu__wrap {
 		padding: 40px 8vw;
 	}
 }
 
 @media (max-width: 1280px) {
-	.menu.header__menu {
+	.menu.header__menu .menu__wrap {
 		padding: 40px;
 	}
 }
@@ -59,12 +85,9 @@
 }
 
 @media (max-width: 900px) {
-	.menu, .menu.header__menu {
+	#scroll-menu .menu .menu__wrap, .menu.header__menu .menu__wrap {
 		background: $dark;
 		padding: 5px 5px 20px;
-		&.active {
-			padding: 5px;
-		}
 		li {
 			a {
 				display: flex;
@@ -82,6 +105,24 @@
 			}
 		}
 	}
+	#scroll-menu {
+		&.active {
+			.menu__wrap {
+				padding: 5px;
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.menu, .menu.header__menu {
+		li {
+			a {
+				font-size: 11px;
+				line-height: 13px;
+			}
+		}
+	}
 }
 
 @media (max-width: 575px) {
@@ -95,8 +136,21 @@
 	}
 }
 
+@media (max-width: 480px) {
+	#scroll-menu {
+		.menu {
+			&:last-child {
+				display: block;
+			}
+			&:first-child {
+				display: none;
+			}
+		}
+	}
+}
+
 @media (max-width: 320px) {
-	.menu, .menu.header__menu {
+	#scroll-menu .menu .menu__wrap, .menu.header__menu .menu__wrap {
 		padding: 5px;
 	}
 }

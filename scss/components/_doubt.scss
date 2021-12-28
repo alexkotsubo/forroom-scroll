@@ -64,6 +64,8 @@
 				border-bottom: 2px solid $white;
 				padding: 10px 0;
 				transition: .2s;
+				outline: none;
+				border-radius: 0px;
 				&::placeholder {
 					opacity: 1;
 					color: $white;
