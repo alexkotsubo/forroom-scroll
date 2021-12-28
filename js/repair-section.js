@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', e => {
 		if (y === 1) return (getCoords(repairsImgs[y]).top - getCoords(repairsScroll).top) / 2;
 		return (getCoords(repairsImgs[y]).top - getCoords(repairsScroll).top) / (y + 2) * (y + 1);
 	};
-	const coordinateMobile = y => getCoords(repairsInners[y]).top + repairsInners[y].offsetHeight / 1.75 - repairsInners[y].offsetHeight * 2;
+	const coordinateMobile = y => getCoords(repairsInners[y]).top + repairsInners[y].offsetHeight / 2.2 - repairsInners[y].offsetHeight * 2;
 	const handleDesktopScroll = e => {
 		for (let i = 0; i < repairsImgs.length; i++) {
 			if (repairsImgs[i + 1]) {

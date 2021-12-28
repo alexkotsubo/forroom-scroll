@@ -84,7 +84,7 @@
 		max-height: 100vh;
 		background: transparent;
 		display: flex;
-		justify-content: flex-start;
+		justify-content: center;
 		flex-direction: column;
 		color: $black;
 		transition: top .6s linear;
@@ -102,9 +102,9 @@
 		position: relative;
 		z-index: 10;
 		justify-content: flex-start;
-		transition: opacity .6s linear;
+		transition: opacity 1s linear;
 		opacity: 0;
-		animation: unactiveSlideRepair .6s forwards;
+		animation: unactiveSlideRepair 1s forwards;
 	}
 	&__wrap {
 		flex: 0 0 auto;
