@@ -218,9 +218,6 @@ if (headerCover && headerBackground) {
 			}
 		},
 	});
-	a.on('autoplayStop', swiper => {
-		console.log(swiper)
-	})
 	window.addEventListener('resize', e => {
 		headerCover.classList.remove('hide');
 		clearInterval(interval);
