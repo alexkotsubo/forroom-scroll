@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', e => {
 		if (y === 1) return (getCoords(repairsImgs[y]).top - getCoords(repairsScroll).top) / 2;
 		return (getCoords(repairsImgs[y]).top - getCoords(repairsScroll).top) / (y + 2) * (y + 1);
 	};
-	const coordinateMobile = y => getCoords(repairsInners[y]).top + repairsInners[y].offsetHeight / 2.2 - repairsInners[y].offsetHeight * 2;
+	const coordinateMobile = y => getCoords(repairsImgs[y]).top + repairsImgs[y].offsetHeight / 2.2 - repairsImgs[y].offsetHeight * 2;
 	const handleDesktopScroll = e => {
 		for (let i = 0; i < repairsImgs.length; i++) {
 			if (repairsImgs[i + 1]) {
@@ -33,12 +33,16 @@ window.addEventListener('DOMContentLoaded', e => {
 				) {
 					repairsContent[prev].classList.remove('active');
 					repairsContent[i].classList.add('active');
+					repairsInners[prev].classList.remove('active');
+					repairsInners[i].classList.add('active');
 					prev = i;
 				}
 			} else {
 				if (+(window.scrollY - getCoords(repairsScroll).top).toFixed() > coordinate(i)) {
 					repairsContent[prev].classList.remove('active');
 					repairsContent[i].classList.add('active');
+					repairsInners[prev].classList.remove('active');
+					repairsInners[i].classList.add('active');
 					prev = i;
 				}
 			}
@@ -70,8 +74,8 @@ window.addEventListener('DOMContentLoaded', e => {
 				activeMode = 1;
 				window.removeEventListener('scroll', handleMobileScroll);
 				for (let i = 0; i < repairsContent.length; i++) {
+					repairsInners[i].classList.remove('active');
 					repairsContent[i].classList.remove('active');
-					repairsInners[i].style.backgroundImage = '';
 				}
 				if (repairsScroll) {
 					repairsContent[0].classList.add('active');
@@ -82,11 +86,9 @@ window.addEventListener('DOMContentLoaded', e => {
 			if (activeMode !== 2) {
 				activeMode = 2;
 				window.removeEventListener('scroll', handleDesktopScroll);
-				for (let i = 0; i < repairsContent.length; i++) {
-					repairsInners[i].style.backgroundImage = repairsImagesSrc[i].style.backgroundImage;
-				}
 				if (repairsScroll) {
 					repairsContent[0].classList.add('active');
+					repairsInners[0].classList.add('active');
 					window.addEventListener('scroll', handleMobileScroll);
 				}
 			}
