@@ -25,6 +25,7 @@ window.addEventListener('DOMContentLoaded', e => {
 	};
 	const coordinateMobile = y => getCoords(repairsImgs[y]).top + repairsImgs[y].offsetHeight / 2.2 - repairsImgs[y].offsetHeight * 2;
 	const handleDesktopScroll = e => {
+		if (document.documentElement.scrollTop === 0) repairsContent[0].classList.add('active');
 		for (let i = 0; i < repairsImgs.length; i++) {
 			if (repairsImgs[i + 1]) {
 				if (
@@ -45,6 +46,7 @@ window.addEventListener('DOMContentLoaded', e => {
 		}
 	};
 	const handleMobileScroll = e => {
+		if (document.documentElement.scrollTop === 0) repairsContent[0].classList.add('active');
 		for (let i = 0; i < repairsInners.length; i++) {
 			if (repairsInners[i + 1]) {
 				if (
