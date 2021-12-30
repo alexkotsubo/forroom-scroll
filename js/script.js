@@ -22,6 +22,13 @@ const getPos = elem => {
 	};
 };
 
+const vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+window.addEventListener('resize', e => {
+	const vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
 /* Fix Image Scroll */
 
 // window.addEventListener('DOMContentLoaded', e => {
