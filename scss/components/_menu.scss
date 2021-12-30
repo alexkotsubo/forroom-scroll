@@ -1,4 +1,5 @@
 .menus {
+	display: none;
 	overflow: hidden;
 	position: fixed;
 	bottom: 0;
@@ -38,7 +39,6 @@
 
 #scroll-menu {
 	transition: transform .3s;
-	visibility: hidden;
 	.menu {
 		max-width: 1230px;
 		width: 100%;
@@ -49,7 +49,6 @@
 			padding: 20px 8px;
 			background: $dark;
 			position: relative;
-			left: 50%;
 		}
 		&:last-child {
 			display: none;
@@ -59,7 +58,20 @@
 		visibility: visible;
 		.menu {
 			.menu__wrap {
+				left: 50%;
 				animation: scrollMenuAppear .4s forwards;
+			}
+		}
+	}
+	&.header-menu {
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 6;
+		.menu {
+			&:last-child {
+				display: none;
 			}
 		}
 	}
@@ -114,6 +126,12 @@
 	}
 }
 
+@media (max-width: 768px) {
+	.menus {
+		display: block;
+	}
+}
+
 @media (max-width: 767px) {
 	.menu, .menu.header__menu {
 		li {
@@ -137,7 +155,7 @@
 }
 
 @media (max-width: 480px) {
-	#scroll-menu {
+	#scroll-menu, #scroll-menu.header-menu {
 		.menu {
 			&:last-child {
 				display: block;

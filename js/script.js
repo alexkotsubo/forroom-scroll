@@ -336,25 +336,31 @@ function burgBodyUnLock() {
 const scrollMenu = document.querySelector('.header__menu');
 const scrollHeader = document.querySelector('.header');
 const scrollingMenu = document.querySelector('#scroll-menu');
+let prevScrollMenu;
+const fixedMenu = () => {
+	if (+window.scrollY.toFixed() >= getCoords(scrollHeader).bottom) {
+		if (scrollY <= prevScrollMenu) scrollingMenu.style.transform = 'translate(0, 0)';
+		if (scrollY > prevScrollMenu) scrollingMenu.style.transform = 'translate(0, 110%)';
+		prevScrollMenu = scrollY;
+	} else {
+		scrollingMenu.style.transform = 'translate(0, 0)';
+	}
+};
+fixedMenu();
+window.addEventListener('scroll', fixedMenu);
 
 const handleScrollMenu = e => {
 	let activeMode = null;
-	let prevScroll;
-	const fixedMenu = () => {
-		if (scrollY <= prevScroll) scrollingMenu.style.transform = 'translate(0, 0)';
-		if (scrollY > prevScroll) scrollingMenu.style.transform = 'translate(0, 110%)';
-		prevScroll = scrollY;
-	};
-	fixedMenu();
-	window.addEventListener('scroll', fixedMenu);
 	if (+window.scrollY.toFixed() >= getCoords(scrollHeader).bottom) {
 		if (activeMode !== 1) {
 			scrollingMenu.classList.add('active');
+			scrollingMenu.classList.remove('header-menu');
 			activeMode = 1;
 		}
 	} else {
 		if (activeMode !== 2) {
 			scrollingMenu.classList.remove('active');
+			scrollingMenu.classList.add('header-menu');
 			activeMode = 2;
 		}
 	}

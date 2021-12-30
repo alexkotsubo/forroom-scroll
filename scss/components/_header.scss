@@ -771,23 +771,8 @@
 						width: 0;
 					}
 				}
-			}
-		}
-		#{$self}__menu {
-			.menu__wrap {
-				padding: 40px calc(50px + 16vw);
-				max-width: 100%;
-				background: transparent;
-			}
-		}
-		#{$self}__menus {
-			display: none;
-			position: relative;
-			z-index: 6;
-			margin-top: auto;
-			.menu {
-				&:last-child {
-					display: none;
+				> span:last-child {
+					left: 1px;
 				}
 			}
 		}
@@ -963,7 +948,7 @@
 		}
 		.header__body {
 			padding-top: 70px;
-			padding-bottom: 10px;
+			padding-bottom: 90px;
 		}
 	}
 }
@@ -1000,9 +985,6 @@
 				}
 			}
 		}
-		.header__menus {
-			display: block;
-		}
 	}
 }
 
@@ -1031,22 +1013,15 @@
 		.header__cover {
 			> span {
 				width: 20px;
+				&:last-child {
+					width: 21px;
+				}
 			}
 			&-inner {
 				width: calc(100% - 20px * 2);
 				span {
 					flex: 0 0 50%;
 					width: 50%;
-				}
-			}
-		}
-		.header__menus {
-			.menu {
-				&:last-child {
-					display: block;
-				}
-				&:first-child {
-					display: none;
 				}
 			}
 		}

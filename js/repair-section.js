@@ -33,16 +33,12 @@ window.addEventListener('DOMContentLoaded', e => {
 				) {
 					repairsContent[prev].classList.remove('active');
 					repairsContent[i].classList.add('active');
-					repairsInners[prev].classList.remove('active');
-					repairsInners[i].classList.add('active');
 					prev = i;
 				}
 			} else {
 				if (+(window.scrollY - getCoords(repairsScroll).top).toFixed() > coordinate(i)) {
 					repairsContent[prev].classList.remove('active');
 					repairsContent[i].classList.add('active');
-					repairsInners[prev].classList.remove('active');
-					repairsInners[i].classList.add('active');
 					prev = i;
 				}
 			}
@@ -57,12 +53,16 @@ window.addEventListener('DOMContentLoaded', e => {
 				) {
 					repairsContent[prev].classList.remove('active');
 					repairsContent[i].classList.add('active');
+					repairsInners[prev].classList.remove('active');
+					repairsInners[i].classList.add('active');
 					prev = i;
 				}
 			} else {
 				if (+(window.scrollY - getCoords(repairsScroll).top).toFixed() > coordinateMobile(i)) {
 					repairsContent[prev].classList.remove('active');
 					repairsContent[i].classList.add('active');
+					repairsInners[prev].classList.remove('active');
+					repairsInners[i].classList.add('active');
 					prev = i;
 				}
 			}
@@ -78,7 +78,7 @@ window.addEventListener('DOMContentLoaded', e => {
 					repairsContent[i].classList.remove('active');
 				}
 				if (repairsScroll) {
-					repairsContent[0].classList.add('active');
+					handleDesktopScroll();
 					window.addEventListener('scroll', handleDesktopScroll);
 				}
 			}
@@ -87,8 +87,7 @@ window.addEventListener('DOMContentLoaded', e => {
 				activeMode = 2;
 				window.removeEventListener('scroll', handleDesktopScroll);
 				if (repairsScroll) {
-					repairsContent[0].classList.add('active');
-					repairsInners[0].classList.add('active');
+					handleMobileScroll();
 					window.addEventListener('scroll', handleMobileScroll);
 				}
 			}
