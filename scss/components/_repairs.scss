@@ -378,3 +378,9 @@
 		padding: 60px 20px;
 	}
 }
+
+@media (max-height: 800px) {
+	.repairs__picture {
+		display: none;
+	}
+}
