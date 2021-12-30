@@ -730,7 +730,7 @@
 			position: absolute;
 			top: 0;
 			left: -1px;
-			width: 100%;
+			width: calc(100% + 1px);
 			height: 100%;
 			display: flex;
 			> span {
