@@ -23,7 +23,7 @@ const getPos = elem => {
 };
  
 const vh = window.innerHeight * 0.01;
-let prevWidth = null;
+let prevWidth =  document.documentElement.clientHeight;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 window.addEventListener('resize', e => {
 	if (document.documentElement.clientHeight !== prevWidth) {
