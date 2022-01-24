@@ -964,7 +964,7 @@
 		// 	justify-content: center;
 		// }
 		.header__body {
-			padding-top: 70px;
+			padding-top: 170px;
 		}
 	}
 }
@@ -1019,6 +1019,9 @@
 			font-size: 14px;
 			line-height: 17px;
 		}
+		.header__body {
+			padding-top: 155px;
+		}
 		.header__btn {
 			margin-top: auto;
 			margin-bottom: 20px;
@@ -1057,6 +1060,9 @@
 		.header__text {
 			font-size: 11px;
 			line-height: 13px;
+		}
+		.header__body {
+			padding-top: 50px;
 		}
 		.header__btn {
 			.btn {

@@ -17,6 +17,107 @@
 <body>
 
 	<div class="wrapper">
+		<!-- Call Popup -->
+
+		<div id="call-popup" class="base-popup popup">
+			<div class="base-popup__body popup__body">
+				<div class="base-popup__close popup__close">
+					<span class="iconify" data-icon="ic:baseline-close"></span>
+				</div>
+
+				<div class="base-popup__inner">
+					<form action="#" class="base-popup__form">
+						<h3 class="base-popup__title">Заполните форму, и наш менеджер свяжется с вами для уточнения всех интересующих вас вопросов</h3>
+						<div class="base-popup__inputs">
+							<label>
+								<span>Контактные данные</span>
+								<div class="block-input">
+									<input type="tel" class="inputmask base-popup__tel" placeholder="+380 (__) ___ - __ - __"><!-- class="success error" -->
+									<p class="block-input__text">Неверный формат номера</p>
+								</div>
+							</label>
+							<label>
+								<span>Удобный вид связи</span>
+								<div class="base-popup__select">
+									<select data-selected="Phone">
+										<option value="Phone">Телефон</option>
+										<option value="Telegram">Telegram</option>
+										<option value="WhatsApp">WhatsApp</option>
+										<option value="Viber">Viber</option>
+									</select>
+								</div>
+							</label>
+						</div>
+						<button type="submit" class="btn btn_big-fill base-popup__btn">оставить заявку</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- Сonfirm Popup -->
+
+		<div id="confirm-popup" class="base-popup popup">
+			<div class="base-popup__body popup__body">
+				<div class="base-popup__close popup__close">
+					<span class="iconify" data-icon="ic:baseline-close"></span>
+				</div>
+
+				<div class="base-popup__inner">
+					<form action="#" class="base-popup__form">
+						<h3 class="base-popup__title">Заполните форму, и наш менеджер свяжется с вами для уточнения всех интересующих вас вопросов</h3>
+						<div class="base-popup__inputs">
+							<label>
+								<span>Выберите планировку</span>
+								<div class="base-popup__select">
+									<select data-placeholder="Планировка">
+										<option></option>
+										<option value="1">1-комн. 30-40 кв.м.</option>
+										<option value="2">1-комн. 40-50 кв.м.</option>
+										<option value="3">2-комн. 50-60 кв.м.</option>
+										<option value="4">2-комн. 60-70 кв.м.</option>
+										<option value="5">3-комн. 60-80 кв.м.</option>
+										<option value="6">4-комн и больше</option>
+									</select>
+								</div>
+							</label>
+							<label>
+								<span>Выбери пакет ремонта</span>
+								<div class="base-popup__select">
+									<select data-placeholder="Пакет ремонта">
+										<option></option>
+										<option value="0">White Box от $ 140/кв.м.</option>
+										<option value="1">Базовый от $ 280/кв.м.</option>
+										<option value="2">Оптимальный от $ 380/кв.м.</option>
+										<option value="3">Максимальный от $ 480/кв.м.</option>
+										<option value="4">Индивидуальный от $ 140/кв.м.</option>
+									</select>
+								</div>
+							</label>
+							<label>
+								<span>Контактные данные</span>
+								<div class="block-input">
+									<input type="tel" class="inputmask base-popup__tel" placeholder="+380 (__) ___ - __ - __"><!-- class="success error" -->
+									<p class="block-input__text">Неверный формат номера</p>
+								</div>
+							</label>
+							<label>
+								<span>Удобный вид связи</span>
+								<div class="base-popup__select">
+									<select data-selected="Phone">
+										<option value="Phone">Телефон</option>
+										<option value="Telegram">Telegram</option>
+										<option value="WhatsApp">WhatsApp</option>
+										<option value="Viber">Viber</option>
+									</select>
+								</div>
+							</label>
+						</div>
+						<button type="submit" class="btn btn_big-fill base-popup__btn">оставить заявку</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
 		<!-- Nav -->
 
 		<nav class="nav fixed-padding nav_menus anim-item" id="nav">
@@ -124,49 +225,75 @@
 
 		<!-- Header -->
 
-		<header class="header anim-item nav-add-padding header_stili-remonta ib">
-			<img src="img/header-image.jpg" alt="header" class="ib_use">
+		<header class="header header_anim">
+			<div class="header__cover">
+				<span></span>
+				<div class="header__cover-inner">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<span></span>
+			</div>
 
-			<div class="container">
+			<div class="header__inner nav-add-padding">
+				<div class="header__lines">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
 				<div class="header__body">
-					<h1 class="header__title">Four rooms</h1>
-					<div class="header__btn">
-						<a href="#" class="btn btn_big">узнать о стилях</a>
+					<div class="header__body-wrap">
+						<h1 class="header__title">стили</h1>
+						<p class="header__subtitle">Стили ремонта</p>
+						<p class="header__text">Выберите один из 4х стилей интерьера и получите профильный подбор материалов</p>
+						<div class="header__btn">
+							<a href="#" class="btn btn_big-fill">выбрать стиль</a>
+						</div>
 					</div>
+				</div>
+
+				<div class="header__anim-background">
+					<div class="swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide ib">
+								<img src="img/stili-remonta-2.jpg" alt="2" class="ib_use">
+							</div>
+
+							<div class="swiper-slide ib">
+								<img src="img/stili-remonta-1.jpg" alt="1" class="ib_use">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Menu -->
+	
+			<div class="menus">
+				<div class="menu">
+					<ul class="menu__wrap">
+						<li><a href="#"><div class="menu__icon"><span class="iconify" data-icon="la:building"></span></div> пакеты ремонта</a></li>
+						<li><a href="#"><div class="menu__icon"><span class="iconify" data-icon="la:tools"></span></div> вторичное жилье</a></li>
+						<li><a href="#"><div class="menu__icon"><span class="iconify" data-icon="la:handshake-solid"></span></div> под аренду</a></li>
+						<li><a href="#"><div class="menu__icon"><span class="iconify" data-icon="la:bed"></span></div> дизайн интерьера</a></li>
+					</ul>
+				</div>
+	
+				<div class="menu">
+					<ul class="menu__wrap">
+						<li><a href="#"><div class="menu__icon"><span class="iconify" data-icon="la:building"></span></div> ремонт в <br> новострое</a></li>
+						<li><a href="#"><div class="menu__icon"><span class="iconify" data-icon="la:tools"></span></div> вторичного <br> жилья</a></li>
+						<li><a href="#"><div class="menu__icon"><span class="iconify" data-icon="la:handshake-solid"></span></div> ремонт под <br> аренду</a></li>
+						<li><a href="#"><div class="menu__icon"><span class="iconify" data-icon="la:bed"></span></div> дизайн <br> интерьера</a></li>
+					</ul>
 				</div>
 			</div>
 		</header>
-
-		<!-- Service -->
-
-		<section class="service">
-			<div class="container">
-				<div class="service__body">
-					<div class="service__image">
-						<div class="service__image-wrap ib">
-							<img src="img/four-rooms.jpg" alt="four-rooms" class="ib_use">
-						</div>
-					</div>
-
-					<div class="service__content anim-item">
-						<div class="service__content-wrap">
-							<h4 class="service__content-subtitle">Мы подготовили для вас новую уникальную услугу, которая не имеет аналогов на рынке</h4>
-							<div class="service__content-title">
-								<h2>Four rooms</h2>
-								<span>Four rooms</span>
-							</div>
-							<p class="service__content-text">Это дизайнерский ремонт вашей квартиры под ключ!</p>
-							<p class="service__content-text">Каждый из наших пакетов ремонта: «Базовый», «Оптимальный», «Максимальный» можно выбрать в четырёх представленных стилях: Лофт, Минимализм, Скандинавский, Современный.</p>
-							<p class="service__content-text">Наши дизайнеры подготовили подборки обоев, ламината, осветительных приборов, дверей, поверхностей мебели и многое другое. Все материалы подобраны от ведущих европейских производителей и являются лучшими в сегменте «цена-качество».</p>
-							<p class="service__content-text">Ниже на визуализациях изображены примеры дизайнов интерьера, выполненные из наших пакетных материалов, которые вы можете заказать уже сейчас!</p>
-							<div class="service__content-btn">
-								<a href="#" class="btn btn_big">узнать о стилях</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
 
 		<!-- Stili -->
 
@@ -399,83 +526,31 @@
 			</div>
 		</section>
 
-		<!-- Materials -->
+		<!-- About -->
 
-		<section class="materials ib">
-			<img src="img/news.jpg" alt="news" class="ib_use">
-			<div class="materials__wrap">
-				<div class="container">
-					<div class="materials__body">
-						<div class="materials__content anim-item">
-							<p class="materials__title">Будь вкурсе всех новостей в мире ремонта и получи в подарок подборку с материалами о стилях ремонта</p>
-							<a href="#" class="btn btn_big-white">получить материалы</a>
+		<section class="about about_stili">
+			<div class="lines anim-item lines_two-space-between">
+				<span></span>
+				<span></span>
+			</div>
+
+			<div class="about__inner">
+				<div class="about__content">
+					<div class="about__body">
+						<div class="about__title">
+							<h2>Без хлопот</h2>
+							<h3>Начните жить в своей новой квартире без хлопот</h3>
 						</div>
+						<p class="about__text">Это дизайнерский ремонт вашей квартиры под ключ!</p>
+						<p class="about__text">Каждый из наших пакетов ремонта можно выбрать в четырёх представленных стилях: лофт, минимализм, скандинавский, современный.</p>
+						<p class="about__text">Наши дизайнеры подготовили подборки обоев, ламината, осветительных приборов, дверей, поверхностей мебели и многое другое. Все материалы — от ведущих европейских производителей и лучшие в соотношении цена-качество.</p>
+						<p class="about__text">Ниже на 3D-визуализациях изображены примеры дизайнов интерьера, выполненные из наших пакетных материалов, которые можно заказать уже сейчас!</p>
 					</div>
 				</div>
-			</div>
-		</section>
 
-		<!-- Test -->
-
-		<section class="test">
-			<div class="test__content anim-item">
-				<p class="test__title">Пройди тест и получи гаранитрованный подарок от нас</p>
-				<div class="test__btn">
-					<a href="#" class="btn btn_big">тест</a>
-				</div>
-			</div>
-
-			<div class="test__image anim-item ib">
-				<img src="img/test.jpg" alt="test" class="ib_use">
-			</div>
-		</section>
-
-		<!-- Brands -->
-
-		<section class="brands brands_stili-remonta">
-			<div class="title title_white anim-item">
-				<h2 class="title__title">brands</h2>
-				<span class="title__text">brands</span>
-			</div>
-
-			<p class="brands__text">Мы являемся официальным дистрибьютором более 5000 отделочных материалов от ведущих производителей</p>
-
-			<div class="brands-slider swiper">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<div class="brands__image">
-							<img src="img/logos/1.png" alt="1">
-						</div>
-					</div>
-
-					<div class="swiper-slide">
-						<div class="brands__image">
-							<img src="img/logos/2.png" alt="2">
-						</div>
-					</div>
-
-					<div class="swiper-slide">
-						<div class="brands__image">
-							<img src="img/logos/3.png" alt="3">
-						</div>
-					</div>
-
-					<div class="swiper-slide">
-						<div class="brands__image">
-							<img src="img/logos/4.png" alt="4">
-						</div>
-					</div>
-
-					<div class="swiper-slide">
-						<div class="brands__image">
-							<img src="img/logos/5.png" alt="5">
-						</div>
-					</div>
-
-					<div class="swiper-slide">
-						<div class="brands__image">
-							<img src="img/logos/6.png" alt="6">
-						</div>
+				<div class="about__image">
+					<div class="about__image-wrap ib">
+						<img src="img/four-rooms.jpg" alt="four-rooms" class="ib_use">
 					</div>
 				</div>
 			</div>
@@ -547,20 +622,6 @@
 
 			<div class="portfolio__btn">
 				<a href="#" class="btn btn_big">все работы</a>
-			</div>
-		</section>
-
-		<!-- Timeto -->
-
-		<section class="timeto ib">
-			<img src="img/timeto.jpg" alt="timeto" class="ib_use">
-
-			<div class="timeto__wrap">
-				<div class="container">
-					<h4 class="timeto__title anim-item">Пора делать ремонт!</h4>
-					<p class="timeto__text anim-item">Выберите готовый пакет ремонта и получите дизайн-проект в подарок</p>
-					<a href="#" class="btn btn_big">консультация</a>
-				</div>
 			</div>
 		</section>
 

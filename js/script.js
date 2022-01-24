@@ -33,10 +33,58 @@ window.addEventListener('resize', e => {
 	}
 });
 
+/* Anchors */
+
+const anchors = document.querySelectorAll('a');
+
+for(let i = 0, length = anchors.length; i < length; i++) {
+	anchors[i].addEventListener('click', function(e) {
+		if (anchors[i].getAttribute('href') !== '#' &&
+				anchors[i].getAttribute('href').trim() &&
+				anchors[i].getAttribute('href').substr(0, 1) === '#' &&
+				document.querySelector(anchors[i].getAttribute('href'))) {
+			e.preventDefault();
+			let anchorID = anchors[i].getAttribute('href');
+
+			function scrollValue() {
+				if (nav != undefined) {
+					if (document.querySelector(anchorID).offsetTop > pageYOffset) {
+						return document.querySelector(anchorID).offsetTop;
+					}
+
+					if (document.querySelector(anchorID).offsetTop <= pageYOffset) {
+						return document.querySelector(anchorID).offsetTop - nav.offsetHeight;
+					}
+				} else {
+					return document.querySelector(anchorID).offsetTop;
+				}
+			}
+			
+			window.scrollTo({
+				top: scrollValue(),
+				behavior: 'smooth'
+			});
+		}
+	});
+}
+
 /* Popup */
 
 const popupBtn = document.querySelectorAll('[data-open-popup]');
 const closePopupBtn = document.querySelectorAll('.popup__close');
+
+const centerPopup = e => {
+	for (let i = 0; i < popupBody.length; i++) {
+		const value = (document.documentElement.clientHeight - popupBody[i].offsetHeight) / 2 - 10;
+		if (value < 0) {
+			popupBody[i].style.marginTop = '0px';
+			return;
+		}
+		popupBody[i].style.marginTop = value + 'px';
+	}
+};
+
+window.addEventListener('resize', centerPopup);
 
 const closePopup = elem => {
 	elem.classList.remove('open');
@@ -45,6 +93,7 @@ const closePopup = elem => {
 
 const openPopup = elem => {
 	if (elem) {
+		centerPopup();
 		const popupActive = document.querySelector('.popup.open');
 
 		if (popupActive) closePopup(popupActive, false);
@@ -78,20 +127,6 @@ document.addEventListener('keydown', e => {
 });
 
 const popupBody = document.querySelectorAll('.popup__body');
-
-const centerPopup = e => {
-	for (let i = 0; i < popupBody.length; i++) {
-		const value = (document.documentElement.clientHeight - popupBody[i].offsetHeight) / 2;
-		if (value < 0) {
-			popupBody[i].style.marginTop = '0px';
-			return;
-		}
-		popupBody[i].style.marginTop = value + 'px';
-	}
-};
-
-window.addEventListener('resize', centerPopup);
-centerPopup();
 
 /* Fix Image Scroll */
 

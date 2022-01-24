@@ -1,7 +1,7 @@
 /* Popup */
 
 .popup {
-	transition: opacity 1.5s 1.5s;
+	transition: .6s;
 	overflow-y: auto;
 	overflow-x: hidden;
 	position: fixed;
@@ -19,13 +19,6 @@
 	&.open {
 		visibility: visible;
 		opacity: 1;
-		transition-delay: 0s;
-		// .base-popup__body {
-		// 	animation: openPopup 1.2s forwards;
-		// }
-		// .base-popup__inner {
-		// 	transform: translate(0, 0);
-		// }
 	}
 	&__body {
 		max-width: 500px;

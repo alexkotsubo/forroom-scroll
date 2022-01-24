@@ -100,6 +100,11 @@
 		position: relative;
 		z-index: 3;
 		flex: 0 0 66%;
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
 	}
 }
 
@@ -151,6 +156,10 @@
 }
 
 @media (max-width: 1024px) {
+	.doubt__content {
+		padding: 60px 50px 25px;
+	}
+
 	.doubt__title {
 		min-height: 61px;
 	}
