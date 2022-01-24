@@ -21,12 +21,16 @@ const getPos = elem => {
 		left: +(box.left).toFixed(),
 	};
 };
-
+ 
 const vh = window.innerHeight * 0.01;
+let prevWidth = null;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 window.addEventListener('resize', e => {
-	const vh = window.innerHeight * 0.01;
-	document.documentElement.style.setProperty('--vh', `${vh}px`);
+	if (document.documentElement.clientHeight !== prevWidth) {
+		const vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+		prevWidth = document.documentElement.clientHeight;
+	}
 });
 
 /* Popup */

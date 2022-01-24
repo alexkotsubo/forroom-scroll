@@ -58,7 +58,8 @@
 			padding-right: 50px;
 			padding-left: 8vw;
 			height: 100%;
-			overflow: auto;
+			overflow-y: auto;
+			overflow-x: hidden;
 			-ms-overflow-style: none;
 			scrollbar-width: none;
 			&::-webkit-scrollbar {
@@ -360,7 +361,8 @@
 
 	.choose__scroll-content {
 		height: 100%;
-		overflow: auto;
+		overflow-y: auto;
+		overflow-x: hidden;
 		-ms-overflow-style: none;
 		scrollbar-width: none;
 		&::-webkit-scrollbar {
