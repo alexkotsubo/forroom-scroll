@@ -23,13 +23,13 @@ const getPos = elem => {
 };
  
 const vh = window.innerHeight * 0.01;
-let prevWidth =  document.documentElement.clientHeight;
+let prevWidth =  document.documentElement.clientWidth;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 window.addEventListener('resize', e => {
-	if (document.documentElement.clientHeight !== prevWidth) {
+	if (document.documentElement.clientWidth !== prevWidth) {
 		const vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
-		prevWidth = document.documentElement.clientHeight;
+		prevWidth = document.documentElement.clientWidth;
 	}
 });
 
