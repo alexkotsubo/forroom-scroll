@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+	<title>ForRoom - Расчёт стоимости</title>
+	<link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+	<link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+	<link rel="stylesheet" href="css/main.css">
+
+	<meta name="format-detection" content="telephone=no">
+	<!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
+
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+
+	<!-- Favicon -->
+</head>
+<body>
+
+	<div class="wrapper">
+		<!-- Call Popup -->
+
+		<div id="call-popup" class="base-popup popup">
+			<div class="base-popup__body popup__body">
+				<div class="base-popup__close popup__close">
+					<span class="iconify" data-icon="ic:baseline-close"></span>
+				</div>
+
+				<div class="base-popup__inner">
+					<form action="#" class="base-popup__form">
+						<h3 class="base-popup__title">Заполните форму, и наш менеджер свяжется с вами для уточнения всех интересующих вас вопросов</h3>
+						<div class="base-popup__inputs">
+							<label>
+								<span>Контактные данные</span>
+								<div class="block-input">
+									<input type="tel" class="inputmask base-popup__tel" placeholder="+380 (__) ___ - __ - __"><!-- class="success error" -->
+									<p class="block-input__text">Неверный формат номера</p>
+								</div>
+							</label>
+							<label>
+								<span>Удобный вид связи</span>
+								<div class="base-popup__select">
+									<select data-selected="Phone">
+										<option value="Phone">Телефон</option>
+										<option value="Telegram">Telegram</option>
+										<option value="WhatsApp">WhatsApp</option>
+										<option value="Viber">Viber</option>
+									</select>
+								</div>
+							</label>
+						</div>
+						<button type="submit" class="btn btn_big-fill base-popup__btn">оставить заявку</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- Сonfirm Popup -->
+
+		<div id="confirm-popup" class="base-popup popup">
+			<div class="base-popup__body popup__body">
+				<div class="base-popup__close popup__close">
+					<span class="iconify" data-icon="ic:baseline-close"></span>
+				</div>
+
+				<div class="base-popup__inner">
+					<form action="#" class="base-popup__form">
+						<h3 class="base-popup__title">Заполните форму, и наш менеджер свяжется с вами для уточнения всех интересующих вас вопросов</h3>
+						<div class="base-popup__inputs">
+							<label>
+								<span>Выберите планировку</span>
+								<div class="base-popup__select">
+									<select data-placeholder="Планировка">
+										<option></option>
+										<option value="1">1-комн. 30-40 кв.м.</option>
+										<option value="2">1-комн. 40-50 кв.м.</option>
+										<option value="3">2-комн. 50-60 кв.м.</option>
+										<option value="4">2-комн. 60-70 кв.м.</option>
+										<option value="5">3-комн. 60-80 кв.м.</option>
+										<option value="6">4-комн и больше</option>
+									</select>
+								</div>
+							</label>
+							<label>
+								<span>Выбери пакет ремонта</span>
+								<div class="base-popup__select">
+									<select data-placeholder="Пакет ремонта">
+										<option></option>
+										<option value="0">White Box от $ 140/кв.м.</option>
+										<option value="1">Базовый от $ 280/кв.м.</option>
+										<option value="2">Оптимальный от $ 380/кв.м.</option>
+										<option value="3">Максимальный от $ 480/кв.м.</option>
+										<option value="4">Индивидуальный от $ 140/кв.м.</option>
+									</select>
+								</div>
+							</label>
+							<label>
+								<span>Контактные данные</span>
+								<div class="block-input">
+									<input type="tel" class="inputmask base-popup__tel" placeholder="+380 (__) ___ - __ - __"><!-- class="success error" -->
+									<p class="block-input__text">Неверный формат номера</p>
+								</div>
+							</label>
+							<label>
+								<span>Удобный вид связи</span>
+								<div class="base-popup__select">
+									<select data-selected="Phone">
+										<option value="Phone">Телефон</option>
+										<option value="Telegram">Telegram</option>
+										<option value="WhatsApp">WhatsApp</option>
+										<option value="Viber">Viber</option>
+									</select>
+								</div>
+							</label>
+						</div>
+						<button type="submit" class="btn btn_big-fill base-popup__btn">оставить заявку</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- Nav -->
+
+		<nav class="nav fixed-padding nav_menus anim-item" id="nav">
+			<div class="nav__burger burger" id="nav-burger">
+				<div class="nav-add-padding burger__bg"></div>
+			
+				<div class="nav-add-padding burger__menu">
+					<div class="burger__menu-wrap">
+						<ul class="burger__list">
+							<li><a href="#" class="burger__link">Ремонт</a></li>
+							<li><a href="#" class="burger__link">Дизайн</a></li>
+							<li><a href="#" class="burger__link">Стили</a></li>
+							<li><a href="#" class="burger__link">Портфолио</a></li>
+							<li><a href="#" class="burger__link">Стоимость</a></li>
+							<li><a href="#" class="burger__link">Контакты</a></li>
+						</ul>
+
+						<div class="burger__lang">
+							<div class="burger__lang-head">
+								<span class="burger__lang-chosen">RU</span>
+								<div class="burger__lang-icon">
+									<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
+								</div>
+							</div>
+		
+							<form action="#" class="burger__lang-select">
+								<label class="burger__lang-variant">
+									RU
+									<input type="radio" value="ru">
+								</label>
+								<label class="burger__lang-variant">
+									UA
+									<input type="radio" value="ua">
+								</label>
+								<label class="burger__lang-variant">
+									EN
+									<input type="radio" value="en">
+								</label>
+							</form>
+						</div>
+
+						<div class="burger__info">
+							<a href="tel:+380487955575" class="burger__phone"><span class="iconify" data-icon="ic:baseline-phone"></span> +38 (048) 795 55 75</a>
+							<ul class="burger__social">
+								<li><a href="#"><span class="iconify" data-icon="bx:bxl-instagram-alt"></span></a></li>
+								<li><a href="#"><span class="iconify" data-icon="ic:baseline-facebook"></span></a></li>
+								<li><a href="#"><span class="iconify" data-icon="ic:baseline-telegram"></span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="nav__body">
+				<div class="nav__menus">
+					<ul class="nav__menu">
+						<li><a href="#">Ремонт</a></li>
+						<li><a href="#">Стили</a></li>
+					</ul>
+
+					<ul class="nav__menu">
+						<li><a href="#">Портфолио</a></li>
+						<li><a href="#">Стоимость</a></li>
+						<li><a href="#">Контакты</a></li>
+					</ul>
+				</div>
+
+				<a href="#" class="nav__logo">
+					<img src="img/forroom-black.png" alt="ForFoom">
+				</a>
+
+				<div class="nav__lang">
+					<div class="nav__lang-head">
+						<span class="nav__lang-chosen">RU</span>
+						<div class="nav__lang-icon">
+							<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
+						</div>
+					</div>
+
+					<form action="#" class="nav__lang-select">
+						<label class="nav__lang-variant">
+							RU
+							<input type="radio" value="ru">
+						</label>
+						<label class="nav__lang-variant">
+							UA
+							<input type="radio" value="ua">
+						</label>
+						<label class="nav__lang-variant">
+							EN
+							<input type="radio" value="en">
+						</label>
+					</form>
+				</div>
+
+				<div class="nav__btn">
+					<span class="iconify" data-icon="la:bars"></span>
+				</div>
+				<div class="nav__close-btn">
+					<span class="iconify" data-icon="ic:baseline-close"></span>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Header -->
+
+		<header class="header header_anim">
+			<div class="header__cover">
+				<span></span>
+				<div class="header__cover-inner">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<span></span>
+			</div>
+
+			<div class="header__inner nav-add-padding">
+				<div class="header__lines">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
+				<div class="header__body">
+					<div class="header__body-wrap">
+						<h1 class="header__title">Новострой</h1>
+						<p class="header__subtitle">РЕМОНТ В НОВОСТРОЕ</p>
+						<p class="header__text">Выбирете готовый пакет ремонта в своем ЖК, укажите планировку и получите готовое предложение</p>
+						<div class="header__btn">
+							<a href="#" class="btn btn_big-fill">выбрать новострой</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="header__anim-background">
+					<div class="swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide ib">
+								<img src="img/novostroi.jpg" alt="1" class="ib_use">
+							</div>
+
+							<div class="swiper-slide ib">
+								<img src="img/novostroi-2.jpg" alt="2" class="ib_use">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Menu -->
+	
+			<div class="menus">
+				<div class="menu">
+					<ul class="menu__wrap">
+						<li><a href="#"><div class="menu__icon"><span class="iconify" data-icon="la:building"></span></div> пакеты ремонта</a></li>
+						<li><a href="#"><div class="menu__icon"><span class="iconify" data-icon="la:tools"></span></div> вторичное жилье</a></li>
+						<li><a href="#"><div class="menu__icon"><span class="iconify" data-icon="la:handshake-solid"></span></div> под аренду</a></li>
+						<li><a href="#"><div class="menu__icon"><span class="iconify" data-icon="la:bed"></span></div> дизайн интерьера</a></li>
+					</ul>
+				</div>
+	
+				<div class="menu">
+					<ul class="menu__wrap">
+						<li><a href="#"><div class="menu__icon"><span class="iconify" data-icon="la:building"></span></div> ремонт в <br> новострое</a></li>
+						<li><a href="#"><div class="menu__icon"><span class="iconify" data-icon="la:tools"></span></div> вторичного <br> жилья</a></li>
+						<li><a href="#"><div class="menu__icon"><span class="iconify" data-icon="la:handshake-solid"></span></div> ремонт под <br> аренду</a></li>
+						<li><a href="#"><div class="menu__icon"><span class="iconify" data-icon="la:bed"></span></div> дизайн <br> интерьера</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<!-- Stili -->
+
+		<section class="stili">
+			<div class="lines anim-item lines_two-space-between">
+				<span></span>
+				<span></span>
+			</div>
+
+			<div class="stili__inner">
+				<div class="title anim-item">
+					<h2 class="title__title">предложения</h2>
+					<span class="title__text">Ценовые предложения</span>
+				</div>
+
+				<div class="stili__slides anim-item">
+					<div class="stili__slide">
+						<div class="stili__slide-inner">
+							<div class="stili__slide-wrap">
+								<div class="stili__slide-content">
+									<div class="stili__slide-img ib">
+										<img src="img/packages/1.jpg" alt="1" class="ib_use">
+									</div>
+
+									<div class="stili__slide-body">
+										<p class="stili__slide-title">White Box</p>
+										<div class="stili__slide-list">
+											<p class="stili__slide-subtitle">от<span>$150</span>за м2</p>
+											<ul>
+												<li><span class="iconify" data-icon="la:check"></span>Максимальная предчистовая отделка</li>
+												<li><span class="iconify" data-icon="la:check"></span>Пакет Чертежей</li>
+												<li><span class="iconify" data-icon="la:check"></span>Подготовительные работы</li>
+												<li><span class="iconify" data-icon="la:check"></span>Черновые работы</li>
+												<li><span class="iconify" data-icon="la:check"></span>Электромонтажные работы</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="stili__slide-btns">
+									<a href="#" class="btn btn_big">Подробнее</a>
+									<a href="#" class="btn btn_big-fill">Заказать</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="stili__slide-name">
+							<h2>White box</h2>
+							<p>White box</p>
+						</div>
+					</div>
+
+					<div class="stili__slide">
+						<div class="stili__slide-inner">
+							<div class="stili__slide-wrap">
+								<div class="stili__slide-content">
+									<div class="stili__slide-img ib">
+										<img src="img/packages/2.jpg" alt="2" class="ib_use">
+									</div>
+
+									<div class="stili__slide-body">
+										<p class="stili__slide-title">Базовый</p>
+										<div class="stili__slide-list">
+											<p class="stili__slide-subtitle">от<span>$290</span>за м2</p>
+											<ul>
+												<li><span class="iconify" data-icon="la:check"></span>Максимальная предчистовая отделка</li>
+												<li><span class="iconify" data-icon="la:check"></span>Черновые работы с материалами</li>
+												<li><span class="iconify" data-icon="la:check"></span>Черновые работы с материалами</li>
+												<li><span class="iconify" data-icon="la:check"></span>Санфаянс</li>
+												<li><span class="iconify" data-icon="la:check"></span>Черновые работы с материалами</li>
+												<li><span class="iconify" data-icon="la:check"></span>Двери</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="stili__slide-btns">
+									<a href="#" class="btn btn_big">Подробнее</a>
+									<a href="#" class="btn btn_big-fill">Заказать</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="stili__slide-name">
+							<h2>базовый</h2>
+							<p>базовый</p>
+						</div>
+					</div>
+
+					<div class="stili__slide">
+						<div class="stili__slide-inner">
+							<div class="stili__slide-wrap">
+								<div class="stili__slide-content">
+									<div class="stili__slide-img ib">
+										<img src="img/packages/3.jpg" alt="3" class="ib_use">
+									</div>
+
+									<div class="stili__slide-body">
+										<p class="stili__slide-title">Оптимальный</p>
+										<div class="stili__slide-list">
+											<p class="stili__slide-subtitle">от<span>$390</span>за м2</p>
+											<ul>
+												<li><span class="iconify" data-icon="la:check"></span>Максимальная предчистовая отделка</li>
+												<li><span class="iconify" data-icon="la:check"></span>Двери</li>
+												<li><span class="iconify" data-icon="la:check"></span>Натяжные потолки</li>
+												<li><span class="iconify" data-icon="la:check"></span>Санфаянс</li>
+												<li><span class="iconify" data-icon="la:check"></span>Кухня под заказ</li>
+												<li><span class="iconify" data-icon="la:check"></span>Дизайнерские шторы</li>
+												<li><span class="iconify" data-icon="la:check"></span>Кондиционеры</li>
+												<li><span class="iconify" data-icon="la:check"></span>Дополнительные опции</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="stili__slide-btns">
+									<a href="#" class="btn btn_big">Подробнее</a>
+									<a href="#" class="btn btn_big-fill">Заказать</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="stili__slide-name">
+							<h2>Оптимальный</h2>
+							<p>Оптимальный</p>
+						</div>
+					</div>
+
+					<div class="stili__slide">
+						<div class="stili__slide-inner">
+							<div class="stili__slide-wrap">
+								<div class="stili__slide-content">
+									<div class="stili__slide-img ib">
+										<img src="img/packages/4.jpg" alt="4" class="ib_use">
+									</div>
+
+									<div class="stili__slide-body">
+										<p class="stili__slide-title">Максимальный</p>
+										<div class="stili__slide-list">
+											<p class="stili__slide-subtitle">от<span>$490</span>за м2</p>
+											<ul>
+												<li><span class="iconify" data-icon="la:check"></span>Максимальная предчистовая отделка</li>
+												<li><span class="iconify" data-icon="la:check"></span>Двери</li>
+												<li><span class="iconify" data-icon="la:check"></span>Натяжные потолки</li>
+												<li><span class="iconify" data-icon="la:check"></span>Санфаянс</li>
+												<li><span class="iconify" data-icon="la:check"></span>Кухня под заказ</li>
+												<li><span class="iconify" data-icon="la:check"></span>Дизайнерские шторы</li>
+												<li><span class="iconify" data-icon="la:check"></span>Кондиционеры</li>
+												<li><span class="iconify" data-icon="la:check"></span>Телевизоры</li>
+												<li><span class="iconify" data-icon="la:check"></span>Холодильник</li>
+												<li><span class="iconify" data-icon="la:check"></span>Варочная поверхность</li>
+												<li><span class="iconify" data-icon="la:check"></span>Дополнительные опции</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="stili__slide-btns">
+									<a href="#" class="btn btn_big">Подробнее</a>
+									<a href="#" class="btn btn_big-fill">Заказать</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="stili__slide-name">
+							<h2>Максимальный</h2>
+							<p>Максимальный</p>
+						</div>
+					</div>
+
+					<div class="stili__slide">
+						<div class="stili__slide-inner">
+							<div class="stili__slide-wrap">
+								<div class="stili__slide-content">
+									<div class="stili__slide-img ib">
+										<img src="img/packages/1.jpg" alt="1" class="ib_use">
+									</div>
+
+									<div class="stili__slide-body">
+										<p class="stili__slide-title">White Box</p>
+										<div class="stili__slide-list">
+											<p class="stili__slide-subtitle">от<span>$150</span>за м2</p>
+											<ul>
+												<li><span class="iconify" data-icon="la:check"></span>Максимальная предчистовая отделка</li>
+												<li><span class="iconify" data-icon="la:check"></span>Пакет Чертежей</li>
+												<li><span class="iconify" data-icon="la:check"></span>Подготовительные работы</li>
+												<li><span class="iconify" data-icon="la:check"></span>Черновые работы</li>
+												<li><span class="iconify" data-icon="la:check"></span>Электромонтажные работы</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="stili__slide-btns">
+									<a href="#" class="btn btn_big">Подробнее</a>
+									<a href="#" class="btn btn_big-fill">Заказать</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="stili__slide-name">
+							<h2>индивидуальный</h2>
+							<p>индивидуальный</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- About -->
+
+		<section class="about about_novostroi">
+			<div class="lines anim-item lines_two-space-between">
+				<span></span>
+				<span></span>
+			</div>
+
+			<div class="about__inner">
+				<div class="about__content">
+					<div class="about__body">
+						<div class="about__title">
+							<h2>Без хлопот</h2>
+							<h3>Начните жить в своей новой квартире без хлопот</h3>
+						</div>
+						<p class="about__text">После покупки квартиры следует не менее ответственный этап — создание в её стенах современного, комфортного и привлекательного интерьера. Ремонт с нуля в новостройке имеет свои характерные особенности. Соблюдая их, вы получите результат, который превзойдёт все ожидания.</p>
+						<p class="about__text">Компания ForRoom возьмёт весь комплекс по ремонту вашей квартиры на себя и выполнит полный цикл работ, который превратит жилое пространство в совершенство благодаря качеству работы, прозрачности всех процессов и абсолютному вниманию к каждой детали. Вы получаете квартиру, полностью готовую для комфортной жизни!</p>
+						<p class="about__text">Приятный бонус: при заказе ремонта под ключ вы получаете дизайн-проект в подарок!</p>
+					</div>
+				</div>
+
+				<div class="about__image">
+					<div class="about__image-wrap ib">
+						<img src="img/about_novostroi.jpg" alt="about_novostroi" class="ib_use">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Choose -->
+
+		<section class="choose">
+			<div class="lines anim-item lines_two-space-between">
+				<span></span>
+				<span></span>
+			</div>
+
+			<div class="choose__content">
+				<div class="choose__inner">
+					<div class="choose__wrap ib">
+						<img src="img/choose.jpg" alt="choose" class="ib_use">
+
+						<div class="choose__scroll">
+							<div class="choose__scroll-title">
+								<h2>выбери ЖК</h2>
+								<h3>Выбери свой ЖК</h3>
+							</div>
+
+							<div class="choose__scroll-content">
+								<div class="choose__scroll-wrap">
+									<div class="choose__scroll-title">
+										<h2>выбери ЖК</h2>
+										<h3>Выбери свой ЖК</h3>
+									</div>
+
+									<div class="choose__scroll-inner">
+										<div class="choose__carts">
+											<div class="choose__cart">
+												<a href="#" class="choose__cart-wrap ib">
+													<img src="img/card-novostroi.jpg" alt="card-novostroi" class="ib_use">
+													<span class="choose__cart-title">Kandinsky Odessa Residence</span>
+													<span class="choose__cart-btn btn btn_big-fill">выбрать</span>
+												</a>
+											</div>
+
+											<div class="choose__cart">
+												<a href="#" class="choose__cart-wrap ib">
+													<img src="img/card-novostroi.jpg" alt="card-novostroi" class="ib_use">
+													<span class="choose__cart-title">Kandinsky Odessa Residence</span>
+													<span class="choose__cart-btn btn btn_big-fill">выбрать</span>
+												</a>
+											</div>
+
+											<div class="choose__cart">
+												<a href="#" class="choose__cart-wrap ib">
+													<img src="img/card-novostroi.jpg" alt="card-novostroi" class="ib_use">
+													<span class="choose__cart-title">Kandinsky Odessa Residence</span>
+													<span class="choose__cart-btn btn btn_big-fill">выбрать</span>
+												</a>
+											</div>
+
+											<div class="choose__cart">
+												<a href="#" class="choose__cart-wrap ib">
+													<img src="img/card-novostroi.jpg" alt="card-novostroi" class="ib_use">
+													<span class="choose__cart-title">Kandinsky Odessa Residence</span>
+													<span class="choose__cart-btn btn btn_big-fill">выбрать</span>
+												</a>
+											</div>
+
+											<div class="choose__cart">
+												<a href="#" class="choose__cart-wrap ib">
+													<img src="img/card-novostroi.jpg" alt="card-novostroi" class="ib_use">
+													<span class="choose__cart-title">Kandinsky Odessa Residence</span>
+													<span class="choose__cart-btn btn btn_big-fill">выбрать</span>
+												</a>
+											</div>
+
+											<div class="choose__cart">
+												<a href="#" class="choose__cart-wrap ib">
+													<img src="img/card-novostroi.jpg" alt="card-novostroi" class="ib_use">
+													<span class="choose__cart-title">Kandinsky Odessa Residence</span>
+													<span class="choose__cart-btn btn btn_big-fill">выбрать</span>
+												</a>
+											</div>
+
+											<div class="choose__cart">
+												<a href="#" class="choose__cart-wrap ib">
+													<img src="img/card-novostroi.jpg" alt="card-novostroi" class="ib_use">
+													<span class="choose__cart-title">Kandinsky Odessa Residence</span>
+													<span class="choose__cart-btn btn btn_big-fill">выбрать</span>
+												</a>
+											</div>
+
+											<div class="choose__cart">
+												<a href="#" class="choose__cart-wrap ib">
+													<img src="img/card-novostroi.jpg" alt="card-novostroi" class="ib_use">
+													<span class="choose__cart-title">Kandinsky Odessa Residence</span>
+													<span class="choose__cart-btn btn btn_big-fill">выбрать</span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="choose__body">
+									<h4 class="choose__title">Введите название вашего ЖК и мы предложим вам персональное решение ремонта</h4>
+									<form action="#" class="choose__form">
+										<div class="block-input block-input_white">
+											<input type="text" placeholder="Ваш ЖК">
+											<p class="block-input__text">Ошибка</p>
+										</div>
+										<button class="btn btn_big-fill choose__btn" type="submit">Выбрать ЖК</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Portfolio -->
+
+		<section class="portfolio portfolio_stili">
+			<div class="lines anim-item lines_two-space-between lines_two-space-between-half">
+				<span></span>
+				<span></span>
+			</div>
+
+			<div class="portfolio__inner">
+				<div class="title anim-item">
+					<h2 class="title__title">портфолио</h2>
+					<span class="title__text">портфолио</span>
+				</div>
+
+				<div class="portfolio__grid">
+					<a href="#" class="portfolio__grid-cart anim-item">
+						<span class="portfolio__grid-wrap anim-left ib">
+							<img src="img/portfolio/1.jpg" alt="1" class="ib_use">
+							<span class="portfolio__grid-inner">
+								<span class="portfolio__grid-title">Переулок Чайковского</span>
+							</span>
+						</span>
+					</a>
+
+					<a href="#" class="portfolio__grid-cart anim-item big-column">
+						<span class="portfolio__grid-wrap anim-bottom ib">
+							<img src="img/portfolio/3.jpg" alt="3" class="ib_use">
+							<span class="portfolio__grid-inner">
+								<span class="portfolio__grid-title">Переулок Чайковского</span>
+							</span>
+						</span>
+					</a>
+
+					<a href="#" class="portfolio__grid-cart anim-item">
+						<span class="portfolio__grid-wrap anim-left ib">
+							<img src="img/portfolio/2.jpg" alt="2" class="ib_use">
+							<span class="portfolio__grid-inner">
+								<span class="portfolio__grid-title">Переулок Чайковского</span>
+							</span>
+						</span>
+					</a>
+
+					<a href="#" class="portfolio__grid-cart anim-item big-row">
+						<span class="portfolio__grid-wrap anim-right ib">
+							<img src="img/portfolio/4.jpg" alt="4" class="ib_use">
+							<span class="portfolio__grid-inner">
+								<span class="portfolio__grid-title">Переулок Чайковского</span>
+							</span>
+						</span>
+					</a>
+
+					<a href="#" class="portfolio__grid-cart anim-item">
+						<span class="portfolio__grid-wrap anim-bottom ib">
+							<img src="img/portfolio/5.jpg" alt="5" class="ib_use">
+							<span class="portfolio__grid-inner">
+								<span class="portfolio__grid-title">Переулок Чайковского</span>
+							</span>
+						</span>
+					</a>
+
+					<a href="#" class="portfolio__grid-cart anim-item">
+						<span class="portfolio__grid-wrap anim-right ib">
+							<img src="img/portfolio/6.jpg" alt="6" class="ib_use">
+							<span class="portfolio__grid-inner">
+								<span class="portfolio__grid-title">Переулок Чайковского</span>
+							</span>
+						</span>
+					</a>
+				</div>
+
+				<div class="portfolio__btn">
+					<a href="#" class="btn btn_big">все работы</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Doubt -->
+
+		<section class="doubt">
+			<div class="doubt__content">
+				<div class="doubt__title">
+					<h2>ответим на вопросы</h2>
+					<h3>контакты</h3>
+				</div>
+				<p class="doubt__text">Приходите на экскурсию в шоу-рум или проконсультируйтесь с нашим экспертом. Мы знаем, как сделать ремонт приятной заботой без стрессов.</p>
+				<div class="doubt__inner">
+					<form action="#" class="doubt__form">
+						<div class="block-input block-input_white">
+							<input type="tel" class="inputmask" placeholder="+380 (__) ___ - __ - __"><!-- class="success error" -->
+							<p class="block-input__text">Неверный формат номера</p>
+						</div>
+						<div class="doubt__form-btn">
+							<button type="submit" class="btn btn_big-fill">обратная связь</button>
+						</div>
+					</form>
+					<ul class="doubt__socials">
+						<li><a href="#"><span class="iconify" data-icon="la:telegram"></span></a></li>
+						<li><a href="#"><span class="iconify" data-icon="la:viber"></span></a></li>
+						<li><a href="#"><span class="iconify" data-icon="la:whatsapp"></span></a></li>
+					</ul>
+					<div class="doubt__info">
+						<p class="doubt__info-text">ТРЦ “МЕГАДОМ”</p>
+						<address class="doubt__info-address">ул. Толбухина 135</address>
+						<p class="doubt__info-time">Пн-Пт 10:00 – 20:00</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="doubt__map ib">
+				<img src="img/map.jpg" alt="map" class="ib_use">
+			</div>
+		</section>
+
+		<!-- Footer -->
+
+		<footer class="footer footer_stili">
+			<div class="footer__top">
+				<div class="footer__menus">
+					<ul class="footer__menu">
+						<li><a href="#">Ремонт</a></li>
+						<li><a href="#">Дизайн</a></li>
+						<li><a href="#">Стили</a></li>
+						<li><a href="#">Портфолио</a></li>
+						<li><a href="#">Стоимость</a></li>
+						<li><a href="#">Контакты</a></li>
+					</ul>
+
+					<ul class="footer__menu">
+						<li><a href="#">Пакеты услуг</a></li>
+						<li><a href="#">Дизайн интерьера</a></li>
+						<li><a href="#">Новострой</a></li>
+						<li><a href="#">Вторичное жильё</a></li>
+						<li><a href="#">Для аренды</a></li>
+					</ul>
+				</div>
+
+				<a href="#" class="footer__logo">
+					<img src="img/forroom-black.png" alt="ForFoom">
+				</a>
+
+				<div class="footer__info">
+					<a href="tel:+380487955575" class="footer__phone"><span class="iconify" data-icon="ic:baseline-phone"></span> +38 (048) 795 55 75</a>
+					<ul class="footer__social">
+						<li><a href="#"><span class="iconify" data-icon="bx:bxl-instagram-alt"></span></a></li>
+						<li><a href="#"><span class="iconify" data-icon="ic:baseline-facebook"></span></a></li>
+						<li><a href="#"><span class="iconify" data-icon="ic:baseline-telegram"></span></a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="footer__bottom">
+				<a href="#" class="footer__policy">Политика конфиденциальности</a>
+				<p class="footer__copyright">© 2021 FORROOM. Все права защищены</p>
+			</div>
+		</footer>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+	<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+	<script src="js/inputmask.min.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/repair-section.js"></script>
+</body>
+</html>

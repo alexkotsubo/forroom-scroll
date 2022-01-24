@@ -34,6 +34,24 @@
 				height: 50%;
 			}
 		}
+		&.lines_two-space-between {
+			span {
+				height: 100%;
+			}
+			&-half {
+				span {
+					height: 40%;
+				}
+			}
+		}
+		&.lines_four-space-between {
+			span {
+				height: 100%;
+				&:nth-child(1) {
+					height: 50%;
+				}
+			}
+		}
 	}
 	span {
 		transition: height .8s .8s;
@@ -68,10 +86,8 @@
 	}
 	&_four-space-between {
 		span {
-			height: 100%;
 			&:nth-child(1) {
 				margin-left: 16vw;
-				height: 50%;
 				transform: translate(0, 100%);
 			}
 			&:nth-child(2) {
@@ -84,6 +100,9 @@
 				margin-left: auto;
 			}
 		}
+	}
+	&_two-space-between {
+		justify-content: space-between;
 	}
 }
 

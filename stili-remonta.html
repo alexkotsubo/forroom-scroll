@@ -6,10 +6,6 @@
 	<title>ForRoom - Расчёт стоимости</title>
 	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="css/main.css">
-	<!-- Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 
 	<meta name="format-detection" content="telephone=no">
 
@@ -23,40 +19,105 @@
 	<div class="wrapper">
 		<!-- Nav -->
 
-		<nav class="nav nav_menus anim-item" id="nav">
-			<div class="nav__body">
-				<a href="tel:+380487955575" class="nav__phone">
-					<span class="iconify" data-icon="ic:baseline-phone"></span>
-				</a>
+		<nav class="nav fixed-padding nav_menus anim-item" id="nav">
+			<div class="nav__burger burger" id="nav-burger">
+				<div class="nav-add-padding burger__bg"></div>
+			
+				<div class="nav-add-padding burger__menu">
+					<div class="burger__menu-wrap">
+						<ul class="burger__list">
+							<li><a href="#" class="burger__link">Ремонт</a></li>
+							<li><a href="#" class="burger__link">Дизайн</a></li>
+							<li><a href="#" class="burger__link">Стили</a></li>
+							<li><a href="#" class="burger__link">Портфолио</a></li>
+							<li><a href="#" class="burger__link">Стоимость</a></li>
+							<li><a href="#" class="burger__link">Контакты</a></li>
+						</ul>
 
-				<ul class="nav__menu">
-					<li><a href="#">Ремонт</a></li>
-					<li><a href="#">Дизайн</a></li>
-					<li><a href="#">Стили</a></li>
-				</ul>
+						<div class="burger__lang">
+							<div class="burger__lang-head">
+								<span class="burger__lang-chosen">RU</span>
+								<div class="burger__lang-icon">
+									<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
+								</div>
+							</div>
+		
+							<form action="#" class="burger__lang-select">
+								<label class="burger__lang-variant">
+									RU
+									<input type="radio" value="ru">
+								</label>
+								<label class="burger__lang-variant">
+									UA
+									<input type="radio" value="ua">
+								</label>
+								<label class="burger__lang-variant">
+									EN
+									<input type="radio" value="en">
+								</label>
+							</form>
+						</div>
 
-				<a href="#" class="nav__logo">
-					<img src="img/logo.png" alt="ForFoom">
-				</a>
-
-				<ul class="nav__menu">
-					<li><a href="#">Стоимость</a></li>
-					<li><a href="#">Рассрочка</a></li>
-					<li><a href="#">Контакты</a></li>
-				</ul>
-
-				<div class="nav__burger">
-					<div class="nav__burger-btn">
-						<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
+						<div class="burger__info">
+							<a href="tel:+380487955575" class="burger__phone"><span class="iconify" data-icon="ic:baseline-phone"></span> +38 (048) 795 55 75</a>
+							<ul class="burger__social">
+								<li><a href="#"><span class="iconify" data-icon="bx:bxl-instagram-alt"></span></a></li>
+								<li><a href="#"><span class="iconify" data-icon="ic:baseline-facebook"></span></a></li>
+								<li><a href="#"><span class="iconify" data-icon="ic:baseline-telegram"></span></a></li>
+							</ul>
+						</div>
 					</div>
-					<ul class="nav__burger-list">
+				</div>
+			</div>
+
+			<div class="nav__body">
+				<div class="nav__menus">
+					<ul class="nav__menu">
 						<li><a href="#">Ремонт</a></li>
 						<li><a href="#">Дизайн</a></li>
 						<li><a href="#">Стили</a></li>
+					</ul>
+
+					<ul class="nav__menu">
+						<li><a href="#">Портфолио</a></li>
 						<li><a href="#">Стоимость</a></li>
-						<li><a href="#">Рассрочка</a></li>
 						<li><a href="#">Контакты</a></li>
 					</ul>
+				</div>
+
+				<a href="#" class="nav__logo">
+					<img src="img/forroom-black.png" alt="ForFoom">
+				</a>
+
+				<div class="nav__lang">
+					<div class="nav__lang-head">
+						<span class="nav__lang-chosen">RU</span>
+						<div class="nav__lang-icon">
+							<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
+						</div>
+					</div>
+
+					<form action="#" class="nav__lang-select">
+						<label class="nav__lang-variant">
+							RU
+							<input type="radio" value="ru">
+						</label>
+						<label class="nav__lang-variant">
+							UA
+							<input type="radio" value="ua">
+						</label>
+						<label class="nav__lang-variant">
+							EN
+							<input type="radio" value="en">
+						</label>
+					</form>
+				</div>
+
+				<div class="nav__btn">
+					<span class="iconify" data-icon="la:bars"></span>
+				</div>
+				<div class="nav__close-btn">
+					<span class="iconify" data-icon="ic:baseline-close"></span>
 				</div>
 			</div>
 		</nav>
@@ -506,15 +567,23 @@
 		<!-- Footer -->
 
 		<footer class="footer footer_stili">
-			<div class="footer__top anim-item">
-				<div class="footer__socials">
-					<ul class="footer__social">
-						<li><a href="#"><span class="iconify" data-icon="bx:bxl-instagram-alt"></span></a></li>
-						<li><a href="#"><span class="iconify" data-icon="ic:baseline-facebook"></span></a></li>
-						<li><a href="#"><span class="iconify" data-icon="ic:baseline-telegram"></span></a></li>
+			<div class="footer__top">
+				<div class="footer__menus">
+					<ul class="footer__menu">
+						<li><a href="#">Ремонт</a></li>
+						<li><a href="#">Дизайн</a></li>
+						<li><a href="#">Стили</a></li>
+						<li><a href="#">Портфолио</a></li>
+						<li><a href="#">Стоимость</a></li>
+						<li><a href="#">Контакты</a></li>
 					</ul>
-					<ul class="footer__social">
-						<li><a href="tel:+380487955575"><span class="iconify" data-icon="ic:baseline-phone"></span> +38 (048) 795 55 75</a></li>
+
+					<ul class="footer__menu">
+						<li><a href="#">Пакеты услуг</a></li>
+						<li><a href="#">Дизайн интерьера</a></li>
+						<li><a href="#">Новострой</a></li>
+						<li><a href="#">Вторичное жильё</a></li>
+						<li><a href="#">Для аренды</a></li>
 					</ul>
 				</div>
 
@@ -522,17 +591,17 @@
 					<img src="img/forroom-black.png" alt="ForFoom">
 				</a>
 
-				<ul class="footer__menu">
-					<li><a href="#">Ремонт</a></li>
-					<li><a href="#">Дизайн</a></li>
-					<li><a href="#">Стили</a></li>
-					<li><a href="#">Стоимость</a></li>
-					<li><a href="#">Рассрочка</a></li>
-					<li><a href="#">Контакты</a></li>
-				</ul>
+				<div class="footer__info">
+					<a href="tel:+380487955575" class="footer__phone"><span class="iconify" data-icon="ic:baseline-phone"></span> +38 (048) 795 55 75</a>
+					<ul class="footer__social">
+						<li><a href="#"><span class="iconify" data-icon="bx:bxl-instagram-alt"></span></a></li>
+						<li><a href="#"><span class="iconify" data-icon="ic:baseline-facebook"></span></a></li>
+						<li><a href="#"><span class="iconify" data-icon="ic:baseline-telegram"></span></a></li>
+					</ul>
+				</div>
 			</div>
 
-			<div class="footer__bottom anim-item">
+			<div class="footer__bottom">
 				<a href="#" class="footer__policy">Политика конфиденциальности</a>
 				<p class="footer__copyright">© 2021 FORROOM. Все права защищены</p>
 			</div>
@@ -541,6 +610,7 @@
 
 	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 	<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+	<script src="js/inputmask.min.js"></script>
 	<script src="js/script.js"></script>
 	<script src="js/stili-remonta.js"></script>
 </body>

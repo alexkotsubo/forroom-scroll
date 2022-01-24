@@ -53,53 +53,6 @@
 	}
 	&__form {
 		margin-top: 40px;
-		&-input {
-			input {
-				width: 100%;
-				opacity: 0.6;
-				font-size: 17px;
-				line-height: 140%;
-				color: $white;
-				background: transparent;
-				border-bottom: 2px solid $white;
-				padding: 10px 0;
-				transition: .2s;
-				outline: none;
-				border-radius: 0px;
-				&::placeholder {
-					opacity: 1;
-					color: $white;
-				}
-				&:focus {
-					opacity: 1;
-				}
-				&.error {
-					color: #D82C2C;
-					border-bottom-color: #D82C2C;
-					opacity: 1;
-					&::placeholder {
-						color: #D82C2C;
-					}
-					+ p {
-						display: block;
-					}
-				}
-				&.success {
-					color: #2CD847;
-					border-bottom-color: #2CD847;
-					opacity: 1;
-					&::placeholder {
-						color: #2CD847;
-					}
-				}
-			}
-			p {
-				font-size: 14px;
-				line-height: 140%;
-				color: #D82C2C;
-				display: none;
-			}
-		}
 		&-btn {
 			margin-top: 20px;
 			.btn {

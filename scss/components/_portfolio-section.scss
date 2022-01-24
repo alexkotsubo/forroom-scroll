@@ -221,8 +221,13 @@
 		}
 	}
 	&_stili {
+		position: relative;
 		overflow: hidden;
 		padding: 65px 50px 120px;
+		#{$self}__inner {
+			position: relative;
+			z-index: 2;
+		}
 		#{$self}__grid {
 			margin-top: 25px;
 			display: grid;
