@@ -82,10 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 }
 
-textarea,
-input[type="text"],
-input[type="button"],
-input[type="submit"] {
+textarea, input {
 	-webkit-appearance: none;
 	border-radius: 0;
 }
