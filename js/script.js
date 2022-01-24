@@ -297,7 +297,6 @@ if (animItems.length > 0) {
 const headerCover = document.querySelector('.header__cover');
 const headerBackground = document.querySelector('.header__anim-background .swiper');
 
-// TODO:
 if (headerCover && headerBackground) {
 	const speed = 0;
 	const delay = 5000;
@@ -313,7 +312,7 @@ if (headerCover && headerBackground) {
 		timeouts[0] = addHide;
 		timeouts[1] = deleteHide;
 	};
-	new Swiper('.header__anim-background .swiper', {
+	const swiper = new Swiper('.header__anim-background .swiper', {
 		loop: true,
 		speed,
 		autoplay: { delay },
@@ -325,11 +324,13 @@ if (headerCover && headerBackground) {
 		},
 	});
 	window.addEventListener('resize', e => {
+		swiper.autoplay.stop();
 		headerCover.classList.remove('hide');
 		clearInterval(interval);
 		for (let i = 0; i < timeouts.length; i++) {
 			clearTimeout(timeouts[i]);
 		}
+		swiper.autoplay.start();
 		handleSwipe();
 		interval = setInterval(handleSwipe, delay);
 	});
@@ -577,12 +578,12 @@ window.addEventListener('DOMContentLoaded', e => {
 						const names = document.querySelectorAll('.stili__slide-name');
 						const wrap = document.querySelectorAll('.stili__slide-wrap');
 						stiliSlide[prev].classList.add('active');
-						stiliSlide[prev].style.height = wrap[prev].offsetHeight + 55 + 'px';
+						stiliSlide[prev].style.height = wrap[prev].offsetHeight + 'px';
 						for (let i = 0; i < names.length; i++) {
 							names[i].onclick = e => {
 								if (i !== prev) {
 									stiliSlide[i].classList.add('active');
-									stiliSlide[i].style.height = wrap[i].offsetHeight + 20 + 'px';
+									stiliSlide[i].style.height = wrap[i].offsetHeight + 'px';
 									stiliSlide[prev].style.height = '58px';
 									stiliSlide[prev].classList.remove('active');
 									prev = i;
@@ -601,7 +602,7 @@ window.addEventListener('DOMContentLoaded', e => {
 						window.addEventListener('resize', e => {
 							for (let i = 0; i < stiliSlide.length; i++) {
 								if (stiliSlide[i].classList.contains('active')) {
-									stiliSlide[i].style.height = wrap[i].offsetHeight + 20 + 'px';
+									stiliSlide[i].style.height = wrap[i].offsetHeight + 'px';
 								} else {
 									stiliSlide[i].style.height = '58px';
 								}
