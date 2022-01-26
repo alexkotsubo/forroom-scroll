@@ -820,3 +820,37 @@ if (nav) {// && document.documentElement.clientWidth > 1070
 		});
 	}
 }
+
+// Choose Carts
+
+window.addEventListener('DOMContentLoaded', e => {
+	const chooseCartWrap = document.querySelectorAll('.choose__cart-wrap');
+	let prev = null;
+	const isMobile = {
+		Android: function() {return navigator.userAgent.match(/Android/i);},
+		BlackBerry: function() {return navigator.userAgent.match(/BlackBerry/i);},
+		iOS: function() {return navigator.userAgent.match(/iPhone|iPad|iPod/i);},
+		Opera: function() {return navigator.userAgent.match(/Opera Mini/i);},
+		Windows: function() {return navigator.userAgent.match(/IEMobile/i);},
+		any: function() {return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());}
+	};
+	
+	if (isMobile.any()) {
+		for (let i = 0; i < chooseCartWrap.length; i++) {
+			chooseCartWrap[i].addEventListener('click', e => {
+				if (prev !== null) {
+					chooseCartWrap[prev].classList.remove('active');
+				}
+				chooseCartWrap[i].classList.add('active');
+				prev = i;
+			});
+		}
+		document.documentElement.addEventListener('click', e => {
+			if (!e.target.closest('.choose__carts')) {
+				if (prev !== null) {
+					chooseCartWrap[prev].classList.remove('active');
+				}
+			}
+		});
+	}
+});

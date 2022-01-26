@@ -163,7 +163,7 @@
 			margin-right: 8vw;
 			min-height: 450px;
 			padding: 20px 10px;
-			&:hover {
+			&.active, &:hover {
 				.choose__cart-title {
 					transition: .3s;
 					opacity: 0;
