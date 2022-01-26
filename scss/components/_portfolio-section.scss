@@ -356,6 +356,35 @@
 	}
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+	.portfolio_stili {
+		padding: 40px 20px 80px;
+	}
+
+	.portfolio_stili {
+		.portfolio__grid {
+			grid-template-columns: repeat(2, 1fr);
+			&-cart {
+				&.big-column {
+					grid-column-start: 2;
+					grid-row-start: 1;
+					grid-row-end: 3;
+				}
+				&.big-row {
+					grid-column-start: 1;
+					grid-row-start: 3;
+					grid-column-end: 3;
+				}
+			}
+		}
+
+		.portfolio__grid-title {
+			font-size: 14px;
+			line-height: 17px;
+		}
+	}
+}
+
 @media (max-width: 768px) {
 	.portfolio_stili {
 		padding: 40px 20px 80px;

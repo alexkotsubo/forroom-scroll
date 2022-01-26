@@ -23,9 +23,6 @@
 			background: $dark;
 			position: relative;
 		}
-		&:last-child {
-			display: none;
-		}
 	}
 	&.active {
 		visibility: visible;
@@ -43,9 +40,6 @@
 		left: 0;
 		z-index: 6;
 		.menu {
-			&:last-child {
-				display: none;
-			}
 			&__wrap {
 				padding: 40px 0;
 				background: transparent;
@@ -171,25 +165,26 @@
 	}
 }
 
-@media (max-width: 575px) {
-	.menu, .menu.header__menu {
-		li {
-			a {
-				font-size: 9px;
-				line-height: 11px;
-			}
-		}
-	}
-}
+// @media (max-width: 575px) {
+// 	.menu, .menu.header__menu {
+// 		li {
+// 			a {
+// 				font-size: 9px;
+// 				line-height: 11px;
+// 			}
+// 		}
+// 	}
+// }
 
 @media (max-width: 480px) {
-	.menus, .menus.header-menu {
-		.menu {
-			&:last-child {
-				display: block;
-			}
-			&:first-child {
-				display: none;
+	.menu, .menu.header__menu {
+		li {
+			display: flex;
+			justify-content: center;
+			a {
+				max-width: 110px;
+				font-size: 9px;
+				line-height: 11px;
 			}
 		}
 	}
