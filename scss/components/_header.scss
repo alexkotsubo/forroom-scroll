@@ -513,7 +513,7 @@
 	}
 	&_stili-remonta {
 		#{$self}__body {
-			min-height: 92vh;
+			min-height: calc(var(--vh, 1vh) * 92);
 			padding: 20vh 0 50px;
 			text-align: center;
 			transition: 1s;

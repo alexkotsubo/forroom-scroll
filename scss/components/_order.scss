@@ -1,6 +1,6 @@
 .order {
 	display: flex;
-	min-height: 92vh;
+	min-height: calc(var(--vh, 1vh) * 92);
 	$self: &;
 	&__image {
 		flex: 0 0 50%;

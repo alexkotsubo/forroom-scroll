@@ -1,9 +1,9 @@
 .title {
 	position: relative;
-	height: 110px;
+	min-height: 110px;
 	display: flex;
 	justify-content: center;
-	align-items: flex-end;
+	align-items: flex-start;
 	text-align: center;
 	opacity: 0;
 	transition: .8s;
@@ -33,9 +33,9 @@
 		line-height: 40px;
 		text-transform: uppercase;
 		color: $black;
-		margin-bottom: 13px;
 		position: relative;
 		z-index: 2;
+		margin-top: 56px;
 	}
 	&_white {
 		.title__text {
@@ -49,7 +49,7 @@
 
 @media (max-width: 1280px) {
 	.title {
-		height: 98px;
+		min-height: 98px;
 	}
 
 	.title__title {
@@ -60,13 +60,13 @@
 	.title__text {
 		font-size: 33px;
 		line-height: 40px;
-		margin-bottom: 8px;
+		margin-top: 47px;
 	}
 }
 
 @media (max-width: 1024px) {
 	.title {
-		height: 73px;
+		min-height: 73px;
 	}
 
 	.title__title {
@@ -77,12 +77,13 @@
 	.title__text {
 		font-size: 22px;
 		line-height: 27px;
+		margin-top: 38px;
 	}
 }
 
 @media (max-width: 767px) {
 	.title {
-		height: 49px;
+		min-height: 49px;
 	}
 
 	.title__title {
@@ -93,5 +94,6 @@
 	.title__text {
 		font-size: 17px;
 		line-height: 21px;
+		margin-top: 23px;
 	}
 }

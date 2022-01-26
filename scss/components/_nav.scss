@@ -148,12 +148,12 @@
 				margin-right: 0;
 			}
 			display: flex;
-			li {
+			> li {
 				margin-right: 40px;
 				&:last-child {
 					margin-right: 0;
 				}
-				a {
+				> a {
 					font-weight: 500;
 					font-size: 17px;
 					line-height: 21px;
@@ -161,6 +161,50 @@
 					transition: .2s;
 					&:hover {
 						color: $red;
+						text-decoration: underline;
+					}
+				}
+				&.has-submenu {
+					position: relative;
+					&:hover, &.active {
+						> .nav__menu-submenu {
+							transition: 0s;
+							top: 21px;
+							left: 0;
+							> ul {
+								opacity: 1;
+								visibility: visible;
+							}
+						}
+					}
+				}
+			}
+			&-submenu {
+				position: absolute;
+				top: -9999px;
+				left: -9999px;
+				transition: top 0s .2s, left 0s .2s;
+				padding-top: 39px;
+				background: transparent;
+				> ul {
+					background: $white;
+					padding: 10px 0;
+					min-width: 280px;
+					opacity: 0;
+					visibility: hidden;
+					transition: .2s;
+					> li {
+						> a {
+							display: block;
+							color: $black;
+							font-size: 17px;
+							font-weight: 500;
+							line-height: 21px;
+							&:hover {
+								text-decoration: underline;
+							}
+							padding: 10px 20px;
+						}
 					}
 				}
 			}
@@ -170,7 +214,6 @@
 			margin-left: auto;
 		}
 		#{$self}__lang {
-			position: relative;
 			margin-left: 40px;
 			&.active {
 				.nav__lang-select {
@@ -199,10 +242,11 @@
 				display: flex;
 				flex-direction: column;
 				position: absolute;
-				top: 44px;
-				right: 0;
+				bottom: 0;
+				right: 50px;
+				transform: translate(0, 100%);
 				background: $white;
-				padding: 5px 10px;
+				padding: 10px 0;
 				min-width: 100px;
 				opacity: 0;
 				visibility: hidden;
@@ -211,7 +255,9 @@
 			&-variant {
 				cursor: pointer;
 				color: $black;
-				padding: 5px 0;
+				padding: 10px 20px;
+				font-size: 17px;
+				line-height: 21px;
 				&:hover {
 					text-decoration: underline;
 				}

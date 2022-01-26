@@ -334,7 +334,7 @@ const headerBackground = document.querySelector('.header__anim-background .swipe
 
 if (headerCover && headerBackground) {
 	const speed = 0;
-	const delay = 5000;
+	const delay = 7500;
 	let timeouts = [];
 	let interval = null;
 	const handleSwipe = () => {
@@ -423,12 +423,12 @@ function addBurger(elem) {
 				}
 			});
 
-			for(let i = 0, length = links.length; i < length; i++) {
-				links[i].addEventListener('click', function(e) {
-					elem.classList.remove('active');
-					burgBodyUnLock();
-				});
-			}
+			// for(let i = 0, length = links.length; i < length; i++) {
+			// 	links[i].addEventListener('click', function(e) {
+			// 		elem.classList.remove('active');
+			// 		burgBodyUnLock();
+			// 	});
+			// }
 
 			document.documentElement.addEventListener('click', function(e) {
 				if ((!e.target.closest('.burger') && elem.classList.contains('active')) || (e.target.closest('.' + bgElem.classList) && elem.classList.contains('active'))) {
@@ -439,6 +439,76 @@ function addBurger(elem) {
 						setTimeout(() => {
 							menu.classList.remove('keep-property');
 						}, 800);
+					}
+				}
+			});
+
+			let active = 0;
+			let isOpened = false;
+			let tapCount = 0;
+			let count = 0;
+			let prev = null;
+			let notPrevent = false;
+			const submenus = nav.querySelectorAll('.burger__list .has-submenu');
+			const submenuLinks = nav.querySelectorAll('.burger__list .has-submenu > a');
+			const handleClick = i => {
+				if (submenuLinks[i]) {
+					submenuLinks[i].addEventListener('click', e => {
+						if (prev === i) {
+							notPrevent = true;
+						}
+						if (!notPrevent) {
+							submenus[active].classList.remove('active');
+							e.preventDefault();
+							if (tapCount === 1) {
+								tapCount = 1;
+							} else {
+								tapCount = 0;
+							}
+							submenus[i].classList.add('active');
+							active = i;
+							isOpened = true;
+						}
+					}, { once: true });
+				}
+			};
+	
+			if (submenuLinks.length > 0) {
+				for (let i = 0; i < submenuLinks.length; i++) {
+					handleClick(i);
+				}
+			}
+	
+			document.documentElement.addEventListener('click', e => {
+				if (elem.classList.contains('active')) {
+					if (tapCount === 1 && e.target.tagName === 'A') {
+						let index = null;
+						for (let i = 0; i < submenuLinks.length; i++) {
+							if (submenus[i].classList.contains('active')) {
+								index = i;
+							}
+						}
+						if (e.target.parentNode.classList.contains('active')) {
+							submenus[active].classList.remove('active');
+							tapCount = 0;
+							handleClick(index);
+							return;
+						} else {
+							handleClick(index);
+						}
+					}
+					if (e.target.tagName === 'A') {
+						if (count === 1 && e.target.parentNode.classList.contains('active')) {
+							notPrevent = true;
+						}
+						let index = null;
+						for (let i = 0; i < submenuLinks.length; i++) {
+							if (submenus[i].classList.contains('active')) {
+								index = i;
+							}
+						}
+						handleClick(index);
+						prev = index;
 					}
 				}
 			});
@@ -533,6 +603,12 @@ window.addEventListener('DOMContentLoaded', e => {
 		} else {
 			nextFunc = 2;
 		}
+		let startFrom = +document.querySelector('.stili__slides').getAttribute('data-start-from') || 1;
+		if (typeof startFrom === 'number') {
+			startFrom -= 1;
+			if (startFrom > stiliSlide.length - 1) startFrom = stiliSlide.length - 1;
+			if (startFrom < 0) startFrom = 0;
+		}
 		const dots = document.querySelectorAll('.stili__slide-dots');
 		for (let i = 0; i < dots.length; i++) {
 			for (let y = 0; y < stiliSlide.length; y++) {
@@ -551,13 +627,13 @@ window.addEventListener('DOMContentLoaded', e => {
 								stiliSlide[i].classList.remove('active');
 								stiliSlide[i].style.height = 'unset';
 							}
-							let prev = 0;
+							let prev = startFrom;
 							let cantSlide = false;
 							const wraps = document.querySelectorAll('.stili__slide-wrap');
 							const names = document.querySelectorAll('.stili__slide-name');
 							stiliSlide[prev].classList.add('active');
-							let width = stiliSlide[0].offsetWidth - names[0].offsetWidth + 'px';
-							wraps[0].style.width = width;
+							let width = stiliSlide[prev].offsetWidth - names[prev].offsetWidth + 'px';
+							wraps[prev].style.width = width;
 							const setWidth = e => {
 								for (let i = 0; i < stiliSlide.length; i++) {
 									if (stiliSlide[i].classList.contains('active')) {
@@ -571,7 +647,7 @@ window.addEventListener('DOMContentLoaded', e => {
 								stiliSlide[i].classList.add('transition');
 								const inner = stiliSlide[i].querySelector('.stili__slide-inner');
 						
-								if (i !== 0) wraps[i].style.width = '0px';
+								if (i !== prev) wraps[i].style.width = '0px';
 					
 								names[i].onclick = e => {
 									if (!stiliSlide[i].classList.contains('active') && !cantSlide) {
@@ -609,7 +685,7 @@ window.addEventListener('DOMContentLoaded', e => {
 							stiliSlide[i].classList.remove('active');
 							stiliSlide[i].style.height = '58px';
 						}
-						let prev = 0;
+						let prev = startFrom;
 						const names = document.querySelectorAll('.stili__slide-name');
 						const wrap = document.querySelectorAll('.stili__slide-wrap');
 						stiliSlide[prev].classList.add('active');
@@ -652,3 +728,95 @@ window.addEventListener('DOMContentLoaded', e => {
 		window.addEventListener('resize', runStiliSlides);
 	}
 });
+
+/* Open Menu */
+
+if (nav) {// && document.documentElement.clientWidth > 1070
+	const isMobile = {
+		Android: function() {return navigator.userAgent.match(/Android/i);},
+		BlackBerry: function() {return navigator.userAgent.match(/BlackBerry/i);},
+		iOS: function() {return navigator.userAgent.match(/iPhone|iPad|iPod/i);},
+		Opera: function() {return navigator.userAgent.match(/Opera Mini/i);},
+		Windows: function() {return navigator.userAgent.match(/IEMobile/i);},
+		any: function() {return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());}
+	};
+	let active = 0;
+	let isOpened = false;
+	let tapCount = 0;
+	let count = 0;
+	let prev = null;
+	let notPrevent = false;
+	
+	if (isMobile.any()) {
+		const submenus = nav.querySelectorAll('.nav__menus .has-submenu');
+		const links = nav.querySelectorAll('.nav__menus .has-submenu > a');
+		const handleClick = i => {
+			if (links[i]) {
+				links[i].addEventListener('click', e => {
+					if (prev === i) {
+						notPrevent = true;
+					}
+					if (!notPrevent) {
+						submenus[active].classList.remove('active');
+						e.preventDefault();
+						if (tapCount === 1) {
+							tapCount = 1;
+						} else {
+							tapCount = 0;
+						}
+						submenus[i].classList.add('active');
+						active = i;
+						isOpened = true;
+					}
+				}, { once: true });
+			}
+		};
+
+		if (links.length > 0) {
+			for (let i = 0; i < links.length; i++) {
+				handleClick(i);
+			}
+		}
+
+		document.documentElement.addEventListener('click', e => {
+			if (!document.querySelector('#nav-burger').classList.contains('active')) {
+				if (e.target.tagName !== 'A') {
+					submenus[active].classList.remove('active');
+					tapCount = 0;
+					handleClick(active);
+					prev = null;
+					return;
+				}
+				if (tapCount === 1 && e.target.tagName === 'A') {
+					let index = null;
+					for (let i = 0; i < links.length; i++) {
+						if (submenus[i].classList.contains('active')) {
+							index = i;
+						}
+					}
+					if (e.target.parentNode.classList.contains('active')) {
+						submenus[active].classList.remove('active');
+						tapCount = 0;
+						handleClick(index);
+						return;
+					} else {
+						handleClick(index);
+					}
+				}
+				if (e.target.tagName === 'A') {
+					if (count === 1 && e.target.parentNode.classList.contains('active')) {
+						notPrevent = true;
+					}
+					let index = null;
+					for (let i = 0; i < links.length; i++) {
+						if (submenus[i].classList.contains('active')) {
+							index = i;
+						}
+					}
+					handleClick(index);
+					prev = index;
+				}
+			}
+		});
+	}
+}

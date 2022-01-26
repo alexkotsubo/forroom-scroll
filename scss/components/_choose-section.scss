@@ -4,7 +4,7 @@
 	&__content {
 		padding: 0 50px;
 		display: flex;
-		min-height: 92vh;
+		min-height: calc(var(--vh, 1vh) * 100);
 		position: relative;
 		z-index: 2;
 	}
@@ -19,6 +19,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: flex-end;
+		background-attachment: fixed;
 	}
 	&__body {
 		max-width: 680px;
@@ -35,6 +36,7 @@
 		margin-left: auto;
 		margin-right: auto;
 		margin-top: 20px;
+		width: 100%;
 	}
 	&__btn {
 		width: 100%;
@@ -48,13 +50,16 @@
 			position: absolute;
 			top: 0;
 			right: 0;
-			width: 50%;
-			min-height: 92vh;
-			max-height: 92vh;
+			width: 100vw;
+			min-height: calc(var(--vh, 1vh) * 100);
+			max-height: calc(var(--vh, 1vh) * 100);
 			display: flex;
 			flex-direction: column;
+			align-items: flex-end;
 		}
 		&-inner {
+			display: flex;
+			justify-content: flex-end;
 			padding-right: 50px;
 			padding-left: 8vw;
 			height: 100%;
@@ -68,14 +73,16 @@
 			}
 		}
 		&-title {
-			margin-right: 50px;
-			margin-left: 8vw;
+			max-width: 50%;
+			min-width: 50%;
+			padding-right: 50px;
+			padding-left: 8vw;
 			margin-top: 65px;
 			margin-bottom: 40px;
 			position: relative;
 			z-index: 1;
 			display: flex;
-			align-items: flex-end;
+			align-items: flex-start;
 			background: transparent;
 			min-height: 110px;
 			h3 {
@@ -87,7 +94,7 @@
 				z-index: 2;
 				display: flex;
 				align-items: flex-end;
-				margin-bottom: 14px;
+				margin-top: 56px;
 				color: $dark;
 			}
 			h2 {
@@ -101,7 +108,7 @@
 				color: transparent;
 				position: absolute;
 				top: 0;
-				left: 0;
+				left: 8vw;
 				white-space: nowrap;
 				transform: translate(-70px, 0);
 				z-index: 1;
@@ -109,10 +116,13 @@
 		}
 	}
 	&__carts {
+		max-width: 50%;
+		min-width: 50%;
 		position: relative;
 		display: flex;
 		flex-wrap: wrap;
 		margin-right: -8vw;
+		height: 100%;
 		&::before {
 			content: '';
 			display: block;
@@ -234,7 +244,7 @@
 		h3 {
 			font-size: 28px;
 			line-height: 34px;
-			margin-bottom: 7px;
+			margin-top: 42px;
 		}
 	}
 }
@@ -263,7 +273,7 @@
 		h3 {
 			font-size: 22px;
 			line-height: 27px;
-			margin-bottom: 10px;
+			margin-top: 48px;
 		}
 	}
 
@@ -299,22 +309,36 @@
 	}
 
 	.choose__scroll-title {
-		margin-left: 145px;
+		min-width: 63%;
+		max-width: 63%;
+		padding-left: 145px;
+		padding-right: 0;
 		h2 {
 			-webkit-text-stroke: 1px $white;
+			left: 145px;
 		}
 		h3 {
 			color: $white;
 		}
 	}
 
+	.choose__carts {
+		min-width: unset;
+		max-width: unset;
+	}
+
 	.choose__scroll {
 		position: relative;
 		z-index: 2;
-		min-height: 92vh;
-		max-height: 92vh;
+		min-height: calc(var(--vh, 1vh) * 100);
+		max-height: calc(var(--vh, 1vh) * 100);
 		> .choose__scroll-title {
 			display: flex;
+		}
+		&-content {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
 		}
 		// overflow: auto;
 		// -ms-overflow-style: none;
@@ -330,13 +354,15 @@
 	}
 
 	.choose__scroll {
-		width: 63%;
 		margin-left: auto;
 		display: flex;
 		flex-direction: column;
+		align-items: flex-end;
 	}
 
 	.choose__scroll-wrap {
+		min-width: 63%;
+		max-width: 63%;
 		//overflow: unset;
 		width: 100%;
 		position: static;
@@ -349,8 +375,13 @@
 	}
 
 	.choose__body {
+		min-width: 63%;
+		max-width: 63%;
 		margin-top: 40px;
 		padding: 0 20px 40px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
 	}
 
 	.choose__scroll-inner {
@@ -374,10 +405,13 @@
 
 @media (max-width: 700px) {
 	.choose__scroll-title {
+		min-width: unset;
+		max-width: unset;
 		margin-left: 0;
 		text-align: center;
 		justify-content: center;
 		margin-right: 0;
+		padding-left: 0;
 		h2 {
 			left: 50%;
 			transform: translate(-50%, 0);
@@ -387,6 +421,7 @@
 	.choose__scroll {
 		width: 100%;
 		padding: 10px 20px 20px;
+		align-items: center;
 	}
 
 	.choose__scroll-title {
@@ -400,6 +435,8 @@
 
 	.choose__body {
 		padding: 0;
+		min-width: unset;
+		max-width: unset;
 	}
 
 	.choose__cart-title {
@@ -416,7 +453,13 @@
 		h3 {
 			font-size: 17px;
 			line-height: 21px;
+			margin-top: 32px;
 		}
+	}
+
+	.choose__scroll-wrap {
+		min-width: unset;
+		max-width: unset;
 	}
 }
 
