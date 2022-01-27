@@ -171,14 +171,23 @@ window.addEventListener('DOMContentLoaded', e => {
 	];
 	for (let i = 0; i < selects.length; i++) {
 		const select = $(selects[i]);
+		const selectNativeElem = selects[i];
 		const selectElem = $(selects[i])[0];
 		const placeholder = selectElem.getAttribute('data-placeholder') ? selectElem.getAttribute('data-placeholder') : undefined;
 		const selected = selectElem.getAttribute('data-selected') ? selectElem.getAttribute('data-selected') : null;
 		if (select) {
+			// const dropdown = querySelector('.select2-container.select2-container--default.select2-container--open');
+			// selectNativeElem.addEventListener('focus', e => {
+			// 	console.log(dropdown)
+			// 	dropdown.classList.add('close');
+			// });
+			// selectNativeElem.addEventListener('blur', e => {
+			// 	console.log(dropdown)
+			// 	dropdown.classList.remove('close');
+			// });
 			select.select2({
 				placeholder,
 				minimumResultsForSearch: -1,
-				closeOnSelect: true,
 			});
 			if (selected) select.val(selected).trigger("change");
 		}
