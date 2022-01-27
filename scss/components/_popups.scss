@@ -85,10 +85,9 @@
 		margin-top: 40px;
 	}
 	&__select {
-		margin-top: 10px;
+		margin-top: 50px;
 		select {
-			opacity: 0;
-			visibility: hidden;
+			display: none;
 		}
 	}
 	&__tel {
