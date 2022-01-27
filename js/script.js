@@ -171,6 +171,7 @@ window.addEventListener('DOMContentLoaded', e => {
 	];
 	for (let i = 0; i < selects.length; i++) {
 		const select = $(selects[i]);
+		const selectNativeElem = selects[i];
 		const selectElem = $(selects[i])[0];
 		const placeholder = selectElem.getAttribute('data-placeholder') ? selectElem.getAttribute('data-placeholder') : undefined;
 		const selected = selectElem.getAttribute('data-selected') ? selectElem.getAttribute('data-selected') : null;
@@ -184,17 +185,17 @@ window.addEventListener('DOMContentLoaded', e => {
 			// 	console.log(dropdown)
 			// 	dropdown.classList.remove('close');
 			// });
+			$('#thingToBlur').blur();
 			select.select2({
 				placeholder,
 				minimumResultsForSearch: -1,
 			});
 			if (selected) select.val(selected).trigger("change");
-			select.on('select2:open', e => {
-				alert(0)
-				select.blur();
-				setTimeout(() => {
-					select.blur();
-				}, 200);
+			selectNativeElem.addEventListener('blur', e => {
+				select.select2('close');
+			});
+			select.blur(function() {
+				select.select2('close');
 			});
 		}
 	}
