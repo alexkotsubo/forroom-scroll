@@ -232,7 +232,8 @@ window.addEventListener('DOMContentLoaded', e => {
 										window.addEventListener('scroll', handleStartFix);
 									}
 								} else if (direction === 'bottom') {
-									if (Math.floor(getScrollWindow().scrollTop) === 0) {
+									if (Math.floor(getScrollWindow().scrollTop) === 0
+										|| Math.floor(getScrollWindow().scrollTop) === 1) {
 										alert('top');
 										getScrollWindow().classList.remove('active');
 										body.style.paddingRight = '0px';
