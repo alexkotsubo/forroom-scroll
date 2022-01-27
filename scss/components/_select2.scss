@@ -67,6 +67,10 @@
 	}
 }
 
+.select2-container.select2-container--default.select2-container--open.close {
+	display: none;
+}
+
 @media (max-width: 768px) {
 	.select2-container--default .select2-selection--single .select2-selection__rendered {
 		font-size: 14px;
