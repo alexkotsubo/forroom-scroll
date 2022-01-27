@@ -75,7 +75,7 @@
 			margin-top: 40px;
 			display: flex;
 			flex-direction: column;
-			span {
+			> span {
 				font-size: 17px;
 				line-height: 140%;
 			}
@@ -104,7 +104,7 @@
 		}
 		&__inputs {
 			label {
-				span {
+				> span {
 					font-size: 14px;
 				}
 			}
