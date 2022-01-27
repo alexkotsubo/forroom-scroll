@@ -191,7 +191,12 @@ window.addEventListener('DOMContentLoaded', e => {
 				minimumResultsForSearch: -1,
 			});
 			if (selected) select.val(selected).trigger("change");
+			console.log(selectNativeElem)
 			selectNativeElem.addEventListener('blur', e => {
+				alert(0)
+				select.select2('close');
+			});
+			selectNativeElem.blur(function() {
 				alert(0)
 				select.select2('close');
 			});
