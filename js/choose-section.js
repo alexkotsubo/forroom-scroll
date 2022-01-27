@@ -214,6 +214,7 @@ window.addEventListener('DOMContentLoaded', e => {
 								if (document.documentElement.clientWidth <= 1024) document.querySelector('.choose__scroll-inner').removeEventListener('scroll', handleInnerScroll);
 								if (direction === 'top') {
 									if (getScrollWindow().scrollHeight - Math.floor(getScrollWindow().scrollTop) === getScrollWindow().clientHeight) {
+										alert('bottom');
 										getScrollWindow().classList.remove('active');
 										body.style.paddingRight = '0px';
 										document.querySelector('body').classList.remove('lock');
@@ -232,6 +233,7 @@ window.addEventListener('DOMContentLoaded', e => {
 									}
 								} else if (direction === 'bottom') {
 									if (Math.floor(getScrollWindow().scrollTop) === 0) {
+										alert('top');
 										getScrollWindow().classList.remove('active');
 										body.style.paddingRight = '0px';
 										document.querySelector('body').classList.remove('lock');
