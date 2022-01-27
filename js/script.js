@@ -178,6 +178,7 @@ window.addEventListener('DOMContentLoaded', e => {
 			select.select2({
 				placeholder,
 				minimumResultsForSearch: -1,
+				closeOnSelect: true,
 			});
 			if (selected) select.val(selected).trigger("change");
 		}
