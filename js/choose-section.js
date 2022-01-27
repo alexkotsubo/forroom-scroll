@@ -254,7 +254,7 @@ window.addEventListener('DOMContentLoaded', e => {
 							};
 							getScrollWindow().addEventListener('scroll', handleInnerScroll);
 						});
-					}, 500);
+					}, 50);
 				}
 			} else {
 				canWork = true;
