@@ -211,6 +211,11 @@ window.addEventListener('DOMContentLoaded', e => {
 							if (getScrollWindow().scrollHeight - Math.floor(getScrollWindow().scrollTop) === getScrollWindow().clientHeight
 								|| getScrollWindow().scrollHeight - Math.floor(getScrollWindow().scrollTop) - 1 === getScrollWindow().clientHeight) direction = 'bottom';
 							if (Math.floor(getScrollWindow().scrollTop) === 0) direction = 'top';
+							if (direction === 'bottom') {
+								nav.style.transform = 'translate(0, -110%)';
+								scrollingMenu.classList.remove('active');
+								scrollingMenu.style.transform = 'translate(0, 110%)';
+							}
 							const handleInnerScroll = e => {
 								if (document.documentElement.clientWidth > 1024) document.querySelector('.choose__scroll-content').removeEventListener('scroll', handleInnerScroll);
 								if (document.documentElement.clientWidth <= 1024) document.querySelector('.choose__scroll-inner').removeEventListener('scroll', handleInnerScroll);
