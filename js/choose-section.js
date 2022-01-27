@@ -232,6 +232,9 @@ window.addEventListener('DOMContentLoaded', e => {
 										window.addEventListener('scroll', handleStartFix);
 									}
 								} else if (direction === 'bottom') {
+									if (Math.floor(getScrollWindow().scrollTop) < 100) {
+										alert(Math.floor(getScrollWindow().scrollTop))
+									}
 									if (Math.floor(getScrollWindow().scrollTop) === 0
 										|| Math.floor(getScrollWindow().scrollTop) === 1) {
 										alert('top');
