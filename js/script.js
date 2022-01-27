@@ -167,48 +167,61 @@ window.addEventListener('DOMContentLoaded', e => {
 
 window.addEventListener('DOMContentLoaded', e => {
 	const selects = [
-		...(document.querySelectorAll('.base-popup__select select')),
+		...(document.querySelectorAll('.block-select')),
 	];
+	let activeSelect = null;
 	for (let i = 0; i < selects.length; i++) {
-		const select = $(selects[i]);
-		const selectNativeElem = selects[i];
-		const selectElem = $(selects[i])[0];
-		const placeholder = selectElem.getAttribute('data-placeholder') ? selectElem.getAttribute('data-placeholder') : undefined;
-		const selected = selectElem.getAttribute('data-selected') ? selectElem.getAttribute('data-selected') : null;
+		const select = selects[i];
 		if (select) {
-			// const dropdown = querySelector('.select2-container.select2-container--default.select2-container--open');
-			// selectNativeElem.addEventListener('focus', e => {
-			// 	console.log(dropdown)
-			// 	dropdown.classList.add('close');
-			// });
-			// selectNativeElem.addEventListener('blur', e => {
-			// 	console.log(dropdown)
-			// 	dropdown.classList.remove('close');
-			// });
-			$('#thingToBlur').blur();
-			select.select2({
-				placeholder,
-				minimumResultsForSearch: -1,
-			});
-			if (selected) select.val(selected).trigger("change");
-			console.log(selectNativeElem)
-			document.querySelector('#seelct').addEventListener('blur', e => {
-				alert(1)
-			});
-			selectNativeElem.addEventListener('blur', e => {
-				alert(0)
-				select.select2('close');
-			});
-			selectNativeElem.blur(function() {
-				alert(0)
-				select.select2('close');
-			});
-			select.blur(function() {
-				alert(0)
-				select.select2('close');
+			const nav = select.querySelector('.block-select__nav');
+			const selected = select.querySelector('.block-select__selected');
+			const list = select.querySelector('.block-select__list');
+			const options = select.querySelectorAll('.block-select__list span');
+			let prev = null;
+
+			selected.innerHTML = select.getAttribute('data-placeholder') ? select.getAttribute('data-placeholder') : '';
+
+			for (let i = 0; i < options.length; i++) {
+				if (options[i].getAttribute('data-selected') === 'selected') {
+					selected.innerHTML = options[i].innerHTML;
+					options[i].classList.add('active');
+					prev = i;
+				}
+				options[i].addEventListener('click', e => {
+					if (prev !== null) {
+						options[prev].classList.remove('active');
+					}
+					selected.innerHTML = options[i].innerHTML;
+					options[i].classList.add('active');
+					select.classList.remove('active');
+					activeSelect = null;
+					prev = i;
+				});
+			}
+
+			nav.addEventListener('click', e => {
+				if (select.classList.contains('active')) {
+					select.classList.remove('active');
+					activeSelect = null;
+				} else {
+					select.classList.add('active');
+					if (document.documentElement.clientHeight - nav.getBoundingClientRect().bottom < list.offsetHeight) {
+						select.classList.add('block-select_top');
+					} else {
+						select.classList.remove('block-select_top');
+					}
+					if (activeSelect !== null) selects[activeSelect].classList.remove('active');
+					activeSelect = i;
+				}
 			});
 		}
 	}
+	document.documentElement.addEventListener('click', e => {
+		if (!e.target.closest('.block-select') && activeSelect !== null) {
+			selects[activeSelect].classList.remove('active');
+			activeSelect = null;
+		}
+	});
 });
 
 /* IB */

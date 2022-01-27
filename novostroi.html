@@ -72,28 +72,38 @@
 							<label>
 								<span>Выберите планировку</span>
 								<div class="base-popup__select">
-									<select data-placeholder="Планировка">
-										<option></option>
-										<option value="1">1-комн. 30-40 кв.м.</option>
-										<option value="2">1-комн. 40-50 кв.м.</option>
-										<option value="3">2-комн. 50-60 кв.м.</option>
-										<option value="4">2-комн. 60-70 кв.м.</option>
-										<option value="5">3-комн. 60-80 кв.м.</option>
-										<option value="6">4-комн и больше</option>
-									</select>
+									<div class="block-select" data-placeholder="Планировка">
+										<div class="block-select__nav">
+											<p class="block-select__selected"></p>
+											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
+										</div>
+										<div class="block-select__list">
+											<span value="1">1-комн. 30-40 кв.м.</span>
+											<span value="2">1-комн. 40-50 кв.м.</span>
+											<span value="3">2-комн. 50-60 кв.м.</span>
+											<span value="4">2-комн. 60-70 кв.м.</span>
+											<span value="5">3-комн. 60-80 кв.м.</span>
+											<span value="6">4-комн и больше</span>
+										</div>
+									</div>
 								</div>
 							</label>
 							<label>
 								<span>Выбери пакет ремонта</span>
 								<div class="base-popup__select">
-									<select data-placeholder="Пакет ремонта">
-										<option></option>
-										<option value="0">White Box от $ 140/кв.м.</option>
-										<option value="1">Базовый от $ 280/кв.м.</option>
-										<option value="2">Оптимальный от $ 380/кв.м.</option>
-										<option value="3">Максимальный от $ 480/кв.м.</option>
-										<option value="4">Индивидуальный от $ 140/кв.м.</option>
-									</select>
+									<div class="block-select block-select_reverse" data-placeholder="Пакет ремонта">
+										<div class="block-select__nav">
+											<p class="block-select__selected"></p>
+											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
+										</div>
+										<div class="block-select__list">
+											<span value="0">White Box от $ 140/кв.м.</span>
+											<span value="1">Базовый от $ 280/кв.м.</span>
+											<span value="2">Оптимальный от $ 380/кв.м.</span>
+											<span value="3">Максимальный от $ 480/кв.м.</span>
+											<span value="4">Индивидуальный от $ 140/кв.м.</span>
+										</div>
+									</div>
 								</div>
 							</label>
 							<label>
@@ -105,19 +115,19 @@
 							</label>
 							<label>
 								<span>Удобный вид связи</span>
-								<select id="seelct">
-									<option value="Phone">Телефон</option>
-									<option value="Telegram">Telegram</option>
-									<option value="WhatsApp">WhatsApp</option>
-									<option value="Viber">Viber</option>
-								</select>
 								<div class="base-popup__select">
-									<select data-selected="Phone">
-										<option value="Phone">Телефон</option>
-										<option value="Telegram">Telegram</option>
-										<option value="WhatsApp">WhatsApp</option>
-										<option value="Viber">Viber</option>
-									</select>
+									<div class="block-select">
+										<div class="block-select__nav">
+											<p class="block-select__selected"></p>
+											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
+										</div>
+										<div class="block-select__list">
+											<span data-value="Phone" data-selected="selected">Телефон</span>
+											<span data-value="Telegram">Telegram</span>
+											<span data-value="WhatsApp">WhatsApp</span>
+											<span data-value="Viber">Viber</span>
+										</div>
+									</div>
 								</div>
 							</label>
 						</div>
