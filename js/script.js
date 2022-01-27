@@ -190,7 +190,11 @@ window.addEventListener('DOMContentLoaded', e => {
 			});
 			if (selected) select.val(selected).trigger("change");
 			select.on('select2:open', e => {
+				alert(0)
 				select.blur();
+				setTimeout(() => {
+					select.blur();
+				}, 200);
 			});
 		}
 	}
