@@ -183,7 +183,8 @@ window.addEventListener('DOMContentLoaded', e => {
 							if (direction === 'top') return distance < 0;
 							if (direction === 'bottom') return distance > 0;
 						};
-						if (getScrollWindow().scrollHeight - Math.floor(getScrollWindow().scrollTop) === getScrollWindow().clientHeight) direction = 'bottom';
+						if (getScrollWindow().scrollHeight - Math.floor(getScrollWindow().scrollTop) === getScrollWindow().clientHeight
+							|| getScrollWindow().scrollHeight - Math.floor(getScrollWindow().scrollTop) - 1 === getScrollWindow().clientHeight) direction = 'bottom';
 						if (Math.floor(getScrollWindow().scrollTop) === 0) direction = 'top';
 						if (condition()) {
 							window.scrollTo({
@@ -207,7 +208,8 @@ window.addEventListener('DOMContentLoaded', e => {
 						scrollToPos(distanceFromStart, 'smooth', () => {
 							enableScroll();
 							getScrollWindow().classList.add('active');
-							if (getScrollWindow().scrollHeight - Math.floor(getScrollWindow().scrollTop) === getScrollWindow().clientHeight) direction = 'bottom';
+							if (getScrollWindow().scrollHeight - Math.floor(getScrollWindow().scrollTop) === getScrollWindow().clientHeight
+								|| getScrollWindow().scrollHeight - Math.floor(getScrollWindow().scrollTop) - 1 === getScrollWindow().clientHeight) direction = 'bottom';
 							if (Math.floor(getScrollWindow().scrollTop) === 0) direction = 'top';
 							const handleInnerScroll = e => {
 								if (document.documentElement.clientWidth > 1024) document.querySelector('.choose__scroll-content').removeEventListener('scroll', handleInnerScroll);
@@ -232,9 +234,7 @@ window.addEventListener('DOMContentLoaded', e => {
 										window.addEventListener('scroll', handleStartFix);
 									}
 								} else if (direction === 'bottom') {
-									alert(direction)
 									if (Math.floor(getScrollWindow().scrollTop) === 0) {
-										alert('top');
 										getScrollWindow().classList.remove('active');
 										body.style.paddingRight = '0px';
 										document.querySelector('body').classList.remove('lock');
