@@ -634,7 +634,7 @@ const stiliSlide = document.querySelectorAll('.stili__slide');
 
 window.addEventListener('DOMContentLoaded', e => {
 	if (stiliSlide.length > 0) {
-		const width = 900;
+		const width = 1023;
 		const duration = 700;
 		let timeout = null;
 		let nextFunc = null;

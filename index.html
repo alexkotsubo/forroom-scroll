@@ -10,7 +10,6 @@
 	<link rel="stylesheet" href="css/main.css">
 
 	<meta name="format-detection" content="telephone=no">
-	<!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
 
 	<meta name="description" content="">
 	<meta name="keywords" content="">
@@ -20,6 +19,129 @@
 <body>
 
 	<div class="wrapper">
+		<!-- Call Popup -->
+
+		<div id="call-popup" class="base-popup popup">
+			<div class="base-popup__body popup__body">
+				<div class="base-popup__close popup__close">
+					<span class="iconify" data-icon="ic:baseline-close"></span>
+				</div>
+
+				<div class="base-popup__inner">
+					<form action="#" class="base-popup__form">
+						<h3 class="base-popup__title">Заполните форму, и наш менеджер свяжется с вами для уточнения всех интересующих вас вопросов</h3>
+						<div class="base-popup__inputs">
+							<label>
+								<span>Контактные данные</span>
+								<div class="block-input">
+									<input type="tel" class="inputmask base-popup__tel" placeholder="+380 (__) ___ - __ - __"><!-- class="success error" -->
+									<p class="block-input__text">Неверный формат номера</p>
+								</div>
+							</label>
+							<label>
+								<span>Удобный вид связи</span>
+								<div class="base-popup__select">
+									<div class="block-select">
+										<div class="block-select__nav">
+											<p class="block-select__selected"></p>
+											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
+										</div>
+										<div class="block-select__list">
+											<span data-value="Phone" data-selected="selected">Телефон</span>
+											<span data-value="Telegram">Telegram</span>
+											<span data-value="WhatsApp">WhatsApp</span>
+											<span data-value="Viber">Viber</span>
+										</div>
+									</div>
+								</div>
+							</label>
+						</div>
+						<button type="submit" class="btn btn_big-fill base-popup__btn">оставить заявку</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- Сonfirm Popup -->
+
+		<div id="confirm-popup" class="base-popup popup">
+			<div class="base-popup__body popup__body">
+				<div class="base-popup__close popup__close">
+					<span class="iconify" data-icon="ic:baseline-close"></span>
+				</div>
+
+				<div class="base-popup__inner">
+					<form action="#" class="base-popup__form">
+						<h3 class="base-popup__title">Заполните форму, и наш менеджер свяжется с вами для уточнения всех интересующих вас вопросов</h3>
+						<div class="base-popup__inputs">
+							<label>
+								<span>Выберите планировку</span>
+								<div class="base-popup__select">
+									<div class="block-select" data-placeholder="Планировка">
+										<div class="block-select__nav">
+											<p class="block-select__selected"></p>
+											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
+										</div>
+										<div class="block-select__list">
+											<span value="1">1-комн. 30-40 кв.м.</span>
+											<span value="2">1-комн. 40-50 кв.м.</span>
+											<span value="3">2-комн. 50-60 кв.м.</span>
+											<span value="4">2-комн. 60-70 кв.м.</span>
+											<span value="5">3-комн. 60-80 кв.м.</span>
+											<span value="6">4-комн и больше</span>
+										</div>
+									</div>
+								</div>
+							</label>
+							<label>
+								<span>Выбери пакет ремонта</span>
+								<div class="base-popup__select">
+									<div class="block-select" data-placeholder="Пакет ремонта">
+										<div class="block-select__nav">
+											<p class="block-select__selected"></p>
+											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
+										</div>
+										<div class="block-select__list">
+											<span value="0">White Box от $ 140/кв.м.</span>
+											<span value="1">Базовый от $ 280/кв.м.</span>
+											<span value="2">Оптимальный от $ 380/кв.м.</span>
+											<span value="3">Максимальный от $ 480/кв.м.</span>
+											<span value="4">Индивидуальный от $ 140/кв.м.</span>
+										</div>
+									</div>
+								</div>
+							</label>
+							<label>
+								<span>Контактные данные</span>
+								<div class="block-input">
+									<input type="tel" class="inputmask base-popup__tel" placeholder="+380 (__) ___ - __ - __"><!-- class="success error" -->
+									<p class="block-input__text">Неверный формат номера</p>
+								</div>
+							</label>
+							<label>
+								<span>Удобный вид связи</span>
+								<div class="base-popup__select">
+									<div class="block-select">
+										<div class="block-select__nav">
+											<p class="block-select__selected"></p>
+											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
+										</div>
+										<div class="block-select__list">
+											<span data-value="Phone" data-selected="selected">Телефон</span>
+											<span data-value="Telegram">Telegram</span>
+											<span data-value="WhatsApp">WhatsApp</span>
+											<span data-value="Viber">Viber</span>
+										</div>
+									</div>
+								</div>
+							</label>
+						</div>
+						<button type="submit" class="btn btn_big-fill base-popup__btn">оставить заявку</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
 		<!-- Nav -->
 
 		<nav class="nav fixed-padding nav_menus anim-item" id="nav">
@@ -29,9 +151,33 @@
 				<div class="nav-add-padding burger__menu">
 					<div class="burger__menu-wrap">
 						<ul class="burger__list">
-							<li><a href="#" class="burger__link">Ремонт</a></li>
-							<li><a href="#" class="burger__link">Дизайн</a></li>
-							<li><a href="#" class="burger__link">Стили</a></li>
+							<li class="has-submenu">
+								<a href="#" class="burger__link">Ремонт</a>
+								<ul class="burger__list-submenu">
+									<li><a href="#">Пакеты ремонта</a></li>
+									<li><a href="#">Ремонт в новострое</a></li>
+									<li><a href="#">Ремонт вторичного жилья</a></li>
+									<li><a href="#">Ремонт под аренду</a></li>
+								</ul>
+							</li>
+							<li class="has-submenu">
+								<a href="#" class="burger__link">Ремонт</a>
+								<ul class="burger__list-submenu">
+									<li><a href="#">Пакеты ремонта</a></li>
+									<li><a href="#">Ремонт в новострое</a></li>
+									<li><a href="#">Ремонт вторичного жилья</a></li>
+									<li><a href="#">Ремонт под аренду</a></li>
+								</ul>
+							</li>
+							<li class="has-submenu">
+								<a href="#" class="burger__link">Ремонт</a>
+								<ul class="burger__list-submenu">
+									<li><a href="#">Пакеты ремонта</a></li>
+									<li><a href="#">Ремонт в новострое</a></li>
+									<li><a href="#">Ремонт вторичного жилья</a></li>
+									<li><a href="#">Ремонт под аренду</a></li>
+								</ul>
+							</li>
 							<li><a href="#" class="burger__link">Портфолио</a></li>
 							<li><a href="#" class="burger__link">Стоимость</a></li>
 							<li><a href="#" class="burger__link">Контакты</a></li>
@@ -76,7 +222,17 @@
 			<div class="nav__body">
 				<div class="nav__menus">
 					<ul class="nav__menu">
-						<li><a href="#">Ремонт</a></li>
+						<li class="has-submenu">
+							<a href="#">Ремонт</a>
+							<div class="nav__menu-submenu">
+								<ul>
+									<li><a href="#">Пакеты ремонта</a></li>
+									<li><a href="#">Ремонт в новострое</a></li>
+									<li><a href="#">Ремонт вторичного жилья</a></li>
+									<li><a href="#">Ремонт под аренду</a></li>
+								</ul>
+							</div>
+						</li>
 						<li><a href="#">Дизайн</a></li>
 						<li><a href="#">Стили</a></li>
 					</ul>
@@ -178,6 +334,15 @@
 						<li><a href="#"><span class="iconify" data-icon="ion:folder-open-outline"></span> пакеты ремонта</a></li>
 						<li><a href="#"><span class="iconify" data-icon="ion:bed-outline"></span> вторичного жилья</a></li>
 						<li><a href="#"><span class="iconify" data-icon="ion:key-outline"></span> под сдачу</a></li>
+						<li><a href="#"><span class="iconify" data-icon="ion:color-palette-outline"></span> дизайн интерьера</a></li>
+					</ul>
+				</div>
+
+				<div class="menu">
+					<ul class="menu__wrap">
+						<li><a href="#"><span class="iconify" data-icon="ion:folder-open-outline"></span> пакеты ремонта</a></li>
+						<li><a href="#"><span class="iconify" data-icon="ion:bed-outline"></span> вторичного жилья</a></li>
+						<li><a href="#"><span class="iconify" data-icon="ion:key-outline"></span> ремонт под сдачу</a></li>
 						<li><a href="#"><span class="iconify" data-icon="ion:color-palette-outline"></span> дизайн интерьера</a></li>
 					</ul>
 				</div>
@@ -431,9 +596,9 @@
 				<p class="doubt__text">Приходите на экскурсию в шоу-рум или проконсультируйтесь с нашим экспертом. Мы знаем, как сделать ремонт приятной заботой без стрессов.</p>
 				<div class="doubt__inner">
 					<form action="#" class="doubt__form">
-						<div class="doubt__form-input">
-							<input type="text" id="doubt-form-phone" placeholder="+380 (__) ___ - __ - __"><!-- class="success error" -->
-							<p>Неверный формат номера</p>
+						<div class="block-input block-input_white">
+							<input type="tel" class="inputmask" placeholder="+380 (__) ___ - __ - __"><!-- class="success error" -->
+							<p class="block-input__text">Неверный формат номера</p>
 						</div>
 						<div class="doubt__form-btn">
 							<button type="submit" class="btn btn_big-fill">обратная связь</button>
@@ -452,8 +617,8 @@
 				</div>
 			</div>
 
-			<div class="doubt__map ib">
-				<img src="img/map.jpg" alt="map" class="ib_use">
+			<div class="doubt__map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2750.0939098411404!2d30.728660415589932!3d46.42701817912411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c6331d058fefa9%3A0xd314fe003772ef4a!2z0KTQvtGA0YDRg9C8IC0g0YDQtdC80L7QvdGC0L3Qvi3RgdGC0YDQvtC40YLQtdC70YzQvdCw0Y8g0LrQvtC80L_QsNC90LjRjw!5e0!3m2!1sru!2sua!4v1635787401257!5m2!1sru!2sua" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 			</div>
 		</section>
 

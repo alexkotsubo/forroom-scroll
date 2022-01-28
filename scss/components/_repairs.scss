@@ -180,13 +180,13 @@
 	}
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1919px) {
 	.repairs__title h2 {
 		transform: translate(-8vw, 0);
 	}
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1439px) {
 	.repairs__title {
 		min-height: 85px;
 	}
@@ -209,7 +209,7 @@
 // 	}
 // }
 
-@media (max-width: 1024px) {
+@media (max-width: 1279px) {
 	.repairs__inner {
 		position: relative;
 		min-height: calc(var(--vh, 1vh) * 100);
@@ -351,7 +351,7 @@
 	}
 }
 
-@media (max-width: 575px) {
+@media (max-width: 767px) {
 	.repairs__content {
 		padding: 80px 40px;
 	}
@@ -373,7 +373,7 @@
 	}
 }
 
-@media (max-width: 320px) {
+@media (max-width: 479px) {
 	.repairs__content {
 		padding: 60px 20px;
 	}

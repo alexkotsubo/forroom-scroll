@@ -223,6 +223,11 @@ window.addEventListener('DOMContentLoaded', e => {
 									if (getScrollWindow().scrollHeight - Math.floor(getScrollWindow().scrollTop) === getScrollWindow().clientHeight
 										|| getScrollWindow().scrollHeight - Math.floor(getScrollWindow().scrollTop) - 1 === getScrollWindow().clientHeight) {
 										getScrollWindow().classList.remove('active');
+										if (fixedPadding.length > 0) {
+											for(let i = 0, length = fixedPadding.length; i < length; i++) {
+												fixedPadding[i].style.paddingRight = '0px';
+											}
+										}
 										body.style.paddingRight = '0px';
 										document.querySelector('body').classList.remove('lock');
 										canWork = false;
@@ -241,6 +246,11 @@ window.addEventListener('DOMContentLoaded', e => {
 								} else if (direction === 'bottom') {
 									if (Math.floor(getScrollWindow().scrollTop) === 0) {
 										getScrollWindow().classList.remove('active');
+										if (fixedPadding.length > 0) {
+											for(let i = 0, length = fixedPadding.length; i < length; i++) {
+												fixedPadding[i].style.paddingRight = '0px';
+											}
+										}
 										body.style.paddingRight = '0px';
 										document.querySelector('body').classList.remove('lock');
 										canWork = false;
