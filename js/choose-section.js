@@ -183,9 +183,9 @@ window.addEventListener('DOMContentLoaded', e => {
 							if (direction === 'top') return distance < 0;
 							if (direction === 'bottom') return distance > 0;
 						};
-						if (getScrollWindow().scrollHeight - Math.floor(getScrollWindow().scrollTop) === getScrollWindow().clientHeight
-							|| getScrollWindow().scrollHeight - Math.floor(getScrollWindow().scrollTop) - 1 === getScrollWindow().clientHeight) direction = 'bottom';
-						if (Math.floor(getScrollWindow().scrollTop) === 0) direction = 'top';
+						// if (getScrollWindow().scrollHeight - Math.floor(getScrollWindow().scrollTop) === getScrollWindow().clientHeight
+						// 	|| getScrollWindow().scrollHeight - Math.floor(getScrollWindow().scrollTop) - 1 === getScrollWindow().clientHeight) direction = 'bottom';
+						// if (Math.floor(getScrollWindow().scrollTop) === 0) direction = 'top';
 						if (condition()) {
 							window.scrollTo({
 								top: distanceFromStart,
@@ -234,11 +234,16 @@ window.addEventListener('DOMContentLoaded', e => {
 										getScrollWindow().removeEventListener('scroll', handleInnerScroll);
 										const handleStartFix = e => {
 											const distance = -(+(section.getBoundingClientRect().top).toFixed());
-											if (distance <= document.documentElement.clientHeight * (threshold + 0.1)) {
-												cantStartFix = true;
-											} else {
+											if (distance > document.documentElement.clientHeight * (threshold + 0.1) || distance < -(document.documentElement.clientHeight * (threshold + 0.1))) {
 												cantStartFix = false;
 												window.removeEventListener('scroll', handleStartFix);
+												if (distance > 0) {
+													direction = 'bottom';
+												} else {
+													direction = 'top';
+												}
+											} else {
+												cantStartFix = true;
 											}
 										};
 										window.addEventListener('scroll', handleStartFix);
@@ -257,9 +262,14 @@ window.addEventListener('DOMContentLoaded', e => {
 										getScrollWindow().removeEventListener('scroll', handleInnerScroll);
 										const handleStartFix = e => {
 											const distance = +(section.getBoundingClientRect().top).toFixed();
-											if (distance > document.documentElement.clientHeight * (threshold + 0.1)) {
+											if (distance > document.documentElement.clientHeight * (threshold + 0.1) || distance < -(document.documentElement.clientHeight * (threshold + 0.1))) {
 												cantStartFix = false;
 												window.removeEventListener('scroll', handleStartFix);
+												if (distance > 0) {
+													direction = 'top';
+												} else {
+													direction = 'bottom';
+												}
 											} else {
 												cantStartFix = true;
 											}

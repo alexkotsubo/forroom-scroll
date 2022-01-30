@@ -19,10 +19,26 @@
 		display: flex;
 		justify-content: center;
 		align-items: flex-end;
-		background-attachment: fixed;
+	}
+	&__image {
+		width: calc(42% - 50px);
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: calc(8vw + 50px);
+		z-index: 1;
+		&-wrap {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: calc(var(--vh, 1vh) * 120);
+			width: 100%;
+		}
 	}
 	&__body {
 		max-width: 680px;
+		position: relative;
+		z-index: 3;
 	}
 	&__title {
 		font-weight: 600;
@@ -329,6 +345,14 @@
 	.choose__carts {
 		min-width: unset;
 		max-width: unset;
+	}
+
+	.choose__image {
+		left: 0;
+		width: 100%;
+		&-wrap {
+			top: calc(var(--vh, 1vh) * 50 * -1);
+		}
 	}
 
 	.choose__scroll {

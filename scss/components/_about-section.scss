@@ -23,12 +23,17 @@
 	}
 	&__image {
 		position: relative;
+		overflow: hidden;
 		z-index: 2;
 		flex: 0 0 50%;
 		padding-left: 8vw;
 		&-wrap {
-			height: 100%;
-			background-attachment: fixed;
+			height: calc(var(--vh, 1vh) * 120);
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			will-change: transform;
 		}
 	}
 	&__title {
@@ -73,7 +78,13 @@
 		line-height: 140%;
 	}
 	&_stili {
-		
+		#{$self}__image {
+			padding-left: 0;
+			&-wrap {
+				width: 92%;
+				
+			}
+		}
 	}
 }
 
@@ -139,10 +150,12 @@
 		padding: 20px 60px 80px;
 	}
 	.about__image {
+		overflow: hidden;
 		flex-basis: 100%;
 		padding-left: 0;
+		min-height: 400px;
 		&-wrap {
-			min-height: 400px;
+			top: calc(var(--vh, 1vh) * 50 * -1);
 		}
 	}
 	.about__body {
@@ -170,9 +183,7 @@
 	.about__image {
 		flex-basis: 100%;
 		padding-left: 0;
-		&-wrap {
-			min-height: 320px;
-		}
+		min-height: 320px;
 	}
 	.about__title {
 		min-height: 49px;

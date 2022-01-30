@@ -33,6 +33,12 @@ window.addEventListener('resize', e => {
 	}
 });
 
+/* Rellax */
+
+const rellax = new Rellax('.rellax', {
+	center: true,
+});
+
 /* Anchors */
 
 const anchors = document.querySelectorAll('a');
@@ -75,10 +81,10 @@ const closePopupBtn = document.querySelectorAll('.popup__close');
 
 const centerPopup = e => {
 	for (let i = 0; i < popupBody.length; i++) {
-		const value = (document.documentElement.clientHeight - popupBody[i].offsetHeight) / 2 - 10;
+		const value = (document.documentElement.clientHeight - popupBody[i].offsetHeight) / 2;
 		if (value < 0) {
 			popupBody[i].style.marginTop = '0px';
-			return;
+			continue;
 		}
 		popupBody[i].style.marginTop = value + 'px';
 	}
@@ -860,3 +866,129 @@ if (nav) {// && document.documentElement.clientWidth > 1070
 		});
 	}
 }
+
+// Test Popup
+
+window.addEventListener('DOMContentLoaded', e => {
+	const popup = document.querySelector('.test-popup');
+	if (popup) {
+		const slides = document.querySelectorAll('.test-popup__slide');
+		const body = document.querySelector('.test-popup__body');
+		let prev = 0;
+		const delay = 400;
+	
+		const closeSlide = index => {
+			if (slides[index]) {
+				slides[index].classList.remove('active');
+				prev = null;
+			}
+		};
+	
+		const openSlide = index => {
+			if (slides[index]) {
+				if (prev !== null) {
+					closeSlide(prev);
+				}
+				slides[index].classList.add('active');
+				prev = index;
+				handleBodyHeight();
+			}
+		};
+
+		const handleBodyHeight = e => {
+			body.style.minHeight = slides[prev].offsetHeight + 'px';
+		};
+		handleBodyHeight();
+		window.addEventListener('resize', handleBodyHeight);
+	
+		body.addEventListener('submit', e => {
+			e.preventDefault();
+			openSlide(prev + 1);
+		});
+	
+		for (let i = 0; i < slides.length; i++) {
+			if (prev === i) openSlide(i);
+			const dots = slides[i].querySelector('.test-popup__dots');
+			const list = slides[i].querySelector('.test-popup__list');
+			const btn = slides[i].querySelector('.test-popup__prev');
+			const home = slides[i].querySelector('.test-popup__home');
+			if (dots) {
+				for (let y = 0; y < slides.length - 1; y++) {
+					const span = document.createElement('span');
+					if (y <= i) span.classList.add('active');
+					dots.appendChild(span);
+				}
+			}
+			if (list) {
+				const inputs = slides[i].querySelectorAll('input[type=radio]');
+				for (let y = 0; y < inputs.length; y++) {
+					inputs[y].addEventListener('click', e => {
+						openSlide(i + 1);
+						for (let a = 0; a < inputs.length; a++) {
+							inputs[a].setAttribute('disabled', 'disabled');
+						}
+						setTimeout(() => {
+							for (let a = 0; a < inputs.length; a++) {
+								inputs[a].removeAttribute('disabled');
+							}
+						}, delay);
+					});
+				}
+			}
+			if (btn) {
+				if (i !== 0) {
+					btn.addEventListener('click', e => {
+						openSlide(i - 1);
+					});
+				} else {
+					// Disable btn
+				}
+			}
+			if (home) {
+				home.addEventListener('click', e => {
+					closePopup(popup);
+					closeSlide(prev);
+				});
+			}
+		}
+
+		const section = document.querySelector('.portfolio');
+		const handleScroll = e => {
+			const distance = +(section.getBoundingClientRect().top).toFixed();
+			if (distance < document.documentElement.clientHeight / 2) {
+				openPopup(popup);
+				window.removeEventListener('scroll', handleScroll);
+			}
+		};
+		handleScroll();
+		window.addEventListener('scroll', handleScroll);
+
+		let mousePosition = { x: null, y: null };
+		window.addEventListener('mousemove', e => {
+			mousePosition.x = e.clientX;
+			mousePosition.y = e.clientY;
+		});
+
+		let cantSetTimeouts = false;
+		const handlePageCancel = e => {
+			if (e.clientY < 100) {
+				if (!cantSetTimeouts) {
+					setTimeout(() => {
+						if (mousePosition.y < 100) {
+							if (mousePosition.y < 30) {
+								openPopup(popup);
+							} else {
+								cantSetTimeouts = false;
+							}
+						} else {
+							cantSetTimeouts = false;
+						}
+					}, 1000);
+					window.removeEventListener('scroll', handlePageCancel);
+					cantSetTimeouts = true;
+				}
+			}
+		};
+		window.addEventListener('mousemove', handlePageCancel);
+	}
+});
