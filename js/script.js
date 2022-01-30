@@ -1010,4 +1010,3 @@ window.addEventListener('DOMContentLoaded', e => {
 		window.addEventListener('mousemove', handlePageCancel);
 	}
 });
-alert(0)
