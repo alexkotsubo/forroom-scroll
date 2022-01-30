@@ -83,6 +83,8 @@
 			overflow-x: hidden;
 			-ms-overflow-style: none;
 			scrollbar-width: none;
+			position: relative;
+			z-index: 5;
 			&::-webkit-scrollbar {
 				width: 0;
 				height: 0;
@@ -351,7 +353,7 @@
 		left: 0;
 		width: 100%;
 		&-wrap {
-			top: calc(var(--vh, 1vh) * 50 * -1);
+			top: calc(var(--vh, 1vh) * 20 * -1);
 		}
 	}
 
