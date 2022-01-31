@@ -967,7 +967,9 @@ window.addEventListener('DOMContentLoaded', e => {
 						openSlide(i - 1);
 					});
 				} else {
-					// Disable btn
+					btn.addEventListener('click', e => {
+						closePopup(popup);
+					});
 				}
 			}
 			if (home) {
@@ -1006,6 +1008,8 @@ window.addEventListener('DOMContentLoaded', e => {
 								// TODO: closepopup cantSetTimeouts = false;
 								// TODO: body lock header slider is b
 								// TODO: openTestPopup no after section
+								// TODO: header animation
+								// TODO: onClosePopup what to do
 							} else {
 								cantSetTimeouts = false;
 							}
