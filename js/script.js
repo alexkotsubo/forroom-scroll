@@ -437,11 +437,14 @@ if (headerCover && headerBackground) {
 
 /* Nav */
 
+let cantShowNav = false;
 if (nav) {
 	let prevScroll;
 	const fixedMenu = () => {
-		if (scrollY > prevScroll && scrollY > nav.offsetHeight) nav.style.transform = 'translate(0, -110%)';
-		if (scrollY <= prevScroll) nav.style.transform = 'translate(0, 0)';
+		if (!cantShowNav) {
+			if (scrollY > prevScroll && scrollY > nav.offsetHeight) nav.style.transform = 'translate(0, -110%)';
+			if (scrollY <= prevScroll) nav.style.transform = 'translate(0, 0)';
+		}
 		prevScroll = scrollY;
 	};
 	fixedMenu();
@@ -613,17 +616,22 @@ const scrollMenu = document.querySelector('.header__menu');
 const scrollBody = document.querySelector('.header__body');
 const scrollHeader = document.querySelector('.header');
 const scrollingMenu = document.querySelector('.menus');
+let cantShowMenu = false;
 let prevScrollMenu;
 
 if (scrollingMenu) {
 	const fixedMenu = () => {
-		if (+window.scrollY.toFixed() >= getCoords(scrollHeader).bottom) {
-			if (scrollY <= prevScrollMenu) scrollingMenu.style.transform = 'translate(0, 0)';
-			if (scrollY > prevScrollMenu) scrollingMenu.style.transform = 'translate(0, 110%)';
-			prevScrollMenu = scrollY;
-		} else {
-			scrollingMenu.style.transform = 'translate(0, 0)';
-		}
+			if (+window.scrollY.toFixed() >= getCoords(scrollHeader).bottom) {
+				if (!cantShowMenu) {
+					if (scrollY <= prevScrollMenu) scrollingMenu.style.transform = 'translate(0, 0)';
+					if (scrollY > prevScrollMenu) scrollingMenu.style.transform = 'translate(0, 110%)';
+				}
+				prevScrollMenu = scrollY;
+			} else {
+				if (!cantShowMenu) {
+					scrollingMenu.style.transform = 'translate(0, 0)';
+				}
+			}
 	};
 	fixedMenu();
 	window.addEventListener('scroll', fixedMenu);
@@ -1022,10 +1030,14 @@ window.addEventListener('DOMContentLoaded', e => {
 		window.addEventListener('scroll', e => {
 			const distance = +(chooseSection.getBoundingClientRect().top).toFixed();
 			if (distance <= 0 && -(chooseSection.offsetHeight - window.innerHeight) <= distance) {
+				cantShowMenu = true;
+				cantNavMenu = true;
 				nav.style.transform = 'translate(0, -110%)';
 				scrollingMenu.classList.remove('active');
 				scrollingMenu.style.transform = 'translate(0, 110%)';
-				// TODO: 
+			} else {
+				cantShowMenu = false;
+				cantNavMenu = false;
 			}
 		});
 	}
