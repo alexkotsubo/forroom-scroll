@@ -371,7 +371,7 @@
 			overflow: hidden;
 		}
 		&-wrap {
-			top: calc(var(--vh, 1vh) * 30 * -1);
+			top: calc(var(--vh, 1vh) * -1);
 		}
 	}
 
