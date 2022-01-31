@@ -366,12 +366,12 @@
 		overflow: unset;
 		&-body {
 			position: sticky;
-			min-height: calc(var(--vh, 1vh) * 100);
-			max-height: calc(var(--vh, 1vh) * 100);
+			min-height: 100vh;
+			max-height: 100vh;
 			overflow: hidden;
 		}
 		&-wrap {
-			top: calc(var(--vh, 1vh) * 20);
+			top: calc(var(--vh, 1vh) * 30 * -1);
 		}
 	}
 
