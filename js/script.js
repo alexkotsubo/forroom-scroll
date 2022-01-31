@@ -998,7 +998,6 @@ window.addEventListener('DOMContentLoaded', e => {
 								// TODO: closepopup cantSetTimeouts = false;
 								// TODO: body lock header slider is b
 								// TODO: openTestPopup no after section
-								// TODO: normal close menus
 							} else {
 								cantSetTimeouts = false;
 							}
@@ -1026,6 +1025,7 @@ window.addEventListener('DOMContentLoaded', e => {
 				nav.style.transform = 'translate(0, -110%)';
 				scrollingMenu.classList.remove('active');
 				scrollingMenu.style.transform = 'translate(0, 110%)';
+				// TODO: 
 			}
 		});
 	}
