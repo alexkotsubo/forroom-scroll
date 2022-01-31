@@ -371,6 +371,7 @@
 			overflow: hidden;
 		}
 		&-wrap {
+			height: calc(var(--vh, 1vh)*140);
 			top: calc(var(--vh, 1vh) * 30 * -1);
 		}
 	}
