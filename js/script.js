@@ -1031,13 +1031,13 @@ window.addEventListener('DOMContentLoaded', e => {
 			const distance = +(chooseSection.getBoundingClientRect().top).toFixed();
 			if (distance <= 0 && -(chooseSection.offsetHeight - window.innerHeight) <= distance) {
 				cantShowMenu = true;
-				cantNavMenu = true;
+				cantShowNav = true;
 				nav.style.transform = 'translate(0, -110%)';
 				scrollingMenu.classList.remove('active');
 				scrollingMenu.style.transform = 'translate(0, 110%)';
 			} else {
 				cantShowMenu = false;
-				cantNavMenu = false;
+				cantShowNav = false;
 			}
 		});
 	}
