@@ -321,13 +321,21 @@
 			line-height: 13px;
 		}
 		.header__body {
-			padding-top: 50px;
+			padding-top: 150px;
 		}
 		.header__btn {
 			.btn {
 				padding: 15px;
 				width: 100%;
 			}
+		}
+	}
+}
+
+@media (max-width: 320px) {
+	.header_anim {
+		.header__body {
+			padding-top: 50px;
 		}
 	}
 }

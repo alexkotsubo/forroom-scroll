@@ -35,25 +35,27 @@ window.addEventListener('resize', e => {
 
 /* Rellax */
 
-const rellaxPhotos = document.querySelectorAll('.rellax');
-
-const rellax = new Rellax('.rellax', {
-	center: true,
-	speed: -3,
-});
-
-const rellaxResize = e => {
-	for (let i = 0; i < rellaxPhotos.length; i++) {
-		const src = rellaxPhotos[i].querySelector('.ib_use').getAttribute('src');
-		if (src) rellaxPhotos[i].style.backgroundImage = 'url(' + src + ')';
-	}
-};
-
-window.addEventListener('resize', rellaxResize);
-window.addEventListener('scroll', e => {
-	rellax.refresh();
-	rellaxResize();
-});
+if (document.querySelectorAll('.rellax').length > 0) {
+	const rellaxPhotos = document.querySelectorAll('.rellax');
+	
+	const rellax = new Rellax('.rellax', {
+		center: true,
+		speed: -3,
+	});
+	
+	const rellaxResize = e => {
+		for (let i = 0; i < rellaxPhotos.length; i++) {
+			const src = rellaxPhotos[i].querySelector('.ib_use').getAttribute('src');
+			if (src) rellaxPhotos[i].style.backgroundImage = 'url(' + src + ')';
+		}
+	};
+	
+	window.addEventListener('resize', rellaxResize);
+	window.addEventListener('scroll', e => {
+		rellax.refresh();
+		rellaxResize();
+	});
+}
 
 /* Anchors */
 
@@ -995,6 +997,8 @@ window.addEventListener('DOMContentLoaded', e => {
 								openPopup(popup);
 								// TODO: closepopup cantSetTimeouts = false;
 								// TODO: body lock header slider is b
+								// TODO: openTestPopup no after section
+								// TODO: menu and menu hide top direction jk
 							} else {
 								cantSetTimeouts = false;
 							}
