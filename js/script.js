@@ -26,11 +26,11 @@ const vh = window.innerHeight * 0.01;
 let prevWidth =  document.documentElement.clientWidth;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 window.addEventListener('resize', e => {
-	if (document.documentElement.clientWidth !== prevWidth) {
+	//if (document.documentElement.clientWidth !== prevWidth) {
 		const vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
 		prevWidth = document.documentElement.clientWidth;
-	}
+	//}
 });
 
 /* Rellax */
