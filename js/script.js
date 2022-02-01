@@ -32,7 +32,7 @@ window.addEventListener('resize', e => {
 		prevWidth = document.documentElement.clientWidth;
 	//}
 });
-
+alert(1111)
 /* Rellax */
 
 if (document.querySelectorAll('.rellax').length > 0) {

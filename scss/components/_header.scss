@@ -89,7 +89,7 @@
 			}
 		}
 		#{$self}__inner {
-			min-height: calc(var(--vh, 1vh) * 100);
+			min-height: -webkit-fill-available;
 			width: 100%;
 			display: flex;
 			transition: opacity 1s;
