@@ -32,7 +32,7 @@ window.addEventListener('resize', e => {
 		prevWidth = document.documentElement.clientWidth;
 	//}
 });
-alert(window.innerHeight - document.innerHeight)
+alert(window.innerHeight - document.documentElement.clientHeight)
 /* Rellax */
 
 if (document.querySelectorAll('.rellax').length > 0) {
