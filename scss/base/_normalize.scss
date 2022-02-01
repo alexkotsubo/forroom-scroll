@@ -24,7 +24,20 @@ html, body {
 	-webkit-text-size-adjust: 100%;
 	background: $white;
 }
-
+body {
+	margin: 0;
+	overflow: hidden;
+  }
+  
+  body > .scroll-box {
+	  position: relative;
+	  left: 0;
+	  right: 0;
+	  height: 100%;
+	  max-height: 100vh;
+	  overflow-y: auto;
+	  overflow-x: hidden;
+  }
 ::selection {
 	color:#000;
 	background:#fff;
