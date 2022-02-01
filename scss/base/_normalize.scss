@@ -24,23 +24,7 @@ html, body {
 	-webkit-text-size-adjust: 100%;
 	background: $white;
 }
-body {
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	margin: 0;
-	}
-	.wrapper {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	overflow: auto;
-	-webkit-overflow-scrolling: touch;
-	}
+
 ::selection {
 	color:#000;
 	background:#fff;
