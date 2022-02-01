@@ -24,15 +24,7 @@ html, body {
 	-webkit-text-size-adjust: 100%;
 	background: $white;
 }
-html, body {
-	height:100%;
-  }
-  
-  /* Then override the scrollbar by a custom scrollable element: */
-  .wrapper {
-	height:100%;
-	overflow-y:auto;
-  }
+
 ::selection {
 	color:#000;
 	background:#fff;
@@ -109,7 +101,7 @@ textarea, input {
 }
 
 .wrapper {
-	
+	min-height: calc(var(--vh, 1vh) * 100);
 }
 
 .red {
