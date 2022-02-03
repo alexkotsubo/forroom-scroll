@@ -3,19 +3,19 @@
 .about {
 	$self: &;
 	position: relative;
-	padding: 0 50px;
+	//padding: 0 50px;
 	overflow: hidden;
 	&__inner {
 		position: relative;
 		z-index: 2;
 		display: flex;
-		min-height: calc(var(--vh, 1vh) * 92);
+		min-height: 92vh;
 	}
 	&__body {
 		max-width: 600px;
 	}
 	&__content {
-		padding-left: 8vw;
+		padding-left: calc(8vw + 50px);
 		padding-top: 40px;
 		padding-bottom: 40px;
 		flex: 0 0 50%;
@@ -25,15 +25,19 @@
 		position: relative;
 		overflow: hidden;
 		z-index: 2;
-		flex: 0 0 42%;
-		left: 8vw;
+		flex: 0 0 50%;
+		padding-right: 50px;
+		padding-left: 8vw;
 		&-wrap {
-			height: calc(var(--vh, 1vh) * 120);
+			height: 120vh;
 			width: 100%;
 			position: absolute;
 			top: 0;
 			left: 0;
 			will-change: transform;
+		}
+		&-body {
+			position: relative;
 		}
 	}
 	&__title {
@@ -79,10 +83,11 @@
 	}
 	&_stili {
 		#{$self}__image {
+			padding-right: calc(8vw + 50px);
 			padding-left: 0;
-			&-wrap {
-				width: 92%;
-			}
+		}
+		#{$self}__content {
+			padding-right: 8vw;
 		}
 	}
 }
@@ -138,24 +143,30 @@
 	.about {
 		padding-bottom: 0;
 	}
-	.about {
-		padding: 0;
-	}
 	.about__inner {
 		flex-direction: column-reverse;
 	}
 	.about__content {
 		flex-basis: 100%;
-		padding: 20px 60px 80px;
+		padding: 20px 20px 80px;
 	}
 	.about__image {
 		overflow: hidden;
 		flex-basis: 100%;
 		padding-left: 0;
+		padding-right: 0;
 		min-height: 400px;
-		left: 0;
 		&-wrap {
-			top: calc(var(--vh, 1vh) * 50 * -1);
+			top: -50vh;
+		}
+	}
+	.about_stili {
+		.about__content {
+			padding: 20px 20px 80px;
+		}
+		.about__image {
+			padding-left: 0;
+			padding-right: 0;
 		}
 	}
 	.about__body {
@@ -207,7 +218,12 @@
 
 @media (max-width: 479px) {
 	.about__content {
-		padding: 10px 20px 40px;
+		padding: 10px 20px 50px;
+	}
+	.about_stili {
+		.about__content {
+			padding: 10px 20px 50px;
+		}
 	}
 	.about__title {
 		h2 {

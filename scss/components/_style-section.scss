@@ -1,0 +1,61 @@
+.style {
+	position: relative;
+	&__inner {
+		position: relative;
+		z-index: 2;
+		padding-top: 120px;
+	}
+	iframe {
+		display: flex;
+		margin-top: 25px;
+		height: 750px;
+	}
+}
+
+@media (max-width: 1919px) {
+	.style {
+		iframe {
+			height: 600px;
+		}
+	}
+}
+
+@media (max-width: 1439px) {
+	.style {
+		iframe {
+			height: 500px;
+		}
+	}
+}
+
+@media (max-width: 1279px) {
+	.style {
+		&__inner {
+			padding-top: 80px;
+		}
+	}
+}
+
+@media (max-width: 1023px) {
+	.style {
+		&__inner {
+			padding-top: 0;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.style {
+		iframe {
+			height: 650px;
+		}
+	}
+}
+
+@media (max-width: 479px) {
+	.style {
+		iframe {
+			height: 480px;
+		}
+	}
+}

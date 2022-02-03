@@ -8,7 +8,6 @@ window.addEventListener('DOMContentLoaded', e => {
 	const repairsContent = document.querySelectorAll('.repairs__content');
 	const repairsImgs = document.querySelectorAll('.repairs__img');
 	const repairsInners = document.querySelectorAll('.repairs__inner');
-	const repairsImagesSrc = document.querySelectorAll('.repairs__image');
 	const repairsScroll = document.querySelector('.repairs__scroll');
 	const getCoords = elem => {
 		const box = elem.getBoundingClientRect();

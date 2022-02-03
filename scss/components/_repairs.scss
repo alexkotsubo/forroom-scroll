@@ -1,9 +1,15 @@
 .repairs {
+	.lines_three-space-between {
+		z-index: unset;
+		span {
+			z-index: 12;
+		}
+	}
 	position: relative;
 	&__scroll {
 		position: relative;
 		z-index: 2;
-		min-height: calc(var(--vh, 1vh) * 100);
+		min-height: 100vh;
 		width: 100%;
 		display: flex;
 	}
@@ -19,37 +25,12 @@
 		position: sticky;
 		top: 0;
 		left: 0;
-		min-height: calc(var(--vh, 1vh) * 100);
-		max-height: calc(var(--vh, 1vh) * 100);
+		min-height: 100vh;
+		max-height: 100vh;
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
-	}
-	&__carts {
-		.repairs__inner {
-			&:first-child {
-				.repairs__wrap {
-					&::before {
-						content: '';
-						display: block;
-						width: calc(100% - 1px);
-						height: 100%;
-						position: absolute;
-						top: 0;
-						left: 0;
-						z-index: 9;
-						margin-right: 1px;
-						background: $white;
-					}
-				}
-			}
-			&:nth-child(2) {
-				.repairs__content {
-					z-index: 6;
-				}
-			}
-		}
 	}
 	&__inner {
 		display: flex;
@@ -72,7 +53,7 @@
 		}
 	}
 	&__image {
-		min-height: calc(var(--vh, 1vh) * 100);
+		min-height: 100vh;
 		position: relative;
 		z-index: 2;
 	}
@@ -80,8 +61,8 @@
 		position: relative;
 		z-index: 5;
 		margin-left: auto;
-		min-height: calc(var(--vh, 1vh) * 100);
-		max-height: calc(var(--vh, 1vh) * 100);
+		min-height: 100vh;
+		max-height: 100vh;
 		background: transparent;
 		display: flex;
 		justify-content: flex-start;
@@ -91,8 +72,12 @@
 		&.active {
 			z-index: 6;
 			.repairs__body {
-				opacity: 1;
+				background: $white;
+				transition: background-color 0s;
 				animation: activeSlideRepair .6s forwards;
+				&-inner {
+					opacity: 1;
+				}
 			}
 		}
 	}
@@ -102,9 +87,12 @@
 		position: relative;
 		z-index: 10;
 		justify-content: flex-start;
-		opacity: 0;
-		transition: opacity .6s linear;
 		animation: unactiveSlideRepair .6s forwards;
+		transition: background-color 0s .6s;
+		&-inner {
+			transition: opacity .6s linear;
+			opacity: 0;
+		}
 	}
 	&__wrap {
 		flex: 0 0 auto;
@@ -212,7 +200,7 @@
 @media (max-width: 1279px) {
 	.repairs__inner {
 		position: relative;
-		min-height: calc(var(--vh, 1vh) * 100);
+		min-height: 100vh;
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -221,11 +209,6 @@
 	.repairs__carts {
 		.repairs__inner {
 			&:first-child {
-				.repairs__wrap {
-					&::before {
-						display: none;
-					}
-				}
 				&::after {
 					content: '';
 					display: block;
@@ -240,11 +223,6 @@
 			}
 		}
 	}
-
-	// .repairs__body {
-	// 	transition: opacity 1s linear;
-	// 	animation: unactiveSlideRepair 1s forwards;
-	// }
 
 	.repairs__images {
 		padding-left: 0;
@@ -281,8 +259,8 @@
 		position: sticky;
 		top: 0;
 		left: 0;
-		min-height: calc(var(--vh, 1vh) * 100);
-		max-height: calc(var(--vh, 1vh) * 100);
+		min-height: 100vh;
+		max-height: 100vh;
 	}
 
 	.repairs__inner {
@@ -348,6 +326,14 @@
 		text-align: center;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	.repairs__content {
+		&.active {
+			.repairs__body {
+				background: transparent;
+			}
+		}
 	}
 }
 

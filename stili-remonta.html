@@ -39,12 +39,18 @@
 							<label>
 								<span>Удобный вид связи</span>
 								<div class="base-popup__select">
-									<select data-selected="Phone">
-										<option value="Phone">Телефон</option>
-										<option value="Telegram">Telegram</option>
-										<option value="WhatsApp">WhatsApp</option>
-										<option value="Viber">Viber</option>
-									</select>
+									<div class="block-select">
+										<div class="block-select__nav">
+											<p class="block-select__selected"></p>
+											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
+										</div>
+										<div class="block-select__list">
+											<span data-value="Phone" data-selected="selected">Телефон</span>
+											<span data-value="Telegram">Telegram</span>
+											<span data-value="WhatsApp">WhatsApp</span>
+											<span data-value="Viber">Viber</span>
+										</div>
+									</div>
 								</div>
 							</label>
 						</div>
@@ -69,28 +75,38 @@
 							<label>
 								<span>Выберите планировку</span>
 								<div class="base-popup__select">
-									<select data-placeholder="Планировка">
-										<option></option>
-										<option value="1">1-комн. 30-40 кв.м.</option>
-										<option value="2">1-комн. 40-50 кв.м.</option>
-										<option value="3">2-комн. 50-60 кв.м.</option>
-										<option value="4">2-комн. 60-70 кв.м.</option>
-										<option value="5">3-комн. 60-80 кв.м.</option>
-										<option value="6">4-комн и больше</option>
-									</select>
+									<div class="block-select" data-placeholder="Планировка">
+										<div class="block-select__nav">
+											<p class="block-select__selected"></p>
+											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
+										</div>
+										<div class="block-select__list">
+											<span value="1">1-комн. 30-40 кв.м.</span>
+											<span value="2">1-комн. 40-50 кв.м.</span>
+											<span value="3">2-комн. 50-60 кв.м.</span>
+											<span value="4">2-комн. 60-70 кв.м.</span>
+											<span value="5">3-комн. 60-80 кв.м.</span>
+											<span value="6">4-комн и больше</span>
+										</div>
+									</div>
 								</div>
 							</label>
 							<label>
 								<span>Выбери пакет ремонта</span>
 								<div class="base-popup__select">
-									<select data-placeholder="Пакет ремонта">
-										<option></option>
-										<option value="0">White Box от $ 140/кв.м.</option>
-										<option value="1">Базовый от $ 280/кв.м.</option>
-										<option value="2">Оптимальный от $ 380/кв.м.</option>
-										<option value="3">Максимальный от $ 480/кв.м.</option>
-										<option value="4">Индивидуальный от $ 140/кв.м.</option>
-									</select>
+									<div class="block-select" data-placeholder="Пакет ремонта">
+										<div class="block-select__nav">
+											<p class="block-select__selected"></p>
+											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
+										</div>
+										<div class="block-select__list">
+											<span value="0">White Box от $ 140/кв.м.</span>
+											<span value="1">Базовый от $ 280/кв.м.</span>
+											<span value="2">Оптимальный от $ 380/кв.м.</span>
+											<span value="3">Максимальный от $ 480/кв.м.</span>
+											<span value="4">Индивидуальный от $ 140/кв.м.</span>
+										</div>
+									</div>
 								</div>
 							</label>
 							<label>
@@ -103,12 +119,18 @@
 							<label>
 								<span>Удобный вид связи</span>
 								<div class="base-popup__select">
-									<select data-selected="Phone">
-										<option value="Phone">Телефон</option>
-										<option value="Telegram">Telegram</option>
-										<option value="WhatsApp">WhatsApp</option>
-										<option value="Viber">Viber</option>
-									</select>
+									<div class="block-select">
+										<div class="block-select__nav">
+											<p class="block-select__selected"></p>
+											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
+										</div>
+										<div class="block-select__list">
+											<span data-value="Phone" data-selected="selected">Телефон</span>
+											<span data-value="Telegram">Telegram</span>
+											<span data-value="WhatsApp">WhatsApp</span>
+											<span data-value="Viber">Viber</span>
+										</div>
+									</div>
 								</div>
 							</label>
 						</div>
@@ -120,7 +142,7 @@
 
 		<!-- Test Popup -->
 
-		<div id="test-popup" class="test-popup popup">
+		<div id="test-popup" data-max-show-count="3" data-seconds-between-showings="5" class="test-popup popup">
 			<form action="#" class="test-popup__body popup__body">
 				<div class="test-popup__slide">
 					<div class="test-popup__content">
@@ -499,9 +521,33 @@
 				<div class="nav-add-padding burger__menu">
 					<div class="burger__menu-wrap">
 						<ul class="burger__list">
-							<li><a href="#" class="burger__link">Ремонт</a></li>
-							<li><a href="#" class="burger__link">Дизайн</a></li>
-							<li><a href="#" class="burger__link">Стили</a></li>
+							<li class="has-submenu">
+								<a href="#" class="burger__link">Ремонт</a>
+								<ul class="burger__list-submenu">
+									<li><a href="#">Пакеты ремонта</a></li>
+									<li><a href="#">Ремонт в новострое</a></li>
+									<li><a href="#">Ремонт вторичного жилья</a></li>
+									<li><a href="#">Ремонт под аренду</a></li>
+								</ul>
+							</li>
+							<li class="has-submenu">
+								<a href="#" class="burger__link">Ремонт</a>
+								<ul class="burger__list-submenu">
+									<li><a href="#">Пакеты ремонта</a></li>
+									<li><a href="#">Ремонт в новострое</a></li>
+									<li><a href="#">Ремонт вторичного жилья</a></li>
+									<li><a href="#">Ремонт под аренду</a></li>
+								</ul>
+							</li>
+							<li class="has-submenu">
+								<a href="#" class="burger__link">Ремонт</a>
+								<ul class="burger__list-submenu">
+									<li><a href="#">Пакеты ремонта</a></li>
+									<li><a href="#">Ремонт в новострое</a></li>
+									<li><a href="#">Ремонт вторичного жилья</a></li>
+									<li><a href="#">Ремонт под аренду</a></li>
+								</ul>
+							</li>
 							<li><a href="#" class="burger__link">Портфолио</a></li>
 							<li><a href="#" class="burger__link">Стоимость</a></li>
 							<li><a href="#" class="burger__link">Контакты</a></li>
@@ -546,7 +592,17 @@
 			<div class="nav__body">
 				<div class="nav__menus">
 					<ul class="nav__menu">
-						<li><a href="#">Ремонт</a></li>
+						<li class="has-submenu">
+							<a href="#">Ремонт</a>
+							<div class="nav__menu-submenu">
+								<ul>
+									<li><a href="#">Пакеты ремонта</a></li>
+									<li><a href="#">Ремонт в новострое</a></li>
+									<li><a href="#">Ремонт вторичного жилья</a></li>
+									<li><a href="#">Ремонт под аренду</a></li>
+								</ul>
+							</div>
+						</li>
 						<li><a href="#">Дизайн</a></li>
 						<li><a href="#">Стили</a></li>
 					</ul>
@@ -669,7 +725,7 @@
 
 		<!-- Stili -->
 
-		<section class="stili" id="stili">
+		<section class="stili stili_stili" id="stili">
 			<div class="lines anim-item lines_two-space-between">
 				<span></span>
 				<span></span>
@@ -691,23 +747,21 @@
 									</div>
 
 									<div class="stili__slide-body">
-										<p class="stili__slide-title">White Box</p>
+										<p class="stili__slide-title">Лофт/Брутализм</p>
 										<div class="stili__slide-list">
-											<p class="stili__slide-subtitle">от<span>$150</span>за м2</p>
 											<ul>
-												<li><span class="iconify" data-icon="la:check"></span>Максимальная предчистовая отделка</li>
-												<li><span class="iconify" data-icon="la:check"></span>Пакет Чертежей</li>
-												<li><span class="iconify" data-icon="la:check"></span>Подготовительные работы</li>
-												<li><span class="iconify" data-icon="la:check"></span>Черновые работы</li>
-												<li><span class="iconify" data-icon="la:check"></span>Электромонтажные работы</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Максимальная предчистовая отделка</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Пакет Чертежей</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Подготовительные работы</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Черновые работы</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Электромонтажные работы</li>
 											</ul>
 										</div>
 									</div>
 								</div>
 
 								<div class="stili__slide-btns">
-									<a href="#" class="btn btn_big">Подробнее</a>
-									<a href="#" class="btn btn_big-fill">Заказать</a>
+									<a href="#" class="btn btn_big">выбрать пакет</a>
 								</div>
 							</div>
 						</div>
@@ -723,116 +777,32 @@
 							<div class="stili__slide-wrap">
 								<div class="stili__slide-content">
 									<div class="stili__slide-img ib">
-										<img src="img/packages/2.jpg" alt="2" class="ib_use">
+										<img src="img/packages/1.jpg" alt="1" class="ib_use">
 									</div>
 
 									<div class="stili__slide-body">
-										<p class="stili__slide-title">Базовый</p>
+										<p class="stili__slide-title">Лофт/Брутализм</p>
 										<div class="stili__slide-list">
-											<p class="stili__slide-subtitle">от<span>$290</span>за м2</p>
 											<ul>
-												<li><span class="iconify" data-icon="la:check"></span>Максимальная предчистовая отделка</li>
-												<li><span class="iconify" data-icon="la:check"></span>Черновые работы с материалами</li>
-												<li><span class="iconify" data-icon="la:check"></span>Черновые работы с материалами</li>
-												<li><span class="iconify" data-icon="la:check"></span>Санфаянс</li>
-												<li><span class="iconify" data-icon="la:check"></span>Черновые работы с материалами</li>
-												<li><span class="iconify" data-icon="la:check"></span>Двери</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Максимальная предчистовая отделка</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Пакет Чертежей</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Подготовительные работы</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Черновые работы</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Электромонтажные работы</li>
 											</ul>
 										</div>
 									</div>
 								</div>
 
 								<div class="stili__slide-btns">
-									<a href="#" class="btn btn_big">Подробнее</a>
-									<a href="#" class="btn btn_big-fill">Заказать</a>
+									<a href="#" class="btn btn_big">выбрать пакет</a>
 								</div>
 							</div>
 						</div>
 
 						<div class="stili__slide-name">
-							<h2>базовый</h2>
-							<p>базовый</p>
-						</div>
-					</div>
-
-					<div class="stili__slide">
-						<div class="stili__slide-inner">
-							<div class="stili__slide-wrap">
-								<div class="stili__slide-content">
-									<div class="stili__slide-img ib">
-										<img src="img/packages/3.jpg" alt="3" class="ib_use">
-									</div>
-
-									<div class="stili__slide-body">
-										<p class="stili__slide-title">Оптимальный</p>
-										<div class="stili__slide-list">
-											<p class="stili__slide-subtitle">от<span>$390</span>за м2</p>
-											<ul>
-												<li><span class="iconify" data-icon="la:check"></span>Максимальная предчистовая отделка</li>
-												<li><span class="iconify" data-icon="la:check"></span>Двери</li>
-												<li><span class="iconify" data-icon="la:check"></span>Натяжные потолки</li>
-												<li><span class="iconify" data-icon="la:check"></span>Санфаянс</li>
-												<li><span class="iconify" data-icon="la:check"></span>Кухня под заказ</li>
-												<li><span class="iconify" data-icon="la:check"></span>Дизайнерские шторы</li>
-												<li><span class="iconify" data-icon="la:check"></span>Кондиционеры</li>
-												<li><span class="iconify" data-icon="la:check"></span>Дополнительные опции</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-
-								<div class="stili__slide-btns">
-									<a href="#" class="btn btn_big">Подробнее</a>
-									<a href="#" class="btn btn_big-fill">Заказать</a>
-								</div>
-							</div>
-						</div>
-
-						<div class="stili__slide-name">
-							<h2>Оптимальный</h2>
-							<p>Оптимальный</p>
-						</div>
-					</div>
-
-					<div class="stili__slide">
-						<div class="stili__slide-inner">
-							<div class="stili__slide-wrap">
-								<div class="stili__slide-content">
-									<div class="stili__slide-img ib">
-										<img src="img/packages/4.jpg" alt="4" class="ib_use">
-									</div>
-
-									<div class="stili__slide-body">
-										<p class="stili__slide-title">Максимальный</p>
-										<div class="stili__slide-list">
-											<p class="stili__slide-subtitle">от<span>$490</span>за м2</p>
-											<ul>
-												<li><span class="iconify" data-icon="la:check"></span>Максимальная предчистовая отделка</li>
-												<li><span class="iconify" data-icon="la:check"></span>Двери</li>
-												<li><span class="iconify" data-icon="la:check"></span>Натяжные потолки</li>
-												<li><span class="iconify" data-icon="la:check"></span>Санфаянс</li>
-												<li><span class="iconify" data-icon="la:check"></span>Кухня под заказ</li>
-												<li><span class="iconify" data-icon="la:check"></span>Дизайнерские шторы</li>
-												<li><span class="iconify" data-icon="la:check"></span>Кондиционеры</li>
-												<li><span class="iconify" data-icon="la:check"></span>Телевизоры</li>
-												<li><span class="iconify" data-icon="la:check"></span>Холодильник</li>
-												<li><span class="iconify" data-icon="la:check"></span>Варочная поверхность</li>
-												<li><span class="iconify" data-icon="la:check"></span>Дополнительные опции</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-
-								<div class="stili__slide-btns">
-									<a href="#" class="btn btn_big">Подробнее</a>
-									<a href="#" class="btn btn_big-fill">Заказать</a>
-								</div>
-							</div>
-						</div>
-
-						<div class="stili__slide-name">
-							<h2>Максимальный</h2>
-							<p>Максимальный</p>
+							<h2>White box</h2>
+							<p>White box</p>
 						</div>
 					</div>
 
@@ -845,30 +815,96 @@
 									</div>
 
 									<div class="stili__slide-body">
-										<p class="stili__slide-title">White Box</p>
+										<p class="stili__slide-title">Лофт/Брутализм</p>
 										<div class="stili__slide-list">
-											<p class="stili__slide-subtitle">от<span>$150</span>за м2</p>
 											<ul>
-												<li><span class="iconify" data-icon="la:check"></span>Максимальная предчистовая отделка</li>
-												<li><span class="iconify" data-icon="la:check"></span>Пакет Чертежей</li>
-												<li><span class="iconify" data-icon="la:check"></span>Подготовительные работы</li>
-												<li><span class="iconify" data-icon="la:check"></span>Черновые работы</li>
-												<li><span class="iconify" data-icon="la:check"></span>Электромонтажные работы</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Максимальная предчистовая отделка</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Пакет Чертежей</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Подготовительные работы</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Черновые работы</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Электромонтажные работы</li>
 											</ul>
 										</div>
 									</div>
 								</div>
 
 								<div class="stili__slide-btns">
-									<a href="#" class="btn btn_big">Подробнее</a>
-									<a href="#" class="btn btn_big-fill">Заказать</a>
+									<a href="#" class="btn btn_big">выбрать пакет</a>
 								</div>
 							</div>
 						</div>
 
 						<div class="stili__slide-name">
-							<h2>индивидуальный</h2>
-							<p>индивидуальный</p>
+							<h2>White box</h2>
+							<p>White box</p>
+						</div>
+					</div>
+
+					<div class="stili__slide">
+						<div class="stili__slide-inner">
+							<div class="stili__slide-wrap">
+								<div class="stili__slide-content">
+									<div class="stili__slide-img ib">
+										<img src="img/packages/1.jpg" alt="1" class="ib_use">
+									</div>
+
+									<div class="stili__slide-body">
+										<p class="stili__slide-title">Лофт/Брутализм</p>
+										<div class="stili__slide-list">
+											<ul>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Максимальная предчистовая отделка</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Пакет Чертежей</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Подготовительные работы</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Черновые работы</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Электромонтажные работы</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="stili__slide-btns">
+									<a href="#" class="btn btn_big">выбрать пакет</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="stili__slide-name">
+							<h2>White box</h2>
+							<p>White box</p>
+						</div>
+					</div>
+
+					<div class="stili__slide">
+						<div class="stili__slide-inner">
+							<div class="stili__slide-wrap">
+								<div class="stili__slide-content">
+									<div class="stili__slide-img ib">
+										<img src="img/packages/1.jpg" alt="1" class="ib_use">
+									</div>
+
+									<div class="stili__slide-body">
+										<p class="stili__slide-title">Лофт/Брутализм</p>
+										<div class="stili__slide-list">
+											<ul>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Максимальная предчистовая отделка</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Пакет Чертежей</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Подготовительные работы</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Черновые работы</li>
+												<li><span class="iconify" data-icon="la:chevron-right"></span>Электромонтажные работы</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="stili__slide-btns">
+									<a href="#" class="btn btn_big">выбрать пакет</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="stili__slide-name">
+							<h2>White box</h2>
+							<p>White box</p>
 						</div>
 					</div>
 				</div>
@@ -878,7 +914,8 @@
 		<!-- About -->
 
 		<section class="about about_stili">
-			<div class="lines anim-item lines_two-space-between">
+			<div class="lines anim-item lines_three-two-right-half">
+				<span></span>
 				<span></span>
 				<span></span>
 			</div>
@@ -898,8 +935,66 @@
 				</div>
 
 				<div class="about__image">
-					<div class="about__image-wrap ib rellax">
-						<img src="img/four-rooms.jpg" alt="four-rooms" class="ib_use">
+					<div class="about__image-body">
+						<div class="about__image-wrap ib rellax">
+							<img src="img/four-rooms.jpg" alt="four-rooms" class="ib_use">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Style -->
+
+		<section class="style">
+			<div class="lines anim-item lines_three-two-right">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+
+			<div class="style__inner">
+				<div class="title title_style anim-item">
+					<h2 class="title__title">стиль</h2>
+					<span class="title__text">Выбери свой стиль</span>
+				</div>
+				<iframe scrolling="no" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen="true" style="border: medium none; background-color: rgb(0, 0, 0); max-width: 100%; width: 100%;" src="https://kuula.co/share/collection/7Y2Gl?fs=1&amp;vr=0&amp;sd=1&amp;autorotate=-0.12&amp;autop=10&amp;thumbs=0&amp;inst=0&amp;info=1&amp;logo=1&amp;enablejs=1&amp;priority=1" data-gtm-yt-inspected-1_19="true" frameborder="0"></iframe>
+			</div>
+		</section>
+
+		<!-- Order -->
+
+		<section class="order order_stili">
+			<div class="lines anim-item lines_three-two-right-one-left">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+
+			<div class="order__inner">
+				<div class="order__image ib">
+					<img src="img/stili-remonta-materials.jpg" alt="stili-remonta-materials" class="ib_use">
+				</div>
+
+				<div class="order__content">
+					<div class="order__content-wrap">
+						<div class="order__content-title">
+							<h2>Стили ремонта</h2>
+							<h3>Получить подбор финишных материалов</h3>
+						</div>
+						<p class="order__content-text">Финишные материалы подобраны совместно отделом дизайна и снабжения, лучшие по соотношению цена-качество</p>
+						<div class="order__list">
+							<p class="order__list-title">Наши дизайнеры подготовили подбор финишных материалов в 4х стилях:</p>
+							<ul class="order__list-list">
+								<li>лофт</li>
+								<li>минимализм</li>
+								<li>контемпорари</li>
+								<li>скандинавский</li>
+							</ul>
+						</div>
+						<div class="order__content-btns">
+							<a href="#" class="btn btn_big-fill">подробнее о стилях</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -908,69 +1003,131 @@
 		<!-- Portfolio -->
 
 		<section class="portfolio portfolio_stili">
-			<div class="title anim-item">
-				<h2 class="title__title">портфолио</h2>
-				<span class="title__text">портфолио</span>
+			<div class="lines anim-item lines_three-two-right-one-left-half">
+				<span></span>
+				<span></span>
+				<span></span>
 			</div>
 
-			<div class="portfolio__grid">
-				<a href="#" class="portfolio__grid-cart anim-item">
-					<span class="portfolio__grid-wrap anim-left ib">
-						<img src="img/portfolio/1.jpg" alt="1" class="ib_use">
-						<span class="portfolio__grid-inner">
-							<span class="portfolio__grid-title">Переулок Чайковского</span>
-						</span>
-					</span>
-				</a>
+			<div class="portfolio__inner">
+				<div class="title anim-item">
+					<h2 class="title__title">портфолио</h2>
+					<span class="title__text">портфолио</span>
+				</div>
 
-				<a href="#" class="portfolio__grid-cart anim-item big-column">
-					<span class="portfolio__grid-wrap anim-bottom ib">
-						<img src="img/portfolio/3.jpg" alt="3" class="ib_use">
-						<span class="portfolio__grid-inner">
-							<span class="portfolio__grid-title">Переулок Чайковского</span>
+				<div class="portfolio__grid">
+					<a href="#" class="portfolio__grid-cart anim-item">
+						<span class="portfolio__grid-wrap anim-left ib">
+							<img src="img/portfolio/1.jpg" alt="1" class="ib_use">
+							<span class="portfolio__grid-inner">
+								<span class="portfolio__grid-title">Переулок Чайковского</span>
+							</span>
 						</span>
-					</span>
-				</a>
+					</a>
 
-				<a href="#" class="portfolio__grid-cart anim-item">
-					<span class="portfolio__grid-wrap anim-left ib">
-						<img src="img/portfolio/2.jpg" alt="2" class="ib_use">
-						<span class="portfolio__grid-inner">
-							<span class="portfolio__grid-title">Переулок Чайковского</span>
+					<a href="#" class="portfolio__grid-cart anim-item big-column">
+						<span class="portfolio__grid-wrap anim-bottom ib">
+							<img src="img/portfolio/3.jpg" alt="3" class="ib_use">
+							<span class="portfolio__grid-inner">
+								<span class="portfolio__grid-title">Переулок Чайковского</span>
+							</span>
 						</span>
-					</span>
-				</a>
+					</a>
 
-				<a href="#" class="portfolio__grid-cart anim-item big-row">
-					<span class="portfolio__grid-wrap anim-right ib">
-						<img src="img/portfolio/4.jpg" alt="4" class="ib_use">
-						<span class="portfolio__grid-inner">
-							<span class="portfolio__grid-title">Переулок Чайковского</span>
+					<a href="#" class="portfolio__grid-cart anim-item">
+						<span class="portfolio__grid-wrap anim-left ib">
+							<img src="img/portfolio/2.jpg" alt="2" class="ib_use">
+							<span class="portfolio__grid-inner">
+								<span class="portfolio__grid-title">Переулок Чайковского</span>
+							</span>
 						</span>
-					</span>
-				</a>
+					</a>
 
-				<a href="#" class="portfolio__grid-cart anim-item">
-					<span class="portfolio__grid-wrap anim-bottom ib">
-						<img src="img/portfolio/5.jpg" alt="5" class="ib_use">
-						<span class="portfolio__grid-inner">
-							<span class="portfolio__grid-title">Переулок Чайковского</span>
+					<a href="#" class="portfolio__grid-cart anim-item big-row">
+						<span class="portfolio__grid-wrap anim-right ib">
+							<img src="img/portfolio/4.jpg" alt="4" class="ib_use">
+							<span class="portfolio__grid-inner">
+								<span class="portfolio__grid-title">Переулок Чайковского</span>
+							</span>
 						</span>
-					</span>
-				</a>
+					</a>
 
-				<a href="#" class="portfolio__grid-cart anim-item">
-					<span class="portfolio__grid-wrap anim-right ib">
-						<img src="img/portfolio/6.jpg" alt="6" class="ib_use">
-						<span class="portfolio__grid-inner">
-							<span class="portfolio__grid-title">Переулок Чайковского</span>
+					<a href="#" class="portfolio__grid-cart anim-item">
+						<span class="portfolio__grid-wrap anim-bottom ib">
+							<img src="img/portfolio/5.jpg" alt="5" class="ib_use">
+							<span class="portfolio__grid-inner">
+								<span class="portfolio__grid-title">Переулок Чайковского</span>
+							</span>
 						</span>
-					</span>
-				</a>
+					</a>
+
+					<a href="#" class="portfolio__grid-cart anim-item">
+						<span class="portfolio__grid-wrap anim-right ib">
+							<img src="img/portfolio/6.jpg" alt="6" class="ib_use">
+							<span class="portfolio__grid-inner">
+								<span class="portfolio__grid-title">Переулок Чайковского</span>
+							</span>
+						</span>
+					</a>
+				</div>
+
+				<div class="portfolio__btn">
+					<a href="#" class="btn btn_big">все работы</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Designer -->
+
+		<section class="designer">
+			<div class="designer__content">
+				<div class="designer__title">
+					<h2>дизайнер</h2>
+					<h3>бесплатный Выезд дизайнера</h3>
+				</div>
+				<div class="designer__content-body">
+					<div class="designer__list">
+						<p class="designer__list-text">К вам на объект приедет дизайнер, который поможет вам:</p>
+						<ul class="designer__list-list">
+							<li><span class="iconify" data-icon="la:check"></span><p>Выбрать материалы и оборудование</p></li>
+							<li><span class="iconify" data-icon="la:check"></span><p>Проконсультирует по видам работ и их очерёдности</p></li>
+							<li><span class="iconify" data-icon="la:check"></span><p>Сориентирует по стоимости и срокам</p></li>
+							<li><span class="iconify" data-icon="la:check"></span><p>Сделать точный замер</p></li>
+						</ul>
+					</div>
+					<form action="#" class="designer__form">
+						<label>
+							<div class="block-input">
+								<input type="tel" class="inputmask" placeholder="+380 (__) ___ - __ - __">
+								<p class="block-input__text">Неверный формат номера</p>
+							</div>
+						</label>
+						<label>
+							<span>Выберите удобный способ связи</span>
+							<div class="block-select">
+								<div class="block-select__nav">
+									<p class="block-select__selected"></p>
+									<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
+								</div>
+								<div class="block-select__list">
+									<span data-value="Phone" data-selected="selected">Телефон</span>
+									<span data-value="Telegram">Telegram</span>
+									<span data-value="WhatsApp">WhatsApp</span>
+									<span data-value="Viber">Viber</span>
+								</div>
+							</div>
+						</label>
+						<button type="submit" class="btn btn_big">подать заявку</button>
+					</form>
+				</div>
 			</div>
 
-			<div class="portfolio__btn">
-				<a href="#" class="btn btn_big">все работы</a>
+			<div class="designer__image ib">
+				<img src="img/designer.jpg" alt="designer" class="ib_use">
+				<div class="designer__image-info">
+					<p class="designer__image-name">Андрей Миронов</p>
+					<p class="designer__image-position">Дизайнер</p>
+				</div>
 			</div>
 		</section>
 

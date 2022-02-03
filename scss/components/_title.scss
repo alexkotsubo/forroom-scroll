@@ -45,6 +45,11 @@
 			-webkit-text-stroke: 1px $white;
 		}
 	}
+	&_style {
+		.title__title {
+			left: calc(50% + 8vw);
+		}
+	}
 }
 
 @media (max-width: 1280px) {

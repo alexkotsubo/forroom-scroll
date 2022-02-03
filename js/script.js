@@ -21,6 +21,7 @@ const getPos = elem => {
 		left: +(box.left).toFixed(),
 	};
 };
+let onCloseTestPopup = () => {};
  
 const vh = window.innerHeight * 0.01;
 let prevWidth =  document.documentElement.clientWidth;
@@ -113,6 +114,10 @@ window.addEventListener('resize', centerPopup);
 const closePopup = elem => {
 	elem.classList.remove('open');
 	body.classList.remove('lock');
+
+	if (elem.id === 'test-popup') {
+		onCloseTestPopup();
+	}
 };
 
 const openPopup = elem => {
@@ -422,7 +427,7 @@ if (headerCover && headerBackground) {
 			}
 		},
 	});
-	window.addEventListener('resize', e => {
+	const resizeObserver = new ResizeObserver(entries => {
 		swiper.autoplay.stop();
 		headerCover.classList.remove('hide');
 		clearInterval(interval);
@@ -433,6 +438,7 @@ if (headerCover && headerBackground) {
 		handleSwipe();
 		interval = setInterval(handleSwipe, delay);
 	});
+	resizeObserver.observe(body);
 }
 
 /* Nav */
@@ -761,7 +767,7 @@ window.addEventListener('DOMContentLoaded', e => {
 						const names = document.querySelectorAll('.stili__slide-name');
 						const wrap = document.querySelectorAll('.stili__slide-wrap');
 						stiliSlide[prev].classList.add('active');
-						stiliSlide[prev].style.height = wrap[prev].offsetHeight + 'px';
+						stiliSlide[prev].style.height = wrap[prev].offsetHeight + 30 + 'px';
 						for (let i = 0; i < names.length; i++) {
 							names[i].onclick = e => {
 								if (i !== prev) {
@@ -900,9 +906,30 @@ window.addEventListener('DOMContentLoaded', e => {
 	if (popup) {
 		const slides = document.querySelectorAll('.test-popup__slide');
 		const body = document.querySelector('.test-popup__body');
+		const content = popup.querySelectorAll('.test-popup__content');
+		const image = popup.querySelectorAll('.test-popup__image');
 		let prev = 0;
 		const delay = 400;
-	
+		let mousePosition = { x: null, y: null };
+		window.addEventListener('mousemove', e => {
+			mousePosition.x = e.clientX;
+			mousePosition.y = e.clientY;
+		});
+		const section = document.querySelector('.portfolio');
+		let cantShow = false;
+		let countOfShowing = 0;
+		let cantSetTimeout = true;
+		let cantCheckMouse = false;
+		let maxNumberOfShowing = +popup.getAttribute('data-max-show-count') || 2;
+		let secondsBetweenShowings = +popup.getAttribute('data-seconds-between-showings') * 1000 || 300 * 1000;
+		let setCheckVariables = false;
+		onCloseTestPopup = () => {
+			if (setCheckVariables) {
+				cantCheckMouse = false;
+				setCheckVariables = false;
+			}
+		};
+
 		const closeSlide = index => {
 			if (slides[index]) {
 				slides[index].classList.remove('active');
@@ -921,8 +948,19 @@ window.addEventListener('DOMContentLoaded', e => {
 			}
 		};
 
+		const closeTestPopup = () => {
+			closePopup(popup);
+			if (setCheckVariables) {
+				onCloseTestPopup();
+			}
+		};
+
 		const handleBodyHeight = e => {
-			body.style.minHeight = slides[prev].offsetHeight + 'px';
+			if (document.documentElement.clientWidth > 1279) {
+				body.style.minHeight = slides[prev].offsetHeight + 'px';
+			} else {
+				body.style.minHeight = content[prev].offsetHeight + image[prev].offsetHeight + 'px';
+			}
 		};
 		handleBodyHeight();
 		window.addEventListener('resize', handleBodyHeight);
@@ -930,6 +968,7 @@ window.addEventListener('DOMContentLoaded', e => {
 		body.addEventListener('submit', e => {
 			e.preventDefault();
 			openSlide(prev + 1);
+			countOfShowing = maxNumberOfShowing;
 		});
 	
 		for (let i = 0; i < slides.length; i++) {
@@ -968,57 +1007,67 @@ window.addEventListener('DOMContentLoaded', e => {
 					});
 				} else {
 					btn.addEventListener('click', e => {
-						closePopup(popup);
+						closeTestPopup();
 					});
 				}
 			}
 			if (home) {
 				home.addEventListener('click', e => {
-					closePopup(popup);
+					closeTestPopup();
 					closeSlide(prev);
 				});
 			}
 		}
 
-		const section = document.querySelector('.portfolio');
 		const handleScroll = e => {
-			const distance = +(section.getBoundingClientRect().top).toFixed();
-			if (distance < document.documentElement.clientHeight / 2) {
-				openPopup(popup);
-				window.removeEventListener('scroll', handleScroll);
+			if (maxNumberOfShowing > countOfShowing) {
+				const distance = +(section.getBoundingClientRect().top).toFixed();
+				if (distance < document.documentElement.clientHeight / 2 && distance >= -(section.offsetHeight / 2)) {
+					if (!cantShow && !cantCheckMouse) {
+						openPopup(popup);
+						cantShow = true;
+						cantSetTimeout = false;
+						countOfShowing++;
+					}
+				} else {
+					if (!cantSetTimeout) {
+						if (typeof secondsBetweenShowings === 'number' && secondsBetweenShowings > 0) {
+							setTimeout(() => {
+								cantShow = false;
+							}, secondsBetweenShowings);
+						}
+						cantSetTimeout = true;
+					}
+				}
 			}
 		};
 		handleScroll();
 		window.addEventListener('scroll', handleScroll);
 
-		let mousePosition = { x: null, y: null };
-		window.addEventListener('mousemove', e => {
-			mousePosition.x = e.clientX;
-			mousePosition.y = e.clientY;
-		});
-
-		let cantSetTimeouts = false;
 		const handlePageCancel = e => {
-			if (e.clientY < 100) {
-				if (!cantSetTimeouts) {
-					setTimeout(() => {
-						if (mousePosition.y < 100) {
+			if (maxNumberOfShowing > countOfShowing) {
+				if (e.clientY < 100) {
+					if (!cantShow && !cantCheckMouse) {
+						setTimeout(() => {
 							if (mousePosition.y < 30) {
 								openPopup(popup);
-								// TODO: closepopup cantSetTimeouts = false;
-								// TODO: body lock header slider is b
-								// TODO: openTestPopup no after section
-								// TODO: header animation
-								// TODO: onClosePopup what to do
+								countOfShowing++;
+								cantCheckMouse = true;
+								if (typeof secondsBetweenShowings === 'number' && secondsBetweenShowings > 0) {
+									setTimeout(() => {
+										if (!popup.classList.contains('open')) {
+											cantCheckMouse = false;
+										} else {
+											setCheckVariables = true;
+										}
+									}, secondsBetweenShowings);
+								}
 							} else {
-								cantSetTimeouts = false;
+								cantCheckMouse = false;
 							}
-						} else {
-							cantSetTimeouts = false;
-						}
-					}, 1000);
-					window.removeEventListener('scroll', handlePageCancel);
-					cantSetTimeouts = true;
+						}, 1000);
+						cantCheckMouse = true;
+					}
 				}
 			}
 		};

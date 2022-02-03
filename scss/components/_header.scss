@@ -20,6 +20,13 @@
 				flex-direction: column;
 			}
 		}
+		&-home {
+			#{$self}__body {
+				&-wrap {
+					padding-bottom: 50px;
+				}
+			}
+		}
 		#{$self}__title {
 			font-weight: 900;
 			font-size: 120px;
@@ -171,6 +178,7 @@
 		.header__text {
 			font-size: 22px;
 			line-height: 27px;
+			max-width: 660px;
 		}
 	}
 }
@@ -188,6 +196,7 @@
 		.header__text {
 			font-size: 17px;
 			line-height: 21px;
+			max-width: 510px;
 		}
 		.header__lines {
 			padding: 0 calc(50px + 8vw);
@@ -277,6 +286,7 @@
 		.header__text {
 			font-size: 14px;
 			line-height: 17px;
+			max-width: 420px;
 		}
 		.header__body {
 			padding-top: 155px;
