@@ -28,27 +28,43 @@
 			}
 		}
 		#{$self}__title {
-			font-weight: 900;
-			font-size: 120px;
-			line-height: 146px;
-			text-transform: uppercase;
-			color: transparent;
-			-webkit-text-stroke: 1px $white;
-			margin: 0 -20px;
-		}
-		#{$self}__subtitle {
-			font-weight: 900;
-			font-size: 48px;
-			line-height: 59px;
-			text-transform: uppercase;
-			color: $white;
-			max-width: 1000px;
-			margin-left: auto;
-			margin-right: auto;
-			margin-top: -75px;
+			position: relative;
+			z-index: 1;
+			display: flex;
+			align-items: flex-start;
+			justify-content: center;
+			background: transparent;
+			min-height: 110px;
+			h3 {
+				font-weight: 900;
+				font-size: 33px;
+				line-height: 40px;
+				text-transform: uppercase;
+				position: relative;
+				z-index: 2;
+				display: flex;
+				align-items: flex-end;
+				margin-top: 56px;
+				color: $white;
+			}
+			h2 {
+				font-weight: 900;
+				font-size: 90px;
+				line-height: 110px;
+				text-align: center;
+				text-transform: uppercase;
+				opacity: .4;
+				-webkit-text-stroke: 1px $white;
+				color: transparent;
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translate(-50%, 0);
+				white-space: nowrap;
+				z-index: 1;
+			}
 		}
 		#{$self}__text {
-			margin-top: 20px;
 			font-weight: 600;
 			font-size: 27px;
 			line-height: 33px;
@@ -59,7 +75,7 @@
 			text-align: center;
 		}
 		#{$self}__btn {
-			margin-top: 40px;
+			margin-top: 20px;
 			margin-bottom: 40px;
 		}
 		#{$self}__anim-background {
@@ -167,13 +183,16 @@
 @media (max-width: 1439px) {
 	.header_anim {
 		.header__title {
-			font-size: 90px;
-			line-height: 110px;
-		}
-		.header__subtitle {
-			font-size: 40px;
-			line-height: 49px;
-			margin-top: -62px;
+			min-height: 110px;
+			h2 {
+				font-size: 90px;
+				line-height: 110px;
+			}
+			h3 {
+				font-size: 40px;
+				line-height: 49px;
+				margin-top: 50px;
+			}
 		}
 		.header__text {
 			font-size: 22px;
@@ -188,10 +207,12 @@
 		.header__body {
 			padding-top: 90px;
 		}
-		.header__subtitle {
-			font-size: 26px;
-			line-height: 32px;
-			margin-top: -47px;
+		.header__title {
+			h3 {
+				font-size: 26px;
+				line-height: 32px;
+				margin-top: 63px;
+			}
 		}
 		.header__text {
 			font-size: 17px;
@@ -274,15 +295,6 @@
 
 @media (max-width: 767px) {
 	.header_anim {
-		.header__title {
-			font-size: 70px;
-			line-height: 85px;
-		}
-		.header__subtitle {
-			font-size: 21px;
-			line-height: 26px;
-			margin-top: -38px;
-		}
 		.header__text {
 			font-size: 14px;
 			line-height: 17px;
@@ -290,6 +302,18 @@
 		}
 		.header__body {
 			padding-top: 155px;
+		}
+		.header__title {
+			min-height: 85px;
+			h2 {
+				font-size: 70px;
+				line-height: 85px;
+			}
+			h3 {
+				font-size: 21px;
+				line-height: 26px;
+				margin-top: 47px;
+			}
 		}
 		.header__btn {
 			margin-top: auto;
@@ -333,6 +357,15 @@
 			.btn {
 				padding: 15px;
 				width: 100%;
+			}
+		}
+		.header__title {
+			h3 {
+				font-size: 22px;
+				line-height: 27px;
+				margin-top: 47px;
+				margin-left: -25px;
+				margin-right: -25px;
 			}
 		}
 	}

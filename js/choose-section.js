@@ -1,5 +1,3 @@
-
-
 // Choose
 
 ;(function($) {
@@ -151,9 +149,6 @@ window.addEventListener('DOMContentLoaded', e => {
 							if (direction === 'top') return distance < 0;
 							if (direction === 'bottom') return distance > 0;
 						};
-						// if (getScrollWindow().scrollHeight - Math.floor(getScrollWindow().scrollTop) === getScrollWindow().clientHeight
-						// 	|| getScrollWindow().scrollHeight - Math.floor(getScrollWindow().scrollTop) - 1 === getScrollWindow().clientHeight) direction = 'bottom';
-						// if (Math.floor(getScrollWindow().scrollTop) === 0) direction = 'top';
 						if (condition()) {
 							window.scrollTo({
 								top: distanceFromStart,
@@ -259,4 +254,55 @@ window.addEventListener('DOMContentLoaded', e => {
 		threshold
 	});
 	observer.observe(section);
+});
+
+window.addEventListener('DOMContentLoaded', e => {
+	const chooseSection = document.querySelector('.choose');
+	if (chooseSection) {
+		window.addEventListener('scroll', e => {
+			const distance = +(chooseSection.getBoundingClientRect().top).toFixed();
+			if (distance <= 0 && -(chooseSection.offsetHeight - window.innerHeight) <= distance) {
+				cantShowMenu = true;
+				cantShowNav = true;
+				nav.style.transform = 'translate(0, -110%)';
+				scrollingMenu.classList.remove('active');
+				scrollingMenu.style.transform = 'translate(0, 110%)';
+			} else {
+				cantShowMenu = false;
+				cantShowNav = false;
+			}
+		});
+	}
+
+	const chooseCartWrap = document.querySelectorAll('.choose__cart-wrap');
+	if (chooseCartWrap.length > 0) {
+		let prev = null;
+		const isMobile = {
+			Android: function() {return navigator.userAgent.match(/Android/i);},
+			BlackBerry: function() {return navigator.userAgent.match(/BlackBerry/i);},
+			iOS: function() {return navigator.userAgent.match(/iPhone|iPad|iPod/i);},
+			Opera: function() {return navigator.userAgent.match(/Opera Mini/i);},
+			Windows: function() {return navigator.userAgent.match(/IEMobile/i);},
+			any: function() {return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());}
+		};
+		
+		if (isMobile.any()) {
+			for (let i = 0; i < chooseCartWrap.length; i++) {
+				chooseCartWrap[i].addEventListener('click', e => {
+					if (prev !== null) {
+						chooseCartWrap[prev].classList.remove('active');
+					}
+					chooseCartWrap[i].classList.add('active');
+					prev = i;
+				});
+			}
+			document.documentElement.addEventListener('click', e => {
+				if (!e.target.closest('.choose__carts')) {
+					if (prev !== null) {
+						chooseCartWrap[prev].classList.remove('active');
+					}
+				}
+			});
+		}
+	}
 });

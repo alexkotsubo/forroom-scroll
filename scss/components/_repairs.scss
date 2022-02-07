@@ -101,6 +101,7 @@
 		z-index: 7;
 	}
 	&__title {
+		margin-top: 20px;
 		margin-bottom: 40px;
 		display: flex;
 		align-items: flex-end;
@@ -281,6 +282,7 @@
 
 	.repairs__title {
 		min-height: 61px;
+		margin-top: 0;
 	}
 
 	.repairs__title h2 {

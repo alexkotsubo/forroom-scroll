@@ -206,6 +206,7 @@ window.addEventListener('DOMContentLoaded', e => {
 			const selected = select.querySelector('.block-select__selected');
 			const list = select.querySelector('.block-select__list');
 			const options = select.querySelectorAll('.block-select__list span');
+			const hiddenInput = select.querySelector('input[type=hidden]');
 			let prev = null;
 
 			selected.innerHTML = select.getAttribute('data-placeholder') ? select.getAttribute('data-placeholder') : '';
@@ -213,6 +214,7 @@ window.addEventListener('DOMContentLoaded', e => {
 			for (let i = 0; i < options.length; i++) {
 				if (options[i].getAttribute('data-selected') === 'selected') {
 					selected.innerHTML = options[i].innerHTML;
+					hiddenInput.setAttribute('value', options[i].innerHTML);
 					options[i].classList.add('active');
 					prev = i;
 				}
@@ -221,6 +223,7 @@ window.addEventListener('DOMContentLoaded', e => {
 						options[prev].classList.remove('active');
 					}
 					selected.innerHTML = options[i].innerHTML;
+					hiddenInput.setAttribute('value', options[i].innerHTML);
 					options[i].classList.add('active');
 					select.classList.remove('active');
 					activeSelect = null;
@@ -1019,30 +1022,32 @@ window.addEventListener('DOMContentLoaded', e => {
 			}
 		}
 
-		const handleScroll = e => {
-			if (maxNumberOfShowing > countOfShowing) {
-				const distance = +(section.getBoundingClientRect().top).toFixed();
-				if (distance < document.documentElement.clientHeight / 2 && distance >= -(section.offsetHeight / 2)) {
-					if (!cantShow && !cantCheckMouse) {
-						openPopup(popup);
-						cantShow = true;
-						cantSetTimeout = false;
-						countOfShowing++;
-					}
-				} else {
-					if (!cantSetTimeout) {
-						if (typeof secondsBetweenShowings === 'number' && secondsBetweenShowings > 0) {
-							setTimeout(() => {
-								cantShow = false;
-							}, secondsBetweenShowings);
+		if (section) {
+			const handleScroll = e => {
+				if (maxNumberOfShowing > countOfShowing) {
+					const distance = +(section.getBoundingClientRect().top).toFixed();
+					if (distance < document.documentElement.clientHeight / 2 && distance >= -(section.offsetHeight / 2)) {
+						if (!cantShow && !cantCheckMouse) {
+							openPopup(popup);
+							cantShow = true;
+							cantSetTimeout = false;
+							countOfShowing++;
 						}
-						cantSetTimeout = true;
+					} else {
+						if (!cantSetTimeout) {
+							if (typeof secondsBetweenShowings === 'number' && secondsBetweenShowings > 0) {
+								setTimeout(() => {
+									cantShow = false;
+								}, secondsBetweenShowings);
+							}
+							cantSetTimeout = true;
+						}
 					}
 				}
-			}
-		};
-		handleScroll();
-		window.addEventListener('scroll', handleScroll);
+			};
+			handleScroll();
+			window.addEventListener('scroll', handleScroll);
+		}
 
 		const handlePageCancel = e => {
 			if (maxNumberOfShowing > countOfShowing) {
@@ -1075,55 +1080,30 @@ window.addEventListener('DOMContentLoaded', e => {
 	}
 });
 
-// Choose
+// Block Tabs
 
-window.addEventListener('DOMContentLoaded', e => {
-	const chooseSection = document.querySelector('.choose');
-	if (chooseSection) {
-		window.addEventListener('scroll', e => {
-			const distance = +(chooseSection.getBoundingClientRect().top).toFixed();
-			if (distance <= 0 && -(chooseSection.offsetHeight - window.innerHeight) <= distance) {
-				cantShowMenu = true;
-				cantShowNav = true;
-				nav.style.transform = 'translate(0, -110%)';
-				scrollingMenu.classList.remove('active');
-				scrollingMenu.style.transform = 'translate(0, 110%)';
-			} else {
-				cantShowMenu = false;
-				cantShowNav = false;
-			}
-		});
-	}
+const blockTabs = document.querySelectorAll('.block-tabs');
 
-	const chooseCartWrap = document.querySelectorAll('.choose__cart-wrap');
-	if (chooseCartWrap.length > 0) {
-		let prev = null;
-		const isMobile = {
-			Android: function() {return navigator.userAgent.match(/Android/i);},
-			BlackBerry: function() {return navigator.userAgent.match(/BlackBerry/i);},
-			iOS: function() {return navigator.userAgent.match(/iPhone|iPad|iPod/i);},
-			Opera: function() {return navigator.userAgent.match(/Opera Mini/i);},
-			Windows: function() {return navigator.userAgent.match(/IEMobile/i);},
-			any: function() {return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());}
-		};
-		
-		if (isMobile.any()) {
-			for (let i = 0; i < chooseCartWrap.length; i++) {
-				chooseCartWrap[i].addEventListener('click', e => {
-					if (prev !== null) {
-						chooseCartWrap[prev].classList.remove('active');
-					}
-					chooseCartWrap[i].classList.add('active');
-					prev = i;
-				});
-			}
-			document.documentElement.addEventListener('click', e => {
-				if (!e.target.closest('.choose__carts')) {
-					if (prev !== null) {
-						chooseCartWrap[prev].classList.remove('active');
-					}
+for (let i = 0; i < blockTabs.length; i++) {
+	const blockTabsTabs = blockTabs[i].querySelectorAll('.block-tabs__tab');
+	const blockBtnsBtn = blockTabs[i].querySelectorAll('.block-tabs__btn');
+	
+	if (blockTabsTabs.length === blockBtnsBtn.length) {
+		let prevTab = 0;
+	
+		blockTabsTabs[prevTab].classList.add('active');
+		blockBtnsBtn[prevTab].classList.add('active');
+	
+		for (let i = 0; i < blockBtnsBtn.length; i++) {
+			blockBtnsBtn[i].addEventListener('click', e => {
+				if (prevTab !== null) {
+					blockTabsTabs[prevTab].classList.remove('active');
+					blockBtnsBtn[prevTab].classList.remove('active');
 				}
+				blockTabsTabs[i].classList.add('active');
+				blockBtnsBtn[i].classList.add('active');
+				prevTab = i;
 			});
 		}
 	}
-});
+}

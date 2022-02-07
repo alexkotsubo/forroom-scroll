@@ -166,3 +166,49 @@
 		}
 	}
 }
+
+.block-tabs {
+	&__btns {
+		display: inline-flex;
+		flex-wrap: wrap;
+		background: $white;
+		box-shadow: 0 0 5px rgba(24, 7, 6, .15);
+		padding: 10px;
+	}
+	&__btn {
+		cursor: pointer;
+		font-size: 17px;
+		line-height: 140%;
+		background: $white;
+		transition: .2s;
+		padding: 10px 15px;
+		color: $dark;
+		&.active {
+			background: $red;
+			color: $white;
+		}
+	}
+	&__tab {
+		height: 0;
+		overflow: hidden;
+		opacity: 0;
+		transition: opacity .4s;
+		&.active {
+			height: unset;
+			opacity: 1;
+		}
+	}
+}
+
+@media (max-width: 1279px) {
+	.block-tabs__btn {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 767px) {
+	.block-tabs__btn {
+		font-size: 12px;
+		line-height: 135%;
+	}
+}

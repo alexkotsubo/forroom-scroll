@@ -159,7 +159,6 @@
 		transition: 0s .4s visibility, .6s .4s opacity;
 	}
 	&__slide {
-		overflow: hidden;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -192,20 +191,9 @@
 		position: relative;
 		z-index: 1;
 		display: flex;
-		align-items: flex-end;
+		align-items: flex-start;
 		background: transparent;
 		min-height: 110px;
-		h3 {
-			font-weight: 900;
-			font-size: 28px;
-			line-height: 34px;
-			text-transform: uppercase;
-			position: relative;
-			z-index: 2;
-			display: flex;
-			align-items: flex-end;
-			margin-top: 80px;
-		}
 		h2 {
 			font-weight: 900;
 			font-size: 90px;
@@ -221,6 +209,17 @@
 			white-space: nowrap;
 			transform: translate(-50px, 0);
 			z-index: 1;
+		}
+		h3 {
+			font-weight: 900;
+			font-size: 28px;
+			line-height: 34px;
+			text-transform: uppercase;
+			position: relative;
+			z-index: 2;
+			display: flex;
+			align-items: flex-end;
+			margin-top: 80px;
 		}
 	}
 	&__steps {
