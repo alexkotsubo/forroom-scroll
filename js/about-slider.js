@@ -7,6 +7,10 @@ if (aboutSlider) {
 		loop: true,
 		slidesPerView: 1,
 		speed: 400,
-		autoplay: { delay: 5000 },
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		effect: 'fade',
 	});
 }

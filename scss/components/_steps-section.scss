@@ -95,6 +95,7 @@
 			margin-top: 0;
 		}
 		&-img {
+			align-self: center;
 			flex: 0 0 270px;
 			min-height: 400px;
 		}
@@ -139,6 +140,12 @@
 				&-content {
 					padding-left: 0;
 				}
+			}
+		}
+		&_text {
+			align-items: flex-end;
+			.steps__cart-content {
+				padding-bottom: 40px;
 			}
 		}
 	}
@@ -226,6 +233,11 @@
 			margin-top: 41px;
 		}
 	}
+	.steps__cart_text {
+		.steps__cart-content {
+			padding-bottom: 20px;
+		}
+	}
 }
 
 @media (max-width: 1279px) {
@@ -255,7 +267,7 @@
 	}
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
 	.steps_content .steps__body {
 		padding-right: 20px;
 	}

@@ -79,13 +79,29 @@
 	&__btn {
 		margin-top: 40px;
 	}
-	&__map {
-		position: relative;
-		z-index: 5;
+	&__maps {
 		flex: 0 0 50%;
+	}
+	&__map {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+		visibility: hidden;
+		opacity: 0;
+		transition: .4s;
+		z-index: 5;
 		padding-right: 50px;
+		&.active {
+			position: static;
+			visibility: visible;
+			opacity: 1;
+		}
 		iframe {
 			min-height: 800px;
+			width: 100% !important;
+			height: 100% !important;
 		}
 	}
 }
@@ -167,10 +183,12 @@
 		padding-left: 20px;
 		flex: none;
 	}
+	.contacts__maps {
+		flex: none;
+	}
 	.contacts__map {
 		padding-right: 20px;
 		padding-left: 20px;
-		flex: none;
 		iframe {
 			min-height: 400px;
 		}

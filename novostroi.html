@@ -58,6 +58,7 @@
 								</div>
 							</label>
 						</div>
+						<input type="hidden" class="hidden-input-actions">
 						<button type="submit" class="btn btn_big-fill base-popup__btn">оставить заявку</button>
 					</form>
 				</div>
@@ -141,6 +142,7 @@
 								</div>
 							</label>
 						</div>
+						<input type="hidden" class="hidden-input-actions">
 						<button type="submit" class="btn btn_big-fill base-popup__btn">оставить заявку</button>
 					</form>
 				</div>
@@ -149,7 +151,7 @@
 
 		<!-- Test Popup -->
 
-		<div id="test-popup" data-max-show-count="3" data-seconds-between-showings="10" class="test-popup popup">
+		<div id="test-popup" data-max-show-count="1" data-seconds-between-showings="300" class="test-popup popup">
 			<form action="#" class="test-popup__body popup__body">
 				<div class="test-popup__slide">
 					<div class="test-popup__content">
@@ -559,6 +561,7 @@
 							<li><a href="#" class="burger__link">Портфолио</a></li>
 							<li><a href="#" class="burger__link">Стоимость</a></li>
 							<li><a href="#" class="burger__link">Контакты</a></li>
+							<li><a href="#" class="burger__link">О компании</a></li>
 						</ul>
 
 						<div class="burger__lang">
@@ -613,6 +616,7 @@
 						</li>
 						<li><a href="#">Дизайн</a></li>
 						<li><a href="#">Стили</a></li>
+						<li><a href="#">О компании</a></li>
 					</ul>
 
 					<ul class="nav__menu">
@@ -773,7 +777,7 @@
 
 								<div class="stili__slide-btns">
 									<a href="#" class="btn btn_big">Подробнее</a>
-									<div data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
+									<div data-disable-test-popup data-stili-item="White Box" data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
 								</div>
 							</div>
 						</div>
@@ -810,7 +814,7 @@
 
 								<div class="stili__slide-btns">
 									<a href="#" class="btn btn_big">Подробнее</a>
-									<div data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
+									<div data-disable-test-popup data-stili-item="Базовый" data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
 								</div>
 							</div>
 						</div>
@@ -849,7 +853,7 @@
 
 								<div class="stili__slide-btns">
 									<a href="#" class="btn btn_big">Подробнее</a>
-									<div data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
+									<div data-disable-test-popup data-stili-item="Оптимальный" data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
 								</div>
 							</div>
 						</div>
@@ -891,7 +895,7 @@
 
 								<div class="stili__slide-btns">
 									<a href="#" class="btn btn_big">Подробнее</a>
-									<div data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
+									<div data-disable-test-popup data-stili-item="Максимальный" data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
 								</div>
 							</div>
 						</div>
@@ -927,7 +931,7 @@
 
 								<div class="stili__slide-btns">
 									<a href="#" class="btn btn_big">Подробнее</a>
-									<div data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
+									<div data-disable-test-popup data-stili-item="White Box" data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
 								</div>
 							</div>
 						</div>
@@ -1003,7 +1007,7 @@
 										<div class="choose__cart-wrap ib">
 											<img src="img/card-novostroi.jpg" alt="card-novostroi" class="ib_use">
 											<span class="choose__cart-title">Kandinsky Odessa Residence</span>
-											<span data-open-popup="confirm-popup" class="choose__cart-btn btn btn_big-fill">выбрать</span>
+											<span data-choose-item="Kandinsky Odessa Residence" data-disable-test-popup data-open-popup="confirm-popup" class="choose__cart-btn btn btn_big-fill">выбрать</span>
 										</div>
 									</div>
 
@@ -1011,7 +1015,7 @@
 										<div class="choose__cart-wrap ib">
 											<img src="img/card-novostroi.jpg" alt="card-novostroi" class="ib_use">
 											<span class="choose__cart-title">Kandinsky Odessa Residence</span>
-											<span data-open-popup="confirm-popup" class="choose__cart-btn btn btn_big-fill">выбрать</span>
+											<span data-choose-item="Kandinsky Odessa Residence" data-disable-test-popup data-open-popup="confirm-popup" class="choose__cart-btn btn btn_big-fill">выбрать</span>
 										</div>
 									</div>
 
@@ -1019,7 +1023,7 @@
 										<div class="choose__cart-wrap ib">
 											<img src="img/card-novostroi.jpg" alt="card-novostroi" class="ib_use">
 											<span class="choose__cart-title">Kandinsky Odessa Residence</span>
-											<span data-open-popup="confirm-popup" class="choose__cart-btn btn btn_big-fill">выбрать</span>
+											<span data-choose-item="Kandinsky Odessa Residence" data-disable-test-popup data-open-popup="confirm-popup" class="choose__cart-btn btn btn_big-fill">выбрать</span>
 										</div>
 									</div>
 
@@ -1027,7 +1031,7 @@
 										<div class="choose__cart-wrap ib">
 											<img src="img/card-novostroi.jpg" alt="card-novostroi" class="ib_use">
 											<span class="choose__cart-title">Kandinsky Odessa Residence</span>
-											<span data-open-popup="confirm-popup" class="choose__cart-btn btn btn_big-fill">выбрать</span>
+											<span data-choose-item="Kandinsky Odessa Residence" data-disable-test-popup data-open-popup="confirm-popup" class="choose__cart-btn btn btn_big-fill">выбрать</span>
 										</div>
 									</div>
 
@@ -1035,7 +1039,7 @@
 										<div class="choose__cart-wrap ib">
 											<img src="img/card-novostroi.jpg" alt="card-novostroi" class="ib_use">
 											<span class="choose__cart-title">Kandinsky Odessa Residence</span>
-											<span data-open-popup="confirm-popup" class="choose__cart-btn btn btn_big-fill">выбрать</span>
+											<span data-choose-item="Kandinsky Odessa Residence" data-disable-test-popup data-open-popup="confirm-popup" class="choose__cart-btn btn btn_big-fill">выбрать</span>
 										</div>
 									</div>
 
@@ -1043,7 +1047,7 @@
 										<div class="choose__cart-wrap ib">
 											<img src="img/card-novostroi.jpg" alt="card-novostroi" class="ib_use">
 											<span class="choose__cart-title">Kandinsky Odessa Residence</span>
-											<span data-open-popup="confirm-popup" class="choose__cart-btn btn btn_big-fill">выбрать</span>
+											<span data-choose-item="Kandinsky Odessa Residence" data-disable-test-popup data-open-popup="confirm-popup" class="choose__cart-btn btn btn_big-fill">выбрать</span>
 										</div>
 									</div>
 
@@ -1051,7 +1055,7 @@
 										<div class="choose__cart-wrap ib">
 											<img src="img/card-novostroi.jpg" alt="card-novostroi" class="ib_use">
 											<span class="choose__cart-title">Kandinsky Odessa Residence</span>
-											<span data-open-popup="confirm-popup" class="choose__cart-btn btn btn_big-fill">выбрать</span>
+											<span data-choose-item="Kandinsky Odessa Residence" data-disable-test-popup data-open-popup="confirm-popup" class="choose__cart-btn btn btn_big-fill">выбрать</span>
 										</div>
 									</div>
 
@@ -1059,7 +1063,7 @@
 										<div class="choose__cart-wrap ib">
 											<img src="img/card-novostroi.jpg" alt="card-novostroi" class="ib_use">
 											<span class="choose__cart-title">Kandinsky Odessa Residence</span>
-											<span data-open-popup="confirm-popup" class="choose__cart-btn btn btn_big-fill">выбрать</span>
+											<span data-choose-item="Kandinsky Odessa Residence" data-disable-test-popup data-open-popup="confirm-popup" class="choose__cart-btn btn btn_big-fill">выбрать</span>
 										</div>
 									</div>
 								</div>
@@ -1070,13 +1074,13 @@
 							<div class="choose__body-wrap">
 								<div class="choose__body-content">
 									<h4 class="choose__title">Введите название вашего ЖК и мы предложим вам персональное решение ремонта</h4>
-									<form action="#" class="choose__form">
+									<div class="choose__form">
 										<div class="block-input block-input_white">
 											<input type="text" placeholder="Ваш ЖК">
 											<p class="block-input__text">Ошибка</p>
 										</div>
-										<button class="btn btn_big-fill choose__btn" type="submit">Выбрать ЖК</button>
-									</form>
+										<div data-choose-input class="btn btn_big-fill choose__btn">Выбрать ЖК</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -1176,6 +1180,7 @@
 							<input type="tel" class="inputmask" placeholder="+380 (__) ___ - __ - __"><!-- class="success error" -->
 							<p class="block-input__text">Неверный формат номера</p>
 						</div>
+						<input type="hidden" class="hidden-input-actions">
 						<div class="doubt__form-btn">
 							<button type="submit" class="btn btn_big-fill">обратная связь</button>
 						</div>
@@ -1207,6 +1212,7 @@
 						<li><a href="#">Ремонт</a></li>
 						<li><a href="#">Дизайн</a></li>
 						<li><a href="#">Стили</a></li>
+						<li><a href="#">О компании</a></li>
 						<li><a href="#">Портфолио</a></li>
 						<li><a href="#">Стоимость</a></li>
 						<li><a href="#">Контакты</a></li>

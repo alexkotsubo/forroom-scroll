@@ -54,6 +54,7 @@
 								</div>
 							</label>
 						</div>
+						<input type="hidden" class="hidden-input-actions">
 						<button type="submit" class="btn btn_big-fill base-popup__btn">оставить заявку</button>
 					</form>
 				</div>
@@ -76,6 +77,7 @@
 								<span>Выберите планировку</span>
 								<div class="base-popup__select">
 									<div class="block-select" data-placeholder="Планировка">
+										<input class="block-select__hidden" type="hidden" name="communication" value="">
 										<div class="block-select__nav">
 											<p class="block-select__selected"></p>
 											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
@@ -95,6 +97,7 @@
 								<span>Выбери пакет ремонта</span>
 								<div class="base-popup__select">
 									<div class="block-select" data-placeholder="Пакет ремонта">
+										<input class="block-select__hidden" type="hidden" name="communication" value="">
 										<div class="block-select__nav">
 											<p class="block-select__selected"></p>
 											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
@@ -135,6 +138,7 @@
 								</div>
 							</label>
 						</div>
+						<input type="hidden" class="hidden-input-actions">
 						<button type="submit" class="btn btn_big-fill base-popup__btn">оставить заявку</button>
 					</form>
 				</div>
@@ -143,7 +147,7 @@
 
 		<!-- Test Popup -->
 
-		<div id="test-popup" data-max-show-count="3" data-seconds-between-showings="10" class="test-popup popup">
+		<div id="test-popup" data-max-show-count="1" data-seconds-between-showings="300" class="test-popup popup">
 			<form action="#" class="test-popup__body popup__body">
 				<div class="test-popup__slide">
 					<div class="test-popup__content">
@@ -553,6 +557,7 @@
 							<li><a href="#" class="burger__link">Портфолио</a></li>
 							<li><a href="#" class="burger__link">Стоимость</a></li>
 							<li><a href="#" class="burger__link">Контакты</a></li>
+							<li><a href="#" class="burger__link">О компании</a></li>
 						</ul>
 
 						<div class="burger__lang">
@@ -607,6 +612,7 @@
 						</li>
 						<li><a href="#">Дизайн</a></li>
 						<li><a href="#">Стили</a></li>
+						<li><a href="#">О компании</a></li>
 					</ul>
 
 					<ul class="nav__menu">
@@ -664,9 +670,9 @@
 
 				<div class="block-tabs contacts__tabs">
 					<div class="block-tabs__btns contacts__tabs-btns">
-						<div class="block-tabs__btn contacts__tabs-btn">Одесса</div>
-						<div class="block-tabs__btn contacts__tabs-btn">Львов</div>
-						<div class="block-tabs__btn contacts__tabs-btn">Киев</div>
+						<div class="block-tabs__btn contacts__tabs-btn" data-city-item="Одесса">Одесса</div>
+						<div class="block-tabs__btn contacts__tabs-btn" data-city-item="Львов">Львов</div>
+						<!-- <div class="block-tabs__btn contacts__tabs-btn" data-city-item="Киев">Киев</div> -->
 					</div>
 
 					<div class="contacts__tabs-tabs">
@@ -698,7 +704,7 @@
 									</li>
 									<li>
 										<span class="iconify" data-icon="la:map-marker-alt"></span>
-										<p>ТРЦ «МЕГАДОМ», ул. Толбухина 135</p> 
+										<p>Львов, ул. Профессора Буйко, 27</p>
 									</li>
 									<li>
 										<span class="iconify" data-icon="la:clock-solid"></span>
@@ -712,7 +718,7 @@
 							</div>
 						</div>
 
-						<div class="block-tabs__tab contacts__tab">
+						<!-- <div class="block-tabs__tab contacts__tab">
 							<div class="contacts__tab-wrap">
 								<ul class="contacts__tab-list">
 									<li>
@@ -721,7 +727,7 @@
 									</li>
 									<li>
 										<span class="iconify" data-icon="la:map-marker-alt"></span>
-										<p>ТРЦ «МЕГАДОМ», ул. Толбухина 135</p> 
+										<p>ТРЦ «МЕГАДОМ», ул. Толбухина 135</p>
 									</li>
 									<li>
 										<span class="iconify" data-icon="la:clock-solid"></span>
@@ -737,17 +743,25 @@
 									</li>
 								</ul>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 
 				<div class="contacts__btn">
-					<div data-open-popup="call-popup" class="btn btn_big-fill">обратная связь</div>
+					<div data-disable-test-popup data-open-popup="call-popup" class="btn btn_big-fill">обратная связь</div>
 				</div>
 			</div>
 
-			<div class="contacts__map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2750.0939098411404!2d30.728660415589932!3d46.42701817912411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c6331d058fefa9%3A0xd314fe003772ef4a!2z0KTQvtGA0YDRg9C8IC0g0YDQtdC80L7QvdGC0L3Qvi3RgdGC0YDQvtC40YLQtdC70YzQvdCw0Y8g0LrQvtC80L_QsNC90LjRjw!5e0!3m2!1sru!2sua!4v1635787401257!5m2!1sru!2sua" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+			<div class="contacts__maps">
+				<div class="contacts__map">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2750.0939098411404!2d30.728660415589932!3d46.42701817912411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c6331d058fefa9%3A0xd314fe003772ef4a!2z0KTQvtGA0YDRg9C8IC0g0YDQtdC80L7QvdGC0L3Qvi3RgdGC0YDQvtC40YLQtdC70YzQvdCw0Y8g0LrQvtC80L_QsNC90LjRjw!5e0!3m2!1sru!2sua!4v1635787401257!5m2!1sru!2sua" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				</div>
+				<div class="contacts__map">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2574.6862560875093!2d24.030033115813033!3d49.81076584112962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ae7efbe2e849f%3A0xacd8a0b0cc1c31d5!2z0YPQuy4g0J_RgNC-0YTQtdGB0YHQvtGA0LAg0JHRg9C50LrQviwgMjcsINCb0YzQstC-0LIsINCb0YzQstC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNzkwMzQ!5e0!3m2!1sru!2sua!4v1644489025824!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				</div>
+				<!-- <div class="contacts__map">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2750.0939098411404!2d30.728660415589932!3d46.42701817912411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c6331d058fefa9%3A0xd314fe003772ef4a!2z0KTQvtGA0YDRg9C8IC0g0YDQtdC80L7QvdGC0L3Qvi3RgdGC0YDQvtC40YLQtdC70YzQvdCw0Y8g0LrQvtC80L_QsNC90LjRjw!5e0!3m2!1sru!2sua!4v1635787401257!5m2!1sru!2sua" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				</div> -->
 			</div>
 		</section>
 
@@ -760,6 +774,7 @@
 						<li><a href="#">Ремонт</a></li>
 						<li><a href="#">Дизайн</a></li>
 						<li><a href="#">Стили</a></li>
+						<li><a href="#">О компании</a></li>
 						<li><a href="#">Портфолио</a></li>
 						<li><a href="#">Стоимость</a></li>
 						<li><a href="#">Контакты</a></li>
@@ -800,5 +815,6 @@
 	<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 	<script src="js/inputmask.min.js"></script>
 	<script src="js/script.js"></script>
+	<script src="js/contacts-section.js"></script>
 </body>
 </html>

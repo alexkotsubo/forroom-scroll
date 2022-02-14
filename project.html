@@ -54,6 +54,7 @@
 								</div>
 							</label>
 						</div>
+						<input type="hidden" class="hidden-input-actions">
 						<button type="submit" class="btn btn_big-fill base-popup__btn">оставить заявку</button>
 					</form>
 				</div>
@@ -76,6 +77,7 @@
 								<span>Выберите планировку</span>
 								<div class="base-popup__select">
 									<div class="block-select" data-placeholder="Планировка">
+										<input class="block-select__hidden" type="hidden" name="communication" value="">
 										<div class="block-select__nav">
 											<p class="block-select__selected"></p>
 											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
@@ -95,6 +97,7 @@
 								<span>Выбери пакет ремонта</span>
 								<div class="base-popup__select">
 									<div class="block-select" data-placeholder="Пакет ремонта">
+										<input class="block-select__hidden" type="hidden" name="communication" value="">
 										<div class="block-select__nav">
 											<p class="block-select__selected"></p>
 											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
@@ -135,6 +138,7 @@
 								</div>
 							</label>
 						</div>
+						<input type="hidden" class="hidden-input-actions">
 						<button type="submit" class="btn btn_big-fill base-popup__btn">оставить заявку</button>
 					</form>
 				</div>
@@ -143,7 +147,7 @@
 
 		<!-- Test Popup -->
 
-		<div id="test-popup" data-max-show-count="3" data-seconds-between-showings="10" class="test-popup popup">
+		<div id="test-popup" data-max-show-count="1" data-seconds-between-showings="300" class="test-popup popup">
 			<form action="#" class="test-popup__body popup__body">
 				<div class="test-popup__slide">
 					<div class="test-popup__content">
@@ -553,6 +557,7 @@
 							<li><a href="#" class="burger__link">Портфолио</a></li>
 							<li><a href="#" class="burger__link">Стоимость</a></li>
 							<li><a href="#" class="burger__link">Контакты</a></li>
+							<li><a href="#" class="burger__link">О компании</a></li>
 						</ul>
 
 						<div class="burger__lang">
@@ -607,6 +612,7 @@
 						</li>
 						<li><a href="#">Дизайн</a></li>
 						<li><a href="#">Стили</a></li>
+						<li><a href="#">О компании</a></li>
 					</ul>
 
 					<ul class="nav__menu">
@@ -765,11 +771,11 @@
 
 								<div class="stili__slide-btns">
 									<a href="#" class="btn btn_big">Подробнее</a>
-									<div data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
+									<div data-disable-test-popup data-stili-item="White Box" data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
 								</div>
 							</div>
 						</div>
-
+ 
 						<div class="stili__slide-name">
 							<h2>White box</h2>
 							<p>White box</p>
@@ -802,7 +808,7 @@
 
 								<div class="stili__slide-btns">
 									<a href="#" class="btn btn_big">Подробнее</a>
-									<div data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
+									<div data-disable-test-popup data-stili-item="Базовый" data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
 								</div>
 							</div>
 						</div>
@@ -841,7 +847,7 @@
 
 								<div class="stili__slide-btns">
 									<a href="#" class="btn btn_big">Подробнее</a>
-									<div data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
+									<div data-disable-test-popup data-stili-item="Оптимальный" data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
 								</div>
 							</div>
 						</div>
@@ -883,7 +889,7 @@
 
 								<div class="stili__slide-btns">
 									<a href="#" class="btn btn_big">Подробнее</a>
-									<div data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
+									<div data-disable-test-popup data-stili-item="Максимальный" data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
 								</div>
 							</div>
 						</div>
@@ -919,7 +925,7 @@
 
 								<div class="stili__slide-btns">
 									<a href="#" class="btn btn_big">Подробнее</a>
-									<div data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
+									<div data-disable-test-popup data-stili-item="White Box" data-open-popup="call-popup" class="btn btn_big-fill">Заказать</div>
 								</div>
 							</div>
 						</div>
@@ -942,6 +948,7 @@
 						<li><a href="#">Ремонт</a></li>
 						<li><a href="#">Дизайн</a></li>
 						<li><a href="#">Стили</a></li>
+						<li><a href="#">О компании</a></li>
 						<li><a href="#">Портфолио</a></li>
 						<li><a href="#">Стоимость</a></li>
 						<li><a href="#">Контакты</a></li>

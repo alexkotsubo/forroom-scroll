@@ -1,0 +1,292 @@
+.team {
+	overflow: hidden;
+	padding: 110px 50px 55px;
+	position: relative;
+	&__inner {
+		position: relative;
+		z-index: 2;
+	}
+	&__carts {
+		margin-top: 65px;
+	}
+	&__cart {
+		display: flex;
+		margin-top: 80px;
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	.team__cart {
+		> .team__image {
+			padding: 20px 10px;
+			flex: 0 0 25%;
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+			.btn {
+				padding: 15px 20px;
+				max-width: 280px;
+				width: 100%;
+			}
+		}
+	}
+	&__content {
+		width: 75%;
+		flex: 0 0 75%;
+		padding-left: 8vw;
+		min-height: 506px;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		&-content {
+			flex: 1 1 auto;
+			> .team__image {
+				display: none;
+			}
+		}
+		&-info {
+			font-size: 17px;
+			line-height: 140%;
+			color: $dark;
+			max-width: 600px;
+		}
+	}
+	&__title {
+		font-weight: 600;
+		font-size: 27px;
+		line-height: 33px;
+		color: $red;
+	}
+	&__position {
+		margin-top: 10px;
+	}
+	&__experience {
+		margin-top: 10px;
+	}
+	&__text {
+		margin-top: 10px;
+	}
+	&__slider {
+		position: relative;
+		width: calc(100% + 50px);
+		margin-top: 10px;
+		.swiper {
+			.swiper-slide {
+				//min-width: 303px;
+				min-height: 290px;
+			}
+		}
+		&-btns {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			transform: translate(-100%, 0);
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		&-btn {
+			padding: 20px;
+			cursor: pointer;
+			.iconify {
+				font-size: 40px;
+				color: $red;
+				min-width: 40px;
+			}
+		}
+	}
+	&__btn {
+		display: none;
+		.btn {
+			padding-right: 50px;
+		}
+	}
+}
+
+@media (max-width: 1919px) {
+	.team {
+		padding: 80px 50px 55px;
+	}
+	.team__cart {
+		margin-top: 40px;
+	}
+}
+
+@media (max-width: 1439px) {
+	.team__slider-btn {
+		padding: 0;
+	}
+	.team__slider {
+		.swiper {
+			.swiper-slide {
+				//min-width: 242px;
+				min-height: 230px;
+			}
+		}
+	}
+	.team__content {
+		min-height: 445px;
+	}
+	.team__title {
+		font-size: 22px;
+		line-height: 27px;
+	}
+	.team__cart {
+		margin-top: 80px;
+	}
+	.team__carts {
+		margin-top: 30px;
+	}
+}
+
+@media (max-width: 1279px) {
+	.team {
+		padding: 55px 50px 50px;
+	}
+	.team__content {
+		&-info {
+			font-size: 14px;
+		}
+	}
+	.team__title {
+		font-size: 17px;
+		line-height: 21px;
+	}
+}
+
+@media (max-width: 1023px) {
+	.team {
+		padding: 40px 20px 50px;
+	}
+	.team__cart {
+		flex-direction: column;
+		margin-top: 40px;
+	}
+	.team__content {
+		padding-left: 0;
+		width: 100%;
+		flex: none;
+		min-height: unset;
+		&-content {
+			display: flex;
+			> .team__image {
+				flex: 0 0 25%;
+				display: inline-block;
+				min-width: 182px;
+				min-height: 250px;
+			}
+		}
+		&-info {
+			flex: 0 0 75%;
+			padding-left: 90px;
+			padding-bottom: 60px;
+		}
+	}
+	.team .team__cart > .team__image {
+		flex: none;
+		padding: 0;
+		display: none;
+		.btn {
+			display: none;
+		}
+	}
+	.team__slider {
+		width: calc(100% + 20px);
+		margin-top: 20px;
+		.swiper {
+			.swiper-slide {
+				min-height: 242px;
+			}
+		}
+		&-btns {
+			left: unset;
+			right: 0;
+			height: unset;
+			transform: translate(0, -100%);
+			flex-direction: row;
+		}
+		&-btn {
+			padding: 20px;
+		}
+	}
+	.team__btn {
+		display: flex;
+		justify-content: center;
+		margin-top: 20px;
+		padding-right: 20px;
+		.btn {
+			min-width: 280px;
+		}
+	}
+	// .team .title {
+	// 	padding-right: 20px;
+	// 	.title__title {
+	// 		left: calc(50% - 20px);
+	// 	}
+	// }
+}
+
+@media (max-width: 767px) {
+	.team__carts {
+		margin-top: 10px;
+	}
+	.team__content {
+		&-content {
+			> .team__image {
+				min-width: 110px;
+				min-height: 150px;
+			}
+		}
+		&-info {
+			padding-left: 20px;
+			padding-bottom: 0;
+			font-size: 12px;
+			line-height: 135%;
+		}
+	}
+	.team__slider {
+		.swiper {
+			.swiper-slide {
+				//min-width: 150px;
+				min-height: 150px;
+			}
+		}
+		&-btns {
+			display: none;
+		}
+	}
+	.team__cart-title {
+		font-size: 14px;
+		line-height: 17px;
+	}
+}
+
+@media (max-width: 479px) {
+	.team {
+		padding: 40px 20px 0;
+	}
+	.team__content-content {
+		flex-direction: column;
+	}
+	.team__content-content > .team__image {
+		max-width: 110px;
+		max-height: 150px;
+		flex: none;
+	}
+	.team__content-info {
+		padding-top: 10px;
+		padding-left: 0;
+		flex: none;
+	}
+	.team__btn {
+		margin-top: 10px;
+		.btn {
+			width: 100%;
+		}
+	}
+	.team__slider .swiper .swiper-slide {
+		//min-width: 140px;
+		min-height: 140px;
+	}
+}

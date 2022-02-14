@@ -5,11 +5,57 @@
 	position: relative;
 	//padding: 0 50px;
 	overflow: hidden;
+	&__cover {
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: -1px;
+		z-index: 3;
+		width: calc(100% + 1px);
+		height: 100%;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		background: transparent;
+		> span {
+			width: 25vw;
+			position: relative;
+			> span {
+				position: absolute;
+				top: 0;
+				left: 0;
+				transition: .5s;
+				width: 0;
+				height: 100%;
+				background: $white;
+			}
+			&:last-child {
+				width: calc(25vw + 1px);
+			}
+			&:nth-child(2n) {
+				> span {
+					left: unset;
+					right: 0;
+				}
+			}
+		}
+		&.hide {
+			> span {
+				> span {
+					width: 100%;
+				}
+			}
+			> span:last-child {
+				> span {
+					width: 100%;
+				}
+			}
+		}
+	}
 	&__inner {
 		position: relative;
 		z-index: 2;
 		display: flex;
-		min-height: 92vh;
+		min-height: 100vh;
 	}
 	&__body {
 		max-width: 600px;
@@ -88,6 +134,19 @@
 		}
 		#{$self}__content {
 			padding-right: 8vw;
+		}
+		&-reverse {
+			#{$self}__inner {
+				flex-direction: row-reverse;
+			}
+			#{$self}__image {
+				padding-right: 0;
+				padding-left: calc(8vw + 50px);
+			}
+			#{$self}__content {
+				padding-left: 8vw;
+				padding-right: calc(8vw + 50px);
+			}
 		}
 	}
 	&_task {
@@ -196,6 +255,14 @@
 			transform: translate(-48px, 0);
 		}
 	}
+
+	.about_stili-reverse {
+		.about__title {
+			h2 {
+				transform: translate(60px, 0);
+			}
+		}
+	}
 }
 
 @media (max-width: 1439px) {
@@ -273,15 +340,19 @@
 		}
 	}
 	.about__content {
-		flex-basis: 100%;
+		width: 100%;
+		flex: none;
 		padding: 20px 20px 80px;
 	}
 	.about__image {
+		width: 100%;
 		overflow: hidden;
-		flex-basis: 100%;
+		flex: none;
 		padding-left: 0;
 		padding-right: 0;
-		min-height: 400px;
+		&-body {
+			min-height: 400px;
+		}
 		&-wrap {
 			top: -50vh;
 		}
@@ -312,6 +383,8 @@
 		}
 		h3 {
 			margin-top: 38px;
+			left: 50%;
+			transform: translate(-50%, 0);
 		}
 	}
 	.about_task {
@@ -376,6 +449,19 @@
 			justify-content: center;
 		}
 	}
+
+	.about_stili-reverse {
+		.about__title {
+			h2 {
+				left: 50%;
+				margin-left: 80px;
+				transform: translate(-50%, 0);
+			}
+		}
+	}
+	.about_stili-reverse .about__inner {
+		flex-direction: column-reverse;
+	}
 }
 
 @media (max-width: 767px) {
@@ -389,9 +475,11 @@
 		}
 	}
 	.about__image {
-		flex-basis: none;
+		flex: none;
 		padding-left: 0;
-		min-height: 320px;
+		&-body {
+			min-height: 320px;
+		}
 	}
 	.about__title {
 		min-height: 49px;
@@ -467,6 +555,11 @@
 		}
 		.about__content {
 			padding-bottom: 0;
+		}
+	}
+	.about__image {
+		&-body {
+			min-height: 230px;
 		}
 	}
 }

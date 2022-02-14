@@ -16,7 +16,7 @@
 		width: 100%;
 		z-index: 52;
 		display: flex;
-		min-height: 100px;
+		min-height: 80px;
 		#{$self}__btn, #{$self}__close-btn {
 			display: none;
 			cursor: pointer;
@@ -93,7 +93,7 @@
 				top: -9999px;
 				left: -9999px;
 				transition: top 0s .2s, left 0s .2s;
-				padding-top: 39px;
+				padding-top: 29px;
 				background: transparent;
 				> ul {
 					background: $white;

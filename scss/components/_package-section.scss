@@ -1,0 +1,61 @@
+.package {
+	&__inner {
+
+	}
+	&__btns {
+		display: flex;
+	}
+	&__btn {
+		text-transform: uppercase;
+		background: $dark;
+		color: $white;
+		max-width: 280px;
+		width: 100%;
+		text-align: center;
+		&:hover, &.active {
+			background: $red;
+		}
+	}
+	&__tabs {
+
+	}
+	&__tab {
+
+	}
+	&__image {
+		flex: 0 0 50%;
+		&-wrap {
+	
+		}
+	}
+	&__content {
+		&-title {
+	
+		}
+	}
+	&__lists {
+
+	}
+	&__list {
+		color: $black;
+		&-title {
+			font-weight: 600;
+			font-size: 27px;
+			line-height: 33px;
+		}
+		&-list {
+			li {
+				display: flex;
+				align-items: flex-start;
+				font-size: 17px;
+				line-height: 140%;
+				.iconify {
+					font-size: 24px;
+					min-width: 24px;
+					color: $red;
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+}

@@ -20,13 +20,6 @@
 				flex-direction: column;
 			}
 		}
-		&-home {
-			#{$self}__body {
-				&-wrap {
-					padding-bottom: 50px;
-				}
-			}
-		}
 		#{$self}__title {
 			position: relative;
 			z-index: 1;
@@ -35,18 +28,6 @@
 			justify-content: center;
 			background: transparent;
 			min-height: 110px;
-			h3 {
-				font-weight: 900;
-				font-size: 33px;
-				line-height: 40px;
-				text-transform: uppercase;
-				position: relative;
-				z-index: 2;
-				display: flex;
-				align-items: flex-end;
-				margin-top: 56px;
-				color: $white;
-			}
 			h2 {
 				font-weight: 900;
 				font-size: 90px;
@@ -62,6 +43,19 @@
 				transform: translate(-50%, 0);
 				white-space: nowrap;
 				z-index: 1;
+			}
+			h3 {
+				font-weight: 900;
+				font-size: 48px;
+				line-height: 59px;
+				text-transform: uppercase;
+				position: relative;
+				z-index: 2;
+				display: flex;
+				align-items: flex-end;
+				margin-top: 41px;
+				color: $white;
+				max-width: 1000px;
 			}
 		}
 		#{$self}__text {
@@ -171,6 +165,24 @@
 				}
 			}
 		}
+		&-home {
+			#{$self}__body {
+				&-wrap {
+					padding-bottom: 50px;
+				}
+			}
+		}
+		&-about {
+			#{$self}__inner {
+				min-height: unset;
+				mix-blend-mode: normal;
+			}
+			#{$self}__body {
+				&-wrap {
+					padding-bottom: 175px;
+				}
+			}
+		}
 	}
 }
 
@@ -192,12 +204,20 @@
 				font-size: 40px;
 				line-height: 49px;
 				margin-top: 50px;
+				max-width: 800px;
 			}
 		}
 		.header__text {
 			font-size: 22px;
 			line-height: 27px;
 			max-width: 660px;
+		}
+		&-about {
+			.header__body {
+				&-wrap {
+					padding-bottom: 120px;
+				}
+			}
 		}
 	}
 }
@@ -212,6 +232,7 @@
 				font-size: 26px;
 				line-height: 32px;
 				margin-top: 63px;
+				max-width: 600px;
 			}
 		}
 		.header__text {
@@ -313,11 +334,17 @@
 				font-size: 21px;
 				line-height: 26px;
 				margin-top: 47px;
+				max-width: 400px;
 			}
 		}
 		.header__btn {
 			margin-top: auto;
 			margin-bottom: 20px;
+		}
+		&-home {
+			.header__btn {
+				margin-top: 20px;
+			}
 		}
 		// .header__body-wrap {
 		// 	justify-content: flex-end;
@@ -345,6 +372,13 @@
 				}
 			}
 		}
+		&-about {
+			.header__body {
+				&-wrap {
+					padding-bottom: 220px;
+				}
+			}
+		}
 	}
 }
 
@@ -359,6 +393,11 @@
 				width: 100%;
 			}
 		}
+		&-home {
+			.header__btn {
+				margin-top: auto;
+			}
+		}
 		.header__title {
 			h3 {
 				font-size: 22px;
@@ -366,6 +405,13 @@
 				margin-top: 47px;
 				margin-left: -25px;
 				margin-right: -25px;
+			}
+		}
+		&-about {
+			.header__body {
+				&-wrap {
+					padding-bottom: 120px;
+				}
 			}
 		}
 	}

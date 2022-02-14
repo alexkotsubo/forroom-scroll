@@ -54,6 +54,7 @@
 								</div>
 							</label>
 						</div>
+						<input type="hidden" class="hidden-input-actions">
 						<button type="submit" class="btn btn_big-fill base-popup__btn">оставить заявку</button>
 					</form>
 				</div>
@@ -76,6 +77,7 @@
 								<span>Выберите планировку</span>
 								<div class="base-popup__select">
 									<div class="block-select" data-placeholder="Планировка">
+										<input class="block-select__hidden" type="hidden" name="communication" value="">
 										<div class="block-select__nav">
 											<p class="block-select__selected"></p>
 											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
@@ -95,6 +97,7 @@
 								<span>Выбери пакет ремонта</span>
 								<div class="base-popup__select">
 									<div class="block-select" data-placeholder="Пакет ремонта">
+										<input class="block-select__hidden" type="hidden" name="communication" value="">
 										<div class="block-select__nav">
 											<p class="block-select__selected"></p>
 											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
@@ -135,6 +138,7 @@
 								</div>
 							</label>
 						</div>
+						<input type="hidden" class="hidden-input-actions">
 						<button type="submit" class="btn btn_big-fill base-popup__btn">оставить заявку</button>
 					</form>
 				</div>
@@ -143,7 +147,7 @@
 
 		<!-- Test Popup -->
 
-		<div id="test-popup" data-max-show-count="3" data-seconds-between-showings="10" class="test-popup popup">
+		<div id="test-popup" data-max-show-count="1" data-seconds-between-showings="300" class="test-popup popup">
 			<form action="#" class="test-popup__body popup__body">
 				<div class="test-popup__slide">
 					<div class="test-popup__content">
@@ -553,6 +557,7 @@
 							<li><a href="#" class="burger__link">Портфолио</a></li>
 							<li><a href="#" class="burger__link">Стоимость</a></li>
 							<li><a href="#" class="burger__link">Контакты</a></li>
+							<li><a href="#" class="burger__link">О компании</a></li>
 						</ul>
 
 						<div class="burger__lang">
@@ -607,6 +612,7 @@
 						</li>
 						<li><a href="#">Дизайн</a></li>
 						<li><a href="#">Стили</a></li>
+						<li><a href="#">О компании</a></li>
 					</ul>
 
 					<ul class="nav__menu">
@@ -663,7 +669,7 @@
 
 			<div class="payment__content">
 				<div class="payment__carts">
-					<div class="payment__cart payment-sizer">
+					<div class="payment__cart anim-item payment-sizer">
 						<div class="payment__cart-wrap">
 							<p class="payment__cart-num">10%</p>
 							<h4 class="payment__cart-title">Подписание договора</h4>
@@ -671,7 +677,7 @@
 						</div>
 					</div>
 
-					<div class="payment__cart">
+					<div class="payment__cart anim-item">
 						<div class="payment__cart-wrap">
 							<p class="payment__cart-num">10%</p>
 							<h4 class="payment__cart-title">Подписание договора</h4>
@@ -679,7 +685,7 @@
 						</div>
 					</div>
 
-					<div class="payment__cart">
+					<div class="payment__cart anim-item">
 						<div class="payment__cart-wrap">
 							<p class="payment__cart-num">10%</p>
 							<h4 class="payment__cart-title">Подписание договора</h4>
@@ -687,7 +693,7 @@
 						</div>
 					</div>
 
-					<div class="payment__cart">
+					<div class="payment__cart anim-item">
 						<div class="payment__cart-wrap">
 							<p class="payment__cart-num">10%</p>
 							<h4 class="payment__cart-title">Подписание договора</h4>
@@ -695,7 +701,7 @@
 						</div>
 					</div>
 
-					<div class="payment__cart">
+					<div class="payment__cart anim-item">
 						<div class="payment__cart-wrap">
 							<p class="payment__cart-num">10%</p>
 							<h4 class="payment__cart-title">Подписание договора</h4>
@@ -703,15 +709,7 @@
 						</div>
 					</div>
 
-					<div class="payment__cart">
-						<div class="payment__cart-wrap">
-							<p class="payment__cart-num">10%</p>
-							<h4 class="payment__cart-title">Подписание договора</h4>
-							<p class="payment__cart-text">s</p>
-						</div>
-					</div>
-
-					<div class="payment__cart">
+					<div class="payment__cart anim-item">
 						<div class="payment__cart-wrap">
 							<p class="payment__cart-num">10%</p>
 							<h4 class="payment__cart-title">Подписание договора</h4>
@@ -719,135 +717,7 @@
 						</div>
 					</div>
 
-					<div class="payment__cart">
-						<div class="payment__cart-wrap">
-							<p class="payment__cart-num">10%</p>
-							<h4 class="payment__cart-title">Подписание договора</h4>
-							<p class="payment__cart-text">После подписания договора мы создаём вам личный кабинет и назначаем рабочую группу. Вы оплачиваете первый этап ремонта в размере 10% инициируются подготовительные работы на объекте и начинается работа над создание дизайн-проекта</p>
-						</div>
-					</div>
-
-					<div class="payment__cart">
-						<div class="payment__cart-wrap">
-							<p class="payment__cart-num">10%</p>
-							<h4 class="payment__cart-title">Подписание договора</h4>
-							<p class="payment__cart-text">После подписания договора мы создаём вам личный кабинет и назначаем рабочую группу. Вы оплачиваете первый этап ремонта в размере 10% инициируются подготовительные работы на объекте и начинается работа над создание дизайн-проекта</p>
-						</div>
-					</div>
-
-					<div class="payment__cart">
-						<div class="payment__cart-wrap">
-							<p class="payment__cart-num">10%</p>
-							<h4 class="payment__cart-title">Подписание договора</h4>
-							<p class="payment__cart-text">После подписания договора мы создаём вам личный кабинет и назначаем рабочую группу. Вы оплачиваете первый этап ремонта в размере 10% инициируются подготовительные работы на объекте и начинается работа над создание дизайн-проекта</p>
-						</div>
-					</div>
-
-					<div class="payment__cart">
-						<div class="payment__cart-wrap">
-							<p class="payment__cart-num">10%</p>
-							<h4 class="payment__cart-title">Подписание договора</h4>
-							<p class="payment__cart-text">После подписания договора мы создаём вам личный кабинет и назначаем рабочую группу. Вы оплачиваете первый этап ремонта в размере 10% инициируются подготовительные работы на объекте и начинается работа над создание дизайн-проекта</p>
-						</div>
-					</div>
-
-					<div class="payment__cart">
-						<div class="payment__cart-wrap">
-							<p class="payment__cart-num">10%</p>
-							<h4 class="payment__cart-title">Подписание договора</h4>
-							<p class="payment__cart-text">После подписания договора мы создаём вам личный кабинет и назначаем рабочую группу. Вы оплачиваете первый этап ремонта в размере 10% инициируются подготовительные работы на объекте и начинается работа над создание дизайн-проекта</p>
-						</div>
-					</div>
-
-					<div class="payment__cart">
-						<div class="payment__cart-wrap">
-							<p class="payment__cart-num">10%</p>
-							<h4 class="payment__cart-title">Подписание договора</h4>
-							<p class="payment__cart-text">После подписания договора мы создаём вам личный кабинет и назначаем рабочую группу. Вы оплачиваете первый этап ремонта в размере 10% инициируются подготовительные работы на объекте и начинается работа над создание дизайн-проекта</p>
-						</div>
-					</div>
-
-					<div class="payment__cart">
-						<div class="payment__cart-wrap">
-							<p class="payment__cart-num">10%</p>
-							<h4 class="payment__cart-title">Подписание договора</h4>
-							<p class="payment__cart-text">После подписания договора мы создаём вам личный кабинет и назначаем рабочую группу. Вы оплачиваете первый этап ремонта в размере 10% инициируются подготовительные работы на объекте и начинается работа над создание дизайн-проекта</p>
-						</div>
-					</div>
-
-					<div class="payment__cart">
-						<div class="payment__cart-wrap">
-							<p class="payment__cart-num">10%</p>
-							<h4 class="payment__cart-title">Подписание договора</h4>
-							<p class="payment__cart-text">После подписания договора мы создаём вам личный кабинет и назначаем рабочую группу. Вы оплачиваете первый этап ремонта в размере 10% инициируются подготовительные работы на объекте и начинается работа над создание дизайн-проекта</p>
-						</div>
-					</div>
-
-					<div class="payment__cart">
-						<div class="payment__cart-wrap">
-							<p class="payment__cart-num">10%</p>
-							<h4 class="payment__cart-title">Подписание договора</h4>
-							<p class="payment__cart-text">После подписания договора мы создаём вам личный кабинет и назначаем рабочую группу. Вы оплачиваете первый этап ремонта в размере 10% инициируются подготовительные работы на объекте и начинается работа над создание дизайн-проекта</p>
-						</div>
-					</div>
-
-					<div class="payment__cart">
-						<div class="payment__cart-wrap">
-							<p class="payment__cart-num">10%</p>
-							<h4 class="payment__cart-title">Подписание договора</h4>
-							<p class="payment__cart-text">После подписания договора мы создаём вам личный кабинет и назначаем рабочую группу. Вы оплачиваете первый этап ремонта в размере 10% инициируются подготовительные работы на объекте и начинается работа над создание дизайн-проекта</p>
-						</div>
-					</div>
-
-					<div class="payment__cart">
-						<div class="payment__cart-wrap">
-							<p class="payment__cart-num">10%</p>
-							<h4 class="payment__cart-title">Подписание договора</h4>
-							<p class="payment__cart-text">После подписания договора мы создаём вам личный кабинет и назначаем рабочую группу. Вы оплачиваете первый этап ремонта в размере 10% инициируются подготовительные работы на объекте и начинается работа над создание дизайн-проекта</p>
-						</div>
-					</div>
-
-					<div class="payment__cart">
-						<div class="payment__cart-wrap">
-							<p class="payment__cart-num">10%</p>
-							<h4 class="payment__cart-title">Подписание договора</h4>
-							<p class="payment__cart-text">После подписания договора мы создаём вам личный кабинет и назначаем рабочую группу. Вы оплачиваете первый этап ремонта в размере 10% инициируются подготовительные работы на объекте и начинается работа над создание дизайн-проекта</p>
-						</div>
-					</div>
-
-					<div class="payment__cart">
-						<div class="payment__cart-wrap">
-							<p class="payment__cart-num">10%</p>
-							<h4 class="payment__cart-title">Подписание договора</h4>
-							<p class="payment__cart-text">После подписания договора мы создаём вам личный кабинет и назначаем рабочую группу. Вы оплачиваете первый этап ремонта в размере 10% инициируются подготовительные работы на объекте и начинается работа над создание дизайн-проекта</p>
-						</div>
-					</div>
-
-					<div class="payment__cart">
-						<div class="payment__cart-wrap">
-							<p class="payment__cart-num">10%</p>
-							<h4 class="payment__cart-title">Подписание договора</h4>
-							<p class="payment__cart-text">После подписания договора мы создаём вам личный кабинет и назначаем рабочую группу. Вы оплачиваете первый этап ремонта в размере 10% инициируются подготовительные работы на объекте и начинается работа над создание дизайн-проекта</p>
-						</div>
-					</div>
-
-					<div class="payment__cart">
-						<div class="payment__cart-wrap">
-							<p class="payment__cart-num">10%</p>
-							<h4 class="payment__cart-title">Подписание договора</h4>
-							<p class="payment__cart-text">После подписания договора мы создаём вам личный кабинет и назначаем рабочую группу. Вы оплачиваете первый этап ремонта в размере 10% инициируются подготовительные работы на объекте и начинается работа над создание дизайн-проекта</p>
-						</div>
-					</div>
-
-					<div class="payment__cart">
-						<div class="payment__cart-wrap">
-							<p class="payment__cart-num">10%</p>
-							<h4 class="payment__cart-title">Подписание договора</h4>
-							<p class="payment__cart-text">После подписания договора мы создаём вам личный кабинет и назначаем рабочую группу. Вы оплачиваете первый этап ремонта в размере 10% инициируются подготовительные работы на объекте и начинается работа над создание дизайн-проекта</p>
-						</div>
-					</div>
-
-					<div class="payment__cart">
+					<div class="payment__cart anim-item">
 						<div class="payment__cart-wrap">
 							<p class="payment__cart-num">10%</p>
 							<h4 class="payment__cart-title">Подписание договора</h4>
@@ -855,6 +725,49 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</section>
+
+		<!-- Credit -->
+
+		<section class="credit">
+			<div class="credit__image">
+				<div class="credit__image-wrap ib">
+					<img src="img/credit.jpg" alt="credit" class="ib_use">
+				</div>
+			</div>
+
+			<div class="credit__content">
+				<div class="credit__title">
+					<h2>Кредит</h2>
+					<h3>Кредитование</h3>
+				</div>
+
+				<p class="credit__text">Вы можете взять кредит или получить рассрочку на ремонт в одном из наших банков-партнёров</p>
+				<p class="credit__price">до 400 000₴</p>
+				<div class="credit__banks">
+					<div class="credit__bank">
+						<img src="img/logos-banks/2.jpg" alt="2">
+					</div>
+					<div class="credit__bank">
+						<img src="img/logos-banks/1.jpg" alt="1">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Gift -->
+
+		<section class="gift">
+			<div class="gift__content">
+				<p class="gift__text">Получите дизайн-проект в подарок при заказе любого пакетного решения!</p>
+				<div class="gift__btn">
+					<a href="#" class="btn btn_big-fill">выбрать пакет ремонта</a>
+				</div>
+			</div>
+
+			<div class="gift__image ib">
+				<img src="img/gift.jpg" alt="gift" class="ib_use">
 			</div>
 		</section>
 
@@ -867,6 +780,7 @@
 						<li><a href="#">Ремонт</a></li>
 						<li><a href="#">Дизайн</a></li>
 						<li><a href="#">Стили</a></li>
+						<li><a href="#">О компании</a></li>
 						<li><a href="#">Портфолио</a></li>
 						<li><a href="#">Стоимость</a></li>
 						<li><a href="#">Контакты</a></li>
@@ -908,6 +822,6 @@
 	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 	<script src="js/inputmask.min.js"></script>
 	<script src="js/script.js"></script>
-	<script src="js/payment.js"></script>
+	<script src="js/payment-section.js"></script>
 </body>
 </html>

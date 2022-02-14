@@ -22,6 +22,7 @@ const getPos = elem => {
 	};
 };
 let onCloseTestPopup = () => {};
+let onCloseAnyPopup = () => {};
  
 const vh = window.innerHeight * 0.01;
 let prevWidth =  document.documentElement.clientWidth;
@@ -37,17 +38,16 @@ window.addEventListener('resize', e => {
 /* Rellax */
 
 if (document.querySelectorAll('.rellax').length > 0) {
-	const rellaxPhotos = document.querySelectorAll('.rellax');
-	
+	const rellaxObjects = document.querySelectorAll('.rellax');
+
 	const rellax = new Rellax('.rellax', {
 		center: true,
-		speed: -3,
 	});
 	
 	const rellaxResize = e => {
-		for (let i = 0; i < rellaxPhotos.length; i++) {
-			const src = rellaxPhotos[i].querySelector('.ib_use').getAttribute('src');
-			if (src) rellaxPhotos[i].style.backgroundImage = 'url(' + src + ')';
+		for (let i = 0; i < rellaxObjects.length; i++) {
+			const src = rellaxObjects[i].querySelector('.ib_use');
+			if (src) rellaxObjects[i].style.backgroundImage = 'url(' + src.getAttribute('src') + ')';
 		}
 	};
 	
@@ -117,6 +117,8 @@ const closePopup = elem => {
 
 	if (elem.id === 'test-popup') {
 		onCloseTestPopup();
+	} else {
+		onCloseAnyPopup();
 	}
 };
 
@@ -315,27 +317,6 @@ if (navAddMargin.length) {
 			navAddMargin[i].style.marginTop = `${nav.offsetHeight}px`;
 		});
 	}
-}
-
-/* Brands Slider */
-
-const brandsSlider = document.querySelector('.brands__slider');
-
-if (brandsSlider) {
-	new Swiper('.brands__slider', {
-		loop: true,
-		slidesPerView: 3,
-		speed: 400,
-		autoplay: { delay: 5000 },
-		breakpoints: {
-			992: {
-				slidesPerView: 5,
-			},
-			768: {
-				slidesPerView: 4,
-			}
-		}
-	});
 }
 
 /* Nav Lang */
@@ -911,6 +892,7 @@ window.addEventListener('DOMContentLoaded', e => {
 		const body = document.querySelector('.test-popup__body');
 		const content = popup.querySelectorAll('.test-popup__content');
 		const image = popup.querySelectorAll('.test-popup__image');
+		const disableTestPopup = document.querySelectorAll('[data-disable-test-popup]');
 		let prev = 0;
 		const delay = 400;
 		let mousePosition = { x: null, y: null };
@@ -926,6 +908,11 @@ window.addEventListener('DOMContentLoaded', e => {
 		let maxNumberOfShowing = +popup.getAttribute('data-max-show-count') || 2;
 		let secondsBetweenShowings = +popup.getAttribute('data-seconds-between-showings') * 1000 || 300 * 1000;
 		let setCheckVariables = false;
+		for (let i = 0; i < disableTestPopup.length; i++) {
+			disableTestPopup[i].addEventListener('click', e => {
+				countOfShowing = maxNumberOfShowing;
+			});
+		}
 		onCloseTestPopup = () => {
 			if (setCheckVariables) {
 				cantCheckMouse = false;
@@ -1051,10 +1038,10 @@ window.addEventListener('DOMContentLoaded', e => {
 
 		const handlePageCancel = e => {
 			if (maxNumberOfShowing > countOfShowing) {
-				if (e.clientY < 100) {
+				if (e.clientY < 100 && mousePosition.x < document.documentElement.clientWidth / 2) {
 					if (!cantShow && !cantCheckMouse) {
 						setTimeout(() => {
-							if (mousePosition.y < 30) {
+							if (mousePosition.y < 30 && mousePosition.x < document.documentElement.clientWidth / 2) {
 								openPopup(popup);
 								countOfShowing++;
 								cantCheckMouse = true;
@@ -1107,3 +1094,65 @@ for (let i = 0; i < blockTabs.length; i++) {
 		}
 	}
 }
+
+// Hidden Input Actions
+
+window.addEventListener('DOMContentLoaded', e => {
+	const hiddenInputActions = document.querySelectorAll('.hidden-input-actions');
+	if (hiddenInputActions.length > 0) {
+		const stiliItems = document.querySelectorAll('[data-stili-item]');
+		const chooseItems = document.querySelectorAll('[data-choose-item]');
+		const chooseInput = document.querySelector('[data-choose-input]');
+		const cityItems = document.querySelectorAll('[data-city-item]');
+		let string = {
+			stili: '',
+			choose: '',
+			city: '',
+		};
+		onCloseAnyPopup = () => {
+			for (let i = 0; i < hiddenInputActions.length; i++) {
+				hiddenInputActions[i].setAttribute('value', '');
+			}
+			string.stili = '';
+			string.choose = '';
+			string.city = '';
+			chooseInput.previousElementSibling.querySelector('input').value = '';
+		};
+
+		const inputUpdate = () => {
+			const values = Object.values(string);
+			const value = values.join(' | ').trim();
+			for (let i = 0; i < hiddenInputActions.length; i++) {
+				hiddenInputActions[i].setAttribute('value', value);
+			}
+		};
+
+		for (let i = 0; i < stiliItems.length; i++) {
+			stiliItems[i].addEventListener('click', e => {
+				string.stili = stiliItems[i].getAttribute('data-stili-item');
+				inputUpdate();
+			});
+		}
+
+		for (let i = 0; i < chooseItems.length; i++) {
+			chooseItems[i].addEventListener('click', e => {
+				string.choose = chooseItems[i].getAttribute('data-choose-item');
+				inputUpdate();
+			});
+		}
+
+		for (let i = 0; i < cityItems.length; i++) {
+			cityItems[i].addEventListener('click', e => {
+				string.city = cityItems[i].getAttribute('data-city-item');
+				inputUpdate();
+			});
+		}
+
+		if (chooseInput) {
+			chooseInput.addEventListener('click', e => {
+				string.choose = e.target.previousElementSibling.querySelector('input').value;
+				inputUpdate();
+			});
+		}
+	}
+});

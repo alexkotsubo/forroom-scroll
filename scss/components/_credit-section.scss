@@ -1,0 +1,231 @@
+.credit {
+	display: flex;
+	margin: 120px 0;
+	&__image {
+		flex: 0 0 58%;
+		padding-left: 50px;
+		&-wrap {
+			height: 100%;
+		}
+	}
+	&__content {
+		padding-left: 8vw;
+		padding-top: 30px;
+		padding-bottom: 80px;
+		padding-right: calc(8vw + 50px);
+		flex: 0 0 42%;
+	}
+	&__title {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		align-items: flex-start;
+		background: transparent;
+		min-height: 110px;
+		h3 {
+			font-weight: 900;
+			font-size: 33px;
+			line-height: 40px;
+			text-transform: uppercase;
+			position: relative;
+			z-index: 2;
+			display: flex;
+			align-items: flex-end;
+			margin-top: 56px;
+			color: $dark;
+		}
+		h2 {
+			font-weight: 900;
+			font-size: 90px;
+			line-height: 110px;
+			text-align: center;
+			text-transform: uppercase;
+			opacity: .4;
+			-webkit-text-stroke: 1px $dark;
+			color: transparent;
+			position: absolute;
+			top: 0;
+			left: 0;
+			white-space: nowrap;
+			z-index: 1;
+		}
+	}
+	&__text {
+		margin-top: 25px;
+		font-size: 17px;
+		line-height: 140%;
+		color: $black;
+	}
+	&__price {
+		text-transform: uppercase;
+		margin-top: 20px;
+		font-weight: 900;
+		font-size: 48px;
+		line-height: 59px;
+		color: $black;
+	}
+	&__banks {
+		margin-top: 40px;
+		display: flex;
+	}
+	&__bank {
+		margin-right: 65px;
+		&:last-child {
+			margin-right: 0;
+		}
+		img {
+			max-width: 100%;
+		}
+	}
+}
+
+@media (max-width: 1919px) {
+	.credit__content {
+		padding-right: 50px;
+	}
+}
+
+@media (max-width: 1439px) {
+	.credit__content {
+		padding-right: 50px;
+	}
+	.credit__title {
+		min-height: 85px;
+		h2 {
+			font-size: 70px;
+			line-height: 85px;
+		}
+		h3 {
+			font-size: 28px;
+			line-height: 34px;
+			margin-top: 42px;
+		}
+	}
+	.credit__text {
+		margin-top: 30px;
+	}
+	.credit__price {
+		font-size: 40px;
+		line-height: 49px;
+	}
+	.credit__bank {
+		margin-right: 90px;
+	}
+	.credit__content {
+		padding-top: 60px;
+	}
+}
+
+@media (max-width: 1279px) {
+	.credit {
+		margin: 80px 0;
+	}
+	.credit__text {
+		font-size: 14px;
+	}
+	.credit__price {
+		font-size: 26px;
+		line-height: 32px;
+	}
+	.credit__banks {
+		margin-top: 20px;
+		flex-direction: column;
+	}
+	.credit__bank {
+		margin-right: 0;
+		margin-top: 20px;
+	}
+	.credit__title {
+		h3 {
+			font-size: 22px;
+			line-height: 27px;
+			margin-top: 48px;
+		}
+	}
+}
+
+@media (max-width: 1023px) {
+	.credit__title {
+		h2 {
+			font-size: 60px;
+			line-height: 73px;
+		}
+		h3 {
+			margin-top: 38px;
+		}
+	}
+	.credit {
+		flex-direction: column;
+		margin: 0;
+	}
+	.credit__image {
+		padding-left: 0;
+		flex: none;
+		&-wrap {
+			min-height: 450px;
+		}
+	}
+	.credit__content {
+		flex: none;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 20px;
+		padding-bottom: 80px;
+	}
+}
+
+@media (max-width: 767px) {
+	.credit__title {
+		min-height: 61px;
+		h2 {
+			font-size: 50px;
+			line-height: 61px;
+		}
+		h3 {
+			font-size: 17px;
+			line-height: 21px;
+			margin-top: 32px;
+		}
+	}
+	.credit__banks {
+		margin-top: 40px;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.credit__bank {
+		margin-top: 0;
+		margin-right: 30px;
+	}
+	.credit__price {
+		text-align: center;
+		font-size: 22px;
+		line-height: 27px;
+		margin-top: 20px;
+	}
+	.credit__text {
+		font-size: 12px;
+		line-height: 135%;
+		margin-top: 10px;
+	}
+}
+
+@media (max-width: 479px) {
+	.credit__banks {
+		margin-top: 10px;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	.credit__bank {
+		margin-top: 10px;
+		margin-right: 0;
+	}
+	.credit__price {
+		margin-top: 10px;
+	}
+	.credit__text {
+		margin-top: 10px;
+	}
+	.credit__content {
+		padding-bottom: 40px;
+	}
+}

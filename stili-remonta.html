@@ -77,6 +77,7 @@
 								<span>Выберите планировку</span>
 								<div class="base-popup__select">
 									<div class="block-select" data-placeholder="Планировка">
+										<input class="block-select__hidden" type="hidden" name="communication" value="">
 										<div class="block-select__nav">
 											<p class="block-select__selected"></p>
 											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
@@ -96,6 +97,7 @@
 								<span>Выбери пакет ремонта</span>
 								<div class="base-popup__select">
 									<div class="block-select" data-placeholder="Пакет ремонта">
+										<input class="block-select__hidden" type="hidden" name="communication" value="">
 										<div class="block-select__nav">
 											<p class="block-select__selected"></p>
 											<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
@@ -144,7 +146,7 @@
 
 		<!-- Test Popup -->
 
-		<div id="test-popup" data-max-show-count="3" data-seconds-between-showings="5" class="test-popup popup">
+		<div id="test-popup" data-max-show-count="1" data-seconds-between-showings="300" class="test-popup popup">
 			<form action="#" class="test-popup__body popup__body">
 				<div class="test-popup__slide">
 					<div class="test-popup__content">
@@ -554,6 +556,7 @@
 							<li><a href="#" class="burger__link">Портфолио</a></li>
 							<li><a href="#" class="burger__link">Стоимость</a></li>
 							<li><a href="#" class="burger__link">Контакты</a></li>
+							<li><a href="#" class="burger__link">О компании</a></li>
 						</ul>
 
 						<div class="burger__lang">
@@ -608,6 +611,7 @@
 						</li>
 						<li><a href="#">Дизайн</a></li>
 						<li><a href="#">Стили</a></li>
+						<li><a href="#">О компании</a></li>
 					</ul>
 
 					<ul class="nav__menu">
@@ -710,19 +714,19 @@
 			<div class="menus">
 				<div class="menu">
 					<ul class="menu__wrap">
-						<li><a href="#"><span class="menu__icon"><span class="iconify" data-icon="la:building"></span></span> пакеты ремонта</a></li>
-						<li><a href="#"><span class="menu__icon"><span class="iconify" data-icon="la:tools"></span></span> вторичное жилье</a></li>
-						<li><a href="#"><span class="menu__icon"><span class="iconify" data-icon="la:handshake-solid"></span></span> под аренду</a></li>
-						<li><a href="#"><span class="menu__icon"><span class="iconify" data-icon="la:bed"></span></span> дизайн интерьера</a></li>
+						<li><a href="#"><span class="menu__icon"><span class="iconify" data-icon="ion:folder-open-outline"></span></span> пакеты ремонта</a></li>
+						<li><a href="#"><span class="menu__icon"><span class="iconify" data-icon="ion:bed-outline"></span></span> вторичного жилья</a></li>
+						<li><a href="#"><span class="menu__icon"><span class="iconify" data-icon="ion:key-outline"></span></span> под сдачу</a></li>
+						<li><a href="#"><span class="menu__icon"><span class="iconify" data-icon="ion:color-palette-outline"></span></span> дизайн интерьера</a></li>
 					</ul>
 				</div>
-	
+
 				<div class="menu">
 					<ul class="menu__wrap">
-						<li><a href="#"><span class="menu__icon"><span class="iconify" data-icon="la:building"></span></span> ремонт в <br> новострое</a></li>
-						<li><a href="#"><span class="menu__icon"><span class="iconify" data-icon="la:tools"></span></span> вторичного <br> жилья</a></li>
-						<li><a href="#"><span class="menu__icon"><span class="iconify" data-icon="la:handshake-solid"></span></span> ремонт под <br> аренду</a></li>
-						<li><a href="#"><span class="menu__icon"><span class="iconify" data-icon="la:bed"></span></span> дизайн <br> интерьера</a></li>
+						<li><a href="#"><span class="menu__icon"><span class="iconify" data-icon="ion:folder-open-outline"></span></span> пакеты ремонта</a></li>
+						<li><a href="#"><span class="menu__icon"><span class="iconify" data-icon="ion:bed-outline"></span></span> вторичного жилья</a></li>
+						<li><a href="#"><span class="menu__icon"><span class="iconify" data-icon="ion:key-outline"></span></span> ремонт под сдачу</a></li>
+						<li><a href="#"><span class="menu__icon"><span class="iconify" data-icon="ion:color-palette-outline"></span></span> дизайн интерьера</a></li>
 					</ul>
 				</div>
 			</div>
@@ -766,7 +770,7 @@
 								</div>
 
 								<div class="stili__slide-btns">
-									<a href="#" class="btn btn_big">выбрать пакет</a>
+									<button data-disable-test-popup data-stili-item="Лофт/Брутализм" data-open-popup="call-popup" type="button" class="btn btn_big">выбрать пакет</button>
 								</div>
 							</div>
 						</div>
@@ -800,7 +804,7 @@
 								</div>
 
 								<div class="stili__slide-btns">
-									<a href="#" class="btn btn_big">выбрать пакет</a>
+									<button data-disable-test-popup data-stili-item="Скандинавский/Эко стиль" data-open-popup="call-popup" type="button" class="btn btn_big">выбрать пакет</button>
 								</div>
 							</div>
 						</div>
@@ -834,7 +838,7 @@
 								</div>
 
 								<div class="stili__slide-btns">
-									<a href="#" class="btn btn_big">выбрать пакет</a>
+									<button data-disable-test-popup data-stili-item="Скандинавский/Эко стиль" data-open-popup="call-popup" type="button" class="btn btn_big">выбрать пакет</button>
 								</div>
 							</div>
 						</div>
@@ -868,7 +872,7 @@
 								</div>
 
 								<div class="stili__slide-btns">
-									<a href="#" class="btn btn_big">выбрать пакет</a>
+									<button data-disable-test-popup data-stili-item="Скандинавский/Эко стиль" data-open-popup="call-popup" type="button" class="btn btn_big">выбрать пакет</button>
 								</div>
 							</div>
 						</div>
@@ -902,7 +906,7 @@
 								</div>
 
 								<div class="stili__slide-btns">
-									<a href="#" class="btn btn_big">выбрать пакет</a>
+									<button data-disable-test-popup data-stili-item="Скандинавский/Эко стиль" data-open-popup="call-popup" type="button" class="btn btn_big">выбрать пакет</button>
 								</div>
 							</div>
 						</div>
@@ -1110,6 +1114,7 @@
 						<label>
 							<span>Выберите удобный способ связи</span>
 							<div class="block-select">
+								<input class="block-select__hidden" type="hidden" name="communication" value="">
 								<div class="block-select__nav">
 									<p class="block-select__selected"></p>
 									<span class="iconify" data-icon="ic:baseline-arrow-drop-down"></span>
@@ -1145,6 +1150,7 @@
 						<li><a href="#">Ремонт</a></li>
 						<li><a href="#">Дизайн</a></li>
 						<li><a href="#">Стили</a></li>
+						<li><a href="#">О компании</a></li>
 						<li><a href="#">Портфолио</a></li>
 						<li><a href="#">Стоимость</a></li>
 						<li><a href="#">Контакты</a></li>
