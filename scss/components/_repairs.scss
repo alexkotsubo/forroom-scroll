@@ -134,7 +134,6 @@
 			top: 75px;
 			left: 0;
 			white-space: nowrap;
-			transform: translate(-15%, 0);
 			z-index: 1;
 		}
 	}
@@ -169,12 +168,6 @@
 	}
 }
 
-@media (max-width: 1919px) {
-	.repairs__title h2 {
-		transform: translate(-8vw, 0);
-	}
-}
-
 @media (max-width: 1439px) {
 	.repairs__title {
 		min-height: 85px;
@@ -201,7 +194,7 @@
 @media (max-width: 1279px) {
 	.repairs__inner {
 		position: relative;
-		min-height: 100vh;
+		min-height: calc(var(--vh, 1vh) * 100);
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -257,9 +250,6 @@
 		overflow: hidden;
 	}
 
-	.repairs__inner {
-	}
-
 	.repairs__content {
 		padding: 80px 110px;
 		color: $white;
@@ -277,7 +267,6 @@
 		-webkit-text-stroke: 1px $white;
 		font-size: 50px;
 		line-height: 61px;
-		transform: translate(-45px, 0);
 	}
 
 	.repairs__title h3 {
@@ -324,6 +313,14 @@
 				background: transparent;
 			}
 		}
+	}
+
+	.repairs__content {
+		min-height: calc(var(--vh, 1vh) * 100);
+	}
+
+	.repairs__image {
+		min-height: calc(var(--vh, 1vh) * 100);
 	}
 }
 

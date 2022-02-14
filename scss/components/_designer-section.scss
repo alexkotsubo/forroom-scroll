@@ -25,7 +25,6 @@
 			position: absolute;
 			top: 0;
 			left: 0;
-			transform: translate(-30px, 0);
 			white-space: nowrap;
 			opacity: 0.4;
 		}
@@ -229,11 +228,6 @@
 	}
 	.designer__list-list li {
 		margin-top: 20px;
-	}
-	.designer__title {
-		h2 {
-			transform: translate(0, 0);
-		}
 	}
 }
 

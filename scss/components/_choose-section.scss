@@ -130,7 +130,6 @@
 				top: 0;
 				left: 0;
 				white-space: nowrap;
-				transform: translate(-70px, 0);
 				z-index: 1;
 			}
 		}
@@ -285,9 +284,6 @@
 	}
 
 	.choose__scroll-title {
-		h2 {
-			transform: translate(-60px, 0);
-		}
 		h3 {
 			font-size: 22px;
 			line-height: 27px;

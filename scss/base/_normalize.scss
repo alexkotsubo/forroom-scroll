@@ -26,8 +26,8 @@ html, body {
 }
 
 ::selection {
-	color:#000;
-	background:#fff;
+	color: $black;
+	background: $white;
 }
 
 body.lock {

@@ -1,0 +1,102 @@
+.section-cover {
+	&_first {
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: -1px;
+		z-index: 3;
+		width: calc(100% + 1px);
+		height: 100%;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		background: transparent;
+		> span {
+			width: 25vw;
+			position: relative;
+			> span {
+				position: absolute;
+				top: 0;
+				transition: .5s;
+				width: 0;
+				height: 100%;
+				background: $white;
+			}
+			&:last-child {
+				width: calc(25vw + 1px);
+			}
+		}
+		&.hide {
+			> span {
+				> span {
+					width: 100%;
+				}
+			}
+			> span:last-child {
+				> span {
+					width: 100%;
+				}
+			}
+		}
+		> span {
+			> span {
+				left: 0;
+			}
+			&:nth-child(2), &:nth-child(3) {
+				> span {
+					left: unset;
+					right: 0;
+				}
+			}
+		}
+	}
+	&_second {
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: -1px;
+		z-index: 3;
+		width: calc(100% + 1px);
+		height: 100%;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		background: transparent;
+		> span {
+			width: 25vw;
+			position: relative;
+			> span {
+				position: absolute;
+				top: 0;
+				transition: .5s;
+				width: 0;
+				height: 100%;
+				background: $white;
+			}
+			&:last-child {
+				width: calc(25vw + 1px);
+			}
+		}
+		&.hide {
+			> span {
+				> span {
+					width: 100%;
+				}
+			}
+			> span:last-child {
+				> span {
+					width: 100%;
+				}
+			}
+		}
+		> span {
+			> span {
+				right: 0;
+			}
+			&:nth-child(2), &:nth-child(3) {
+				> span {
+					right: unset;
+					left: 0;
+				}
+			}
+		}
+	}
+}

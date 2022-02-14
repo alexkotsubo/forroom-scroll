@@ -28,6 +28,7 @@
 		}
 	}
 	&.active {
+		background: $dark;
 		visibility: visible;
 		.menu {
 			.menu__wrap {

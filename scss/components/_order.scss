@@ -45,7 +45,6 @@
 				top: 0;
 				left: 0;
 				white-space: nowrap;
-				transform: translate(-15%, 0);
 				z-index: 1;
 			}
 		}
@@ -153,11 +152,6 @@
 		}
 		#{$self}__content {
 			flex-basis: 35%;
-			&-title {
-				h2 {
-					transform: translate(60px, 0);
-				}
-			}
 		}
 	}
 	&_packages {
@@ -183,16 +177,6 @@
 
 	.order__content-btns {
 		margin-top: 28px;
-	}
-
-	.order_reverse {
-		.order__content {
-			&-title {
-				h2 {
-					transform: translate(100px, 0);
-				}
-			}
-		}
 	}
 }
 
@@ -238,7 +222,6 @@
 		h2 {
 			font-size: 50px;
 			line-height: 61px;
-			transform: translate(-4%, 0);
 		}
 		h3 {
 			font-size: 22px;
@@ -285,10 +268,6 @@
 		}
 	}
 
-	.order__content-title h2 {
-		transform: translate(-10%, 0);
-	}
-
 	.order__image {
 		padding-bottom: 78%;
 		flex: none;
@@ -319,7 +298,6 @@
 				h2 {
 					left: unset;
 					right: 0;
-					transform: translate(15px, 0);
 				}
 			}
 		}

@@ -118,7 +118,6 @@
 			top: 0;
 			left: 0;
 			white-space: nowrap;
-			transform: translate(60px, 0);
 			z-index: 1;
 		}
 	}
@@ -176,9 +175,6 @@
 		}
 		#{$self}__title {
 			margin-bottom: 5px;
-			h2 {
-				transform: translate(0, 0);
-			}
 		}
 		#{$self}__content {
 			padding-left: 0;
@@ -229,9 +225,6 @@
 		}
 		#{$self}__title {
 			margin-bottom: 25px;
-			h2 {
-				transform: translate(0, 0);
-			}
 		}
 		#{$self}__btn {
 			margin-top: 40px;
@@ -247,20 +240,6 @@
 		padding-bottom: 120px;
 		&_task {
 			padding-bottom: 0;
-		}
-	}
-
-	.about__title {
-		h2 {
-			transform: translate(-48px, 0);
-		}
-	}
-
-	.about_stili-reverse {
-		.about__title {
-			h2 {
-				transform: translate(60px, 0);
-			}
 		}
 	}
 }
@@ -310,9 +289,6 @@
 	}
 	.about__title {
 		margin-bottom: 10px;
-		h2 {
-			transform: translate(-67px, 0);
-		}
 		h3 {
 			font-size: 22px;
 			line-height: 27px;
@@ -379,12 +355,9 @@
 		h2 {
 			font-size: 60px;
 			line-height: 73px;
-			transform: translate(40px, 0);
 		}
 		h3 {
 			margin-top: 38px;
-			left: 50%;
-			transform: translate(-50%, 0);
 		}
 	}
 	.about_task {
@@ -487,7 +460,6 @@
 		h2 {
 			font-size: 40px;
 			line-height: 49px;
-			transform: translate(67px, 0);
 		}
 		h3 {
 			font-size: 17px;
@@ -531,11 +503,6 @@
 	.about_stili {
 		.about__content {
 			padding: 10px 20px 50px;
-		}
-	}
-	.about__title {
-		h2 {
-			transform: translate(41px, 0);
 		}
 	}
 	.about_task {
