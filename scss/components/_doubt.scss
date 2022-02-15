@@ -144,13 +144,38 @@
 
 	.doubt__title h2 {
 		font-size: 28px;
-		margin-top: 41px;
+		margin-top: 22px;
 		line-height: 34px;
 	}
 
 	.doubt__title h3 {
-		font-size: 70px;
-		line-height: 85px;
+		font-size: 50px;
+		line-height: 61px;
+	}
+
+	.doubt__info-text {
+		font-size: 17px;
+		line-height: 21px;
+	}
+
+	.doubt__info-address {
+		font-size: 14px;
+		line-height: 140%;
+	}
+
+	.doubt__info-time {
+		font-size: 14px;
+		line-height: 17px;
+	}
+
+	.doubt__text {
+		margin-top: 13px;
+	}
+
+	.doubt__text {
+		font-size: 14px;
+		line-height: 140%;
+		max-width: 100%;
 	}
 }
 
@@ -172,25 +197,6 @@
 		font-size: 28px;
 		line-height: 34px;
 		margin-top: 21px;
-	}
-
-	.doubt__text {
-		margin-top: 20px;
-	}
-
-	.doubt__info-text {
-		font-size: 17px;
-		line-height: 21px;
-	}
-
-	.doubt__info-address {
-		font-size: 14px;
-		line-height: 140%;
-	}
-
-	.doubt__info-time {
-		font-size: 14px;
-		line-height: 17px;
 	}
 
 	.doubt__socials li a .iconify {
@@ -231,12 +237,6 @@
 	.doubt__title h3 {
 		font-size: 50px;
 		line-height: 61px;
-	}
-
-	.doubt__text {
-		font-size: 14px;
-		line-height: 140%;
-		max-width: 100%;
 	}
 }
 

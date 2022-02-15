@@ -23,6 +23,15 @@
 			}
 		}
 		#{$self}__title {
+			&.anim-item {
+				opacity: 0;
+				transform: scale(0);
+				transition: .5s .2s;
+				&.active {
+					opacity: 1;
+					transform: scale(1);
+				}
+			}
 			position: relative;
 			z-index: 1;
 			display: flex;
@@ -115,12 +124,11 @@
 			opacity: 1;
 			position: relative;
 			z-index: 5;
-			mix-blend-mode: lighten;
 		}
 		#{$self}__cover {
 			position: absolute;
 			top: 0;
-			left: -1px;
+			left: 0;
 			width: calc(100% + 1px);
 			height: 100%;
 			display: flex;
@@ -138,13 +146,14 @@
 				&::before {
 					content: '';
 					display: block;
-					width: 100%;
+					width: 0;
 					height: 100%;
 					position: absolute;
 					top: 0;
-					right: 0;
-					background: #000;
+					left: 0;
+					background: $white;
 					transition: .5s;
+					z-index: 6;
 				}
 			}
 			&-inner {
@@ -157,13 +166,15 @@
 				}
 			}
 			&.hide {
-				> span, #{$self}__cover-inner span {
+				#{$self}__cover-inner span {
 					&::before {
-						width: 0;
+						width: 100%;
 					}
 				}
-				> span:last-child {
-					left: 1px;
+				> span {
+					&::before {
+						width: 100%;
+					}
 				}
 			}
 		}

@@ -104,7 +104,15 @@
 	}
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1439px) {
+	.footer_stili {
+		.footer__menu li a {
+			font-size: 17px;
+			line-height: 21px;
+		}
+	}
+}
+@media (max-width: 1279px) {
 	.footer_stili {
 		.footer__menus {
 			flex-basis: 30%;

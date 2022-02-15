@@ -947,8 +947,9 @@ window.addEventListener('DOMContentLoaded', e => {
 		};
 
 		const handleBodyHeight = e => {
+			body.style.minHeight = '0px';
 			if (document.documentElement.clientWidth > 1279) {
-				body.style.minHeight = slides[prev].offsetHeight + 'px';
+				body.style.minHeight = content[prev].offsetHeight + 'px';
 			} else {
 				body.style.minHeight = content[prev].offsetHeight + image[prev].offsetHeight + 'px';
 			}

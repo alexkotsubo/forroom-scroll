@@ -404,6 +404,9 @@
 			}
 		}
 	}
+	.about__title {
+		justify-content: center;
+	}
 	.about_smeta {
 		.about__image {
 			padding-right: 0;
@@ -427,7 +430,6 @@
 		.about__title {
 			h2 {
 				left: 50%;
-				margin-left: 80px;
 				transform: translate(-50%, 0);
 			}
 		}
