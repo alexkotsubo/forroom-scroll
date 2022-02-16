@@ -41,7 +41,7 @@
 			justify-content: center;
 			position: relative;
 			z-index: 4;
-			background: $white;
+			background: $white_secondary;
 			font-size: 17px;
 			line-height: 140%;
 			padding: 40px;
@@ -71,24 +71,18 @@
 	.director__inner {
 		min-height: 600px;
 	}
-}
-
-@media (max-width: 1279px) {
 	.director__title {
 		font-size: 17px;
 		line-height: 21px;
 	}
-	.director__content {
-		margin-top: 50px;
-		margin-bottom: 50px;
-	}
 	.director__text {
 		font-size: 14px;
-		line-height: 17px;
 	}
 	.director__about {
 		font-size: 14px;
-		line-height: 17px;
+	}
+	.director__inner {
+		min-height: 500px;
 	}
 }
 

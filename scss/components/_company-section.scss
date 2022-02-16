@@ -107,24 +107,23 @@
 			line-height: 85px;
 		}
 		h3 {
-			font-size: 28px;
-			line-height: 34px;
-			margin-top: 42px;
-		}
-	}
-}
-
-@media (max-width: 1279px) {
-	.company__title {
-		h3 {
 			font-size: 22px;
 			line-height: 27px;
 			margin-top: 48px;
 		}
 	}
 	.company__text {
-		margin-top: 10px;
 		font-size: 14px;
+	}
+	.company__image-wrap,
+	.company__slider .swiper .swiper-slide {
+		min-height: 550px;
+	}
+}
+
+@media (max-width: 1279px) {
+	.company__text {
+		margin-top: 10px;
 	}
 	.company__cart {
 		padding-bottom: 80px;

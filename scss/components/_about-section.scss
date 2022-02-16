@@ -275,6 +275,16 @@
 			}
 		}
 	}
+	.about__text {
+		font-size: 14px;
+	}
+	.about__title {
+		h3 {
+			font-size: 22px;
+			line-height: 27px;
+			margin-top: 48px;
+		}
+	}
 }
 
 @media (max-width: 1279px) {
@@ -284,16 +294,8 @@
 			padding-bottom: 0;
 		}
 	}
-	.about__text {
-		font-size: 14px;
-	}
 	.about__title {
 		margin-bottom: 10px;
-		h3 {
-			font-size: 22px;
-			line-height: 27px;
-			margin-top: 48px;
-		}
 	}
 }
 

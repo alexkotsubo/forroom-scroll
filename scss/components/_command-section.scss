@@ -105,13 +105,6 @@
 
 @media (max-width: 1441px) {
 	.command__cart-title {
-		font-size: 22px;
-		line-height: 27px;
-	}
-}
-
-@media (max-width: 1279px) {
-	.command__cart-title {
 		font-size: 17px;
 		line-height: 21px;
 	}
@@ -121,6 +114,9 @@
 	.command__cart-content {
 		min-height: 290px;
 	}
+}
+
+@media (max-width: 1279px) {
 	.command {
 		padding-top: 80px;
 		padding-bottom: 55px;

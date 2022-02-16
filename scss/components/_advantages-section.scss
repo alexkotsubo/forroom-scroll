@@ -51,19 +51,16 @@
 		font-size: 89px;
 	}
 	.advantages__cart-subtitle {
-		font-size: 22px;
-		line-height: 27px;
-	}
-}
-
-@media (max-width: 1279px) {
-	.advantages__cart-subtitle {
 		font-size: 17px;
 		line-height: 21px;
 	}
 	.advantages__cart-text {
 		font-size: 14px;
+		margin-top: 10px;
 	}
+}
+
+@media (max-width: 1279px) {
 	.advantages {
 		padding-bottom: 60px;
 	}

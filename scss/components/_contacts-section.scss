@@ -134,18 +134,11 @@
 			line-height: 85px;
 		}
 		h3 {
-			font-size: 28px;
-			line-height: 34px;
-			margin-top: 42px;
+			font-size: 22px;
+			line-height: 27px;
+			margin-top: 48px;
 		}
 	}
-	.contacts__tab-list li p a {
-		font-size: 22px;
-		line-height: 27px;
-	}
-}
-
-@media (max-width: 1279px) {
 	.contacts__tab-list li p a {
 		font-size: 17px;
 		line-height: 21px;
@@ -156,13 +149,12 @@
 	.contacts__tab-list li .iconify {
 		font-size: 32px;
 	}
-	.contacts__title {
-		h3 {
-			font-size: 22px;
-			line-height: 27px;
-			margin-top: 47px;
-		}
+	.contacts__btn {
+		margin-top: 20px;
 	}
+}
+
+@media (max-width: 1279px) {
 	.contacts {
 		padding-bottom: 80px;
 	}
