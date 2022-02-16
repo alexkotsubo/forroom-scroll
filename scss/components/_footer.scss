@@ -107,9 +107,16 @@
 @media (max-width: 1441px) {
 	.footer_stili {
 		.footer__menu li a {
-			font-size: 17px;
-			line-height: 21px;
+			font-size: 14px;
+			line-height: 17px;
 		}
+		.footer__logo {
+			max-width: 200px;
+		}
+	}
+	.footer_stili .footer__bottom {
+		font-size: 12px;
+		line-height: 135%;
 	}
 }
 @media (max-width: 1279px) {
