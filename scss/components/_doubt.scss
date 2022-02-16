@@ -120,10 +120,6 @@
 		margin-top: 20px;
 	}
 
-	.doubt__form {
-		margin-top: 20px;
-	}
-
 	.doubt__info-time {
 		margin-top: 10px;
 	}
@@ -133,9 +129,9 @@
 	}
 }
 
-@media (max-width: 1439px) {
+@media (max-width: 1441px) {
 	.doubt__content {
-		padding: 40px 50px 10px;
+		padding: 40px 50px 30px;
 	}
 
 	.doubt__title {
@@ -151,6 +147,10 @@
 	.doubt__title h3 {
 		font-size: 50px;
 		line-height: 61px;
+	}
+
+	.doubt__form {
+		margin-top: 40px;
 	}
 
 	.doubt__info-text {
@@ -192,6 +192,9 @@
 	.doubt__content {
 		padding: 60px 50px 25px;
 	}
+	.doubt__form-btn .btn {
+		max-width: 280px;
+	}
 }
 
 @media (max-width: 1023px) {
@@ -220,13 +223,15 @@
 	.doubt__title h2 {
 		font-size: 22px;
 		line-height: 27px;
-		margin-top: 0;
-		top: -7px;
 	}
 
 	.doubt__title h3 {
 		font-size: 50px;
 		line-height: 61px;
+	}
+
+	.doubt__info {
+		margin-top: 20px;
 	}
 }
 
@@ -246,6 +251,7 @@
 		line-height: 21px;
 		margin-left: auto;
 		margin-right: auto;
+		margin-top: 33px;
 	}
 
 	.doubt__title h3 {

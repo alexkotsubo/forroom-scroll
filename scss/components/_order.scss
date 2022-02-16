@@ -92,7 +92,7 @@
 		position: relative;
 		z-index: 2;
 		display: flex;
-		min-height: 100vh;
+		min-height: 90vh;
 	}
 	&__cover {
 		overflow: hidden;
@@ -180,7 +180,7 @@
 	}
 }
 
-@media (max-width: 1439px) {
+@media (max-width: 1441px) {
 	.order__content-title {
 		min-height: 61px;
 		h2 {
@@ -202,6 +202,10 @@
 	.order__list {
 		font-size: 14px;
 		line-height: 140%;
+	}
+
+	.order__content {
+		padding: 50px 40px;
 	}
 }
 
@@ -307,10 +311,6 @@
 		.btn {
 			margin-right: 0;
 		}
-	}
-
-	.order__content-text {
-		margin-top: 0;
 	}
 
 	.order__content {

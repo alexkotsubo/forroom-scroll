@@ -118,9 +118,13 @@
 		padding-top: 25px;
 		padding-bottom: 80px;
 	}
+
+	.portfolio_stili .portfolio__btn {
+		margin-top: 20px;
+	}
 }
 
-@media (max-width: 1439px) {
+@media (max-width: 1441px) {
 	.portfolio_stili {
 		.portfolio__grid-title {
 			font-size: 17px;
