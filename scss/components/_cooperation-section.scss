@@ -109,8 +109,14 @@
 
 @media (max-width: 1441px) {
 	.cooperation__title {
-		font-size: 22px;
-		line-height: 27px;
+		font-size: 17px;
+		line-height: 21px;
+	}
+	.cooperation__text {
+		font-size: 14px;
+	}
+	.cooperation__image-inner {
+		min-height: 275px;
 	}
 }
 
@@ -119,21 +125,11 @@
 		padding-bottom: 55px;
 		padding-top: 80px;
 	}
-	.cooperation__title {
-		font-size: 17px;
-		line-height: 21px;
-	}
-	.cooperation__text {
-		font-size: 14px;
-	}
 	.cooperation__carts {
 		margin-top: 30px;
 	}
 	.cooperation__cart {
 		margin-top: 40px;
-	}
-	.cooperation__image-inner {
-		min-height: 275px;
 	}
 }
 

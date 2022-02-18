@@ -92,7 +92,7 @@
 		position: relative;
 		z-index: 2;
 		display: flex;
-		min-height: 90vh;
+		min-height: 83vh;
 	}
 	&__cover {
 		overflow: hidden;
@@ -206,6 +206,11 @@
 
 	.order__content {
 		padding: 50px 40px;
+	}
+	.order_packages {
+		.order__content {
+			padding: 50px 40px;
+		}
 	}
 }
 

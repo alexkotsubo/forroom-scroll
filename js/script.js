@@ -1118,7 +1118,7 @@ window.addEventListener('DOMContentLoaded', e => {
 			string.stili = '';
 			string.choose = '';
 			string.city = '';
-			chooseInput.previousElementSibling.querySelector('input').value = '';
+			if (chooseInput) chooseInput.previousElementSibling.querySelector('input').value = '';
 		};
 
 		const inputUpdate = () => {

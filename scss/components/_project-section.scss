@@ -1,7 +1,7 @@
 .project {
 	overflow: hidden;
-	padding-left: 50px;
-	padding-right: 50px;
+	padding-left: 11vw;
+	padding-right: 11vw;
 	&__header {
 		padding-top: 80px;
 		display: flex;
@@ -37,7 +37,7 @@
 			display: block;
 			margin-top: 20px;
 			margin-right: 20px;
-			min-height: 290px;
+			min-height: 240px;
 		}
 	}
 }
@@ -45,7 +45,7 @@
 .project-item {
 	&_height2 {
 		.project__cart-wrap {
-			min-height: 600px;
+			min-height: 500px;
 		}
 	}
 	&_width2 {
@@ -61,12 +61,12 @@
 	.project-item {
 		&_height2 {
 			.project__cart-wrap {
-				min-height: 440px;
+				min-height: 360px;
 			}
 		}
 	}
 	.project__cart-wrap {
-		min-height: 210px;
+		min-height: 170px;
 	}
 }
 
@@ -74,12 +74,12 @@
 	.project-item {
 		&_height2 {
 			.project__cart-wrap {
-				min-height: 380px;
+				min-height: 320px;
 			}
 		}
 	}
 	.project__cart-wrap {
-		min-height: 180px;
+		min-height: 150px;
 	}
 	.project__header {
 		&-btn {
@@ -92,24 +92,31 @@
 			line-height: 34px;
 		}
 	}
+	.project__header {
+		&-text {
+			font-size: 22px;
+			line-height: 27px;
+		}
+		&-btn {
+			.iconify {
+				font-size: 32px;
+			}
+		}
+	}
 }
 
 @media (max-width: 1279px) {
 	.project__cart-wrap {
-		min-height: 140px;
+		min-height: 110px;
+	}
+	.project__header {
+		padding-top: 40px;
 	}
 	.project-item {
 		&_height2 {
 			.project__cart-wrap {
-				min-height: 300px;
+				min-height: 240px;
 			}
-		}
-	}
-	.project__header {
-		padding-top: 40px;
-		&-text {
-			font-size: 22px;
-			line-height: 27px;
 		}
 	}
 	.project__carts {

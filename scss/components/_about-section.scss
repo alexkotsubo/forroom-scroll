@@ -55,7 +55,7 @@
 		position: relative;
 		z-index: 2;
 		display: flex;
-		min-height: 100vh;
+		min-height: 84vh;
 	}
 	&__body {
 		max-width: 600px;
@@ -285,6 +285,26 @@
 			margin-top: 48px;
 		}
 	}
+	.about {
+		&_task {
+			.about__list li {
+				padding: 0 10px;
+			}
+			.about__list li .iconify {
+				font-size: 40px;
+			}
+			.about__list li p {
+				margin-top: 10px;
+				font-size: 14px;
+				line-height: 17px;
+			}
+		}
+	}
+	.about_smeta {
+		.about__btn {
+			margin-top: 20px;
+		}
+	}
 }
 
 @media (max-width: 1279px) {
@@ -479,17 +499,6 @@
 		&_task {
 			.about__list {
 				margin-top: 20px;
-			}
-			.about__list li {
-				padding: 0 10px;
-			}
-			.about__list li .iconify {
-				font-size: 40px;
-			}
-			.about__list li p {
-				margin-top: 10px;
-				font-size: 14px;
-				line-height: 17px;
 			}
 		}
 	}

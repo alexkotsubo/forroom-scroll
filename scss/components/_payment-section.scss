@@ -82,19 +82,13 @@
 
 @media (max-width: 1441px) {
 	.payment__carts {
-		padding-top: 70px;
+		padding-top: 30px;
 	}
-}
-
-@media (max-width: 1279px) {
 	.payment__cart-wrap {
-		margin-top: 140px;
+		margin-top: 120px;
 	}
 	.payment__carts {
-		margin-top: -140px;
-	}
-	.payment__carts {
-		padding-top: 25px;
+		margin-top: -120px;
 	}
 	.payment__cart-num {
 		font-size: 89px;
@@ -110,6 +104,12 @@
 	}
 	.payment__cart-num::after {
 		top: -5px;
+	}
+}
+
+@media (max-width: 1279px) {
+	.payment__carts {
+		padding-top: 25px;
 	}
 }
 

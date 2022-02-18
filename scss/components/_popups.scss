@@ -219,7 +219,7 @@
 			z-index: 2;
 			display: flex;
 			align-items: flex-end;
-			margin-top: 80px;
+			margin-top: 61px;
 		}
 	}
 	&__steps {
@@ -227,8 +227,8 @@
 		align-items: center;
 		> span {
 			font-weight: 900;
-			font-size: 120px;
-			line-height: 146px;
+			font-size: 100px;
+			line-height: 122px;
 			text-transform: uppercase;
 			-webkit-text-stroke: 1px $red;
 			color: transparent;
@@ -256,8 +256,8 @@
 		margin-top: 20px;
 		h4 {
 			font-weight: 600;
-			font-size: 27px;
-			line-height: 33px;
+			font-size: 22px;
+			line-height: 27px;
 			color: $black;
 		}
 	}
@@ -466,7 +466,7 @@
 		h3 {
 			font-size: 22px;
 			line-height: 27px;
-			margin-top: 54px;
+			margin-top: 48px;
 			max-width: 550px;
 		}
 	}

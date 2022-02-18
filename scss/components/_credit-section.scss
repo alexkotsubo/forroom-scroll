@@ -96,17 +96,18 @@
 			line-height: 85px;
 		}
 		h3 {
-			font-size: 28px;
-			line-height: 34px;
-			margin-top: 42px;
+			font-size: 22px;
+			line-height: 27px;
+			margin-top: 48px;
 		}
 	}
 	.credit__text {
 		margin-top: 30px;
+		font-size: 14px;
 	}
 	.credit__price {
-		font-size: 40px;
-		line-height: 49px;
+		font-size: 28px;
+		line-height: 34px;
 	}
 	.credit__bank {
 		margin-right: 90px;
@@ -120,13 +121,6 @@
 	.credit {
 		margin: 80px 0;
 	}
-	.credit__text {
-		font-size: 14px;
-	}
-	.credit__price {
-		font-size: 26px;
-		line-height: 32px;
-	}
 	.credit__banks {
 		margin-top: 20px;
 		flex-direction: column;
@@ -134,13 +128,6 @@
 	.credit__bank {
 		margin-right: 0;
 		margin-top: 20px;
-	}
-	.credit__title {
-		h3 {
-			font-size: 22px;
-			line-height: 27px;
-			margin-top: 48px;
-		}
 	}
 }
 

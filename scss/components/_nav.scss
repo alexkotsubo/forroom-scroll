@@ -28,15 +28,12 @@
 			}
 		}
 		#{$self}__body {
-			position: relative;
-			max-width: 1920px;
-			left: 50%;
-			transform: translate(-50%, 0);
 			width: 100%;
 			padding: 10px 50px;
 			background: $white_secondary;
 			display: flex;
 			align-items: center;
+			position: relative;
 			z-index: 52;
 		}
 		#{$self}__logo {

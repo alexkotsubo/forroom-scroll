@@ -111,6 +111,9 @@
 	.team__cart {
 		margin-top: 40px;
 	}
+	.team__content {
+		min-height: 500px;
+	}
 }
 
 @media (max-width: 1441px) {
@@ -126,23 +129,13 @@
 		}
 	}
 	.team__content {
-		min-height: 445px;
-	}
-	.team__title {
-		font-size: 22px;
-		line-height: 27px;
+		min-height: 400px;
 	}
 	.team__cart {
 		margin-top: 80px;
 	}
 	.team__carts {
 		margin-top: 30px;
-	}
-}
-
-@media (max-width: 1279px) {
-	.team {
-		padding: 55px 50px 50px;
 	}
 	.team__content {
 		&-info {
@@ -152,6 +145,12 @@
 	.team__title {
 		font-size: 17px;
 		line-height: 21px;
+	}
+}
+
+@media (max-width: 1279px) {
+	.team {
+		padding: 55px 50px 50px;
 	}
 }
 

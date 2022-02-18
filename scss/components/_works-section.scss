@@ -193,7 +193,9 @@
 			line-height: 85px;
 		}
 		h3 {
-			margin-top: 22px;
+			font-size: 40px;
+			line-height: 49px;
+			margin-top: 31px;
 		}
 	}
 	.works__header {
@@ -204,11 +206,14 @@
 		line-height: 61px;
 	}
 	.works__cart-subtitle {
-		font-size: 22px;
-		line-height: 27px;
+		font-size: 17px;
+		line-height: 21px;
+	}
+	.works__cart-text {
+		font-size: 14px;
 	}
 	.works__cart-inner {
-		min-height: 400px;
+		min-height: 350px;
 	}
 	.works__pagination {
 		&-btn {
@@ -236,10 +241,6 @@
 	.works__header {
 		min-height: 200px;
 	}
-	.works__cart-subtitle {
-		font-size: 17px;
-		line-height: 21px;
-	}
 	.works {
 		padding-bottom: 80px;
 	}
@@ -251,9 +252,6 @@
 			}
 		}
 	}
-	.works__cart-inner {
-		min-height: 350px;
-	}
 	.works_packages {
 		padding-top: 80px;
 		padding-bottom: 0;
@@ -264,9 +262,6 @@
 }
 
 @media (max-width: 1023px) {
-	.works__cart-text {
-		font-size: 14px;
-	}
 	.works__cart {
 		max-width: 100%;
 		flex-basis: 100%;

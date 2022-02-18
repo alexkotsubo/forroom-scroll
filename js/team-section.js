@@ -14,7 +14,7 @@ if (teamSliders.length > 0) {
 				1920: {
 					slidesPerView: 4,
 				},
-				1440: {
+				1442: {
 					slidesPerView: 3.15,
 				},
 				1280: {

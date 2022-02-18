@@ -79,6 +79,7 @@
 		flex-direction: column;
 		> label {
 			margin-top: 20px;
+			text-align: center;
 			> span {
 				font-size: 17px;
 				line-height: 140%;
@@ -124,38 +125,13 @@
 	}
 }
 
-@media (max-width: 1439px) {
+@media (max-width: 1441px) {
 	.designer__title {
 		min-height: 85px;
 		h2 {
 			font-size: 70px;
 			line-height: 85px;
 		}
-		h3 {
-			font-size: 28px;
-			line-height: 34px;
-			margin-top: 41px;
-		}
-	}
-	.designer__list {
-		&-text {
-			font-size: 22px;
-			line-height: 27px;
-		}
-		&-list {
-			margin-top: 10px;
-		}
-	}
-	.designer__image {
-		&-name {
-			font-size: 22px;
-			line-height: 27px;
-		}
-	}
-}
-
-@media (max-width: 1279px) {
-	.designer__title {
 		h3 {
 			font-size: 22px;
 			line-height: 27px;
@@ -168,12 +144,18 @@
 			line-height: 21px;
 		}
 		&-list {
-			margin-top: 20px;
+			margin-top: 0;
 			li {
 				p {
 					font-size: 14px;
 				}
 			}
+		}
+	}
+	.designer__list {
+		&-text {
+			font-size: 17px;
+			line-height: 21px;
 		}
 	}
 	.designer__image {
@@ -185,15 +167,21 @@
 			font-size: 14px;
 		}
 	}
+	.designer__list-list li {
+		margin-top: 20px;
+	}
+	.designer__form > label > span {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 1279px) {
 	.designer__list-list {
 		display: block;
 	}
 	.designer__form {
 		margin-left: 0;
 		margin-right: 0;
-	}
-	.designer__form > label > span {
-		font-size: 14px;
 	}
 }
 
@@ -225,9 +213,6 @@
 	.designer__list-list {
 		margin-top: 0;
 		max-width: 280px;
-	}
-	.designer__list-list li {
-		margin-top: 20px;
 	}
 }
 
