@@ -23,15 +23,7 @@
 			}
 		}
 		#{$self}__title {
-			&.anim-item {
-				opacity: 0;
-				transform: scale(0);
-				transition: .5s .2s;
-				&.active {
-					opacity: 1;
-					transform: scale(1);
-				}
-			}
+			animation: headerAnimShowTitle .5s .2s both;
 			position: relative;
 			z-index: 1;
 			display: flex;
@@ -70,7 +62,7 @@
 			}
 		}
 		#{$self}__text {
-			font-weight: 600;
+			font-weight: 500;
 			font-size: 27px;
 			line-height: 33px;
 			color: $white;
@@ -184,6 +176,16 @@
 				mix-blend-mode: normal;
 			}
 		}
+	}
+}
+@keyframes headerAnimShowTitle {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
 	}
 }
 

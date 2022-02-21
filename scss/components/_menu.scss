@@ -22,7 +22,7 @@
 		}
 		.menu__wrap {
 			width: 100%;
-			padding: 20px 0;
+			padding: 10px 0;
 			background: $dark;
 			position: relative;
 		}
@@ -64,11 +64,11 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			min-height: 50px;
+			min-height: 40px;
 			padding: 0 30px;
 			font-weight: 500;
-			font-size: 17px;
-			line-height: 21px;
+			font-size: 14px;
+			line-height: 17px;
 			text-align: center;
 			text-transform: uppercase;
 			color: $black;
@@ -81,6 +81,7 @@
 		display: flex;
 		align-items: flex-start;
 		flex-wrap: wrap;
+		margin-bottom: 0 !important;
 	}
 }
 

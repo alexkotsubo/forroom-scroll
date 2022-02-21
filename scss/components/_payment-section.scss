@@ -41,7 +41,7 @@
 			}
 		}
 		&-title {
-			font-weight: 600;
+			font-weight: 500;
 			font-size: 22px;
 			line-height: 27px;
 		}
@@ -64,6 +64,24 @@
 	&_interior {
 		padding-top: 0;
 		padding-bottom: 0;
+	}
+	&_show-carts {
+		.payment__cart {
+			animation: showCartsPayment .7s;
+		}
+	}
+}
+
+@keyframes showCartsPayment {
+	0% {
+		opacity: 0;
+		visibility: hidden;
+		transform: translate(0, 100%);
+	}
+	100% {
+		opacity: 1;
+		visibility: visible;
+		transform: translate(0, 0);
 	}
 }
 

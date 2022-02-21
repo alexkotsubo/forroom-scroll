@@ -3,7 +3,7 @@
 	&__content {
 		overflow: hidden;
 		padding: 65px 50px 50px;
-		color: $white;
+		color: #F9F8FE;
 		flex: 0 0 34%;
 		background: $dark;
 	}
@@ -22,6 +22,7 @@
 			display: flex;
 			align-items: flex-end;
 			margin-top: 57px;
+			color: $white;
 		}
 		h3 {
 			font-weight: 900;
@@ -79,7 +80,7 @@
 	&__info {
 		margin-top: 80px;
 		&-text {
-			font-weight: 600;
+			font-weight: 500;
 			font-size: 27px;
 			line-height: 33px;
 		}
@@ -89,7 +90,7 @@
 			margin-top: 20px;
 		}
 		&-time {
-			font-weight: 600;
+			font-weight: 500;
 			font-size: 22px;
 			line-height: 27px;
 			margin-top: 20px;
@@ -131,11 +132,22 @@
 
 @media (max-width: 1441px) {
 	.doubt__content {
-		padding: 40px 50px 30px;
+		padding: 40px 8vw 30px;
+		flex-basis: 45%;
+	}
+
+	.doubt__inner {
+		margin-right: 20px;
+	}
+
+	.doubt__map {
+		flex-basis: 55%;
 	}
 
 	.doubt__title {
 		min-height: 61px;
+		max-width: 300px;
+		margin-left: auto;
 	}
 
 	.doubt__title h2 {
@@ -154,8 +166,8 @@
 	}
 
 	.doubt__info-text {
-		font-size: 17px;
-		line-height: 21px;
+		font-size: 22px;
+		line-height: 27px;
 	}
 
 	.doubt__info-address {
@@ -164,18 +176,16 @@
 	}
 
 	.doubt__info-time {
-		font-size: 14px;
-		line-height: 17px;
+		font-size: 17px;
+		line-height: 21px;
 	}
 
 	.doubt__text {
 		margin-top: 13px;
-	}
-
-	.doubt__text {
+		max-width: 300px;
 		font-size: 14px;
 		line-height: 140%;
-		max-width: 100%;
+		margin-left: auto;
 	}
 
 	.doubt__form-btn .btn {
@@ -189,11 +199,26 @@
 }
 
 @media (max-width: 1279px) {
+	.doubt__info-time {
+		font-size: 14px;
+		line-height: 17px;
+	}
 	.doubt__content {
 		padding: 60px 50px 25px;
 	}
 	.doubt__form-btn .btn {
 		max-width: 280px;
+	}
+	.doubt__inner {
+		max-width: 250px;
+		margin-right: 50px;
+	}
+	.doubt__info-text {
+		font-size: 17px;
+		line-height: 21px;
+	}
+	.doubt__info {
+		margin-top: 20px;
 	}
 }
 
@@ -233,11 +258,34 @@
 	.doubt__info {
 		margin-top: 20px;
 	}
+
+	.doubt__title {
+		max-width: 100%;
+		width: 100%;
+	}
+
+	.doubt__text {
+		max-width: 100%;
+		width: 100%;
+	}
+
+	.doubt__inner {
+		margin-right: auto;
+	}
 }
 
 @media (max-width: 767px) {
 	.doubt__content {
 		margin-bottom: 0;
+	}
+
+	.doubt__text {
+		font-size: 12px;
+		line-height: 135%;
+	}
+
+	.doubt__socials {
+		margin-top: 40px;
 	}
 }
 

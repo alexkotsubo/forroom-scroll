@@ -197,7 +197,7 @@
 					font-size: 80px;
 				}
 				p {
-					font-weight: 600;
+					font-weight: 500;
 					font-size: 22px;
 					line-height: 27px;
 					color: $red;
@@ -304,6 +304,9 @@
 		.about__btn {
 			margin-top: 20px;
 		}
+	}
+	.about__inner {
+		min-height: 550px;
 	}
 }
 

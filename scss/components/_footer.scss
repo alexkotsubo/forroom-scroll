@@ -137,10 +137,14 @@
 			margin-top: -61px;
 			max-width: 17%;
 		}
+		.footer__phone {
+			font-size: 22px;
+			line-height: 27px;
+		}
 	}
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
 	.footer_stili {
 		font-size: 22px;
 		line-height: 27px;
@@ -210,9 +214,7 @@
 		}
 		.footer__phone {
 			margin-top: 0;
-			font-size: 22px;
-			line-height: 27px;
-			font-weight: 600;
+			font-weight: 500;
 			color: $black;
 			.iconify {
 				color: $red;
@@ -224,7 +226,7 @@
 	}
 }
 
-@media (max-width: 480px) {
+@media (max-width: 479px) {
 	.footer_stili {
 		padding: 20px 20px 10px;
 		.footer__menu {

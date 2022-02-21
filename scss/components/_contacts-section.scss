@@ -1,9 +1,10 @@
 .contacts {
 	overflow: hidden;
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
+	margin: 80px 0;
 	&__content {
-		padding: 80px 50px 20px;
+		padding: 0 50px;
 		flex: 0 0 50%;
 	}
 	&__title {
@@ -65,7 +66,7 @@
 					line-height: 140%;
 					color: $dark;
 					a {
-						font-weight: 600;
+						font-weight: 500;
 						font-size: 27px;
 						line-height: 33px;
 						&:hover {
@@ -99,7 +100,7 @@
 			opacity: 1;
 		}
 		iframe {
-			min-height: 800px;
+			min-height: 600px;
 			width: 100% !important;
 			height: 100% !important;
 		}
@@ -107,26 +108,18 @@
 }
 
 @media (max-width: 1919px) {
-	.contacts {
-		padding-bottom: 120px;
-	}
 	.contacts__map {
 		iframe {
-			min-height: 600px;
+			min-height: 500px;
 		}
 	}
 }
 
 @media (max-width: 1441px) {
-	.contacts__map {
-		iframe {
-			min-height: 550px;
-		}
-	}
-	.contacts__content {
-		padding-top: 20px;
-		padding-bottom: 40px;
-	}
+	// .contacts__content {
+	// 	padding-top: 20px;
+	// 	padding-bottom: 40px;
+	// }
 	.contacts__title {
 		min-height: 85px;
 		h2 {
@@ -156,16 +149,14 @@
 
 @media (max-width: 1279px) {
 	.contacts {
-		padding-bottom: 80px;
-	}
-	.contacts__map {
-		iframe {
-			min-height: 500px;
-		}
+		margin: 40px 0;
 	}
 }
 
 @media (max-width: 1023px) {
+	.contacts {
+		margin: 20px 0 80px;
+	}
 	.contacts {
 		flex-direction: column;
 		align-items: stretch;
@@ -173,6 +164,8 @@
 	.contacts__content {
 		padding-right: 20px;
 		padding-left: 20px;
+		padding-top: 20px;
+		padding-bottom: 40px;
 		flex: none;
 	}
 	.contacts__maps {
@@ -188,6 +181,9 @@
 }
 
 @media (max-width: 767px) {
+	.contacts {
+		margin: 0 0 80px;
+	}
 	.contacts__map {
 		iframe {
 			min-height: 250px;
@@ -245,7 +241,7 @@
 
 @media (max-width: 479px) {
 	.contacts {
-		padding-bottom: 40px;
+		margin: 0 0 40px;
 	}
 	.contacts__map {
 		iframe {

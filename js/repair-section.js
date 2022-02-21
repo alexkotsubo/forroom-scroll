@@ -19,8 +19,8 @@ window.addEventListener('DOMContentLoaded', e => {
 		};
 	};
 	const coordinate = y => {
-		if (y === 1) return (getCoords(repairsImgs[y]).top - getCoords(repairsScroll).top) / 2;
-		return (getCoords(repairsImgs[y]).top - getCoords(repairsScroll).top) / (y + 2) * (y + 1);
+		if (y === 1) return (getCoords(repairsImgs[y]).top - getCoords(repairsScroll).top);
+		return (getCoords(repairsImgs[y]).top - getCoords(repairsScroll).top);
 	};
 	const coordinateMobile = y => getCoords(repairsImgs[y]).top + repairsImgs[y].offsetHeight / 2.2 - repairsImgs[y].offsetHeight * 2;
 	const handleDesktopScroll = e => {
@@ -70,7 +70,7 @@ window.addEventListener('DOMContentLoaded', e => {
 		}
 	};
 	const handleResize = e => {
-		if (document.documentElement.clientWidth > 1024) {
+		if (document.documentElement.clientWidth > 1023) {
 			if (activeMode !== 1) {
 				activeMode = 1;
 				window.removeEventListener('scroll', handleMobileScroll);
