@@ -2,16 +2,25 @@
 
 window.addEventListener('DOMContentLoaded', e => {
 	const header = document.querySelector('.header');
-	const headerNextSection = document.querySelector('.header + section');
 	const sectionCoverHeader = header.querySelector('.section-cover');
+	let prevScroll = window.scrollY;
+	let toShowHeader = false;
 	const handleHeaderScroll = e => {
 		const distanceFromStart = +(window.pageYOffset + header.getBoundingClientRect().top).toFixed();
-		//const distanceFromStartNextSection = +(window.pageYOffset + headerNextSection.getBoundingClientRect().top).toFixed();
-		if (window.scrollY > distanceFromStart + header.offsetHeight * .2) {
-			sectionCoverHeader.classList.add('hide');
-		} else {
+		if (toShowHeader && prevScroll > window.scrollY) {
 			sectionCoverHeader.classList.remove('hide');
 		}
+		if (prevScroll < window.scrollY) {//if (window.scrollY < distanceFromStart + header.offsetHeight * .5) {
+			toShowHeader = false;
+		}
+		if (!toShowHeader && window.scrollY > distanceFromStart + header.offsetHeight * .5) {
+			sectionCoverHeader.classList.add('hide');
+			toShowHeader = true;
+		}
+		prevScroll = window.scrollY;
+		// else {
+		// 	sectionCoverHeader.classList.remove('hide');
+		// }
 	};
 	handleHeaderScroll();
 	window.addEventListener('scroll', handleHeaderScroll);
@@ -39,7 +48,6 @@ window.addEventListener('DOMContentLoaded', e => {
 			&& !cantHandleScrollAbout
 			) {
 			cantHandleScrollAbout = true;
-			console.log(getDirection())
 			setTimeout(() => {
 				if (getDirection() === 'top') {
 					sectionCoverAbout.classList.add('hide');
