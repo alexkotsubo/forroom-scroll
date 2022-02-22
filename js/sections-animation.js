@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', e => {
 		if (prevScroll < window.scrollY) {//if (window.scrollY < distanceFromStart + header.offsetHeight * .5) {
 			toShowHeader = false;
 		}
-		if (!toShowHeader && window.scrollY > distanceFromStart + header.offsetHeight * .5) {
+		if (!toShowHeader && window.scrollY > distanceFromStart + header.offsetHeight * .6) {
 			sectionCoverHeader.classList.add('hide');
 			toShowHeader = true;
 		}

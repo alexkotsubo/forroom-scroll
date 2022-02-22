@@ -23,7 +23,7 @@
 			}
 		}
 		#{$self}__title {
-			animation: headerAnimShowTitle .5s .2s both;
+			animation: headerAnimShowTitle .5s .6s both;
 			position: relative;
 			z-index: 1;
 			display: flex;
@@ -178,6 +178,7 @@
 		}
 	}
 }
+
 @keyframes headerAnimShowTitle {
 	0% {
 		opacity: 0;
