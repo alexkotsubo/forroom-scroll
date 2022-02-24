@@ -1,9 +1,9 @@
 .package {
+	position: relative;
 	&__inner {
-
-	}
-	&__btns {
-		display: flex;
+		position: relative;
+		z-index: 2;
+		min-height: 100vh;
 	}
 	&__btn {
 		text-transform: uppercase;
@@ -16,12 +16,6 @@
 			background: $red;
 		}
 	}
-	&__tabs {
-
-	}
-	&__tab {
-
-	}
 	&__image {
 		flex: 0 0 50%;
 		&-wrap {
@@ -29,6 +23,7 @@
 		}
 	}
 	&__content {
+		flex: 0 0 50%;
 		&-title {
 	
 		}

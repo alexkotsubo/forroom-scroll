@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', e => {
 		if (prevScroll < window.scrollY) {//if (window.scrollY < distanceFromStart + header.offsetHeight * .5) {
 			toShowHeader = false;
 		}
-		if (!toShowHeader && window.scrollY > distanceFromStart + header.offsetHeight * .65) {
+		if (!toShowHeader && window.scrollY > distanceFromStart + header.offsetHeight * .5) {
 			sectionCoverHeader.classList.add('hide');
 			toShowHeader = true;
 		}
@@ -42,8 +42,14 @@ window.addEventListener('DOMContentLoaded', e => {
 	const handleAboutScroll = e => {
 		const distanceFromStartOrder = +(window.pageYOffset + order.getBoundingClientRect().top).toFixed();
 		const distanceFromStartAbout = +(window.pageYOffset + about.getBoundingClientRect().top).toFixed();
+		let topHeight = distanceFromStartAbout + about.offsetHeight - document.documentElement.clientHeight;
+		if (about.offsetHeight >= document.documentElement.clientHeight) {
+			topHeight = distanceFromStartAbout + about.offsetHeight - document.documentElement.clientHeight;
+		} else {
+			topHeight = distanceFromStartAbout;
+		}
 		if (
-			window.scrollY > distanceFromStartAbout + about.offsetHeight - document.documentElement.clientHeight 
+			window.scrollY > topHeight
 			&& window.scrollY < distanceFromStartOrder + order.offsetHeight
 			&& !cantHandleScrollAbout
 			) {
@@ -60,7 +66,7 @@ window.addEventListener('DOMContentLoaded', e => {
 						}
 						sectionCoverOrder.classList.remove('hide');
 						const handleOutsideScroll = e => {
-							if (window.scrollY > distanceFromStartOrder + order.offsetHeight || window.scrollY < distanceFromStartAbout + about.offsetHeight - document.documentElement.clientHeight) {
+							if (window.scrollY > distanceFromStartOrder + order.offsetHeight || window.scrollY < topHeight) {
 								cantHandleScrollAbout = false;
 								window.removeEventListener('scroll', handleOutsideScroll);
 							}
@@ -79,7 +85,7 @@ window.addEventListener('DOMContentLoaded', e => {
 							window.removeEventListener('scroll', handleBottomScroll);
 							sectionCoverOrder.classList.add('hide');
 							setTimeout(() => {
-								if (window.scrollY > distanceFromStartAbout + about.offsetHeight - document.documentElement.clientHeight) {
+								if (window.scrollY > topHeight) {
 									window.scrollTo({
 										top: distanceFromStartAbout,
 									});
@@ -91,7 +97,7 @@ window.addEventListener('DOMContentLoaded', e => {
 										cantHandleScrollAbout = false;
 										window.removeEventListener('scroll', handleOutsideScroll);
 									}
-									if (window.scrollY < distanceFromStartAbout + about.offsetHeight - document.documentElement.clientHeight) {
+									if (window.scrollY < topHeight) {
 										cantHandleScrollAbout = false;
 										window.removeEventListener('scroll', handleOutsideScroll);
 									}

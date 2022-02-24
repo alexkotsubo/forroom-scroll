@@ -1,4 +1,5 @@
 .gift {
+	$self: &;
 	display: flex;
 	&__content {
 		flex: 0 0 42%;
@@ -17,6 +18,9 @@
 	}
 	&__image {
 		flex: 0 0 58%;
+	}
+	&_reverse {
+		flex-direction: row-reverse;
 	}
 }
 
@@ -43,6 +47,9 @@
 @media (max-width: 1023px) {
 	.gift {
 		flex-direction: column-reverse;
+		&_reverse {
+			flex-direction: column-reverse;
+		}
 	}
 	.gift__image {
 		min-height: 450px;

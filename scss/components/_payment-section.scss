@@ -70,6 +70,10 @@
 			animation: showCartsPayment .7s;
 		}
 	}
+	&_package {
+		padding-top: 120px;
+		padding-bottom: 120px;
+	}
 }
 
 @keyframes showCartsPayment {

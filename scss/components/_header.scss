@@ -5,6 +5,15 @@
 	&_anim {
 		overflow: hidden;
 		position: relative;
+		#{$self}__price {
+			font-weight: 900;
+			font-size: 33px;
+			line-height: 40px;
+			margin-top: 20px;
+			text-align: center;
+			text-transform: uppercase;
+			color: #F9F8FE;
+		}
 		#{$self}__body {
 			position: relative;
 			z-index: 3;
@@ -23,7 +32,7 @@
 			}
 		}
 		#{$self}__title {
-			animation: headerAnimShowTitle .5s .6s both;
+			animation: headerAnimShowTitle .5s 1.1s both;
 			position: relative;
 			z-index: 1;
 			display: flex;
@@ -173,7 +182,11 @@
 		&-about {
 			#{$self}__inner {
 				min-height: 600px;
-				mix-blend-mode: normal;
+			}
+		}
+		&-package {
+			#{$self}__inner {
+				min-height: 570px;
 			}
 		}
 	}

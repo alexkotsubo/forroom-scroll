@@ -185,13 +185,13 @@
 		}
 		> span {
 			&::before {
-				animation: loaderCover .8s .3s both;
+				animation: loaderCover 1.1s .3s both;
 			}
 		}
 		#{$self}__inner {
 			> span {
 				&::before {
-					animation: loaderCover .8s .3s both;
+					animation: loaderCover 1.1s .3s both;
 				}
 			}
 		}
