@@ -1,0 +1,172 @@
+.table-package {
+	padding: 120px 50px;
+	overflow: auto;
+	&__table {
+		width: 100%;
+		border-collapse: collapse;
+		thead {
+			th {
+				border-left: 1px solid rgba(58, 64, 66, 0.6);
+				border-right: 1px solid rgba(58, 64, 66, 0.6);
+				&:first-child {
+					border-left: none;
+				}
+				a {
+					font-weight: 500;
+					font-size: 22px;
+					line-height: 27px;
+					display: block;
+					padding: 20px 0 10px;
+					width: 100%;
+					text-align: center;
+					color: $dark;
+					background: transparent;
+					transition: .3s;
+					&.active {
+						background: $red;
+						color: $white;
+					}
+				}
+			}
+		}
+		tbody {
+			td {
+				border-left: 1px solid rgba(58, 64, 66, 0.6);
+				border-right: 1px solid rgba(58, 64, 66, 0.6);
+				&:first-child {
+					width: 33%;
+					border-left: none;
+				}
+				position: relative;
+				> span {
+					padding: 10px 0;
+					width: 100%;
+					display: block;
+					font-size: 17px;
+					line-height: 140%;
+				}
+				a {
+					position: absolute;
+					top: 0;
+					left: 0;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding: 10px;
+					width: 100%;
+					height: 100%;
+					text-align: center;
+					background: transparent;
+					transition: .3s;
+					.iconify {
+						font-size: 24px;
+						color: $red;
+						transition: .3s;
+					}
+					&.active {
+						background: $red;
+						color: $white;
+						.iconify {
+							color: $white;
+						}
+					}
+				}
+			}
+		}
+		tfoot {
+			td {
+				border-left: 1px solid rgba(58, 64, 66, 0.6);
+				border-right: 1px solid rgba(58, 64, 66, 0.6);
+				&:first-child {
+					border-left: none;
+				}
+				a {
+					font-size: 17px;
+					line-height: 140%;
+					color: $dark;
+					display: block;
+					padding: 30px 0 15px;
+					width: 100%;
+					text-align: center;
+					span {
+						font-weight: 900;
+						font-size: 33px;
+						line-height: 40px;
+						text-transform: uppercase;
+						color: $dark;
+						transition: .3s;
+						margin: 0 10px;
+					}
+					background: transparent;
+					transition: .3s;
+					&.active {
+						background: $red;
+						color: $white;
+						span {
+							color: $white;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1441px) {
+	.table-package__table tbody td > span {
+		font-size: 14px;
+	}
+
+	.table-package__table thead th a {
+		font-size: 17px;
+		line-height: 21px;
+	}
+
+	.table-package__table tbody td a .iconify {
+		font-size: 20px;
+	}
+
+	.table-package__table tfoot td a {
+		font-size: 14px;
+		span {
+			font-size: 22px;
+			line-height: 27px;
+		}
+	}
+}
+
+@media (max-width: 1279px) {
+	.table-package {
+		padding: 80px 50px 160px;
+	}
+}
+
+@media (max-width: 1023px) {
+	.table-package {
+		padding: 80px 20px;
+		margin-right: 20px;
+	}
+
+	.table-package__table tbody td > span {
+		font-size: 12px;
+		line-height: 135%;
+	}
+}
+
+@media (max-width: 767px) {
+	.table-package {
+		padding: 40px 20px 80px;
+	}
+
+	.table-package__table tbody td a .iconify {
+		font-size: 16px;
+	}
+
+	.table-package__table tfoot td a {
+		font-size: 12px;
+		span {
+			font-size: 17px;
+			line-height: 21px;
+		}
+	}
+}
