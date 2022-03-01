@@ -122,19 +122,11 @@ window.addEventListener('DOMContentLoaded', e => {
 		};
 		window.addEventListener('scroll', onScroll);
 		onScroll();
-		// window.scrollTo({
-		// 	top: offset,
-		// 	behavior: animation
-		// });
 		$('html').animate({ scrollTop: fixedOffset }, 900);
 	};
 	const handleHeaderScroll = e => {
 		const distanceFromStart = +(window.pageYOffset + header.getBoundingClientRect().top).toFixed();
 		const distanceToEnd = +(window.pageYOffset + header.getBoundingClientRect().bottom).toFixed();
-		// if (toShowHeader && prevScroll > window.scrollY) {
-		// 	sectionCoverHeader.classList.remove('hide');
-		// }
-		console.log(toShowHeader, window.scrollY < distanceToEnd)
 		if (canLetOpenHeader && toShowHeader && window.scrollY < distanceToEnd) {
 			canLetOpenHeader = false;
 			sectionCoverHeader.classList.remove('hide');
@@ -148,7 +140,6 @@ window.addEventListener('DOMContentLoaded', e => {
 			toShowHeader = true;
 			disableScroll();
 			setTimeout(() => {
-				console.log(0)
 				scrollToPos(distanceToEnd, () => {
 					enableScroll();
 					canLetOpenHeader = true;
