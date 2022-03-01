@@ -49,7 +49,7 @@
 	&__tabs {
 		padding-left: 50px;
 		padding-right: 50px;
-		margin-top: 40px;
+		margin-top: 120px;
 		display: flex;
 		flex-direction: column;
 		&-btns {
@@ -243,6 +243,9 @@
 	}
 	.works {
 		padding-bottom: 80px;
+		&__tabs {
+			margin-top: 80px;
+		}
 	}
 	.works__pagination {
 		&-numbers {
@@ -309,7 +312,7 @@
 		padding-bottom: 80px;
 	}
 	.works__tabs {
-		margin-top: 20px;
+		margin-top: 40px;
 	}
 	.works__tabs-tabs {
 		margin-top: 40px;
@@ -368,7 +371,7 @@
 		padding-bottom: 40px;
 	}
 	.works__tabs {
-		margin-top: 20px;
+		margin-top: 40px;
 	}
 	.works__tabs-tabs {
 		margin-top: 40px;

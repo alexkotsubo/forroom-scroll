@@ -26,6 +26,9 @@
 						background: $red;
 						color: $white;
 					}
+					&.hover {
+						background: #D2ACAC;
+					}
 				}
 			}
 		}
@@ -70,6 +73,9 @@
 							color: $white;
 						}
 					}
+					&.hover {
+						background: #D2ACAC;
+					}
 				}
 			}
 		}
@@ -105,6 +111,9 @@
 						span {
 							color: $white;
 						}
+					}
+					&.hover {
+						background: #D2ACAC;
 					}
 				}
 			}
@@ -144,12 +153,16 @@
 @media (max-width: 1023px) {
 	.table-package {
 		padding: 80px 20px;
-		margin-right: 20px;
+		//margin-right: 20px;
 	}
 
 	.table-package__table tbody td > span {
 		font-size: 12px;
 		line-height: 135%;
+	}
+
+	.table-package__table {
+		width: calc(150vw - 20px);
 	}
 }
 
@@ -168,5 +181,15 @@
 			font-size: 17px;
 			line-height: 21px;
 		}
+	}
+}
+
+@media (max-width: 479px) {
+	.table-package__table {
+		width: calc(220vw - 20px);
+	}
+
+	.table-package__table tbody td:first-child {
+		width: 25%;
 	}
 }

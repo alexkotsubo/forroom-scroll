@@ -892,6 +892,7 @@ window.addEventListener('DOMContentLoaded', e => {
 		const slides = document.querySelectorAll('.test-popup__slide');
 		const body = document.querySelector('.test-popup__body');
 		const content = popup.querySelectorAll('.test-popup__content');
+		const inner = popup.querySelectorAll('.test-popup__inner');
 		const image = popup.querySelectorAll('.test-popup__image');
 		const disableTestPopup = document.querySelectorAll('[data-disable-test-popup]');
 		let prev = 0;
@@ -921,6 +922,17 @@ window.addEventListener('DOMContentLoaded', e => {
 			}
 		};
 
+		const handleBodyHeight = e => {
+			body.style.minHeight = '0px';
+			if (document.documentElement.clientWidth > 1279) {
+				body.style.minHeight = inner[prev].offsetHeight + 'px';
+			} else {
+				body.style.minHeight = inner[prev].offsetHeight + image[prev].offsetHeight + 'px';
+			}
+		};
+		handleBodyHeight();
+		window.addEventListener('resize', handleBodyHeight);
+
 		const closeSlide = index => {
 			if (slides[index]) {
 				slides[index].classList.remove('active');
@@ -930,12 +942,14 @@ window.addEventListener('DOMContentLoaded', e => {
 	
 		const openSlide = index => {
 			if (slides[index]) {
+				setTimeout(() => {
+					handleBodyHeight();
+				}, delay);
 				if (prev !== null) {
 					closeSlide(prev);
 				}
 				slides[index].classList.add('active');
 				prev = index;
-				handleBodyHeight();
 			}
 		};
 
@@ -945,24 +959,13 @@ window.addEventListener('DOMContentLoaded', e => {
 				onCloseTestPopup();
 			}
 		};
-
-		const handleBodyHeight = e => {
-			body.style.minHeight = '0px';
-			if (document.documentElement.clientWidth > 1279) {
-				body.style.minHeight = content[prev].offsetHeight + 'px';
-			} else {
-				body.style.minHeight = content[prev].offsetHeight + image[prev].offsetHeight + 'px';
-			}
-		};
-		handleBodyHeight();
-		window.addEventListener('resize', handleBodyHeight);
 	
 		body.addEventListener('submit', e => {
 			e.preventDefault();
 			openSlide(prev + 1);
 			countOfShowing = maxNumberOfShowing;
 		});
-	
+
 		for (let i = 0; i < slides.length; i++) {
 			if (prev === i) openSlide(i);
 			const dots = slides[i].querySelector('.test-popup__dots');

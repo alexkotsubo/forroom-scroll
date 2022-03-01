@@ -28,35 +28,35 @@ window.addEventListener('DOMContentLoaded', e => {
 
 	for (let i = 0; i < thead.length; i++) {
 		thead[i].addEventListener('mouseenter', e => {
-			thead[i].classList.add('active');
+			thead[i].classList.add('hover');
 			for (let y = i; y < tbody.length; y += step) {
-				tbody[y].classList.add('active');
+				tbody[y].classList.add('hover');
 			}
-			tfoot[i].classList.add('active');
+			tfoot[i].classList.add('hover');
 		});
 		thead[i].addEventListener('mouseleave', e => {
-			thead[i].classList.remove('active');
+			thead[i].classList.remove('hover');
 			for (let y = i; y < tbody.length; y += step) {
-				tbody[y].classList.remove('active');
+				tbody[y].classList.remove('hover');
 			}
-			tfoot[i].classList.remove('active');
+			tfoot[i].classList.remove('hover');
 		});
 	}
 
 	for (let i = 0; i < tfoot.length; i++) {
 		tfoot[i].addEventListener('mouseenter', e => {
-			thead[i].classList.add('active');
+			thead[i].classList.add('hover');
 			for (let y = i; y < tbody.length; y += step) {
-				tbody[y].classList.add('active');
+				tbody[y].classList.add('hover');
 			}
-			tfoot[i].classList.add('active');
+			tfoot[i].classList.add('hover');
 		});
 		tfoot[i].addEventListener('mouseleave', e => {
-			thead[i].classList.remove('active');
+			thead[i].classList.remove('hover');
 			for (let y = i; y < tbody.length; y += step) {
-				tbody[y].classList.remove('active');
+				tbody[y].classList.remove('hover');
 			}
-			tfoot[i].classList.remove('active');
+			tfoot[i].classList.remove('hover');
 		});
 	}
 
@@ -66,22 +66,22 @@ window.addEventListener('DOMContentLoaded', e => {
 			while (index > 3) {
 				index -= 4;
 			}
-			thead[index].classList.add('active');
+			thead[index].classList.add('hover');
 			for (let y = index; y < tbody.length; y += step) {
-				tbody[y].classList.add('active');
+				tbody[y].classList.add('hover');
 			}
-			tfoot[index].classList.add('active');
+			tfoot[index].classList.add('hover');
 		});
 		tbody[i].addEventListener('mouseleave', e => {
 			let index = i;
 			while (index > 3) {
 				index -= 4;
 			}
-			thead[index].classList.remove('active');
+			thead[index].classList.remove('hover');
 			for (let y = index; y < tbody.length; y += step) {
-				tbody[y].classList.remove('active');
+				tbody[y].classList.remove('hover');
 			}
-			tfoot[index].classList.remove('active');
+			tfoot[index].classList.remove('hover');
 		});
 	}
 });
