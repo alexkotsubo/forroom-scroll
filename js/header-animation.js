@@ -99,8 +99,6 @@ function disableScroll() {
 	$(".wrapper").disablescroll();
 }
 
-alert(0)
-
 function enableScroll() {
 	$('.wrapper').onmousewheel = e => {};
 	$('.wrapper').onscroll = e => {};
