@@ -362,14 +362,24 @@
 		overflow: unset;
 		&-body {
 			position: sticky;
-			min-height: calc(var(--vh, 1vh) * 100);
-			max-height: calc(var(--vh, 1vh) * 100);
+			min-height: 100vh;
+			max-height: 100vh;
 			overflow: hidden;
 		}
 		&-wrap {
-			height: calc(var(--vh, 1vh) * 140);
-			top: calc(var(--vh, 1vh) * -30);
+			height: 140vh;
+			top: -30vh;
 		}
+		// &-body {
+		// 	position: sticky;
+		// 	min-height: calc(var(--vh, 1vh) * 100);
+		// 	max-height: calc(var(--vh, 1vh) * 100);
+		// 	overflow: hidden;
+		// }
+		// &-wrap {
+		// 	height: calc(var(--vh, 1vh) * 140);
+		// 	top: calc(var(--vh, 1vh) * -30);
+		// }
 	}
 
 	.choose__wrap {
