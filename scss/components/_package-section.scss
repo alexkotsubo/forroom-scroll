@@ -3,7 +3,7 @@
 	&__inner {
 		position: relative;
 		z-index: 2;
-		min-height: 100vh;
+		min-height: calc(var(--vh, 1vh) * 100);
 		display: flex;
 	}
 	&__btn {
@@ -24,8 +24,8 @@
 		position: sticky;
 		top: 0;
 		left: 0;
-		min-height: 100vh;
-		max-height: 100vh;
+		min-height: calc(var(--vh, 1vh) * 100);
+		max-height: calc(var(--vh, 1vh) * 100);
 		z-index: 1;
 		&-wrap {
 			height: 100%;

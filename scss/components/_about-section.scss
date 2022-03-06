@@ -75,7 +75,7 @@
 		padding-right: 50px;
 		padding-left: 8vw;
 		&-wrap {
-			height: 120vh;
+			height: calc(var(--vh, 1vh) * 120);
 			width: 100%;
 			position: absolute;
 			top: 0;
@@ -260,7 +260,7 @@
 	.about {
 		&_task {
 			.about__inner {
-				min-height: 70vh;
+				min-height: calc(var(--vh, 1vh) * 70);
 			}
 			.about__list {
 				margin-top: 40px;
@@ -355,7 +355,7 @@
 			min-height: 400px;
 		}
 		&-wrap {
-			top: -50vh;
+			top: calc(var(--vh, 1vh) * -50);
 		}
 	}
 	.about_stili {

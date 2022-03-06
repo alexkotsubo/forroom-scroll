@@ -2,7 +2,7 @@
 
 .consultation {
 	&__body {
-		min-height: 40vh;
+		min-height: calc(var(--vh, 1vh) * 40);
 		display: flex;
 		&:hover {
 			.consultation__image-image {
