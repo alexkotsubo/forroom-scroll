@@ -219,7 +219,7 @@
 				height: 100%;
 				background: $white;
 				z-index: 8;
-				transform: translate(0, 100%);
+				transform: translate(0, -100%);
 			}
 		}
 		> span {
@@ -229,6 +229,7 @@
 				width: calc(16vw + 50px + 1px);
 				&::before {
 					transition: 1.5s;
+					transform: translate(0, 100%);
 				}
 			}
 		}
@@ -241,7 +242,7 @@
 				position: relative;
 				&:nth-child(2n - 1) {
 					&::before {
-						transform: translate(0, -100%);
+						transform: translate(0, 100%);
 						transition: 1.5s;
 					}
 				}
@@ -274,7 +275,7 @@
 
 @media (max-width: 1279px) {
 	.section-cover {
-		&_third, &_fourth {
+		&_third, &_fourth, &_fifth {
 			> span {
 				width: calc(8vw + 50px);
 				&:last-child {
@@ -314,7 +315,7 @@
 				left: unset;
 			}
 		}
-		&_third, &_fourth {
+		&_third, &_fourth, &_fifth {
 			> span {
 				width: calc(16vw + 50px);
 				&:last-child {
@@ -336,7 +337,7 @@
 
 @media (max-width: 767px) {
 	.section-cover {
-		&_third, &_fourth {
+		&_third, &_fourth, &_fifth {
 			> span {
 				width: 20px;
 				&:last-child {

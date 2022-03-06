@@ -153,7 +153,7 @@
 		justify-content: center;
 	}
 	&__inner {
-		padding: 80px 40px 40px 50px;
+		padding: 80px 20px 40px 50px;
 	}
 	&__image {
 		flex: 0 0 35%;
@@ -308,6 +308,7 @@
 		.iconify {
 			font-size: 40px;
 			color: $white;
+			background: rgba(0, 0, 0, .3);
 		}
 	}
 	&__btn {
@@ -456,8 +457,11 @@
 		line-height: 110px;
 	}
 
+	.test-popup__inner {
+		padding: 40px 40px 40px 20px;
+	}
+
 	.test-popup__content {
-		padding: 40px;
 		flex: 1 1 auto;
 		display: flex;
 		flex-direction: column;
@@ -568,6 +572,10 @@
 		}
 	}
 
+	.test-popup__inner {
+		padding: 20px 20px 30px 20px;
+	}
+
 	.test-popup__title {
 		margin-bottom: 20px;
 		h3 {
@@ -583,10 +591,6 @@
 
 	.test-popup__body {
 		max-width: 320px;
-	}
-
-	.test-popup__content {
-		padding: 20px 20px 40px;
 	}
 
 	.test-popup__steps > span {

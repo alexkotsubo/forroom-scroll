@@ -74,6 +74,10 @@
 		padding-top: 120px;
 		padding-bottom: 120px;
 	}
+	&_top-padding {
+		padding-top: 120px;
+		padding-bottom: 0;
+	}
 }
 
 @keyframes showCartsPayment {
@@ -133,6 +137,11 @@
 	.payment__carts {
 		padding-top: 25px;
 	}
+
+	.payment_top-padding {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
 }
 
 @media (max-width: 1023px) {
@@ -164,6 +173,10 @@
 			padding-bottom: 0;
 		}
 	}
+	.payment_top-padding {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
 }
 
 @media (max-width: 767px) {
@@ -184,10 +197,18 @@
 	.payment__cart-num::after {
 		top: -2px;
 	}
+	.payment_top-padding {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
 }
 
 @media (max-width: 479px) {
 	.payment__cart-num {
 		font-size: 49px;
+	}
+	.payment_top-padding {
+		padding-top: 0;
+		padding-bottom: 0;
 	}
 }
