@@ -140,11 +140,18 @@ window.addEventListener('DOMContentLoaded', e => {
 			toShowHeader = true;
 			disableScroll();
 			setTimeout(() => {
-				scrollToPos(distanceToEnd, () => {
-					enableScroll();
+				setTimeout(() => {
 					canLetOpenHeader = true;
+				}, 900);
+				scrollToPos(distanceToEnd, () => {
+					console.log(0)
+					enableScroll();
+					//canLetOpenHeader = true;
 				}, 'smooth');
 			}, 100);
+		}
+		if (!canLetOpenHeader && window.scrollY > distanceToEnd) {
+			canLetOpenHeader = true;
 		}
 		prevScroll = window.scrollY;
 	};
