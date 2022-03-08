@@ -142,12 +142,9 @@ window.addEventListener('DOMContentLoaded', e => {
 			setTimeout(() => {
 				setTimeout(() => {
 					canLetOpenHeader = true;
-				}, 900);
-				scrollToPos(distanceToEnd, () => {
-					console.log(0)
 					enableScroll();
-					//canLetOpenHeader = true;
-				}, 'smooth');
+				}, 900);
+				scrollToPos(distanceToEnd, () => {}, 'smooth');
 			}, 100);
 		}
 		if (!canLetOpenHeader && window.scrollY > distanceToEnd) {
