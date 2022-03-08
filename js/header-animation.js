@@ -143,7 +143,7 @@ window.addEventListener('DOMContentLoaded', e => {
 				setTimeout(() => {
 					canLetOpenHeader = true;
 					enableScroll();
-				}, 900);
+				}, 1000);
 				scrollToPos(distanceToEnd, () => {}, 'smooth');
 			}, 100);
 		}
