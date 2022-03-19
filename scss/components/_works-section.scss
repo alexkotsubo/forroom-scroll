@@ -54,9 +54,7 @@
 		flex-direction: column;
 		&-btns {
 			align-self: center;
-		}
-		&-tabs {
-			margin-top: 80px;
+			margin-bottom: 80px;
 		}
 	}
 	&__carts {
@@ -306,8 +304,8 @@
 	.works__tabs {
 		margin-top: 40px;
 	}
-	.works__tabs-tabs {
-		margin-top: 40px;
+	.works__tabs-btns {
+		margin-bottom: 40px;
 	}
 	.works__pagination {
 		&-btn {
@@ -360,9 +358,6 @@
 		padding-bottom: 40px;
 	}
 	.works__tabs {
-		margin-top: 40px;
-	}
-	.works__tabs-tabs {
 		margin-top: 40px;
 	}
 	.works__pagination {
