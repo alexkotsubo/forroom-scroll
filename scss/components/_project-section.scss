@@ -21,7 +21,7 @@
 			text-align: center;
 			text-transform: uppercase;
 			color: $black;
-			margin: 0 10px;
+			margin: 0 auto;
 		}
 	}
 	&__carts {
@@ -42,6 +42,10 @@
 	}
 }
 
+.project-sizer {
+	width: 25%;
+}
+
 .project-item {
 	&_height2 {
 		.project__cart-wrap {
@@ -51,10 +55,6 @@
 	&_width2 {
 		width: 50%;
 	}
-}
-
-.project-sizer {
-	width: 25%;
 }
 
 @media (max-width: 1919px) {

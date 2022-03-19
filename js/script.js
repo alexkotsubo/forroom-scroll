@@ -603,53 +603,70 @@ function burgBodyUnLock() {
 
 /* Scroll Menu */
 
-const scrollMenu = document.querySelector('.header__menu');
-const scrollBody = document.querySelector('.header__body');
-const scrollHeader = document.querySelector('.header');
-const scrollingMenu = document.querySelector('.menus');
-let cantShowMenu = false;
-let prevScrollMenu;
+window.addEventListener('DOMContentLoaded', e => {
+	const scrollMenu = document.querySelector('.header__menu');
+	const scrollBody = document.querySelector('.header__body');
+	const scrollHeader = document.querySelector('.header');
+	const scrollingMenu = document.querySelector('.menus');
+	let tidioChatBtn = null;
+	let cantShowMenu = false;
+	let prevScrollMenu;
 
-if (scrollingMenu) {
-	const fixedMenu = () => {
+	if (scrollingMenu) {
+		const fixedMenu = () => {
+			tidioChatBtn = document.querySelector('#tidio-chat iframe');
+			if (tidioChatBtn) tidioChatBtn.classList.add('transition-chat');
+			if (tidioChatBtn) tidioChatBtn.style = tidioChatBtn.getAttribute('style') + ' transition: .3s !important;';
+			if (tidioChatBtn) console.log(tidioChatBtn.getAttribute('style'))
 			if (+window.scrollY.toFixed() >= getCoords(scrollHeader).bottom) {
 				if (!cantShowMenu) {
-					if (scrollY <= prevScrollMenu) scrollingMenu.style.transform = 'translate(0, 0)';
-					if (scrollY > prevScrollMenu) scrollingMenu.style.transform = 'translate(0, 110%)';
+					if (scrollY <= prevScrollMenu) {
+						scrollingMenu.style.transform = 'translate(0, 0)';
+						if (tidioChatBtn) tidioChatBtn.style = tidioChatBtn.getAttribute('style') + ' transition: .3s !important;';
+						if (tidioChatBtn) tidioChatBtn.style.marginBottom = scrollingMenu.offsetHeight - 20 + 'px';
+					}
+					if (scrollY > prevScrollMenu) {
+						scrollingMenu.style.transform = 'translate(0, 110%)';
+						if (tidioChatBtn) tidioChatBtn.style = tidioChatBtn.getAttribute('style') + ' transition: .3s !important;';
+						if (tidioChatBtn) tidioChatBtn.style.marginBottom = '0px';
+					}
 				}
 				prevScrollMenu = scrollY;
 			} else {
 				if (!cantShowMenu) {
 					scrollingMenu.style.transform = 'translate(0, 0)';
+					if (tidioChatBtn) tidioChatBtn.style = tidioChatBtn.getAttribute('style') + ' transition: .3s !important;';
+					if (tidioChatBtn) tidioChatBtn.style.marginBottom = '0px';
 				}
 			}
-	};
-	fixedMenu();
-	window.addEventListener('scroll', fixedMenu);
+		};
+		fixedMenu();
+		window.addEventListener('scroll', fixedMenu);
 
-	const handleScrollMenu = e => {
-		let activeMode = null;
-		if (+window.scrollY.toFixed() >= getCoords(scrollHeader).bottom) {
-			if (activeMode !== 1) {
-				scrollingMenu.classList.add('active');
-				scrollingMenu.classList.remove('header-menu');
-				activeMode = 1;
+		const handleScrollMenu = e => {
+			let activeMode = null;
+			if (+window.scrollY.toFixed() >= getCoords(scrollHeader).bottom) {
+				if (activeMode !== 1) {
+					scrollingMenu.classList.add('active');
+					scrollingMenu.classList.remove('header-menu');
+					activeMode = 1;
+				}
+			} else {
+				if (activeMode !== 2) {
+					scrollingMenu.classList.remove('active');
+					scrollingMenu.classList.add('header-menu');
+					activeMode = 2;
+				}
 			}
-		} else {
-			if (activeMode !== 2) {
-				scrollingMenu.classList.remove('active');
-				scrollingMenu.classList.add('header-menu');
-				activeMode = 2;
-			}
-		}
-	};
-	handleScrollMenu();
-	window.addEventListener('scroll', handleScrollMenu);
+		};
+		handleScrollMenu();
+		window.addEventListener('scroll', handleScrollMenu);
 
-	const handleBodyPadding = e => scrollBody.style.paddingBottom = scrollingMenu.offsetHeight + 'px';
-	handleBodyPadding();
-	window.addEventListener('resize', handleBodyPadding);
-}
+		const handleBodyPadding = e => scrollBody.style.paddingBottom = scrollingMenu.offsetHeight + 'px';
+		handleBodyPadding();
+		window.addEventListener('resize', handleBodyPadding);
+	}
+});
 
 /* Stili */
 

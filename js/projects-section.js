@@ -1,6 +1,6 @@
 'use strict';
 
-if (document.querySelectorAll('.project__carts')) {
+if (document.querySelector('.project__carts')) {
 	window.addEventListener('DOMContentLoaded', e => {
 		const parent = document.querySelector('.project__carts');
 		const msnry = new Masonry('.project__carts', {

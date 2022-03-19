@@ -1,18 +1,18 @@
 'use strict';
 
-;(function($) {
+;(function(jQuery) {
 	"use strict";
 
 	var instance, proto;
 
-	function UserScrollDisabler($container, options) {
-		this.opts = $.extend({
+	function UserScrollDisabler(jQuerycontainer, options) {
+		this.opts = jQuery.extend({
 			handleKeys : true,
 			scrollEventKeys : [32, 33, 34, 35, 36, 37, 38, 39, 40]
 		}, options);
 
-		this.$container = $container;
-		this.$document = $(document);
+		this.jQuerycontainer = jQuerycontainer;
+		this.jQuerydocument = jQuery(document);
 		this.lockToScrollPos = [0, 0];
 
 		this.disable();
@@ -24,21 +24,21 @@
 		var t = this;
 
 		t.lockToScrollPos = [
-			t.$container.scrollLeft(),
-			t.$container.scrollTop()
+			t.jQuerycontainer.scrollLeft(),
+			t.jQuerycontainer.scrollTop()
 		];
 
-		t.$container.on(
+		t.jQuerycontainer.on(
 			"mousewheel.disablescroll DOMMouseScroll.disablescroll touchmove.disablescroll",
 			t._handleWheel
 		);
 
-		t.$container.on("scroll.disablescroll", function() {
+		t.jQuerycontainer.on("scroll.disablescroll", function() {
 			t._handleScrollbar.call(t);
 		});
 
 		if(t.opts.handleKeys) {
-			t.$document.on("keydown.disablescroll", function(event) {
+			t.jQuerydocument.on("keydown.disablescroll", function(event) {
 				t._handleKeydown.call(t, event);
 			});
 		}
@@ -46,9 +46,9 @@
 
 	proto.undo = function() {
 		var t = this;
-		t.$container.off(".disablescroll");
+		t.jQuerycontainer.off(".disablescroll");
 		if(t.opts.handleKeys) {
-			t.$document.off(".disablescroll");
+			t.jQuerydocument.off(".disablescroll");
 		}
 	};
 
@@ -57,8 +57,8 @@
 	};
 
 	proto._handleScrollbar = function() {
-		this.$container.scrollLeft(this.lockToScrollPos[0]);
-		this.$container.scrollTop(this.lockToScrollPos[1]);
+		this.jQuerycontainer.scrollLeft(this.lockToScrollPos[0]);
+		this.jQuerycontainer.scrollTop(this.lockToScrollPos[1]);
 	};
 
 	proto._handleKeydown = function(event) {
@@ -70,7 +70,7 @@
 		}
 	};
 
-	$.fn.disablescroll = function(method) {
+	jQuery.fn.disablescroll = function(method) {
 		if( ! instance && (typeof method === "object" || ! method)) {
 			instance = new UserScrollDisabler(this, method);
 		}
@@ -84,26 +84,26 @@
 })(jQuery);
 
 function disableScroll() {
-	$('.wrapper').onmousewheel = e => {
+	jQuery('.wrapper').onmousewheel = e => {
 		e.preventDefault();
 		e.stopPropagation();
 	};
-	$('.wrapper').onscroll = e => {
+	jQuery('.wrapper').onscroll = e => {
 		e.preventDefault();
 		e.stopPropagation();
 	};
-	$('.wrapper').ontouchmove = e => {
+	jQuery('.wrapper').ontouchmove = e => {
 		e.preventDefault();
 		e.stopPropagation();
 	};
-	$(".wrapper").disablescroll();
+	jQuery(".wrapper").disablescroll();
 }
 
 function enableScroll() {
-	$('.wrapper').onmousewheel = e => {};
-	$('.wrapper').onscroll = e => {};
-	$('.wrapper').ontouchmove = e => {};
-	$(".wrapper").disablescroll("undo");
+	jQuery('.wrapper').onmousewheel = e => {};
+	jQuery('.wrapper').onscroll = e => {};
+	jQuery('.wrapper').ontouchmove = e => {};
+	jQuery(".wrapper").disablescroll("undo");
 }
 
 window.addEventListener('DOMContentLoaded', e => {
@@ -122,7 +122,7 @@ window.addEventListener('DOMContentLoaded', e => {
 		};
 		window.addEventListener('scroll', onScroll);
 		onScroll();
-		$('html').animate({ scrollTop: fixedOffset }, 900);
+		jQuery('html').animate({ scrollTop: fixedOffset }, 900);
 	};
 	const handleHeaderScroll = e => {
 		const distanceFromStart = +(window.pageYOffset + header.getBoundingClientRect().top).toFixed();

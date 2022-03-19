@@ -1,6 +1,26 @@
 .table-package {
 	padding: 120px 50px;
 	overflow: auto;
+	display: flex;
+	align-items: flex-start;
+	&__left {
+		display: flex;
+		flex-direction: column;
+		flex: 0 0 35%;
+		span {
+			padding: 10px 0;
+			width: 100%;
+			display: block;
+			font-size: 17px;
+			line-height: 140%;
+			padding-right: 10px;
+		}
+	}
+	&__wrap {
+		flex: 0 0 65%;
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
 	&__table {
 		width: 100%;
 		border-collapse: collapse;
@@ -8,9 +28,6 @@
 			th {
 				border-left: 1px solid rgba(58, 64, 66, 0.6);
 				border-right: 1px solid rgba(58, 64, 66, 0.6);
-				&:first-child {
-					border-left: none;
-				}
 				a {
 					font-weight: 500;
 					font-size: 22px;
@@ -36,18 +53,14 @@
 			td {
 				border-left: 1px solid rgba(58, 64, 66, 0.6);
 				border-right: 1px solid rgba(58, 64, 66, 0.6);
-				&:first-child {
-					width: 33%;
-					border-left: none;
-				}
 				position: relative;
-				> span {
-					padding: 10px 0;
-					width: 100%;
-					display: block;
-					font-size: 17px;
-					line-height: 140%;
-				}
+				// > span {
+				// 	padding: 10px 0;
+				// 	width: 100%;
+				// 	display: block;
+				// 	font-size: 17px;
+				// 	line-height: 140%;
+				// }
 				a {
 					position: absolute;
 					top: 0;
@@ -83,9 +96,6 @@
 			td {
 				border-left: 1px solid rgba(58, 64, 66, 0.6);
 				border-right: 1px solid rgba(58, 64, 66, 0.6);
-				&:first-child {
-					border-left: none;
-				}
 				a {
 					font-size: 17px;
 					line-height: 140%;
@@ -126,6 +136,12 @@
 		font-size: 14px;
 	}
 
+	.table-package__left {
+		> span {
+			font-size: 14px;
+		}
+	}
+
 	.table-package__table thead th a {
 		font-size: 17px;
 		line-height: 21px;
@@ -162,7 +178,19 @@
 	}
 
 	.table-package__table {
-		width: calc(150vw - 20px);
+		width: 96vw;
+	}
+
+	.table-package__left {
+		flex-basis: 50%;
+		> span {
+			font-size: 12px;
+			line-height: 135%;
+		}
+	}
+
+	.table-package__wrap {
+		flex-basis: 50%;
 	}
 }
 
@@ -191,5 +219,17 @@
 
 	.table-package__table tbody td:first-child {
 		width: 25%;
+	}
+
+	.table-package__table {
+		width: 160vw;
+	}
+
+	.table-package__left {
+		flex-basis: 56%;
+	}
+
+	.table-package__wrap {
+		flex-basis: 44%;
 	}
 }

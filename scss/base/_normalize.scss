@@ -80,6 +80,7 @@ img {
 h1, h2, h3, h4, h5, h6 {
 	font-size: inherit;
 	font-weight: normal;
+	margin-bottom: 0;
 }
 
 textarea, input {
@@ -110,6 +111,10 @@ textarea, input {
 
 p {
 	margin-bottom: 0;
+}
+
+div#tidio-chat > iframe#tidio-chat-iframe.transition-chat {
+	transition: .3s !important;
 }
 
 /* IB */

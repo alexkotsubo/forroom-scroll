@@ -104,6 +104,7 @@
 			display: flex;
 			align-items: flex-end;
 			margin-top: 56px;
+			color: $dark;
 		}
 		h2 {
 			font-weight: 900;
@@ -214,7 +215,7 @@
 				padding-right: 0;
 			}
 			#{$self}__image {
-				padding-right: 0;
+				padding-right: 50px;
 				padding-left: 0;
 			}
 		}
@@ -461,6 +462,9 @@
 	}
 	.about_stili-reverse .about__inner {
 		flex-direction: column-reverse;
+	}
+	.about_task-reverse .about__image {
+		padding-right: 0;
 	}
 }
 
