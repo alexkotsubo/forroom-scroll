@@ -342,7 +342,7 @@ if (burgerLang) {
 	});
 }
 
-/* Aminate Page */
+/* Animate Page */
 
 const animItems = document.querySelectorAll('.anim-item');
 
@@ -383,47 +383,32 @@ if (animItems.length > 0) {
 
 /* Slide With Hiding Content */
 
-const headerCover = document.querySelector('.header__cover');
-const headerBackground = document.querySelector('.header__anim-background .swiper');
-
-if (headerCover && headerBackground) {
-	const speed = 0;
-	const delay = 7500;
-	let timeouts = [];
-	let interval = null;
-	const handleSwipe = () => {
-		const addHide = setTimeout(() => {
-			headerCover.classList.add('hide');
-		}, delay - 800);
-		const deleteHide = setTimeout(() => {
-			headerCover.classList.remove('hide');
-		}, delay);
-		timeouts[0] = addHide;
-		timeouts[1] = deleteHide;
-	};
-	const swiper = new Swiper('.header__anim-background .swiper', {
-		loop: true,
-		speed,
-		autoplay: { delay },
-		on: {
-			init: () => {
-				handleSwipe();
-				interval = setInterval(handleSwipe, delay);
+const headerCover = document.querySelectorAll('.header__cover');
+ 
+if (headerCover) {
+	const delay = 1800;
+	const speed = delay * 2;
+	let withUpClass = null;
+	let prev = 0;
+	headerCover[prev].classList.remove('hide');
+	if (headerCover.length > 1) {
+		setInterval(() => {
+			if (withUpClass !== null) {
+				headerCover[withUpClass].classList.remove('up');
 			}
-		},
-	});
-	const resizeObserver = new ResizeObserver(entries => {
-		swiper.autoplay.stop();
-		headerCover.classList.remove('hide');
-		clearInterval(interval);
-		for (let i = 0; i < timeouts.length; i++) {
-			clearTimeout(timeouts[i]);
-		}
-		swiper.autoplay.start();
-		handleSwipe();
-		interval = setInterval(handleSwipe, delay);
-	});
-	resizeObserver.observe(body);
+			let prevLoc = prev;
+			setTimeout(() => {
+				headerCover[prevLoc].classList.add('hide');
+			}, delay);
+			prev += 1;
+			if (prev > headerCover.length - 1) {
+				prev = 0;
+				headerCover[prev].classList.add('up');
+				withUpClass = prev;
+			}
+			headerCover[prev].classList.remove('hide');
+		}, speed + delay);
+	}
 }
 
 /* Nav */
